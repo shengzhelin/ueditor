@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ferry</title>
+</head>
+<body>
+    <br>
+    {{ .Description }}：
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td style="text-align: right">標題：</td>
+            <td>{{ .Title }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">申請人：</td>
+            <td>{{ .Creator }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">優先級：</td>
+            <td>{{ .PriorityValue }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">申請時間：</td>
+            <td>{{ .CreatedAt }}</td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="{{ .Domain }}/#/process/handle-ticket?workOrderId={{ .Id }}&processId={{ .ProcessId }}" target="_blank">點擊此處跳轉到工單詳情</a>
+</body>
+<style>
+    table {
+        border: 1px solid #ccc;
+        border-collapse:collapse;
+    }
+    td {
+        padding: 10px 15px 10px 15px;
+        border: 1px solid #ccc;
+    }
+</style>
+</html>

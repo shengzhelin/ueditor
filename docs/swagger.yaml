@@ -1,0 +1,1992 @@
+definitions:
+  app.Response:
+    properties:
+      code:
+        description: 代碼
+        example: 200
+        type: integer
+      data:
+        description: 數據集
+        type: object
+      msg:
+        description: 消息
+        type: string
+    type: object
+  models.Dept:
+    properties:
+      children:
+        items:
+          $ref: '#/definitions/models.Dept'
+        type: array
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      deptId:
+        description: 部門編碼
+        type: integer
+      deptName:
+        description: 部門名稱
+        type: string
+      deptPath:
+        type: string
+      email:
+        description: 郵箱
+        type: string
+      leader:
+        description: 負責人
+        type: string
+      params:
+        type: string
+      parentId:
+        description: 上級部門
+        type: integer
+      phone:
+        description: 手機
+        type: string
+      sort:
+        description: 排序
+        type: integer
+      status:
+        description: 狀態
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.DictType:
+    properties:
+      createBy:
+        description: 創建者
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      dictId:
+        type: integer
+      dictName:
+        description: 字典名稱
+        type: string
+      dictType:
+        description: 字典類型
+        type: string
+      params:
+        type: string
+      remark:
+        description: 備注
+        type: string
+      status:
+        description: 狀態
+        type: string
+      updateBy:
+        description: 更新者
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.Login:
+    properties:
+      code:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+      uuid:
+        type: string
+    required:
+    - code
+    - password
+    - username
+    - uuid
+    type: object
+  models.LoginLog:
+    properties:
+      browser:
+        description: 瀏覽器
+        type: string
+      createBy:
+        description: 創建人
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        description: 數據
+        type: string
+      deletedAt:
+        type: string
+      infoId:
+        description: 主鍵
+        type: integer
+      ipaddr:
+        description: ip地址
+        type: string
+      loginLocation:
+        description: 歸屬地
+        type: string
+      loginTime:
+        description: 登錄時間
+        type: string
+      msg:
+        type: string
+      os:
+        description: 系統
+        type: string
+      params:
+        type: string
+      platform:
+        description: 固件
+        type: string
+      remark:
+        description: 備注
+        type: string
+      status:
+        description: 狀態
+        type: string
+      updateBy:
+        description: 更新者
+        type: string
+      updatedAt:
+        type: string
+      username:
+        description: 用戶名
+        type: string
+    type: object
+  models.Menu:
+    properties:
+      action:
+        type: string
+      breadcrumb:
+        type: string
+      children:
+        items:
+          $ref: '#/definitions/models.Menu'
+        type: array
+      component:
+        type: string
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      icon:
+        type: string
+      is_select:
+        type: boolean
+      isFrame:
+        type: string
+      menuId:
+        type: integer
+      menuName:
+        type: string
+      menuType:
+        type: string
+      noCache:
+        type: boolean
+      params:
+        type: string
+      parentId:
+        type: integer
+      path:
+        type: string
+      paths:
+        type: string
+      permission:
+        type: string
+      roleId:
+        type: integer
+      sort:
+        type: integer
+      title:
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+      visible:
+        type: string
+    type: object
+  models.Post:
+    properties:
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      params:
+        type: string
+      postCode:
+        description: 崗位代碼
+        type: string
+      postId:
+        description: 崗位編號
+        type: integer
+      postName:
+        description: 崗位名稱
+        type: string
+      remark:
+        description: 描述
+        type: string
+      sort:
+        description: 崗位排序
+        type: integer
+      status:
+        description: 狀態
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.SysConfig:
+    properties:
+      configId:
+        description: 編碼
+        type: integer
+      configKey:
+        description: 參數鍵名
+        type: string
+      configName:
+        description: 參數名稱
+        type: string
+      configType:
+        description: 是否系統內置
+        type: string
+      configValue:
+        description: 參數鍵值
+        type: string
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      params:
+        type: string
+      remark:
+        description: 備注
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.SysOperLog:
+    properties:
+      businessType:
+        description: 操作類型
+        type: string
+      businessTypes:
+        type: string
+      createBy:
+        description: 創建人
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        description: 數據
+        type: string
+      deletedAt:
+        type: string
+      deptName:
+        description: 部門名稱
+        type: string
+      jsonResult:
+        description: 返回數據
+        type: string
+      latencyime:
+        description: 耗時
+        type: string
+      method:
+        description: 函數
+        type: string
+      operId:
+        description: 日志編碼
+        type: integer
+      operIp:
+        description: 客戶端ip
+        type: string
+      operLocation:
+        description: 訪問位置
+        type: string
+      operName:
+        description: 操作者
+        type: string
+      operParam:
+        description: 請求參數
+        type: string
+      operTime:
+        description: 操作時間
+        type: string
+      operUrl:
+        description: 訪問地址
+        type: string
+      operatorType:
+        description: 操作類型
+        type: string
+      params:
+        description: 參數
+        type: string
+      remark:
+        description: 備注
+        type: string
+      requestMethod:
+        description: 請求方式
+        type: string
+      status:
+        description: 操作狀態
+        type: string
+      title:
+        description: 操作模塊
+        type: string
+      updateBy:
+        description: 更新者
+        type: string
+      updatedAt:
+        type: string
+      userAgent:
+        description: ua
+        type: string
+    type: object
+  models.SysRole:
+    properties:
+      admin:
+        type: boolean
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      deptIds:
+        items:
+          type: integer
+        type: array
+      flag:
+        type: string
+      menuIds:
+        items:
+          type: integer
+        type: array
+      params:
+        type: string
+      remark:
+        description: 備注
+        type: string
+      roleId:
+        description: 角色編碼
+        type: integer
+      roleKey:
+        description: 角色代碼
+        type: string
+      roleName:
+        description: 角色名稱
+        type: string
+      roleSort:
+        description: 角色排序
+        type: integer
+      status:
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.SysUser:
+    properties:
+      avatar:
+        description: 頭像
+        type: string
+      createBy:
+        type: string
+      createdAt:
+        type: string
+      dataScope:
+        type: string
+      deletedAt:
+        type: string
+      deptId:
+        description: 部門編碼
+        type: integer
+      email:
+        description: 郵箱
+        type: string
+      nickName:
+        description: 昵稱
+        type: string
+      params:
+        type: string
+      password:
+        description: 密碼
+        type: string
+      phone:
+        description: 手機號
+        type: string
+      postId:
+        description: 職位編碼
+        type: integer
+      remark:
+        description: 備注
+        type: string
+      roleId:
+        description: 角色編碼
+        type: integer
+      salt:
+        description: 鹽
+        type: string
+      sex:
+        description: 性別
+        type: string
+      status:
+        type: string
+      updateBy:
+        type: string
+      updatedAt:
+        type: string
+      userId:
+        description: 編碼
+        type: integer
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: |-
+    基於Gin + Vue + Element UI前後端分離的工單系統的接口文檔
+    添加qq群: 1127401830 進入技術交流群 請備注，謝謝！
+  license:
+    name: MIT
+    url: https://github.com/lanyulei/ferry/blob/master/LICENSE
+  title: ferry API
+  version: 0.0.1
+paths:
+  /api/v1/config:
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysConfig'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改配置
+      tags:
+      - 配置
+  /api/v1/config/{configId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: configId
+        in: path
+        name: configId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除配置
+      tags:
+      - 配置
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: 配置編碼
+        in: path
+        name: configId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取配置
+      tags:
+      - 配置
+  /api/v1/configKey/{configKey}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: configKey
+        in: path
+        name: configKey
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取配置
+      tags:
+      - 配置
+  /api/v1/configList:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: configKey
+        in: query
+        name: configKey
+        type: string
+      - description: configName
+        in: query
+        name: configName
+        type: string
+      - description: configType
+        in: query
+        name: configType
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 配置列表數據
+      tags:
+      - 配置
+  /api/v1/db/columns/page:
+    get:
+      description: 數據庫表列分頁列表 / database table column page list
+      parameters:
+      - description: tableName / 數據表名稱
+        in: query
+        name: tableName
+        type: string
+      - description: pageSize / 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: pageIndex / 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      summary: 分頁列表數據 / page list data
+      tags:
+      - 工具 / Tools
+  /api/v1/db/tables/page:
+    get:
+      description: 數據庫表分頁列表 / database table page list
+      parameters:
+      - description: tableName / 數據表名稱
+        in: query
+        name: tableName
+        type: string
+      - description: pageSize / 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: pageIndex / 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      summary: 分頁列表數據 / page list data
+      tags:
+      - 工具 / Tools
+  /api/v1/dept:
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Dept'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加部門
+      tags:
+      - 部門
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Dept'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改部門
+      tags:
+      - 部門
+  /api/v1/dept/{deptId}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: deptId
+        in: path
+        name: deptId
+        type: string
+      - description: position
+        in: query
+        name: position
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 部門列表數據
+      tags:
+      - 部門
+  /api/v1/dept/{id}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除部門
+      tags:
+      - 部門
+  /api/v1/deptList:
+    get:
+      description: 分頁列表
+      parameters:
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: position
+        in: query
+        name: position
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 分頁部門列表數據
+      tags:
+      - 部門
+  /api/v1/dict/data:
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysConfig'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加配置
+      tags:
+      - 配置
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.DictType'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改字典數據
+      tags:
+      - 字典數據
+  /api/v1/dict/data/{dictCode}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: dictCode
+        in: path
+        name: dictCode
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除字典數據
+      tags:
+      - 字典數據
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: 字典編碼
+        in: path
+        name: dictCode
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 通過編碼獲取字典數據
+      tags:
+      - 字典數據
+  /api/v1/dict/data/list:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: status
+        in: query
+        name: status
+        type: string
+      - description: dictCode
+        in: query
+        name: dictCode
+        type: string
+      - description: dictType
+        in: query
+        name: dictType
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 字典數據列表
+      tags:
+      - 字典數據
+  /api/v1/dict/databyType/{dictType}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: dictType
+        in: path
+        name: dictType
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 通過字典類型獲取字典數據
+      tags:
+      - 字典數據
+  /api/v1/dict/type:
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.DictType'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加字典類型
+      tags:
+      - 字典類型
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.DictType'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改字典類型
+      tags:
+      - 字典類型
+  /api/v1/dict/type/{dictId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: dictId
+        in: path
+        name: dictId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除字典類型
+      tags:
+      - 字典類型
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: 字典類型編碼
+        in: path
+        name: dictId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 通過字典id獲取字典類型
+      tags:
+      - 字典類型
+  /api/v1/dict/type/list:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: dictName
+        in: query
+        name: dictName
+        type: string
+      - description: dictId
+        in: query
+        name: dictId
+        type: string
+      - description: dictType
+        in: query
+        name: dictType
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 字典類型列表數據
+      tags:
+      - 字典類型
+  /api/v1/loginlog:
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginLog'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加登錄日志
+      tags:
+      - 登錄日志
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginLog'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改登錄日志
+      tags:
+      - 登錄日志
+  /api/v1/loginlog/{infoId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: 以逗號（,）分割的infoId
+        in: path
+        name: infoId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 批量刪除登錄日志
+      tags:
+      - 登錄日志
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: infoId
+        in: path
+        name: infoId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 通過編碼獲取登錄日志
+      tags:
+      - 登錄日志
+  /api/v1/loginloglist:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: status
+        in: query
+        name: status
+        type: string
+      - description: dictCode
+        in: query
+        name: dictCode
+        type: string
+      - description: dictType
+        in: query
+        name: dictType
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 登錄日志列表
+      tags:
+      - 登錄日志
+  /api/v1/menu:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: menuName
+        in: query
+        name: menuName
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: Menu列表數據
+      tags:
+      - 菜單
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: 獲取JSON
+      parameters:
+      - description: menuName
+        in: formData
+        name: menuName
+        required: true
+        type: string
+      - description: Path
+        in: formData
+        name: Path
+        type: string
+      - description: Action
+        in: formData
+        name: Action
+        required: true
+        type: string
+      - description: Permission
+        in: formData
+        name: Permission
+        required: true
+        type: string
+      - description: ParentId
+        in: formData
+        name: ParentId
+        required: true
+        type: string
+      - description: IsDel
+        in: formData
+        name: IsDel
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 創建菜單
+      tags:
+      - 菜單
+  /api/v1/menu/{id}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除菜單
+      tags:
+      - 菜單
+    put:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: 獲取JSON
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Menu'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "修改失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改菜單
+      tags:
+      - 菜單
+  /api/v1/menuTreeselect:
+    get:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: 獲取JSON
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 獲取菜單樹
+      tags:
+      - 菜單
+  /api/v1/menuids/{id}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 獲取角色對應的菜單id數組
+      tags:
+      - 菜單
+  /api/v1/menulist:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: menuName
+        in: query
+        name: menuName
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: Menu列表數據
+      tags:
+      - 菜單
+  /api/v1/menurole:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 根據角色名稱獲取菜單列表數據（左菜單使用）
+      tags:
+      - 菜單
+  /api/v1/operlog:
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysOperLog'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加操作日志
+      tags:
+      - 操作日志
+  /api/v1/operlog/{infoId}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: infoId
+        in: path
+        name: infoId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 通過編碼獲取登錄日志
+      tags:
+      - 登錄日志
+  /api/v1/operlog/{operId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: 以逗號（,）分割的operId
+        in: path
+        name: operId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 批量刪除操作日志
+      tags:
+      - 操作日志
+  /api/v1/operloglist:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: status
+        in: query
+        name: status
+        type: string
+      - description: dictCode
+        in: query
+        name: dictCode
+        type: string
+      - description: dictType
+        in: query
+        name: dictType
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 登錄日志列表
+      tags:
+      - 登錄日志
+  /api/v1/post:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: position
+        in: query
+        name: position
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 職位列表數據
+      tags:
+      - 職位
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Post'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加職位
+      tags:
+      - 職位
+  /api/v1/post/:
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Dept'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改職位
+      tags:
+      - 職位
+  /api/v1/post/{postId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除職位
+      tags:
+      - 職位
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: postId
+        in: path
+        name: postId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取字典數據
+      tags:
+      - 字典數據
+  /api/v1/role:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: roleId
+        in: path
+        name: roleId
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 獲取Role數據
+      tags:
+      - 角色/Role
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRole'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      summary: 創建角色
+      tags:
+      - 角色/Role
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRole'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "修改失敗"}'
+          schema:
+            type: string
+      summary: 修改用戶角色
+      tags:
+      - 角色/Role
+  /api/v1/role/{roleId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: roleId
+        in: path
+        name: roleId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除用戶角色
+      tags:
+      - 角色/Role
+  /api/v1/rolelist:
+    get:
+      description: Get JSON
+      parameters:
+      - description: roleName
+        in: query
+        name: roleName
+        type: string
+      - description: status
+        in: query
+        name: status
+        type: string
+      - description: roleKey
+        in: query
+        name: roleKey
+        type: string
+      - description: 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 角色列表數據
+      tags:
+      - 角色/Role
+  /api/v1/rolemenu:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: RoleId
+        in: query
+        name: RoleId
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: RoleMenu列表數據
+      tags:
+      - 角色菜單
+  /api/v1/rolemenu/{id}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: menu_id
+        in: query
+        name: menu_id
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除用戶菜單數據
+      tags:
+      - 角色菜單
+  /api/v1/sys/tables/info:
+    post:
+      consumes:
+      - application/json
+      description: 添加表結構
+      parameters:
+      - description: tableName / 數據表名稱
+        in: query
+        name: tables
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 添加表結構
+      tags:
+      - 工具 - 生成表
+    put:
+      consumes:
+      - application/json
+      description: 修改表結構
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.Dept'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 修改表結構
+      tags:
+      - 工具 - 生成表
+  /api/v1/sys/tables/info/{tableId}:
+    delete:
+      description: 刪除表結構
+      parameters:
+      - description: tableId
+        in: path
+        name: tableId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除表結構
+      tags:
+      - 工具 - 生成表
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: configKey
+        in: path
+        name: configKey
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取配置
+      tags:
+      - 工具 - 生成表
+  /api/v1/sys/tables/page:
+    get:
+      description: 生成表分頁列表
+      parameters:
+      - description: tableName / 數據表名稱
+        in: query
+        name: tableName
+        type: string
+      - description: pageSize / 頁條數
+        in: query
+        name: pageSize
+        type: integer
+      - description: pageIndex / 頁碼
+        in: query
+        name: pageIndex
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      summary: 分頁列表數據
+      tags:
+      - 工具 - 生成表
+  /api/v1/sysUser:
+    get:
+      description: 獲取JSON
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取用戶角色和職位
+      tags:
+      - 用戶
+    post:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: 用戶數據
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysUser'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      summary: 創建用戶
+      tags:
+      - 用戶
+  /api/v1/sysUser/{userId}:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: 用戶編碼
+        in: path
+        name: userId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取用戶
+      tags:
+      - 用戶
+  /api/v1/sysUserList:
+    get:
+      description: 獲取JSON
+      parameters:
+      - description: username
+        in: query
+        name: username
+        type: string
+      responses:
+        "200":
+          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          schema:
+            type: string
+      security:
+      - Bearer: []
+      summary: 列表數據
+      tags:
+      - 用戶
+  /api/v1/sysuser/{userId}:
+    delete:
+      description: 刪除數據
+      parameters:
+      - description: userId
+        in: path
+        name: userId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: '{"code": -1, "message": "刪除失敗"}'
+          schema:
+            type: string
+      summary: 刪除用戶數據
+      tags:
+      - 用戶
+    put:
+      consumes:
+      - application/json
+      description: 獲取JSON
+      parameters:
+      - description: body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysUser'
+          type: object
+      responses:
+        "200":
+          description: '{"code": -1, "message": "修改失敗"}'
+          schema:
+            type: string
+      summary: 修改用戶數據
+      tags:
+      - 用戶
+  /api/v1/user/profile:
+    get:
+      description: 獲取JSON
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/app.Response'
+      security:
+      - "": []
+      summary: 獲取當前登錄用戶
+      tags:
+      - 個人中心
+  /api/v1/user/profileAvatar:
+    post:
+      consumes:
+      - multipart/form-data
+      description: 獲取JSON
+      parameters:
+      - description: file
+        in: formData
+        name: file
+        required: true
+        type: file
+      responses:
+        "200":
+          description: '{"code": -1, "message": "添加失敗"}'
+          schema:
+            type: string
+      summary: 修改頭像
+      tags:
+      - 用戶
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: 獲取token
+      parameters:
+      - description: Add account
+        in: body
+        name: username
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+          type: object
+      responses:
+        "200":
+          description: '{"code": 200, "expire": "2019-08-07T12:45:48+08:00", "token":
+            ".eyJleHAiOjE1NjUxNTMxNDgsImlkIjoiYWRtaW4iLCJvcmlnX2lhdCI6MTU2NTE0OTU0OH0.-zvzHvbg0A"
+            }'
+          schema:
+            type: string
+      summary: 登陸
+  /logout:
+    post:
+      consumes:
+      - application/json
+      description: 獲取token
+      responses:
+        "200":
+          description: '{"code": 200, "msg": "成功退出系統" }'
+          schema:
+            type: string
+      security:
+      - "": []
+      summary: 退出登錄
+  /sd/cpu:
+    get:
+      consumes:
+      - text/html
+      description: CPU 使用量 DiskCheck checks the disk usage.
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: CPU 使用量
+  /sd/disk:
+    get:
+      consumes:
+      - text/html
+      description: 服務器硬盤使用量 DiskCheck checks the disk usage.
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 'OK - Free space: 16321MB (15GB) / 51200MB (50GB) | Used: 31%'
+          schema:
+            type: string
+        "429":
+          description: WARNING
+          schema:
+            type: string
+        "500":
+          description: CRITICAL
+          schema:
+            type: string
+      summary: 服務器硬盤使用量
+  /sd/health:
+    get:
+      consumes:
+      - text/html
+      description: 健康狀況
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 健康狀況 HealthCheck shows OK as the ping-pong result.
+  /sd/os:
+    get:
+      consumes:
+      - text/html
+      description: Os
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: OS
+  /sd/ram:
+    get:
+      consumes:
+      - text/html
+      description: 內存使用量 RAMCheck checks the disk usage.
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 內存使用量
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
