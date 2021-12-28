@@ -13,7 +13,7 @@ import (
 type Info struct {
 	base.Model
 	Name        string          `gorm:"column:name; type:varchar(128)" json:"name" form:"name"`                               // 流程名稱
-	Icon        string          `gorm:"column:icon; type:varchar(128)" json:"icon" form:"icon"`                               // 流程標簽
+	Icon        string          `gorm:"column:icon; type:varchar(128)" json:"icon" form:"icon"`                               // 流程標籤
 	Structure   json.RawMessage `gorm:"column:structure; type:json" json:"structure" form:"structure"`                        // 流程結構
 	Classify    int             `gorm:"column:classify; type:int(11)" json:"classify" form:"classify"`                        // 分類ID
 	Tpls        json.RawMessage `gorm:"column:tpls; type:json" json:"tpls" form:"tpls"`                                       // 模版

@@ -156,7 +156,7 @@ function config_redis {
 
 function get_variables {
     read_from_input front_url "$(gettext '請輸入您的程序訪問地址: ')" "" ""
-    read_from_input front_clone_from "$(gettext '請選擇從哪里拉取前端代碼，默認是gitee: 1:gitee, 2: github, 3:自定義地址')" "" "1"
+    read_from_input front_clone_from "$(gettext '請選擇從哪裡拉取前端代碼，默認是gitee: 1:gitee, 2: github, 3:自定義地址')" "" "1"
 
     if [ $front_clone_from == 1 ]; then
         ui_address="https://gitee.com/yllan/ferry_web.git"
