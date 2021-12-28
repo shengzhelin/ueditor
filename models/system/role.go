@@ -11,15 +11,15 @@ import (
 */
 
 type SysRole struct {
-	RoleId   int    `json:"roleId" gorm:"primary_key;AUTO_INCREMENT"` // 角色編碼
-	RoleName string `json:"roleName" gorm:"type:varchar(128);"`       // 角色名稱
+	RoleId   int    `json:"roleId" gorm:"primary_key;AUTO_INCREMENT"` //角色編碼
+	RoleName string `json:"roleName" gorm:"type:varchar(128);"`       //角色名稱
 	Status   string `json:"status" gorm:"type:int(1);"`               //
 	RoleKey  string `json:"roleKey" gorm:"type:varchar(128);"`        //角色代碼
 	RoleSort int    `json:"roleSort" gorm:"type:int(4);"`             //角色排序
 	Flag     string `json:"flag" gorm:"type:varchar(128);"`           //
 	CreateBy string `json:"createBy" gorm:"type:varchar(128);"`       //
 	UpdateBy string `json:"updateBy" gorm:"type:varchar(128);"`       //
-	Remark   string `json:"remark" gorm:"type:varchar(255);"`         //備注
+	Remark   string `json:"remark" gorm:"type:varchar(255);"`         //備註
 	Admin    bool   `json:"admin" gorm:"type:char(1);"`
 	Params   string `json:"params" gorm:"-"`
 	MenuIds  []int  `json:"menuIds" gorm:"-"`
@@ -92,7 +92,7 @@ func (role *SysRole) GetList() (SysRole []SysRole, err error) {
 	return
 }
 
-// 獲取角色對應的菜單ids
+// 獲取角色對應的選單ids
 func (role *SysRole) GetRoleMeunId() ([]int, error) {
 	menuIds := make([]int, 0)
 	menuList := make([]MenuIdList, 0)

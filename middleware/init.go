@@ -7,7 +7,7 @@ import (
 
 
 func InitMiddleware(r *gin.Engine) {
-	// 日志處理
+	// 日誌處理
 	r.Use(LoggerToFile())
 	// 自定義錯誤處理
 	r.Use(CustomError)

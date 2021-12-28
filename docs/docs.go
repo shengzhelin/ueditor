@@ -868,9 +868,9 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "修改登錄日志",
+                "summary": "修改登入日誌",
                 "parameters": [
                     {
                         "description": "body",
@@ -903,9 +903,9 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "添加登錄日志",
+                "summary": "添加登入日誌",
                 "parameters": [
                     {
                         "description": "data",
@@ -937,9 +937,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "通過編碼獲取登錄日志",
+                "summary": "通過編碼獲取登入日誌",
                 "parameters": [
                     {
                         "type": "integer",
@@ -961,9 +961,9 @@ var doc = `{
             "delete": {
                 "description": "刪除數據",
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "批量刪除登錄日志",
+                "summary": "批量刪除登入日誌",
                 "parameters": [
                     {
                         "type": "string",
@@ -992,9 +992,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "登錄日志列表",
+                "summary": "登入日誌列表",
                 "parameters": [
                     {
                         "type": "string",
@@ -1046,7 +1046,7 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
                 "summary": "Menu列表數據",
                 "parameters": [
@@ -1059,7 +1059,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1077,9 +1077,9 @@ var doc = `{
                     "application/x-www-form-urlencoded"
                 ],
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "創建菜單",
+                "summary": "創建選單",
                 "parameters": [
                     {
                         "type": "string",
@@ -1145,9 +1145,9 @@ var doc = `{
                     "application/x-www-form-urlencoded"
                 ],
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "修改菜單",
+                "summary": "修改選單",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1179,9 +1179,9 @@ var doc = `{
             "delete": {
                 "description": "刪除數據",
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "刪除菜單",
+                "summary": "刪除選單",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1213,9 +1213,9 @@ var doc = `{
                     "application/x-www-form-urlencoded"
                 ],
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "獲取菜單樹",
+                "summary": "獲取選單樹",
                 "responses": {
                     "200": {
                         "description": "{\"code\": -1, \"message\": \"添加失敗\"}",
@@ -1235,9 +1235,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "獲取角色對應的菜單id數組",
+                "summary": "獲取角色對應的選單id數組",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1249,7 +1249,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1266,7 +1266,7 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
                 "summary": "Menu列表數據",
                 "parameters": [
@@ -1279,7 +1279,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1296,9 +1296,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "菜單"
+                    "選單"
                 ],
-                "summary": "根據角色名稱獲取菜單列表數據（左菜單使用）",
+                "summary": "根據角色名稱獲取選單列表數據（左選單使用）",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1310,7 +1310,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1330,9 +1330,9 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "操作日志"
+                    "操作日誌"
                 ],
-                "summary": "添加操作日志",
+                "summary": "添加操作日誌",
                 "parameters": [
                     {
                         "description": "data",
@@ -1364,9 +1364,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "通過編碼獲取登錄日志",
+                "summary": "通過編碼獲取登入日誌",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1390,9 +1390,9 @@ var doc = `{
             "delete": {
                 "description": "刪除數據",
                 "tags": [
-                    "操作日志"
+                    "操作日誌"
                 ],
-                "summary": "批量刪除操作日志",
+                "summary": "批量刪除操作日誌",
                 "parameters": [
                     {
                         "type": "string",
@@ -1421,9 +1421,9 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "登錄日志"
+                    "登入日誌"
                 ],
-                "summary": "登錄日志列表",
+                "summary": "登入日誌列表",
                 "parameters": [
                     {
                         "type": "string",
@@ -1657,7 +1657,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1814,7 +1814,7 @@ var doc = `{
                 ],
                 "description": "獲取JSON",
                 "tags": [
-                    "角色菜單"
+                    "角色選單"
                 ],
                 "summary": "RoleMenu列表數據",
                 "parameters": [
@@ -1827,7 +1827,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -1839,9 +1839,9 @@ var doc = `{
             "delete": {
                 "description": "刪除數據",
                 "tags": [
-                    "角色菜單"
+                    "角色選單"
                 ],
-                "summary": "刪除用戶菜單數據",
+                "summary": "刪除用戶選單數據",
                 "parameters": [
                     {
                         "type": "string",
@@ -2132,7 +2132,7 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關信息\"}",
+                        "description": "{\"code\": -1, \"message\": \"抱歉未找到相關訊息\"}",
                         "schema": {
                             "type": "string"
                         }
@@ -2207,7 +2207,7 @@ var doc = `{
                 "tags": [
                     "個人中心"
                 ],
-                "summary": "獲取當前登錄用戶",
+                "summary": "獲取當前登入用戶",
                 "responses": {
                     "200": {
                         "description": "{\"code\": 200, \"data\": [...]}",
@@ -2253,7 +2253,7 @@ var doc = `{
                 "consumes": [
                     "application/json"
                 ],
-                "summary": "登陸",
+                "summary": "登入",
                 "parameters": [
                     {
                         "description": "Add account",
@@ -2287,7 +2287,7 @@ var doc = `{
                 "consumes": [
                     "application/json"
                 ],
-                "summary": "退出登錄",
+                "summary": "退出登入",
                 "responses": {
                     "200": {
                         "description": "{\"code\": 200, \"msg\": \"成功退出系統\" }",
@@ -2320,14 +2320,14 @@ var doc = `{
         },
         "/sd/disk": {
             "get": {
-                "description": "服務器硬盤使用量 DiskCheck checks the disk usage.",
+                "description": "服務器硬碟使用量 DiskCheck checks the disk usage.",
                 "consumes": [
                     "text/html"
                 ],
                 "produces": [
                     "text/html"
                 ],
-                "summary": "服務器硬盤使用量",
+                "summary": "服務器硬碟使用量",
                 "responses": {
                     "200": {
                         "description": "OK - Free space: 16321MB (15GB) / 51200MB (50GB) | Used: 31%",
@@ -2463,7 +2463,7 @@ var doc = `{
                     "type": "string"
                 },
                 "email": {
-                    "description": "郵箱",
+                    "description": "信箱",
                     "type": "string"
                 },
                 "leader": {
@@ -2474,7 +2474,7 @@ var doc = `{
                     "type": "string"
                 },
                 "parentId": {
-                    "description": "上級部門",
+                    "description": "處級部門",
                     "type": "integer"
                 },
                 "phone": {
@@ -2528,7 +2528,7 @@ var doc = `{
                     "type": "string"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "status": {
@@ -2601,7 +2601,7 @@ var doc = `{
                     "type": "string"
                 },
                 "loginTime": {
-                    "description": "登錄時間",
+                    "description": "登入時間",
                     "type": "string"
                 },
                 "msg": {
@@ -2619,7 +2619,7 @@ var doc = `{
                     "type": "string"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "status": {
@@ -2744,15 +2744,15 @@ var doc = `{
                     "type": "string"
                 },
                 "postCode": {
-                    "description": "崗位代碼",
+                    "description": "職稱代碼",
                     "type": "string"
                 },
                 "postId": {
-                    "description": "崗位編號",
+                    "description": "職稱編號",
                     "type": "integer"
                 },
                 "postName": {
-                    "description": "崗位名稱",
+                    "description": "職稱名稱",
                     "type": "string"
                 },
                 "remark": {
@@ -2760,7 +2760,7 @@ var doc = `{
                     "type": "string"
                 },
                 "sort": {
-                    "description": "崗位排序",
+                    "description": "職稱排序",
                     "type": "integer"
                 },
                 "status": {
@@ -2814,7 +2814,7 @@ var doc = `{
                     "type": "string"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "updateBy": {
@@ -2866,7 +2866,7 @@ var doc = `{
                     "type": "string"
                 },
                 "operId": {
-                    "description": "日志編碼",
+                    "description": "日誌編碼",
                     "type": "integer"
                 },
                 "operIp": {
@@ -2902,7 +2902,7 @@ var doc = `{
                     "type": "string"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "requestMethod": {
@@ -2967,7 +2967,7 @@ var doc = `{
                     "type": "string"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "roleId": {
@@ -3021,7 +3021,7 @@ var doc = `{
                     "type": "integer"
                 },
                 "email": {
-                    "description": "郵箱",
+                    "description": "信箱",
                     "type": "string"
                 },
                 "nickName": {
@@ -3036,7 +3036,7 @@ var doc = `{
                     "type": "string"
                 },
                 "phone": {
-                    "description": "手機號",
+                    "description": "手機號碼碼碼碼碼",
                     "type": "string"
                 },
                 "postId": {
@@ -3044,7 +3044,7 @@ var doc = `{
                     "type": "integer"
                 },
                 "remark": {
-                    "description": "備注",
+                    "description": "備註",
                     "type": "string"
                 },
                 "roleId": {
@@ -3103,7 +3103,7 @@ var SwaggerInfo = swaggerInfo{
 	BasePath:    "",
 	Schemes:     []string{},
 	Title:       "ferry API",
-	Description: "基於Gin + Vue + Element UI前後端分離的工單系統的接口文檔\n添加qq群: 1127401830 進入技術交流群 請備注，謝謝！",
+	Description: "基於Gin + Vue + Element UI前後端分離的工單系統的接口文檔",
 }
 
 type s struct{}

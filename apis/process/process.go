@@ -69,7 +69,7 @@ func CreateProcess(c *gin.Context) {
 		Where("name = ?", processValue.Name).
 		Count(&processCount).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("流程信息查詢失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("流程訊息查詢失敗，%v", err.Error()))
 		return
 	}
 	if processCount > 0 {
@@ -114,11 +114,11 @@ func UpdateProcess(c *gin.Context) {
 			"remarks":   processValue.Remarks,
 		}).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("更新流程信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("更新流程訊息失敗，%v", err.Error()))
 		return
 	}
 
-	app.OK(c, processValue, "更新流程信息成功")
+	app.OK(c, processValue, "更新流程訊息成功")
 }
 
 // 刪除流程
@@ -207,7 +207,7 @@ func ClassifyProcessList(c *gin.Context) {
 	app.OK(c, classifyList, "成功獲取數據")
 }
 
-// 克隆流程
+// 複製流程
 func CloneProcess(c *gin.Context) {
 	var (
 		err  error
@@ -236,7 +236,7 @@ func CloneProcess(c *gin.Context) {
 		Remarks:     info.Remarks,
 	}).Error
 	if err != nil {
-		app.Error(c, -1, err, "克隆流程失敗")
+		app.Error(c, -1, err, "複製流程失敗")
 		return
 	}
 

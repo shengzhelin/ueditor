@@ -47,7 +47,7 @@ func IdentityHandler(c *gin.Context) interface{} {
 	}
 }
 
-// @Summary 登陸
+// @Summary 登入
 // @Description 獲取token
 // LoginHandler can be used by clients to get a jwt token.
 // Payload needs to be json in the form of {"username": "USERNAME", "password": "PASSWORD"}.
@@ -78,7 +78,7 @@ func Authenticator(c *gin.Context) (interface{}, error) {
 	browserName, browserVersion := ua.Browser()
 	loginLog.Browser = browserName + " " + browserVersion
 	loginLog.Os = ua.OS()
-	loginLog.Msg = "登錄成功"
+	loginLog.Msg = "登入成功"
 	loginLog.Platform = ua.Platform()
 
 	// 獲取前端過來的數據
@@ -101,12 +101,12 @@ func Authenticator(c *gin.Context) (interface{}, error) {
 
 	// ldap 驗證
 	if loginVal.LoginType == 1 {
-		// ldap登陸
+		// ldap登入
 		ldapUserInfo, err = ldap1.LdapLogin(loginVal.Username, loginVal.Password)
 		if err != nil {
 			return nil, err
 		}
-		// 2. 將ldap用戶信息寫入到用戶數據表中
+		// 2. 將ldap用戶訊息寫入到用戶數據表中
 		err = orm.Eloquent.Model(&system.SysUser{}).
 			Where("username = ?", loginVal.Username).
 			Count(&authUserCount).Error
@@ -149,7 +149,7 @@ func Authenticator(c *gin.Context) (interface{}, error) {
 		return map[string]interface{}{"user": user, "role": role}, nil
 	} else {
 		loginLog.Status = "1"
-		loginLog.Msg = "登錄失敗"
+		loginLog.Msg = "登入失敗"
 		_, _ = loginLog.Create()
 		logger.Info(e.Error())
 	}
@@ -157,7 +157,7 @@ func Authenticator(c *gin.Context) (interface{}, error) {
 	return nil, jwt.ErrFailedAuthentication
 }
 
-// @Summary 退出登錄
+// @Summary 退出登入
 // @Description 獲取token
 // LoginHandler can be used by clients to get a jwt token.
 // Reply will be of the form {"token": "TOKEN"}.

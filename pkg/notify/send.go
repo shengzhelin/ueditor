@@ -17,7 +17,7 @@ import (
 
 type BodyData struct {
 	SendTo        interface{} // 接受人
-	EmailCcTo     []string    // 抄送人郵箱列表
+	EmailCcTo     []string    // 抄送人信箱列表
 	Subject       string      // 標題
 	Classify      []int       // 通知類型
 	Id            int         // 工單ID
@@ -27,7 +27,7 @@ type BodyData struct {
 	PriorityValue string      // 工單優先級
 	CreatedAt     string      // 工單創建時間
 	Content       string      // 通知的內容
-	Description   string      // 表格上面的描述信息
+	Description   string      // 表格上面的描述訊息
 	ProcessId     int         // 流程ID
 	Domain        string      // 域名地址
 }

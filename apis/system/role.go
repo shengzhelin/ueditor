@@ -57,7 +57,7 @@ func GetRoleList(c *gin.Context) {
 // @Tags 角色/Role
 // @Param roleId path string false "roleId"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/role [get]
 // @Security Bearer
 func GetRole(c *gin.Context) {

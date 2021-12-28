@@ -23,18 +23,18 @@ func GetVariableValue(stateList []interface{}, creator int) (err error) {
 					// 創建者
 					stateItem.(map[string]interface{})["processor"].([]interface{})[processorIndex] = creator
 				} else if int(processor.(float64)) == 2 {
-					// 1. 查詢用戶信息
+					// 1. 查詢用戶訊息
 					err = orm.Eloquent.Model(&userInfo).Where("user_id = ?", creator).Find(&userInfo).Error
 					if err != nil {
 						return
 					}
-					// 2. 查詢部門信息
+					// 2. 查詢部門訊息
 					err = orm.Eloquent.Model(&deptInfo).Where("dept_id = ?", userInfo.DeptId).Find(&deptInfo).Error
 					if err != nil {
 						return
 					}
 
-					// 3. 替換處理人信息
+					// 3. 替換處理人訊息
 					stateItem.(map[string]interface{})["processor"].([]interface{})[processorIndex] = deptInfo.Leader
 				}
 			}

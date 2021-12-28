@@ -67,7 +67,7 @@ func Get{{.ClassName}}(c *gin.Context) {
 	var data models.{{.ClassName}}
 	data.{{.PkGoField}}, _ = utils.StringToInt(c.Param("{{.PkJsonField}}"))
 	result, err := data.Get()
-	pkg.HasError(err, "抱歉未找到相關信息", -1)
+	pkg.HasError(err, "抱歉未找到相關訊息", -1)
 
 	var res app.Response
 	res.Data = result

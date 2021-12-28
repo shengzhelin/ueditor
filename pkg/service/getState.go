@@ -13,7 +13,7 @@ type ProcessState struct {
 	Structure map[string][]map[string]interface{}
 }
 
-// 獲取節點信息
+// 獲取節點訊息
 func (p *ProcessState) GetNode(stateId string) (nodeValue map[string]interface{}, err error) {
 	for _, node := range p.Structure["nodes"] {
 		if node["id"] == stateId {
@@ -23,7 +23,7 @@ func (p *ProcessState) GetNode(stateId string) (nodeValue map[string]interface{}
 	return
 }
 
-// 獲取流轉信息
+// 獲取流轉訊息
 func (p *ProcessState) GetEdge(stateId string, classify string) (edgeValue []map[string]interface{}, err error) {
 	var (
 		leftSort  int

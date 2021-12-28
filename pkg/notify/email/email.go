@@ -15,7 +15,7 @@ import (
 )
 
 func server(mailTo []string, ccTo []string, subject, body string, args ...string) error {
-	//定義郵箱服務器連接信息，如果是網易郵箱 pass填密碼，qq郵箱填授權碼
+	//定義信箱服務器連接訊息，如果是網易信箱 pass填密碼，qq信箱填授權碼
 	mailConn := map[string]string{
 		"user": viper.GetString("settings.email.user"),
 		"pass": viper.GetString("settings.email.pass"),

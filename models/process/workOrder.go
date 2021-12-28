@@ -18,7 +18,7 @@ type WorkOrderInfo struct {
 	Classify      int             `gorm:"column:classify; type:int(11)" json:"classify" form:"classify"`                              // 分類ID
 	IsEnd         int             `gorm:"column:is_end; type:int(11); default:0" json:"is_end" form:"is_end"`                         // 是否結束， 0 未結束，1 已結束
 	IsDenied      int             `gorm:"column:is_denied; type:int(11); default:0" json:"is_denied" form:"is_denied"`                // 是否被拒絕， 0 沒有，1 有
-	State         json.RawMessage `gorm:"column:state; type:json" json:"state" form:"state"`                                          // 狀態信息
+	State         json.RawMessage `gorm:"column:state; type:json" json:"state" form:"state"`                                          // 狀態訊息
 	RelatedPerson json.RawMessage `gorm:"column:related_person; type:json" json:"related_person" form:"related_person"`               // 工單所有處理人
 	Creator       int             `gorm:"column:creator; type:int(11)" json:"creator" form:"creator"`                                 // 創建人
 	UrgeCount     int             `gorm:"column:urge_count; type:int(11); default:0" json:"urge_count" form:"urge_count"`             // 催辦次數

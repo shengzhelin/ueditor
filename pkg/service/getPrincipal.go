@@ -116,13 +116,13 @@ func GetPrincipalUserInfo(stateList []interface{}, creator int) (userInfoList []
 					// 創建者
 					userInfoList = append(userInfoList, userInfo)
 				} else if int(processor.(float64)) == 2 {
-					// 1. 查詢部門信息
+					// 1. 查詢部門訊息
 					err = orm.Eloquent.Model(&deptInfo).Where("dept_id = ?", userInfo.DeptId).Find(&deptInfo).Error
 					if err != nil {
 						return
 					}
 
-					// 2. 查詢Leader信息
+					// 2. 查詢Leader訊息
 					err = orm.Eloquent.Model(&userInfo).Where("user_id = ?", deptInfo.Leader).Find(&userInfo).Error
 					if err != nil {
 						return

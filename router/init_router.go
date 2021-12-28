@@ -21,7 +21,7 @@ func InitRouter() *gin.Engine {
 	authMiddleware, err := middleware.AuthInit()
 	tools.HasError(err, "JWT Init Error", 500)
 
-	// 注冊系統路由
+	// 註冊系統路由
 	InitSysRouter(r, authMiddleware)
 
 	return r

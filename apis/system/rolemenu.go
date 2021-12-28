@@ -14,10 +14,10 @@ import (
 
 // @Summary RoleMenu列表數據
 // @Description 獲取JSON
-// @Tags 角色菜單
+// @Tags 角色選單
 // @Param RoleId query string false "RoleId"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/rolemenu [get]
 // @Security Bearer
 func GetRoleMenu(c *gin.Context) {
@@ -47,9 +47,9 @@ func InsertRoleMenu(c *gin.Context) {
 	c.JSON(http.StatusOK, res.ReturnOK())
 }
 
-// @Summary 刪除用戶菜單數據
+// @Summary 刪除用戶選單數據
 // @Description 刪除數據
-// @Tags 角色菜單
+// @Tags 角色選單
 // @Param id path string true "id"
 // @Param menu_id query string false "menu_id"
 // @Success 200 {string} string	"{"code": 200, "message": "刪除成功"}"

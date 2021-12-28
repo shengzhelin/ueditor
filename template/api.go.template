@@ -38,7 +38,7 @@ func Get{{.ClassName}}(c *gin.Context) {
 var data models.{{.ClassName}}
 data.{{.PkGoField}}, _ = tools.StringToInt(c.Param("{{.PkJsonField}}"))
 result, err := data.Get()
-tools.HasError(err, "抱歉未找到相關信息", -1)
+tools.HasError(err, "抱歉未找到相關訊息", -1)
 
 app.OK(c, result, "")
 }

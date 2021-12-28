@@ -13,13 +13,13 @@ import (
 
 type Dept struct {
 	DeptId   int    `json:"deptId" gorm:"primary_key;AUTO_INCREMENT"` //部門編碼
-	ParentId int    `json:"parentId" gorm:"type:int(11);"`            //上級部門
+	ParentId int    `json:"parentId" gorm:"type:int(11);"`            //處級部門
 	DeptPath string `json:"deptPath" gorm:"type:varchar(255);"`       //
 	DeptName string `json:"deptName"  gorm:"type:varchar(128);"`      //部門名稱
 	Sort     int    `json:"sort" gorm:"type:int(4);"`                 //排序
 	Leader   int    `json:"leader" gorm:"type:int(11);"`              //負責人
 	Phone    string `json:"phone" gorm:"type:varchar(11);"`           //手機
-	Email    string `json:"email" gorm:"type:varchar(64);"`           //郵箱
+	Email    string `json:"email" gorm:"type:varchar(64);"`           //信箱
 	Status   string `json:"status" gorm:"type:int(1);"`               //狀態
 	CreateBy string `json:"createBy" gorm:"type:varchar(64);"`
 	UpdateBy string `json:"updateBy" gorm:"type:varchar(64);"`
@@ -185,7 +185,7 @@ func (e *Dept) Update(id int) (update Dept, err error) {
 	e.DeptPath = deptPath
 
 	if e.DeptPath != "" && e.DeptPath != update.DeptPath {
-		return update, errors.New("上級部門不允許修改！")
+		return update, errors.New("處級部門不允許修改！")
 	}
 
 	//參數1:是要修改的數據

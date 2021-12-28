@@ -110,7 +110,7 @@ function mk_ferry_dir {
 
 function init(){
     mk_ferry_dir
-    echo_green "\n>>> $(gettext '開始遷移配置信息...')"
+    echo_green "\n>>> $(gettext '開始遷移配置訊息...')"
     [ -f "${BASE_DIR}/config/db.sql" ] && cp -pf ${BASE_DIR}/config/db.sql ${BASE_DIR}/build/config
     [ -f "${BASE_DIR}/config/settings.yml" ] && cp -pf ${BASE_DIR}/config/settings.yml ${BASE_DIR}/build/config
     [ -f "${BASE_DIR}/config/rbac_model.conf" ] && cp -pf ${BASE_DIR}/config/rbac_model.conf ${BASE_DIR}/build/config
@@ -129,12 +129,12 @@ function init(){
 }
 
 function config_mysql {
-    echo_green "\n>>> $(gettext '需注意: 郵件服務器信息若是暫時沒有，可暫時不修改，但是MySQL和Redis是必須配置正確的')"
+    echo_green "\n>>> $(gettext '需注意: 郵件服務器訊息若是暫時沒有，可暫時不修改，但是MySQL和Redis是必須配置正確的')"
     read_from_input confirm "$(gettext '請確認是否安裝MySQL')?" "y/n" "y"
 
     if [[ "${confirm}" == "y" ]]; then
         echo ""
-        echo "請在此處暫停一下，將數據庫配置信息，寫入到配置文件中，${BASE_DIR}/build/config/settings.yml，<settings.database> 下面數據庫相關配置。"
+        echo "請在此處暫停一下，將數據庫配置訊息，寫入到配置文件中，${BASE_DIR}/build/config/settings.yml，<settings.database> 下面數據庫相關配置。"
     else
         echo_red "未安裝Mysql結束此次編譯"
         exit 1
@@ -147,7 +147,7 @@ function config_redis {
 
     if [[ "${confirm}" == "y" ]]; then
         echo ""
-        echo "請在此處暫停一下，將 Redis 配置信息，寫入到配置文件中，${BASE_DIR}/build/config/settings.yml，<settings.redis> 下面是Redis相關配置，若是不知道如何配置URL，可自行百度一下。"
+        echo "請在此處暫停一下，將 Redis 配置訊息，寫入到配置文件中，${BASE_DIR}/build/config/settings.yml，<settings.redis> 下面是Redis相關配置，若是不知道如何配置URL，可自行百度一下。"
     else
         echo_red "未安裝Redis結束此次編譯"
         exit 1

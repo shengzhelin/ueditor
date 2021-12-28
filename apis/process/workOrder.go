@@ -114,7 +114,7 @@ func ProcessWorkOrder(c *gin.Context) {
 			WorkOrderId    int                      `json:"work_order_id"`   // 工單ID
 			Circulation    string                   `json:"circulation"`     // 流轉ID
 			FlowProperties int                      `json:"flow_properties"` // 流轉類型 0 拒絕，1 同意，2 其他
-			Remarks        string                   `json:"remarks"`         // 處理的備注信息
+			Remarks        string                   `json:"remarks"`         // 處理的備注訊息
 			Tpls           []map[string]interface{} `json:"tpls"`            // 表單數據
 			IsExecTask     bool                     `json:"is_exec_task"`    // 是否執行任務
 		}
@@ -145,7 +145,7 @@ func ProcessWorkOrder(c *gin.Context) {
 		params.SourceState,    // 源節點
 		params.Circulation,    // 流轉標題
 		params.FlowProperties, // 流轉屬性
-		params.Remarks,        // 備注信息
+		params.Remarks,        // 備注訊息
 		params.Tpls,           // 工單數據更新
 		params.IsExecTask,     // 是否執行任務
 	)
@@ -174,7 +174,7 @@ func UnityWorkOrder(c *gin.Context) {
 
 	tx := orm.Eloquent.Begin()
 
-	// 查詢工單信息
+	// 查詢工單訊息
 	err = tx.Model(&workOrderInfo).
 		Where("id = ?", workOrderId).
 		Find(&workOrderInfo).Error
@@ -198,7 +198,7 @@ func UnityWorkOrder(c *gin.Context) {
 		return
 	}
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	err = tx.Model(&userInfo).
 		Where("user_id = ?", tools.GetUserId(c)).
 		Find(&userInfo).Error
@@ -245,7 +245,7 @@ func InversionWorkOrder(c *gin.Context) {
 		}
 	)
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	err = orm.Eloquent.Model(&currentUserInfo).
 		Where("user_id = ?", tools.GetUserId(c)).
 		Find(&currentUserInfo).Error
@@ -260,12 +260,12 @@ func InversionWorkOrder(c *gin.Context) {
 		return
 	}
 
-	// 查詢工單信息
+	// 查詢工單訊息
 	err = orm.Eloquent.Model(&workOrderInfo).
 		Where("id = ?", params.WorkOrderId).
 		Find(&workOrderInfo).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("查詢工單信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("查詢工單訊息失敗，%v", err.Error()))
 		return
 	}
 
@@ -298,16 +298,16 @@ func InversionWorkOrder(c *gin.Context) {
 		Where("id = ?", params.WorkOrderId).
 		Update("state", stateValue).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("更新節點信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("更新節點訊息失敗，%v", err.Error()))
 		return
 	}
 
-	// 查詢用戶信息
+	// 查詢用戶訊息
 	err = tx.Model(&system.SysUser{}).
 		Where("user_id = ?", params.UserId).
 		Find(&userInfo).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("查詢用戶信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("查詢用戶訊息失敗，%v", err.Error()))
 		return
 	}
 
@@ -362,7 +362,7 @@ func UrgeWorkOrder(c *gin.Context) {
 	// 查詢工單數據
 	err := orm.Eloquent.Model(&process.WorkOrderInfo{}).Where("id = ?", workOrderId).Find(&workOrderInfo).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("查詢工單信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("查詢工單訊息失敗，%v", err.Error()))
 		return
 	}
 
@@ -372,7 +372,7 @@ func UrgeWorkOrder(c *gin.Context) {
 		return
 	}
 
-	// 獲取當前工單處理人信息
+	// 獲取當前工單處理人訊息
 	err = json.Unmarshal(workOrderInfo.State, &stateList)
 	if err != nil {
 		app.Error(c, -1, err, "")
@@ -380,10 +380,10 @@ func UrgeWorkOrder(c *gin.Context) {
 	}
 	sendToUserList, err = service.GetPrincipalUserInfo(stateList, workOrderInfo.Creator)
 
-	// 查詢創建人信息
+	// 查詢創建人訊息
 	err = orm.Eloquent.Model(&system.SysUser{}).Where("user_id = ?", workOrderInfo.Creator).Find(&userInfo).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("創建人信息查詢失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("創建人訊息查詢失敗，%v", err.Error()))
 		return
 	}
 
@@ -394,7 +394,7 @@ func UrgeWorkOrder(c *gin.Context) {
 		},
 		Subject:     "您被催辦工單了，請及時處理。",
 		Description: "您有一條待辦工單，請及時處理，工單描述如下",
-		Classify:    []int{1}, // todo 1 表示郵箱，後續添加了其他的在重新補充
+		Classify:    []int{1}, // todo 1 表示信箱，後續添加了其他的在重新補充
 		ProcessId:   workOrderInfo.Process,
 		Id:          workOrderInfo.Id,
 		Title:       workOrderInfo.Title,
@@ -414,7 +414,7 @@ func UrgeWorkOrder(c *gin.Context) {
 		"urge_last_time": int(time.Now().Unix()),
 	}).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("更新催辦信息失敗，%v", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("更新催辦訊息失敗，%v", err.Error()))
 		return
 	}
 
@@ -492,17 +492,17 @@ func ReopenWorkOrder(c *gin.Context) {
 
 	id = c.Param("id")
 
-	// 查詢當前ID的工單信息
+	// 查詢當前ID的工單訊息
 	err = orm.Eloquent.Find(&workOrder, id).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("查詢工單信息失敗, %s", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("查詢工單訊息失敗, %s", err.Error()))
 		return
 	}
 
 	// 創建新的工單
 	err = orm.Eloquent.Find(&processInfo, workOrder.Process).Error
 	if err != nil {
-		app.Error(c, -1, err, fmt.Sprintf("查詢流程信息失敗, %s", err.Error()))
+		app.Error(c, -1, err, fmt.Sprintf("查詢流程訊息失敗, %s", err.Error()))
 		return
 	}
 	err = json.Unmarshal(processInfo.Structure, &structure)

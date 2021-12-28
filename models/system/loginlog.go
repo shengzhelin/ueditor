@@ -17,12 +17,12 @@ type LoginLog struct {
 	LoginLocation string    `json:"loginLocation" gorm:"type:varchar(255);"`  //歸屬地
 	Browser       string    `json:"browser" gorm:"type:varchar(255);"`        //瀏覽器
 	Os            string    `json:"os" gorm:"type:varchar(255);"`             //系統
-	Platform      string    `json:"platform" gorm:"type:varchar(255);"`       // 固件
-	LoginTime     time.Time `json:"loginTime" gorm:"type:timestamp;"`         //登錄時間
+	Platform      string    `json:"platform" gorm:"type:varchar(255);"`       //固件
+	LoginTime     time.Time `json:"loginTime" gorm:"type:timestamp;"`         //登入時間
 	CreateBy      string    `json:"createBy" gorm:"type:varchar(128);"`       //創建人
 	UpdateBy      string    `json:"updateBy" gorm:"type:varchar(128);"`       //更新者
 	Params        string    `json:"params" gorm:"-"`                          //
-	Remark        string    `json:"remark" gorm:"type:varchar(255);"`         //備注
+	Remark        string    `json:"remark" gorm:"type:varchar(255);"`         //備註
 	Msg           string    `json:"msg" gorm:"type:varchar(255);"`
 	BaseModel
 }

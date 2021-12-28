@@ -9,10 +9,10 @@ import (
   @Author : lanyulei
 */
 
-// 配置信息
+// 配置訊息
 type Settings struct {
 	base.Model
-	Classify int             `gorm:"column:classify; type:int(11)" json:"classify" form:"classify"` // 設置分類，1 配置信息，2 Ldap配置
+	Classify int             `gorm:"column:classify; type:int(11)" json:"classify" form:"classify"` // 設置分類，1 配置訊息，2 Ldap配置
 	Content  json.RawMessage `gorm:"column:content; type:json" json:"content" form:"content"`       // 配置內容
 }
 

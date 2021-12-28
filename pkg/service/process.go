@@ -104,7 +104,7 @@ func ProcessStructure(c *gin.Context, processId int, workOrderId int) (result ma
 		}
 		result["tpls"] = tplDetails
 	} else {
-		// 查詢工單信息
+		// 查詢工單訊息
 		err = orm.Eloquent.Model(&process.WorkOrderInfo{}).
 			Where("id = ?", workOrderId).
 			Scan(&workOrderInfo).Error

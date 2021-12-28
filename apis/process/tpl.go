@@ -73,7 +73,7 @@ func CreateTemplate(c *gin.Context) {
 		return
 	}
 
-	templateValue.Creator = tools.GetUserId(c) // 當前登陸用戶ID
+	templateValue.Creator = tools.GetUserId(c) // 當前登入用戶ID
 	err = orm.Eloquent.Create(&templateValue).Error
 	if err != nil {
 		app.Error(c, -1, err, "")
@@ -155,7 +155,7 @@ func DeleteTemplate(c *gin.Context) {
 	app.OK(c, "", "刪除模版成功")
 }
 
-// 克隆模版
+// 複製模版
 func CloneTemplate(c *gin.Context) {
 	var (
 		err  error
@@ -178,7 +178,7 @@ func CloneTemplate(c *gin.Context) {
 		Remarks:       info.Remarks,
 	}).Error
 	if err != nil {
-		app.Error(c, -1, err, "克隆模版失敗")
+		app.Error(c, -1, err, "複製模版失敗")
 		return
 	}
 

@@ -451,19 +451,19 @@ func (h *Handle) HandleWorkOrder(
 		}
 	}()
 
-	// 獲取工單信息
+	// 獲取工單訊息
 	err = orm.Eloquent.Model(&process.WorkOrderInfo{}).Where("id = ?", workOrderId).Find(&h.workOrderDetails).Error
 	if err != nil {
 		return
 	}
 
-	// 查詢工單創建人信息
+	// 查詢工單創建人訊息
 	err = orm.Eloquent.Model(&system.SysUser{}).Where("user_id = ?", h.workOrderDetails.Creator).Find(&applyUserInfo).Error
 	if err != nil {
 		return
 	}
 
-	// 獲取流程信息
+	// 獲取流程訊息
 	err = orm.Eloquent.Model(&process.Info{}).Where("id = ?", h.workOrderDetails.Process).Find(&processInfo).Error
 	if err != nil {
 		return
@@ -592,7 +592,7 @@ func (h *Handle) HandleWorkOrder(
 		// 入口，判斷
 		targetEdges, err = h.processState.GetEdge(h.targetStateValue["id"].(string), "target")
 		if err != nil {
-			err = fmt.Errorf("查詢流轉信息失敗，%v", err.Error())
+			err = fmt.Errorf("查詢流轉訊息失敗，%v", err.Error())
 			return
 		}
 
@@ -774,7 +774,7 @@ func (h *Handle) HandleWorkOrder(
 		}
 	}
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	err = orm.Eloquent.Model(&currentUserInfo).
 		Where("user_id = ?", tools.GetUserId(c)).
 		Find(&currentUserInfo).Error
@@ -857,7 +857,7 @@ func (h *Handle) HandleWorkOrder(
 			return
 		}
 		if len(noticeList) > 0 {
-			// 查詢工單創建人信息
+			// 查詢工單創建人訊息
 			err = h.tx.Model(&system.SysUser{}).
 				Where("user_id = ?", h.workOrderDetails.Creator).
 				Find(&sendToUserList).Error

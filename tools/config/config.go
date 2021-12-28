@@ -57,7 +57,7 @@ func ConfigSetup(path string) {
 	}
 	SslConfig = InitSsl(cfgSsl)
 
-	// 日志配置
+	// 日誌配置
 	logger.Init()
 }
 

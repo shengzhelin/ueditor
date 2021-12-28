@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// 日志記錄到文件
+// 日誌記錄到文件
 func LoggerToFile() gin.HandlerFunc {
 
 	return func(c *gin.Context) {
@@ -35,7 +35,7 @@ func LoggerToFile() gin.HandlerFunc {
 		// 請求IP
 		clientIP := c.ClientIP()
 
-		// 日志格式
+		// 日誌格式
 		logger.Infof(" %s %3d %13v %15s %s %s",
 			startTime.Format("2006-01-02 15:04:05.9999"),
 			statusCode,

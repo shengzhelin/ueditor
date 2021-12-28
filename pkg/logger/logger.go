@@ -32,11 +32,11 @@ func Init() {
 	var syncWriters []zapcore.WriteSyncer
 	level := getLoggerLevel(viper.GetString(`settings.log.level`))
 	fileConfig := &lumberjack.Logger{
-		Filename:   viper.GetString(`settings.log.path`),    // 日志文件名
-		MaxSize:    viper.GetInt(`settings.log.maxsize`),    // 日志文件大小
+		Filename:   viper.GetString(`settings.log.path`),    // 日誌文件名
+		MaxSize:    viper.GetInt(`settings.log.maxsize`),    // 日誌文件大小
 		MaxAge:     viper.GetInt(`settings.log.maxAge`),     // 最長保存天數
 		MaxBackups: viper.GetInt(`settings.log.maxBackups`), // 最多備份幾個
-		LocalTime:  viper.GetBool(`settings.log.localtime`), // 日志時間戳
+		LocalTime:  viper.GetBool(`settings.log.localtime`), // 日誌時間戳
 		Compress:   viper.GetBool(`settings.log.compress`),  // 是否壓縮文件，使用gzip
 	}
 	encoder := zap.NewProductionEncoderConfig()

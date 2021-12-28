@@ -96,7 +96,7 @@ func (w *WorkOrder) PureWorkOrderList() (result interface{}, err error) {
 		db = db.Where("p_work_order_info.priority = ?", priority)
 	}
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	switch w.Classify {
 	case 1:
 		// 待辦工單

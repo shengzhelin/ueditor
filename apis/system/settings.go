@@ -13,7 +13,7 @@ import (
   @Author : lanyulei
 */
 
-// 設置系統信息
+// 設置系統訊息
 func GetSettingsInfo(c *gin.Context) {
 	var (
 		err          error
@@ -32,10 +32,10 @@ func GetSettingsInfo(c *gin.Context) {
 		return
 	}
 
-	app.OK(c, settingsInfo, "查詢配置信息成功")
+	app.OK(c, settingsInfo, "查詢配置訊息成功")
 }
 
-// 設置系統信息
+// 設置系統訊息
 func SetSettingsInfo(c *gin.Context) {
 	var (
 		err           error
@@ -58,10 +58,10 @@ func SetSettingsInfo(c *gin.Context) {
 		return
 	}
 	if settingsCount == 0 {
-		// 創建新的配置信息
+		// 創建新的配置訊息
 		err = orm.Eloquent.Create(&settingsInfo).Error
 		if err != nil {
-			app.Error(c, -1, fmt.Errorf("創建配置信息失敗，%v", err.Error()), "")
+			app.Error(c, -1, fmt.Errorf("創建配置訊息失敗，%v", err.Error()), "")
 			return
 		}
 	} else {
@@ -69,10 +69,10 @@ func SetSettingsInfo(c *gin.Context) {
 			Where("classify = ?", settingsInfo.Classify).
 			Updates(&settingsInfo).Error
 		if err != nil {
-			app.Error(c, -1, fmt.Errorf("更新配置信息失敗，%v", err.Error()), "")
+			app.Error(c, -1, fmt.Errorf("更新配置訊息失敗，%v", err.Error()), "")
 			return
 		}
 	}
 
-	app.OK(c, "", "配置信息設置成功")
+	app.OK(c, "", "配置訊息設置成功")
 }

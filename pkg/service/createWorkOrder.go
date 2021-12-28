@@ -74,7 +74,7 @@ func CreateWorkOrder(c *gin.Context) (err error) {
 	// 創建工單數據
 	tx := orm.Eloquent.Begin()
 
-	// 查詢流程信息
+	// 查詢流程訊息
 	err = tx.Model(&processValue).Where("id = ?", workOrderValue.Process).Find(&processValue).Error
 	if err != nil {
 		return
@@ -151,13 +151,13 @@ func CreateWorkOrder(c *gin.Context) (err error) {
 		// 入口，判斷
 		sourceEdges, err = processState.GetEdge(nodeValue["id"].(string), "source")
 		if err != nil {
-			err = fmt.Errorf("查詢流轉信息失敗，%v", err.Error())
+			err = fmt.Errorf("查詢流轉訊息失敗，%v", err.Error())
 			return
 		}
 
 		targetEdges, err = processState.GetEdge(nodeValue["id"].(string), "target")
 		if err != nil {
-			err = fmt.Errorf("查詢流轉信息失敗，%v", err.Error())
+			err = fmt.Errorf("查詢流轉訊息失敗，%v", err.Error())
 			return
 		}
 
@@ -252,11 +252,11 @@ func CreateWorkOrder(c *gin.Context) (err error) {
 		}
 	}
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	err = tx.Model(&system.SysUser{}).Where("user_id = ?", tools.GetUserId(c)).Find(&userInfo).Error
 	if err != nil {
 		tx.Rollback()
-		err = fmt.Errorf("查詢用戶信息失敗，%v", err.Error())
+		err = fmt.Errorf("查詢用戶訊息失敗，%v", err.Error())
 		return
 	}
 
@@ -309,7 +309,7 @@ func CreateWorkOrder(c *gin.Context) (err error) {
 	if len(noticeList) > 0 {
 		sendToUserList, err = GetPrincipalUserInfo(stateList, workOrderInfo.Creator)
 		if err != nil {
-			err = fmt.Errorf("獲取所有處理人的用戶信息失敗，%v", err.Error())
+			err = fmt.Errorf("獲取所有處理人的用戶訊息失敗，%v", err.Error())
 			return
 		}
 

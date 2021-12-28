@@ -33,8 +33,8 @@ func HealthCheck(c *gin.Context) {
 	app.OK(c, "", "OK")
 }
 
-// @Summary 服務器硬盤使用量
-// @Description 服務器硬盤使用量 DiskCheck checks the disk usage.
+// @Summary 服務器硬碟使用量
+// @Description 服務器硬碟使用量 DiskCheck checks the disk usage.
 // @Accept  text/html
 // @Produce text/html
 // @Success 200 {string} string "OK - Free space: 16321MB (15GB) / 51200MB (50GB) | Used: 31%"

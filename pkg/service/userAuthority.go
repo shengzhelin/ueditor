@@ -34,7 +34,7 @@ func JudgeUserAuthority(c *gin.Context, workOrderId int, currentState string) (s
 		currentStateValue map[string]interface{}
 		currentUserInfo   system.SysUser
 	)
-	// 獲取工單信息
+	// 獲取工單訊息
 	err = orm.Eloquent.Model(&workOrderInfo).
 		Where("id = ?", workOrderId).
 		Find(&workOrderInfo).Error
@@ -42,7 +42,7 @@ func JudgeUserAuthority(c *gin.Context, workOrderId int, currentState string) (s
 		return
 	}
 
-	// 獲取流程信息
+	// 獲取流程訊息
 	err = orm.Eloquent.Model(&process.Info{}).Where("id = ?", workOrderInfo.Process).Find(&processInfo).Error
 	//if err != nil {
 	//	return
@@ -72,7 +72,7 @@ func JudgeUserAuthority(c *gin.Context, workOrderId int, currentState string) (s
 		}
 	}
 
-	// 獲取當前用戶信息
+	// 獲取當前用戶訊息
 	err = orm.Eloquent.Model(&currentUserInfo).
 		Where("user_id = ?", tools.GetUserId(c)).
 		Find(&currentUserInfo).

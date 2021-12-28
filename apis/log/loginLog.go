@@ -11,9 +11,9 @@ import (
 	"github.com/gin-gonic/gin/binding"
 )
 
-// @Summary 登錄日志列表
+// @Summary 登入日誌列表
 // @Description 獲取JSON
-// @Tags 登錄日志
+// @Tags 登入日誌
 // @Param status query string false "status"
 // @Param dictCode query string false "dictCode"
 // @Param dictType query string false "dictType"
@@ -60,9 +60,9 @@ func GetLoginLogList(c *gin.Context) {
 	c.JSON(http.StatusOK, res.ReturnOK())
 }
 
-// @Summary 通過編碼獲取登錄日志
+// @Summary 通過編碼獲取登入日誌
 // @Description 獲取JSON
-// @Tags 登錄日志
+// @Tags 登入日誌
 // @Param infoId path int true "infoId"
 // @Success 200 {object} app.Response "{"code": 200, "data": [...]}"
 // @Router /api/v1/loginlog/{infoId} [get]
@@ -83,9 +83,9 @@ func GetLoginLog(c *gin.Context) {
 	c.JSON(http.StatusOK, res.ReturnOK())
 }
 
-// @Summary 添加登錄日志
+// @Summary 添加登入日誌
 // @Description 獲取JSON
-// @Tags 登錄日志
+// @Tags 登入日誌
 // @Accept  application/json
 // @Product application/json
 // @Param data body models.LoginLog true "data"
@@ -110,9 +110,9 @@ func InsertLoginLog(c *gin.Context) {
 	c.JSON(http.StatusOK, res.ReturnOK())
 }
 
-// @Summary 修改登錄日志
+// @Summary 修改登入日誌
 // @Description 獲取JSON
-// @Tags 登錄日志
+// @Tags 登入日誌
 // @Accept  application/json
 // @Product application/json
 // @Param data body models.LoginLog true "body"
@@ -139,9 +139,9 @@ func UpdateLoginLog(c *gin.Context) {
 	c.JSON(http.StatusOK, res.ReturnOK())
 }
 
-// @Summary 批量刪除登錄日志
+// @Summary 批量刪除登入日誌
 // @Description 刪除數據
-// @Tags 登錄日志
+// @Tags 登入日誌
 // @Param infoId path string true "以逗號（,）分割的infoId"
 // @Success 200 {string} string	"{"code": 200, "message": "刪除成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "刪除失敗"}"

@@ -21,7 +21,7 @@ import (
 // @Tags 用戶
 // @Param username query string false "username"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/sysUserList [get]
 // @Security Bearer
 func GetSysUserList(c *gin.Context) {
@@ -97,7 +97,7 @@ func GetSysUser(c *gin.Context) {
 	})
 }
 
-// @Summary 獲取當前登錄用戶
+// @Summary 獲取當前登入用戶
 // @Description 獲取JSON
 // @Tags 個人中心
 // @Success 200 {object} app.Response "{"code": 200, "data": [...]}"

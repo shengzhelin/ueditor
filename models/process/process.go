@@ -21,7 +21,7 @@ type Info struct {
 	SubmitCount int             `gorm:"column:submit_count; type:int(11); default:0" json:"submit_count" form:"submit_count"` // 提交統計
 	Creator     int             `gorm:"column:creator; type:int(11)" json:"creator" form:"creator"`                           // 創建者
 	Notice      json.RawMessage `gorm:"column:notice; type:json" json:"notice" form:"notice"`                                 // 綁定通知
-	Remarks     string          `gorm:"column:remarks; type:varchar(1024)" json:"remarks" form:"remarks"`                     // 流程備注
+	Remarks     string          `gorm:"column:remarks; type:varchar(1024)" json:"remarks" form:"remarks"`                     // 流程備註
 }
 
 func (Info) TableName() string {

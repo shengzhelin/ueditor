@@ -15,10 +15,10 @@ import (
 
 // @Summary Menu列表數據
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Param menuName query string false "menuName"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/menulist [get]
 // @Security Bearer
 func GetMenuList(c *gin.Context) {
@@ -46,10 +46,10 @@ func GetMenuList(c *gin.Context) {
 
 // @Summary Menu列表數據
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Param menuName query string false "menuName"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/menu [get]
 // @Security Bearer
 func GetMenu(c *gin.Context) {
@@ -89,9 +89,9 @@ func GetMenuTreeRoleselect(c *gin.Context) {
 	})
 }
 
-// @Summary 獲取菜單樹
+// @Summary 獲取選單樹
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Accept  application/x-www-form-urlencoded
 // @Product application/x-www-form-urlencoded
 // @Success 200 {string} string	"{"code": 200, "message": "添加成功"}"
@@ -108,9 +108,9 @@ func GetMenuTreeelect(c *gin.Context) {
 	app.OK(c, result, "")
 }
 
-// @Summary 創建菜單
+// @Summary 創建選單
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Accept  application/x-www-form-urlencoded
 // @Product application/x-www-form-urlencoded
 // @Param menuName formData string true "menuName"
@@ -139,9 +139,9 @@ func InsertMenu(c *gin.Context) {
 	app.OK(c, result, "")
 }
 
-// @Summary 修改菜單
+// @Summary 修改選單
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Accept  application/x-www-form-urlencoded
 // @Product application/x-www-form-urlencoded
 // @Param id path int true "id"
@@ -167,9 +167,9 @@ func UpdateMenu(c *gin.Context) {
 
 }
 
-// @Summary 刪除菜單
+// @Summary 刪除選單
 // @Description 刪除數據
-// @Tags 菜單
+// @Tags 選單
 // @Param id path int true "id"
 // @Success 200 {string} string	"{"code": 200, "message": "刪除成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "刪除失敗"}"
@@ -187,12 +187,12 @@ func DeleteMenu(c *gin.Context) {
 	app.OK(c, "", "刪除成功")
 }
 
-// @Summary 根據角色名稱獲取菜單列表數據（左菜單使用）
+// @Summary 根據角色名稱獲取選單列表數據（左選單使用）
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Param id path int true "id"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/menurole [get]
 // @Security Bearer
 func GetMenuRole(c *gin.Context) {
@@ -205,12 +205,12 @@ func GetMenuRole(c *gin.Context) {
 	app.OK(c, result, "")
 }
 
-// @Summary 獲取角色對應的菜單id數組
+// @Summary 獲取角色對應的選單id數組
 // @Description 獲取JSON
-// @Tags 菜單
+// @Tags 選單
 // @Param id path int true "id"
 // @Success 200 {string} string "{"code": 200, "data": [...]}"
-// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關信息"}"
+// @Success 200 {string} string "{"code": -1, "message": "抱歉未找到相關訊息"}"
 // @Router /api/v1/menuids/{id} [get]
 // @Security Bearer
 func GetMenuIDS(c *gin.Context) {

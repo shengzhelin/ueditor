@@ -108,7 +108,7 @@ func run() error {
 		config2.ApplicationConfig.Host,
 		config2.ApplicationConfig.Port)
 	fmt.Printf("%s Enter Control + C Shutdown Server \r\n", tools.GetCurrntTimeStr())
-	// 等待中斷信號以優雅地關閉服務器（設置 5 秒的超時時間）
+	// 等待中斷訊號以優雅地關閉服務器（設置 5 秒的超時時間）
 	quit := make(chan os.Signal)
 	signal.Notify(quit, os.Interrupt)
 	<-quit

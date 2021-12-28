@@ -41,13 +41,13 @@ func (e *Mysql) Setup() {
 		logger.Fatalf("database error %v", orm.Eloquent.Error)
 	}
 
-	// 是否開啟詳細日志記錄
+	// 是否開啟詳細日誌記錄
 	orm.Eloquent.LogMode(viper.GetBool("settings.gorm.logMode"))
 
 	// 設置最大打開連接數
 	orm.Eloquent.DB().SetMaxOpenConns(viper.GetInt("settings.gorm.maxOpenConn"))
 
-	// 用於設置閑置的連接數.設置閑置的連接數則當開啟的一個連接使用完成後可以放在池里等候下一次使用
+	// 用於設置閒置的連接數.設置閒置的連接數則當開啟的一個連接使用完成後可以放在池裡等候下一次使用
 	orm.Eloquent.DB().SetMaxIdleConns(viper.GetInt("settings.gorm.maxIdleConn"))
 }
 

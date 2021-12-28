@@ -21,7 +21,7 @@ type CirculationHistory struct {
 	Processor    string `gorm:"column:processor; type: varchar(45)" json:"processor" form:"processor"`         // 處理人
 	ProcessorId  int    `gorm:"column:processor_id; type: int(11)" json:"processor_id" form:"processor_id"`    // 處理人ID
 	CostDuration int64  `gorm:"column:cost_duration; type: int(11)" json:"cost_duration" form:"cost_duration"` // 處理時長
-	Remarks      string `gorm:"column:remarks; type: longtext" json:"remarks" form:"remarks"`                  // 備注
+	Remarks      string `gorm:"column:remarks; type: longtext" json:"remarks" form:"remarks"`                  // 備註
 }
 
 func (CirculationHistory) TableName() string {

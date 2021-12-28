@@ -9,10 +9,10 @@ import (
 */
 
 type Post struct {
-	PostId   int    `gorm:"primary_key;AUTO_INCREMENT" json:"postId"` //崗位編號
-	PostName string `gorm:"type:varchar(128);" json:"postName"`       //崗位名稱
-	PostCode string `gorm:"type:varchar(128);" json:"postCode"`       //崗位代碼
-	Sort     int    `gorm:"type:int(4);" json:"sort"`                 //崗位排序
+	PostId   int    `gorm:"primary_key;AUTO_INCREMENT" json:"postId"` //職稱編號
+	PostName string `gorm:"type:varchar(128);" json:"postName"`       //職稱名稱
+	PostCode string `gorm:"type:varchar(128);" json:"postCode"`       //職稱代碼
+	Sort     int    `gorm:"type:int(4);" json:"sort"`                 //職稱排序
 	Status   string `gorm:"type:int(1);" json:"status"`               //狀態
 	Remark   string `gorm:"type:varchar(255);" json:"remark"`         //描述
 	CreateBy string `gorm:"type:varchar(128);" json:"createBy"`

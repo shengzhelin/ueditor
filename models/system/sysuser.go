@@ -45,18 +45,18 @@ type SysUserId struct {
 }
 
 type SysUserB struct {
-	NickName string `gorm:"type:varchar(128)" json:"nickName"` // 昵稱
-	Phone    string `gorm:"type:varchar(11)" json:"phone"`     // 手機號
+	NickName string `gorm:"type:varchar(128)" json:"nickName"` // 暱稱
+	Phone    string `gorm:"type:varchar(11)" json:"phone"`     // 手機號碼
 	RoleId   int    `gorm:"type:int(11)" json:"roleId"`        // 角色編碼
 	Salt     string `gorm:"type:varchar(255)" json:"salt"`     //鹽
 	Avatar   string `gorm:"type:varchar(255)" json:"avatar"`   //頭像
 	Sex      string `gorm:"type:varchar(255)" json:"sex"`      //性別
-	Email    string `gorm:"type:varchar(128)" json:"email"`    //郵箱
+	Email    string `gorm:"type:varchar(128)" json:"email"`    //信箱
 	DeptId   int    `gorm:"type:int(11)" json:"deptId"`        //部門編碼
 	PostId   int    `gorm:"type:int(11)" json:"postId"`        //職位編碼
 	CreateBy string `gorm:"type:varchar(128)" json:"createBy"` //
 	UpdateBy string `gorm:"type:varchar(128)" json:"updateBy"` //
-	Remark   string `gorm:"type:varchar(255)" json:"remark"`   //備注
+	Remark   string `gorm:"type:varchar(255)" json:"remark"`   //備註
 	Status   string `gorm:"type:int(1);" json:"status"`
 	Params   string `gorm:"-" json:"params"`
 	BaseModel
@@ -257,7 +257,7 @@ func (e SysUser) Insert() (id int, err error) {
 	var count int
 	orm.Eloquent.Table(e.TableName()).Where("username = ? and `delete_time` IS NULL", e.Username).Count(&count)
 	if count > 0 {
-		err = errors.New("賬戶已存在！")
+		err = errors.New("帳戶已存在！")
 		return
 	}
 

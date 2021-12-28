@@ -81,7 +81,7 @@ func searchRequest(username string) (userInfo *ldap.Entry, err error) {
 	}
 
 	if len(cur.Entries) == 0 {
-		err = errors.New("未查詢到對應的用戶信息。")
+		err = errors.New("未查詢到對應的用戶訊息。")
 		logger.Error(err)
 		return
 	}

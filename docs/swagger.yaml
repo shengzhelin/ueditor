@@ -35,7 +35,7 @@ definitions:
       deptPath:
         type: string
       email:
-        description: 郵箱
+        description: 信箱
         type: string
       leader:
         description: 負責人
@@ -43,7 +43,7 @@ definitions:
       params:
         type: string
       parentId:
-        description: 上級部門
+        description: 處級部門
         type: integer
       phone:
         description: 手機
@@ -81,7 +81,7 @@ definitions:
       params:
         type: string
       remark:
-        description: 備注
+        description: 備註
         type: string
       status:
         description: 狀態
@@ -133,7 +133,7 @@ definitions:
         description: 歸屬地
         type: string
       loginTime:
-        description: 登錄時間
+        description: 登入時間
         type: string
       msg:
         type: string
@@ -146,7 +146,7 @@ definitions:
         description: 固件
         type: string
       remark:
-        description: 備注
+        description: 備註
         type: string
       status:
         description: 狀態
@@ -230,19 +230,19 @@ definitions:
       params:
         type: string
       postCode:
-        description: 崗位代碼
+        description: 職稱代碼
         type: string
       postId:
-        description: 崗位編號
+        description: 職稱編號
         type: integer
       postName:
-        description: 崗位名稱
+        description: 職稱名稱
         type: string
       remark:
         description: 描述
         type: string
       sort:
-        description: 崗位排序
+        description: 職稱排序
         type: integer
       status:
         description: 狀態
@@ -280,7 +280,7 @@ definitions:
       params:
         type: string
       remark:
-        description: 備注
+        description: 備註
         type: string
       updateBy:
         type: string
@@ -317,7 +317,7 @@ definitions:
         description: 函數
         type: string
       operId:
-        description: 日志編碼
+        description: 日誌編碼
         type: integer
       operIp:
         description: 客戶端ip
@@ -344,7 +344,7 @@ definitions:
         description: 參數
         type: string
       remark:
-        description: 備注
+        description: 備註
         type: string
       requestMethod:
         description: 請求方式
@@ -389,7 +389,7 @@ definitions:
       params:
         type: string
       remark:
-        description: 備注
+        description: 備註
         type: string
       roleId:
         description: 角色編碼
@@ -427,10 +427,10 @@ definitions:
         description: 部門編碼
         type: integer
       email:
-        description: 郵箱
+        description: 信箱
         type: string
       nickName:
-        description: 昵稱
+        description: 暱稱
         type: string
       params:
         type: string
@@ -438,13 +438,13 @@ definitions:
         description: 密碼
         type: string
       phone:
-        description: 手機號
+        description: 手機號碼
         type: string
       postId:
         description: 職位編碼
         type: integer
       remark:
-        description: 備注
+        description: 備註
         type: string
       roleId:
         description: 角色編碼
@@ -471,7 +471,6 @@ info:
   contact: {}
   description: |-
     基於Gin + Vue + Element UI前後端分離的工單系統的接口文檔
-    添加qq群: 1127401830 進入技術交流群 請備注，謝謝！
   license:
     name: MIT
     url: https://github.com/lanyulei/ferry/blob/master/LICENSE
@@ -1019,9 +1018,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 添加登錄日志
+      summary: 添加登入日誌
       tags:
-      - 登錄日志
+      - 登入日誌
     put:
       consumes:
       - application/json
@@ -1041,9 +1040,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 修改登錄日志
+      summary: 修改登入日誌
       tags:
-      - 登錄日志
+      - 登入日誌
   /api/v1/loginlog/{infoId}:
     delete:
       description: 刪除數據
@@ -1058,9 +1057,9 @@ paths:
           description: '{"code": -1, "message": "刪除失敗"}'
           schema:
             type: string
-      summary: 批量刪除登錄日志
+      summary: 批量刪除登入日誌
       tags:
-      - 登錄日志
+      - 登入日誌
     get:
       description: 獲取JSON
       parameters:
@@ -1076,9 +1075,9 @@ paths:
             $ref: '#/definitions/app.Response'
       security:
       - "": []
-      summary: 通過編碼獲取登錄日志
+      summary: 通過編碼獲取登入日誌
       tags:
-      - 登錄日志
+      - 登入日誌
   /api/v1/loginloglist:
     get:
       description: 獲取JSON
@@ -1110,9 +1109,9 @@ paths:
             $ref: '#/definitions/app.Response'
       security:
       - "": []
-      summary: 登錄日志列表
+      summary: 登入日誌列表
       tags:
-      - 登錄日志
+      - 登入日誌
   /api/v1/menu:
     get:
       description: 獲取JSON
@@ -1123,14 +1122,14 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
       - Bearer: []
       summary: Menu列表數據
       tags:
-      - 菜單
+      - 選單
     post:
       consumes:
       - application/x-www-form-urlencoded
@@ -1172,9 +1171,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 創建菜單
+      summary: 創建選單
       tags:
-      - 菜單
+      - 選單
   /api/v1/menu/{id}:
     delete:
       description: 刪除數據
@@ -1189,9 +1188,9 @@ paths:
           description: '{"code": -1, "message": "刪除失敗"}'
           schema:
             type: string
-      summary: 刪除菜單
+      summary: 刪除選單
       tags:
-      - 菜單
+      - 選單
     put:
       consumes:
       - application/x-www-form-urlencoded
@@ -1216,9 +1215,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 修改菜單
+      summary: 修改選單
       tags:
-      - 菜單
+      - 選單
   /api/v1/menuTreeselect:
     get:
       consumes:
@@ -1231,9 +1230,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 獲取菜單樹
+      summary: 獲取選單樹
       tags:
-      - 菜單
+      - 選單
   /api/v1/menuids/{id}:
     get:
       description: 獲取JSON
@@ -1245,14 +1244,14 @@ paths:
         type: integer
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
       - Bearer: []
-      summary: 獲取角色對應的菜單id數組
+      summary: 獲取角色對應的選單id數組
       tags:
-      - 菜單
+      - 選單
   /api/v1/menulist:
     get:
       description: 獲取JSON
@@ -1263,14 +1262,14 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
       - Bearer: []
       summary: Menu列表數據
       tags:
-      - 菜單
+      - 選單
   /api/v1/menurole:
     get:
       description: 獲取JSON
@@ -1282,14 +1281,14 @@ paths:
         type: integer
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
       - Bearer: []
-      summary: 根據角色名稱獲取菜單列表數據（左菜單使用）
+      summary: 根據角色名稱獲取選單列表數據（左選單使用）
       tags:
-      - 菜單
+      - 選單
   /api/v1/operlog:
     post:
       consumes:
@@ -1310,9 +1309,9 @@ paths:
             type: string
       security:
       - Bearer: []
-      summary: 添加操作日志
+      summary: 添加操作日誌
       tags:
-      - 操作日志
+      - 操作日誌
   /api/v1/operlog/{infoId}:
     get:
       description: 獲取JSON
@@ -1329,9 +1328,9 @@ paths:
             $ref: '#/definitions/app.Response'
       security:
       - "": []
-      summary: 通過編碼獲取登錄日志
+      summary: 通過編碼獲取登入日誌
       tags:
-      - 登錄日志
+      - 登入日誌
   /api/v1/operlog/{operId}:
     delete:
       description: 刪除數據
@@ -1346,9 +1345,9 @@ paths:
           description: '{"code": -1, "message": "刪除失敗"}'
           schema:
             type: string
-      summary: 批量刪除操作日志
+      summary: 批量刪除操作日誌
       tags:
-      - 操作日志
+      - 操作日誌
   /api/v1/operloglist:
     get:
       description: 獲取JSON
@@ -1380,9 +1379,9 @@ paths:
             $ref: '#/definitions/app.Response'
       security:
       - "": []
-      summary: 登錄日志列表
+      summary: 登入日誌列表
       tags:
-      - 登錄日志
+      - 登入日誌
   /api/v1/post:
     get:
       description: 獲取JSON
@@ -1499,7 +1498,7 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
@@ -1608,14 +1607,14 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
       - Bearer: []
       summary: RoleMenu列表數據
       tags:
-      - 角色菜單
+      - 角色選單
   /api/v1/rolemenu/{id}:
     delete:
       description: 刪除數據
@@ -1634,9 +1633,9 @@ paths:
           description: '{"code": -1, "message": "刪除失敗"}'
           schema:
             type: string
-      summary: 刪除用戶菜單數據
+      summary: 刪除用戶選單數據
       tags:
-      - 角色菜單
+      - 角色選單
   /api/v1/sys/tables/info:
     post:
       consumes:
@@ -1800,7 +1799,7 @@ paths:
         type: string
       responses:
         "200":
-          description: '{"code": -1, "message": "抱歉未找到相關信息"}'
+          description: '{"code": -1, "message": "抱歉未找到相關訊息"}'
           schema:
             type: string
       security:
@@ -1855,7 +1854,7 @@ paths:
             $ref: '#/definitions/app.Response'
       security:
       - "": []
-      summary: 獲取當前登錄用戶
+      summary: 獲取當前登入用戶
       tags:
       - 個人中心
   /api/v1/user/profileAvatar:
@@ -1897,7 +1896,7 @@ paths:
             }'
           schema:
             type: string
-      summary: 登陸
+      summary: 登入
   /logout:
     post:
       consumes:
@@ -1910,7 +1909,7 @@ paths:
             type: string
       security:
       - "": []
-      summary: 退出登錄
+      summary: 退出登入
   /sd/cpu:
     get:
       consumes:
@@ -1928,7 +1927,7 @@ paths:
     get:
       consumes:
       - text/html
-      description: 服務器硬盤使用量 DiskCheck checks the disk usage.
+      description: 服務器硬碟使用量 DiskCheck checks the disk usage.
       produces:
       - text/html
       responses:
@@ -1944,7 +1943,7 @@ paths:
           description: CRITICAL
           schema:
             type: string
-      summary: 服務器硬盤使用量
+      summary: 服務器硬碟使用量
   /sd/health:
     get:
       consumes:

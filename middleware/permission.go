@@ -29,7 +29,7 @@ func AuthCheckRole() gin.HandlerFunc {
 		} else {
 			c.JSON(http.StatusOK, gin.H{
 				"code": 403,
-				"msg":  fmt.Sprintf("對不起，您沒有 <%v-%v> 訪問權限，請聯系管理員", c.Request.URL.Path, c.Request.Method),
+				"msg":  fmt.Sprintf("對不起，您沒有 <%v-%v> 訪問權限，請聯繫管理員", c.Request.URL.Path, c.Request.Method),
 			})
 			c.Abort()
 			return
