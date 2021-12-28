@@ -114,7 +114,7 @@ func ProcessWorkOrder(c *gin.Context) {
 			WorkOrderId    int                      `json:"work_order_id"`   // 工單ID
 			Circulation    string                   `json:"circulation"`     // 流轉ID
 			FlowProperties int                      `json:"flow_properties"` // 流轉類型 0 拒絕，1 同意，2 其他
-			Remarks        string                   `json:"remarks"`         // 處理的備注訊息
+			Remarks        string                   `json:"remarks"`         // 處理的備註訊息
 			Tpls           []map[string]interface{} `json:"tpls"`            // 表單數據
 			IsExecTask     bool                     `json:"is_exec_task"`    // 是否執行任務
 		}
@@ -145,7 +145,7 @@ func ProcessWorkOrder(c *gin.Context) {
 		params.SourceState,    // 源節點
 		params.Circulation,    // 流轉標題
 		params.FlowProperties, // 流轉屬性
-		params.Remarks,        // 備注訊息
+		params.Remarks,        // 備註訊息
 		params.Tpls,           // 工單數據更新
 		params.IsExecTask,     // 是否執行任務
 	)

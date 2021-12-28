@@ -190,7 +190,7 @@ vim config/settings.yml
   
 其他的根據情況來修改調整
 
- # 4. 創建日志路徑及靜態文件經歷
+ # 4. 創建日誌路徑及靜態文件經歷
 
 mkdir -p log static/uploadfile static/scripts static/template
 

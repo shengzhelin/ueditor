@@ -200,7 +200,7 @@ function install_front {
     git clone $ui_address 
 
     if [ "$?" -ne 0 ];then
-        echo_red "克隆代碼失敗，請檢查git地址: ${ui_address}或者網絡質量"
+        echo_red "複製代碼失敗，請檢查git地址: ${ui_address}或者網絡質量"
         exit 1
     fi
     config_front

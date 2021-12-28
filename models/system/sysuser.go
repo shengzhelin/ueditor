@@ -41,13 +41,13 @@ type LoginM struct {
 }
 
 type SysUserId struct {
-	UserId int `gorm:"primary_key;AUTO_INCREMENT"  json:"userId"` // 編碼
+	UserId int `gorm:"primary_key;AUTO_INCREMENT"  json:"userId"` //編碼
 }
 
 type SysUserB struct {
-	NickName string `gorm:"type:varchar(128)" json:"nickName"` // 暱稱
-	Phone    string `gorm:"type:varchar(11)" json:"phone"`     // 手機號碼
-	RoleId   int    `gorm:"type:int(11)" json:"roleId"`        // 角色編碼
+	NickName string `gorm:"type:varchar(128)" json:"nickName"` //暱稱
+	Phone    string `gorm:"type:varchar(11)" json:"phone"`     //手機號碼
+	RoleId   int    `gorm:"type:int(11)" json:"roleId"`        //角色編碼
 	Salt     string `gorm:"type:varchar(255)" json:"salt"`     //鹽
 	Avatar   string `gorm:"type:varchar(255)" json:"avatar"`   //頭像
 	Sex      string `gorm:"type:varchar(255)" json:"sex"`      //性別

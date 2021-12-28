@@ -3025,7 +3025,7 @@ var doc = `{
                     "type": "string"
                 },
                 "nickName": {
-                    "description": "昵稱",
+                    "description": "暱稱",
                     "type": "string"
                 },
                 "params": {
@@ -3036,7 +3036,7 @@ var doc = `{
                     "type": "string"
                 },
                 "phone": {
-                    "description": "手機號碼碼碼碼碼",
+                    "description": "手機號碼",
                     "type": "string"
                 },
                 "postId": {
