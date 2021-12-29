@@ -203,7 +203,7 @@ CREATE TABLE `sys_dept` (
   `dept_name` varchar(128) DEFAULT NULL,
   `sort` int DEFAULT NULL,
   `leader` int DEFAULT NULL,
-  `phone` varchar(11) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `email` varchar(64) DEFAULT NULL,
   `status` int DEFAULT NULL,
   `create_by` varchar(64) DEFAULT NULL,
@@ -359,7 +359,7 @@ DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user` (
   `user_id` int NOT NULL AUTO_INCREMENT,
   `nick_name` varchar(128) DEFAULT NULL,
-  `phone` varchar(11) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `role_id` int DEFAULT NULL,
   `salt` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
