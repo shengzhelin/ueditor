@@ -33,7 +33,7 @@ export default function luckysheetcreatedom(colwidth, rowheight, data, menu, tit
 
     let gh = gridHTML();
     gh = replaceHtml(gh, { "logotitle": title });//設置title
-    gh = replaceHtml(gh, { "menu": menuToolBar() });//設置需要顯示的菜單
+    gh = replaceHtml(gh, { "menu": menuToolBar() });//設置需要顯示的選單
 
     // if (data.length == 0) {
     //     Store.flowdata = datagridgrowth(data, rowheight, colwidth);
@@ -96,14 +96,14 @@ export default function luckysheetcreatedom(colwidth, rowheight, data, menu, tit
 
     flowHTML = replaceHtml(flowHTML, { "width": Store.ch_width, "flow": flowstr, "index": 0 });
 
-    gh = replaceHtml(gh, { "flow": flowHTML, "rowHeader": "<div style='height:" + Store.rh_height + "px' id='luckysheetrowHeader_0' class='luckysheetsheetchange'></div>", "columnHeader": colsheader, "functionButton": luckysheetConfigsetting.functionButton });//設置需要顯示的菜單
+    gh = replaceHtml(gh, { "flow": flowHTML, "rowHeader": "<div style='height:" + Store.rh_height + "px' id='luckysheetrowHeader_0' class='luckysheetsheetchange'></div>", "columnHeader": colsheader, "functionButton": luckysheetConfigsetting.functionButton });//設置需要顯示的選單
 
     $("#" + Store.container).append(gh);
 
     $("#luckysheet-scrollbar-x div").width(Store.ch_width);
     $("#luckysheet-scrollbar-y div").height(Store.rh_height + Store.columnHeaderHeight - Store.cellMainSrollBarSize - 3);
 
-    //新建行菜單
+    //新建行選單
     $("body").append(maskHTML);
     $("body").append(colsmenuHTML);
     $("body").append(rightclickHTML());

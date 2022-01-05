@@ -726,7 +726,7 @@ const functionImplementation = {
                 }
             }
 
-            return "未找到匹配星座信息";
+            return "未找到匹配星座訊息";
         }
         catch (e) {
             var err = e;
@@ -775,7 +775,7 @@ const functionImplementation = {
                 return list[index];
             }
             else {
-                return "未找到匹配生肖信息";
+                return "未找到匹配生肖訊息";
             }
         }
         catch (e) {
@@ -9864,7 +9864,7 @@ const functionImplementation = {
                 }
             }
 
-            //要返回的數據在數組或數據區域里的位置（從小到大）
+            //要返回的數據在數組或數據區域裡的位置（從小到大）
             var k = func_methods.getFirstValue(arguments[1]);
             if(valueIsError(k)){
                 return k;
@@ -23346,7 +23346,7 @@ const functionImplementation = {
         }
 
         try {
-            //單元格信息的類型
+            //單元格訊息的類型
             var data_info_type = arguments[0];
             var info_type;
 
@@ -25512,7 +25512,7 @@ const functionImplementation = {
             //定義需要格式化data數據
             var dataformat = formula.readCellDataToOneArray(rangeValue);
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -25653,7 +25653,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -25788,7 +25788,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -25934,7 +25934,7 @@ const functionImplementation = {
             let luckysheetfile = getluckysheetfile();
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26025,7 +26025,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26170,7 +26170,7 @@ const functionImplementation = {
             let luckysheetfile = getluckysheetfile();
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26261,7 +26261,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26350,7 +26350,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26449,7 +26449,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26542,7 +26542,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];
@@ -26632,7 +26632,7 @@ const functionImplementation = {
             let index = getSheetIndex(Store.calculateSheetIndex);
             let sheetdata = luckysheetfile[index].data;
 
-            //在下面獲得該單元格的長度和寬度,同時考慮了合並單元格問題
+            //在下面獲得該單元格的長度和寬度,同時考慮了合併單元格問題
             var cellSize = menuButton.getCellRealSize(sheetdata, cell_r, cell_c);
             var width = cellSize[0];
             var height = cellSize[1];

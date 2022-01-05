@@ -1,11 +1,11 @@
 # 教程與資源
 
-開源軟件離不開社區的貢獻，這里將會列舉出社區提供的教程、學習資料及配套解決方案。
+開源軟件離不開社區的貢獻，這裡將會列舉出社區提供的教程、學習資料及配套解決方案。
 
 如果您寫了或者發現了優秀的教程想要推薦給我們，請直接[編輯此頁](https://github.com/mengshukeji/Luckysheet/edit/master/docs/zh/guide/resource.md)提交PR。
 
 ## 博客
-- [Luckysheet如何初始化含合並單元格的數據](https://www.cnblogs.com/DuShuSir/p/13272397.html)
+- [Luckysheet如何初始化含合併單元格的數據](https://www.cnblogs.com/DuShuSir/p/13272397.html)
 - [Luckysheet如何把表格里的數據保存到數據庫](https://www.cnblogs.com/DuShuSir/p/13857874.html)
 - [本地HTML采用cdn加載方式引入Luckysheet的案例](https://www.cnblogs.com/DuShuSir/p/13859103.html)
 - [Luckysheet基礎用法，使用loadUrl加載服務端數據](https://blog.csdn.net/DCDC2020/article/details/108486525)

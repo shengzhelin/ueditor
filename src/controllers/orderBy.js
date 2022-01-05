@@ -24,7 +24,7 @@ import locale from '../locale/locale';
 
 export function orderByInitial(){
     const _locale = locale();
-    //菜單欄 排序按鈕
+    //選單欄 排序按鈕
     $("#luckysheetorderbyasc, #luckysheetorderbyasc_t").mousedown(function (event) {
         cleargridelement(event);
         sortColumnSeletion(Store.orderbyindex, true);

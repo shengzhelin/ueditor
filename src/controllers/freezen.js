@@ -422,7 +422,7 @@ const luckysheetFreezen = {
                 ];
                 _this.saveFreezen(freezenhorizontaldata, top, null, null);
                 // todo: 沒有下面代碼 如果有滾動，凍結之後首行的行號仍顯示的之前滾動的行號
-                // todo: 不 setTimeout 這里直接刷新的話，凍結的首行顯示有問題，沒有列的分割線
+                // todo: 不 setTimeout 這裡直接刷新的話，凍結的首行顯示有問題，沒有列的分割線
                 setTimeout(() => {
                     luckysheetFreezen.createAssistCanvas();
                     luckysheetrefreshgrid();

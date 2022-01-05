@@ -42,7 +42,7 @@
 ## 特性
 
 - **格式設置**：樣式，條件格式，文本對齊及旋轉，文本截斷、溢出、自動換行，多種數據類型，單元格內多樣式
-- **單元格**：拖拽，下拉填充，多選區，查找和替換，定位，合並單元格，數據驗證
+- **單元格**：拖拽，下拉填充，多選區，查找和替換，定位，合併單元格，數據驗證
 - **行和列操作**：隱藏、插入、刪除行或列，凍結，文本分列
 - **操作體驗**：撤銷、重做，覆制、粘貼、剪切，快捷鍵，格式刷，選區拖拽
 - **公式和函數**：內置公式，遠程公式，自定義公式
@@ -56,7 +56,7 @@
 - 新用戶優先閱讀：[用戶指引](https://github.com/mengshukeji/Luckysheet/wiki/User-Guide)
 - 社區提供的教程、學習資料及配套解決方案請查閱：[教程與資源](https://mengshukeji.github.io/LuckysheetDocs/zh/guide/resource.html)
 
-## 📜 更新日志
+## 📜 更新日誌
 
 每個版本的詳細更改都記錄在 [CHANGELOG.md](CHANGELOG.md) 中。
 
@@ -133,7 +133,7 @@ npm run build
 - [Github 論壇](https://github.com/mengshukeji/Luckysheet/discussions)
 - 以下掃碼加入官方微信群或者QQ群
 
-| 官方微信群 |  群滿則加小編微信，備注:加群  | QQ群 |
+| 官方微信群 |  群滿則加小編微信，備註:加群  | QQ群 |
 |---|---|---|
 | <img src="https://minio.cnbabylon.com/public/luckysheet/luckysheet_wechat_group.png" width="200" /> | <img src="https://minio.cnbabylon.com/public/luckysheet/dushusir_wechat.jpg" width="200" />| <img src="https://minio.cnbabylon.com/public/luckysheet/luckysheet_qq_group.jpg" width="200" /> |
 
@@ -237,7 +237,7 @@ Luckysheet是MIT許可的開源項目，其持續穩定的開發離不開這些�
 - [@kdevilpf](https://github.com/kdevilpf)
 - [@WJWM0316](https://github.com/WJWM0316)
 
-## 版權信息
+## 版權訊息
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2020-present, mengshukeji

@@ -109,7 +109,7 @@ const defaultConfig = {
             luckysheetCurrentChartMove: null, // Debounce state
             luckysheetCurrentChartMoveTimeout: null,//拖動圖表框的節流定時器
             luckysheetCurrentChartMoveObj: null, //chart DOM object
-            luckysheetCurrentChartMoveXy: null, //上一次操作結束的圖表信息，x,y: chart框位置，scrollLeft1,scrollTop1: 滾動條位置
+            luckysheetCurrentChartMoveXy: null, //上一次操作結束的圖表訊息，x,y: chart框位置，scrollLeft1,scrollTop1: 滾動條位置
             luckysheetCurrentChartMoveWinH: null, //左右滾動條滑動距離
             luckysheetCurrentChartMoveWinW: null, //上下滾動條滑動距離
             luckysheetCurrentChartResize: null,

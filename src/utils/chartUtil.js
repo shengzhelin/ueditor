@@ -18,7 +18,7 @@ function generateRandomKey(prefix) {
     return prefix + '_' + mid + '_' + time
 }
 /**
- * 深度克隆數據,包括對象，數組，map
+ * 深度複製數據,包括對象，數組，map
  * @param {*} obj 對象，數組，map
  */
 function deepCopy(obj) {
@@ -84,7 +84,7 @@ function isMap(obj) {
     }
 }
 
-// 替換temp中的${xxx}為指定內容 ,temp:字符串，這里指html代碼，dataarry：一個對象{"xxx":"替換的內容"}
+// 替換temp中的${xxx}為指定內容 ,temp:字符串，這裡指html代碼，dataarry：一個對象{"xxx":"替換的內容"}
 // 例：luckysheet.replaceHtml("${image}",{"image":"abc","jskdjslf":"abc"})   ==>  abc
 function replaceHtml(temp, dataarry) {
     return temp.replace(/\$\{([\w]+)\}/g, function (s1, s2) { var s = dataarry[s2]; if (typeof (s) != "undefined") { return s; } else { return s1; } });

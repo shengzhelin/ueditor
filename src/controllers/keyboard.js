@@ -467,7 +467,7 @@ export function keyboardInitial(){
                         return;
                     }
 
-                    //覆制範圍內包含部分合並單元格，提示
+                    //覆制範圍內包含部分合併單元格，提示
                     if(Store.config["merge"] != null){
                         let has_PartMC = false;
 
@@ -621,7 +621,7 @@ export function keyboardInitial(){
                         return;
                     }
 
-                    //覆制範圍內包含部分合並單元格，提示
+                    //覆制範圍內包含部分合併單元格，提示
                     if(Store.config["merge"] != null){
                         let has_PartMC = false;
 
@@ -972,7 +972,7 @@ export function keyboardInitial(){
     });
 
 
-    // 右擊菜單的input輸入框 敲擊Enter一樣生效
+    // 右擊選單的input輸入框 敲擊Enter一樣生效
     $("#" + Store.container).add("input.luckysheet-mousedown-cancel").keydown(function (event) {
 
         const element =  event.target.closest('.luckysheet-cols-menuitem');

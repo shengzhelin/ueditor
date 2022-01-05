@@ -17,10 +17,10 @@ export default {
     // menu: "undo|redo|freezenrow|freezencolumn|download|share|chart|pivot",
     data: [{ "name": "Sheet1", color: "", "status": "1", "order": "0", "data": [], "config": {}, "index":0 }, { "name": "Sheet2", color: "", "status": "0", "order": "1", "data": [], "config": {}, "index":1  }, { "name": "Sheet3", color: "", "status": "0", "order": "2", "data": [], "config": {}, "index":2  }], //客戶端sheet數據[sheet1, sheet2, sheet3]
     title: "Luckysheet Demo", //表格的名稱
-    userInfo:false,// 右上角的用戶信息展示樣式，支持 1. boolean類型：false:不展示，ture:展示默認 '<i style="font-size:16px;color:#ff6a00;" class="fa fa-taxi" aria-hidden="true"></i> rabbit' ，2. HTML模板字符串或者普通字符串，如：'<i style="font-size:16px;color:#ff6a00;" class="fa fa-taxi" aria-hidden="true"></i> Lucky'或者'用戶名'， 3. 對象格式，設置 userImage：用戶頭像地址 和 userName：用戶名 4. 不設置或者設置undefined同設置false
-    userMenuItem: [{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登陸"}], //點擊右上角的用戶信息彈出的菜單
+    userInfo:false,// 右上角的用戶訊息展示樣式，支持 1. boolean類型：false:不展示，ture:展示默認 '<i style="font-size:16px;color:#ff6a00;" class="fa fa-taxi" aria-hidden="true"></i> rabbit' ，2. HTML模板字符串或者普通字符串，如：'<i style="font-size:16px;color:#ff6a00;" class="fa fa-taxi" aria-hidden="true"></i> Lucky'或者'用戶名'， 3. 對象格式，設置 userImage：用戶頭像地址 和 userName：用戶名 4. 不設置或者設置undefined同設置false
+    userMenuItem: [{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登入"}], //點擊右上角的用戶訊息彈出的選單
     myFolderUrl: "www.baidu.com", //左上角<返回按鈕的鏈接
-    config: {}, //表格行高、列寬、合並單元格、公式等設置
+    config: {}, //表格行高、列寬、合併單元格、公式等設置
     fullscreenmode: true, //是否全屏模式，非全屏模式下，標記框不會強制選中。
     devicePixelRatio: window.devicePixelRatio, //設備比例，比例越大表格分標率越高
     allowEdit: true, //是否允許前台編輯
@@ -64,7 +64,7 @@ export default {
     showtoolbarConfig:{}, //自定義工具欄
     showsheetbarConfig:{}, //自定義底部sheet頁
     showstatisticBarConfig:{}, //自定義計數欄
-    cellRightClickConfig:{}, //自定義單元格右鍵菜單
-    sheetRightClickConfig:{}, //自定義底部sheet頁右擊菜單
+    cellRightClickConfig:{}, //自定義單元格右鍵選單
+    sheetRightClickConfig:{}, //自定義底部sheet頁右擊選單
     imageUpdateMethodConfig:{}, //自定義圖片同步方式
 }

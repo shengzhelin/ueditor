@@ -1692,7 +1692,7 @@ export function getDefaultColWidth(options = {}) {
 
 /**
  * 返回當前選區對象的數組，可能存在多個選區。
- * 每個選區的格式為row/column信息組成的對象{row:[0,1],column:[0,1]}
+ * 每個選區的格式為row/column訊息組成的對象{row:[0,1],column:[0,1]}
  * @returns {Array}
  */
 export function getRange() {
@@ -1845,7 +1845,7 @@ export function getRangeHtml(options = {}) {
         return tooltip.info("The order parameter is invalid.", "");
     }
 
-    //覆制範圍內包含部分合並單元格，提示
+    //覆制範圍內包含部分合併單元格，提示
     let cfg = $.extend(true, {}, file.config);
     if (cfg["merge"] != null) {
         let has_PartMC = false;
@@ -2360,7 +2360,7 @@ export function getRangeArray(dimensional, options = {}) {
     let c1 = range.column[0],
         c2 = range.column[1];
 
-    //覆制範圍內包含部分合並單元格，提示
+    //覆制範圍內包含部分合併單元格，提示
     let cfg = $.extend(true, {}, file.config);
     if(cfg["merge"] != null){
         let has_PartMC = hasPartMC(cfg, r1, r2, c1, c2);
@@ -2443,7 +2443,7 @@ export function getRangeJson(isFirstRowTitle, options = {}) {
         return;
     }
 
-    //覆制範圍內包含部分合並單元格，提示
+    //覆制範圍內包含部分合併單元格，提示
     if(config["merge"] != null) {
         let has_PartMC = false;
         let r1 = range.row[0],
@@ -2539,7 +2539,7 @@ export function getRangeDiagonal(type, options = {}) {
         return;
     }
 
-    //覆制範圍內包含部分合並單元格，提示
+    //覆制範圍內包含部分合併單元格，提示
     if(config["merge"] != null) {
         let has_PartMC = false;
         let r1 = range[0].row[0],
@@ -2641,7 +2641,7 @@ export function getRangeBoolean(options = {}) {
         return;
     }
 
-    //覆制範圍內包含部分合並單元格，提示
+    //覆制範圍內包含部分合併單元格，提示
     if(config["merge"] != null) {
         let has_PartMC = false;
         let r1 = range[0].row[0],
@@ -3068,8 +3068,8 @@ export function setRangeFilter(type, options = {}) {
 }
 
 /**
- * 為指定索引的工作表，選定的範圍設定合並單元格
- * @param {String} type 合並類型 all-全部合並  horizontal-水平合並  vertical-垂直合並
+ * 為指定索引的工作表，選定的範圍設定合併單元格
+ * @param {String} type 合併類型 all-全部合併  horizontal-水平合併  vertical-垂直合併
  * @param {Object} options 可選參數
  * @param {Object | String} options.range 選區範圍
  * @param {Number} options.order 工作表索引；默認值為當前工作表索引
@@ -3119,12 +3119,12 @@ export function setRangeMerge(type, options = {}) {
         }]
     }
 
-    //不能合並重疊區域
+    //不能合併重疊區域
     if(selectIsOverlap(range)){
         return tooltip.info('Cannot merge overlapping range', '');
     }
 
-    //選區是否含有 部分合並單元格
+    //選區是否含有 部分合併單元格
     if(cfg["merge"] != null){
         let has_PartMC = false;
 
@@ -3148,7 +3148,7 @@ export function setRangeMerge(type, options = {}) {
         cfg.merge = {}
     }
 
-    //選區是否含有 合並的單元格
+    //選區是否含有 合併的單元格
     let isHasMc = false;
 
     for(let i = 0; i < range.length; i++){
@@ -3173,7 +3173,7 @@ export function setRangeMerge(type, options = {}) {
         }
     }
 
-    if(isHasMc){//選區有合並單元格（選區都執行 取消合並）
+    if(isHasMc){//選區有合併單元格（選區都執行 取消合併）
         cancelRangeMerge({
             range: range,
             order: order
@@ -3285,7 +3285,7 @@ export function setRangeMerge(type, options = {}) {
 }
 
 /**
- * 為指定索引的工作表，選定的範圍取消合並單元格
+ * 為指定索引的工作表，選定的範圍取消合併單元格
  * @param {Object} options 可選參數
  * @param {Array | Object | String} options.range 選區範圍
  * @param {Number} options.order 工作表索引；默認值為當前工作表索引
@@ -3330,12 +3330,12 @@ export function cancelRangeMerge(options = {}) {
         }]
     }
 
-    //不能合並重疊區域
+    //不能合併重疊區域
     if(selectIsOverlap(range)){
         return tooltip.info('Cannot merge overlapping range', '');
     }
 
-    //選區是否含有 部分合並單元格
+    //選區是否含有 部分合併單元格
     if(cfg["merge"] != null){
         let has_PartMC = false;
 
@@ -4870,7 +4870,7 @@ export function setSheetAdd(options = {}) {
     order = Number(order);
 
     let index = sheetmanage.generateRandomSheetIndex();
-    // calcChain公式鏈里的index也要跟著變化
+    // calcChain公式鏈裡的index也要跟著變化
     if (sheetObject.calcChain && sheetObject.calcChain.length > 0) {
         sheetObject.calcChain.forEach((item) => {
             item.index = index
@@ -6007,7 +6007,7 @@ export function getLuckysheetfile(){
 
 /**
  * 指定工作表範圍設置數據驗證功能，並設置參數
- * @param {Object} optionItem 數據驗證的配置信息
+ * @param {Object} optionItem 數據驗證的配置訊息
  * @param {String} optionItem.type 類型
  * @param {String | Null} optionItem.type2 條件類型
  * @param {String | Number} optionItem.value1 條件值1

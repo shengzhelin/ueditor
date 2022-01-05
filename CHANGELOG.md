@@ -132,7 +132,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **formular:** docs ([ddac582](https://github.com/mengshukeji/Luckysheet/commit/ddac582f696898a1a46fc0ce3eb5d245d20077ae))
 * **hook:** function ([fb43a56](https://github.com/mengshukeji/Luckysheet/commit/fb43a56222c3d4c77b84efa9ff37eed8e1333a1a))
 * **hook function:** cellupdate ([5e8f71f](https://github.com/mengshukeji/Luckysheet/commit/5e8f71f32e5104769dbe6e0c61de3cd26b286344))
-* ie11右下角菜單圖標會出現錯位 ([34fd6e7](https://github.com/mengshukeji/Luckysheet/commit/34fd6e74cb87f9563ff28979d9f5f8a192fb558a))
+* ie11右下角選單圖標會出現錯位 ([34fd6e7](https://github.com/mengshukeji/Luckysheet/commit/34fd6e74cb87f9563ff28979d9f5f8a192fb558a))
 * 重覆create會出現很多問題 ([8f22790](https://github.com/mengshukeji/Luckysheet/commit/8f227904fe9600ea17fdc346924d73c3bc81a041))
 
 ### [2.1.6](https://github.com/mengshukeji/Luckysheet/compare/v2.1.5...v2.1.6) (2020-11-23)

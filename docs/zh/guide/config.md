@@ -20,16 +20,16 @@ const options = {
 luckysheet.create(options)
 ```
 
-這里的`options`配置項會作用於整個表格，特別的，單個sheet的配置則需要在`options.data`數組中，分別設置對應更詳細的參數，參考[工作表配置](/zh/guide/sheet.html)
+這裡的`options`配置項會作用於整個表格，特別的，單個sheet的配置則需要在`options.data`數組中，分別設置對應更詳細的參數，參考[工作表配置](/zh/guide/sheet.html)
 
-針對個性化的需求，除了允許配置信息欄（[showinfobar](#showinfobar)）、工具欄（[showtoolbar](#showtoolbar)）、底部sheet頁（[showsheetbar](#showsheetbar)）、底部計數欄（[showstatisticBar](#showstatisticBar)）之外，
+針對個性化的需求，除了允許配置訊息欄（[showinfobar](#showinfobar)）、工具欄（[showtoolbar](#showtoolbar)）、底部sheet頁（[showsheetbar](#showsheetbar)）、底部計數欄（[showstatisticBar](#showstatisticBar)）之外，
 Luckysheet開放了更細致的自定義配置選項，分別有
 
 - 自定義工具欄（[showtoolbarConfig](#showtoolbarConfig)）
 - 自定義底部sheet頁（[showsheetbarConfig](#showsheetbarConfig)）
 - 自定義計數欄（[showstatisticBarConfig](#showstatisticBarConfig)）
-- 自定義單元格右鍵菜單（[cellRightClickConfig](#cellRightClickConfig)）
-- 自定義底部sheet頁右擊菜單（[sheetRightClickConfig](#sheetRightClickConfig)）
+- 自定義單元格右鍵選單（[cellRightClickConfig](#cellRightClickConfig)）
+- 自定義底部sheet頁右擊選單（[sheetRightClickConfig](#sheetRightClickConfig)）
 
 
 ## 配置項
@@ -54,7 +54,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 允許覆制 [allowCopy](#allowCopy)
 - 工具欄 [showtoolbar](#showtoolbar)
 - 自定義工具欄[showtoolbarConfig](#showtoolbarConfig)
-- 信息欄 [showinfobar](#showinfobar)
+- 訊息欄 [showinfobar](#showinfobar)
 - 底部sheet頁 [showsheetbar](#showsheetbar)
 - 自定義底部sheet頁 [showsheetbarConfig](#showsheetbarConfig)
 - 底部計數欄 [showstatisticBar](#showstatisticBar)
@@ -62,15 +62,15 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 允許添加行 [enableAddRow](#enableAddRow)
 - 默認添加行的數目 [addRowCount](#addRowCount)
 - 允許回到頂部 [enableAddBackTop](#enableAddBackTop)
-- 用戶信息 [userInfo](#userInfo)
-- 用戶信息菜單 [userMenuItem](#userMenuItem)
+- 用戶訊息 [userInfo](#userInfo)
+- 用戶訊息選單 [userMenuItem](#userMenuItem)
 - 返回按鈕鏈接 [myFolderUrl](#myFolderUrl)
 - 比例 [devicePixelRatio](#devicePixelRatio)
 - 功能按鈕 [functionButton](#functionButton)
 - 自動縮進界面 [showConfigWindowResize](#showConfigWindowResize)
 - 刷新公式 [forceCalculation](#forceCalculation)
-- 自定義單元格右鍵菜單 [cellRightClickConfig](#cellRightClickConfig)
-- 自定義sheet頁右擊菜單 [sheetRightClickConfig](#sheetRightClickConfig)
+- 自定義單元格右鍵選單 [cellRightClickConfig](#cellRightClickConfig)
+- 自定義sheet頁右擊選單 [sheetRightClickConfig](#sheetRightClickConfig)
 - 行標題區域的寬度 [rowHeaderWidth](#rowHeaderWidth)
 - 列標題區域的高度 [columnHeaderHeight](#columnHeaderHeight)
 - 是否顯示公式欄 [sheetFormulaBar](#sheetFormulaBar)
@@ -297,7 +297,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
         textColor: false, // '文本顏色'
         fillColor: false, // '單元格顏色'
         border: false, // '邊框'
-        mergeCell: false, // '合並單元格'
+        mergeCell: false, // '合併單元格'
         horizontalAlignMode: false, // '水平對齊方式'
         verticalAlignMode: false, // '垂直對齊方式'
         textWrapMode: false, // '換行方式'
@@ -375,7 +375,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 ### showinfobar
 - 類型：Boolean
 - 默認值：true
-- 作用：是否顯示頂部信息欄
+- 作用：是否顯示頂部訊息欄
 
 ------------
 ### showsheetbar
@@ -393,7 +393,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
     ```json
     {
         add: false, //新增sheet  
-        menu: false, //sheet管理菜單
+        menu: false, //sheet管理選單
         sheet: false //sheet頁顯示
     }
     ```
@@ -487,7 +487,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 ### userInfo
 - 類型：String | Boolean | Object
 - 默認值：false
-- 作用：右上角的用戶信息展示樣式，支持以下三種形式
+- 作用：右上角的用戶訊息展示樣式，支持以下三種形式
 	1. HTML模板字符串，如：
 	
 	```js
@@ -512,7 +512,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 	```js
 	options:{
 		// 其他配置
-		userInfo:false, // 不展示用戶信息
+		userInfo:false, // 不展示用戶訊息
 	}
 
 	```
@@ -538,8 +538,8 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 ------------
 ### userMenuItem
 - 類型：Array
-- 默認值：`[{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登陸"}]`
-- 作用：點擊右上角的用戶信息彈出的菜單
+- 默認值：`[{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登入"}]`
+- 作用：點擊右上角的用戶訊息彈出的選單
 
 ------------
 ### myFolderUrl
@@ -582,7 +582,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 
 - 類型：Object
 - 默認值：{}
-- 作用：自定義配置單元格右擊菜單
+- 作用：自定義配置單元格右擊選單
 - 格式：
     ```json
     {
@@ -609,9 +609,9 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 		cellFormat: false // 設置單元格格式
     }
 	```
-	除了單元格，這里的配置還包括行標題右擊菜單、列標題右擊菜單和列標題下拉箭頭的菜單，具體配置關系如下表格：
+	除了單元格，這裡的配置還包括行標題右擊選單、列標題右擊選單和列標題下拉箭頭的選單，具體配置關系如下表格：
 	
-	|右擊菜單配置|單元格|行標題|列標題|列箭頭|
+	|右擊選單配置|單元格|行標題|列標題|列箭頭|
     | ------------ | ------------ | ------------ | ------------ | ------------ |
     |copy|覆制|覆制|覆制|覆制|
     |copyAs|覆制為|覆制為|覆制為|覆制為|
@@ -641,7 +641,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 
 - 類型：Object
 - 默認值：{}
-- 作用：自定義配置sheet頁右擊菜單
+- 作用：自定義配置sheet頁右擊選單
 - 格式：
     ```json
     {   
@@ -774,7 +774,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 類型： `function (string) => string`，接受原始路徑，返回新路徑
 - 默認值： `undefined`
 - 作用，處理圖片顯示時的路徑。  
-  如上傳返回地址為接口地址，如： `rest/attach/[fileguid]`， 則需要處理為 `http://localhost:8080/xxx/rest/attach/[fileguid]` 才能顯示，但將前面域名信息寫入數據，後續使用可能會有問題，因此可使用此方法處理路徑，全路徑僅在展示使用，數據內僅存儲 `rest/attach/[fileguid]`
+  如上傳返回地址為接口地址，如： `rest/attach/[fileguid]`， 則需要處理為 `http://localhost:8080/xxx/rest/attach/[fileguid]` 才能顯示，但將前面域名訊息寫入數據，後續使用可能會有問題，因此可使用此方法處理路徑，全路徑僅在展示使用，數據內僅存儲 `rest/attach/[fileguid]`
 
 ```js
 {
@@ -1610,7 +1610,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：協同編輯中的每次操作後執行的方法，監聽表格內容變化，即客戶端每執行一次表格操作，Luckysheet將這次操作存到歷史記錄中後觸發，撤銷重做時因為也算一次操作，也會觸發此鉤子函數。
 - 參數：
-	- {Object} [operate]: 本次操作的歷史記錄信息，根據不同的操作，會有不同的歷史記錄，參考源碼 [歷史記錄](https://github.com/mengshukeji/Luckysheet/blob/master/src/controllers/controlHistory.js)
+	- {Object} [operate]: 本次操作的歷史記錄訊息，根據不同的操作，會有不同的歷史記錄，參考源碼 [歷史記錄](https://github.com/mengshukeji/Luckysheet/blob/master/src/controllers/controlHistory.js)
     
 ------------
 ### resized
@@ -1661,7 +1661,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：圖片插入之後
 - 參數：
-	- {Object} [item]]: 圖片地址、寬高、位置等信息
+	- {Object} [item]]: 圖片地址、寬高、位置等訊息
     
 ------------
 ### imageUpdateBefore
@@ -1670,7 +1670,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：圖片修改之前，修改的內容包括寬高、位置、裁剪等操作
 - 參數：
-	- {Object} [item]]: 圖片地址、寬高、位置等信息
+	- {Object} [item]]: 圖片地址、寬高、位置等訊息
     
 ------------
 ### imageUpdateAfter
@@ -1679,8 +1679,8 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：圖片修改之後，修改的內容包括寬高、位置、裁剪等操作
 - 參數：
-	- {Object} [oldItem]]: 修改前圖片地址、寬高、位置等信息
-	- {Object} [newItem]]: 修改後圖片地址、寬高、位置等信息
+	- {Object} [oldItem]]: 修改前圖片地址、寬高、位置等訊息
+	- {Object} [newItem]]: 修改後圖片地址、寬高、位置等訊息
     
 ------------
 ### imageDeleteBefore
@@ -1689,7 +1689,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：圖片刪除之前
 - 參數：
-	- {Object} [item]]: 圖片地址、寬高、位置等信息
+	- {Object} [item]]: 圖片地址、寬高、位置等訊息
     
 ------------
 ### imageDeleteAfter
@@ -1698,7 +1698,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：圖片刪除之後
 - 參數：
-	- {Object} [item]]: 圖片地址、寬高、位置等信息
+	- {Object} [item]]: 圖片地址、寬高、位置等訊息
     
 ------------
 
@@ -1722,7 +1722,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 參數：
 	- {Number} [r]:單元格所在行號
 	- {Number} [c]:單元格所在列號
-	- {Object} [cell]: 被插入批注所在的單元格信息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，包含批注信息
+	- {Object} [cell]: 被插入批注所在的單元格訊息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，包含批注訊息
     
 ------------
 ### commentDeleteBefore
@@ -1733,7 +1733,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 參數：
 	- {Number} [r]:單元格所在行號
 	- {Number} [c]:單元格所在列號
-	- {Object} [cell]: 要刪除的批注所在的單元格信息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，可以看到批注信息
+	- {Object} [cell]: 要刪除的批注所在的單元格訊息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，可以看到批注訊息
 
 ------------
 ### commentDeleteAfter
@@ -1744,7 +1744,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 參數：
 	- {Number} [r]:單元格所在行號
 	- {Number} [c]:單元格所在列號
-	- {Object} [cell]: 被刪除批注所在的單元格信息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，可以看到批注已被刪除
+	- {Object} [cell]: 被刪除批注所在的單元格訊息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`，可以看到批注已被刪除
     
 ------------
 ### commentUpdateBefore
@@ -1766,8 +1766,8 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 參數：
 	- {Number} [r]:單元格所在行號
 	- {Number} [c]:單元格所在列號
-	- {Object} [oldCell]: 修改前批注所在的單元格信息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`
-	- {Object} [newCell]: 修改後批注所在的單元格信息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`
+	- {Object} [oldCell]: 修改前批注所在的單元格訊息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`
+	- {Object} [newCell]: 修改後批注所在的單元格訊息，如：`{ r:0,c:2,v:{m:'233',v:'233'}}`
     
 ------------
 
@@ -1801,7 +1801,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：設置凍結前
 - 參數：
-	- {Object} [frozen]: 凍結類型信息
+	- {Object} [frozen]: 凍結類型訊息
 
 ------------
 ### frozenCreateAfter
@@ -1810,7 +1810,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：設置凍結後
 - 參數：
-	- {Object} [frozen]: 凍結類型信息
+	- {Object} [frozen]: 凍結類型訊息
     
 ------------
 ### frozenCancelBefore
@@ -1819,7 +1819,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：取消凍結前
 - 參數：
-	- {Object} [frozen]: 凍結類型信息
+	- {Object} [frozen]: 凍結類型訊息
 
 ------------
 ### frozenCancelAfter
@@ -1828,7 +1828,7 @@ Luckysheet開放了更細致的自定義配置選項，分別有
 - 默認值：null
 - 作用：取消凍結後
 - 參數：
-	- {Object} [frozen]: 凍結類型信息
+	- {Object} [frozen]: 凍結類型訊息
     
 ------------
 

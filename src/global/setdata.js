@@ -179,7 +179,7 @@ function setcellvalue(r, c, d, v) {
                         vupdate = parseFloat(vupdate);
                     }
                 }
-                cell.v = vupdate;   /* 備注：如果使用parseFloat，1.1111111111111111會轉換為1.1111111111111112 ? */
+                cell.v = vupdate;   /* 備註：如果使用parseFloat，1.1111111111111111會轉換為1.1111111111111112 ? */
                 cell.ct = { "fa": "General", "t": "n" };
                 if(cell.v == Infinity || cell.v == -Infinity){
                     cell.m = cell.v.toString();

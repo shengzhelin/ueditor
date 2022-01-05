@@ -167,7 +167,7 @@ export default function luckysheetsizeauto(isRefreshCanvas=true) {
             //When resize, change the width of the more button container in real time
             $$('#luckysheet-icon-morebtn-div').style.left = '';//reset
 
-            // *這里計算containerLeft的作用是：獲得容器左側的margin值，以讓點擊出現的“更多按鈕”欄位置不會出錯。
+            // *這裡計算containerLeft的作用是：獲得容器左側的margin值，以讓點擊出現的“更多按鈕”欄位置不會出錯。
             const containerLeft = $$(`#${Store.container}`).getBoundingClientRect ? $$(`#${Store.container}`).getBoundingClientRect().left : 0;
             const morebtnLeft = $$('#luckysheet-icon-morebtn-div').getBoundingClientRect().left;//get real left info
 

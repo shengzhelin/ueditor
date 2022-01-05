@@ -2765,7 +2765,7 @@ export default {
             'type': 'range'
         }, {
             'name': 'k',
-            'detail': '要返回的數據在數組或數據區域里的位置（從小到大）。',
+            'detail': '要返回的數據在數組或數據區域裡的位置（從小到大）。',
             'example': '4',
             'require': 'm',
             'repeat': 'n',
@@ -2919,7 +2919,7 @@ export default {
             'type': 'rangeall'
         }, {
             'name': '搜索範圍 | 搜索結果數組',
-            'detail': '使用 LOOKUP 的一種方法是給定單行或單列形式的搜索範圍進行搜索查找，這種方式要用到另一個參數結果範圍。另一種方式是將這兩個參數合並為一個搜索結果數組，其中第一行或第一列用於搜索，並將返回值放在該數組的最後一行或最後一列中。',
+            'detail': '使用 LOOKUP 的一種方法是給定單行或單列形式的搜索範圍進行搜索查找，這種方式要用到另一個參數結果範圍。另一種方式是將這兩個參數合併為一個搜索結果數組，其中第一行或第一列用於搜索，並將返回值放在該數組的最後一行或最後一列中。',
             'example': 'A1:A100',
             'require': 'm',
             'repeat': 'n',
@@ -7055,7 +7055,7 @@ export default {
             'type': 'rangeall'
         }, {
             'name': 'stats',
-            'detail': '[可選 - 默認值為FALSE()] - 一個邏輯值，用於指定是否返回附加回歸統計值。\n\n如果詳細為TRUE，除了對應於每個自變量的一組線性系數和y截距之外，LINEST還返回以下信息：\n\n每項系數和截距的標準誤差、\n\n限定系數（介於0和1之間，1表示完全相關）、\n\n因變量值的標準誤差、\n\nF統計或F觀測值，指示所觀測到的因變量和自變量變量之間的關系是隨機的還是線性的、\n\n自由度，用於在參照表中查找F統計值以估算可信度、\n\n回歸平方和，以及\n\n殘差平方和。',
+            'detail': '[可選 - 默認值為FALSE()] - 一個邏輯值，用於指定是否返回附加回歸統計值。\n\n如果詳細為TRUE，除了對應於每個自變量的一組線性系數和y截距之外，LINEST還返回以下訊息：\n\n每項系數和截距的標準誤差、\n\n限定系數（介於0和1之間，1表示完全相關）、\n\n因變量值的標準誤差、\n\nF統計或F觀測值，指示所觀測到的因變量和自變量變量之間的關系是隨機的還是線性的、\n\n自由度，用於在參照表中查找F統計值以估算可信度、\n\n回歸平方和，以及\n\n殘差平方和。',
             'example': 'TRUE()',
             'require': 'o',
             'repeat': 'n',
@@ -7183,19 +7183,19 @@ export default {
     }, {
         'n': 'CELL',
         't': 15,
-        'd': '返回有關單元格的格式、位置或內容的信息。',
-        'a': '返回有關單元格的格式、位置或內容的信息。',
+        'd': '返回有關單元格的格式、位置或內容的訊息。',
+        'a': '返回有關單元格的格式、位置或內容的訊息。',
         'm': [2, 2],
         'p': [{
             'name': 'info_type',
-            'detail': '一個文本值，指定要返回的單元格信息的類型。',
+            'detail': '一個文本值，指定要返回的單元格訊息的類型。',
             'example': '"type"',
             'require': 'm',
             'repeat': 'n',
             'type': 'rangeall'
         }, {
             'name': 'reference',
-            'detail': '需要其相關信息的單元格。',
+            'detail': '需要其相關訊息的單元格。',
             'example': 'C2',
             'require': 'm',
             'repeat': 'n',
@@ -9079,8 +9079,8 @@ export default {
         fillColor: '單元格顏色',
         border: '邊框',
         borderStyle: '邊框類型',
-        mergeCell: '合並單元格',
-        chooseMergeType: '選擇合並類型',
+        mergeCell: '合併單元格',
+        chooseMergeType: '選擇合併類型',
         horizontalAlign: '水平對齊',
         verticalAlign: '垂直對齊',
         alignment: '對齊方式',
@@ -9453,12 +9453,12 @@ export default {
         borderSize:'邊框粗細'
     },
     merge:{
-        mergeAll:"全部合並",
-        mergeV:"垂直合並",
-        mergeH:"水平合並",
-        mergeCancel:"取消合並",
-        overlappingError:"不能合並重疊區域",
-        partiallyError:"無法對部分合並單元格執行此操作",
+        mergeAll:"全部合併",
+        mergeV:"垂直合併",
+        mergeH:"水平合併",
+        mergeCancel:"取消合併",
+        overlappingError:"不能合併重疊區域",
+        partiallyError:"無法對部分合併單元格執行此操作",
     },
     align:{
         left:"左對齊",
@@ -9517,7 +9517,7 @@ export default {
 
 
         "noRangeError":"不能對多重選擇區域執行此操作，請選擇單個區域，然後再試",
-        "mergeError":"選區有合並單元格，無法執行此操作！",
+        "mergeError":"選區有合併單元格，無法執行此操作！",
 
     },
     filter:{
@@ -9573,7 +9573,7 @@ export default {
         filterDateFormatTip:"日期格式",
 
         valueBlank:"(空白)",
-        mergeError:"篩選選區有合並單元格，無法執行此操作！",
+        mergeError:"篩選選區有合併單元格，無法執行此操作！",
     },
     rightclick: {
         copy: '覆制',
@@ -9647,7 +9647,7 @@ export default {
     screenshot:{
         screenshotTipNoSelection:"請框選需要截圖的範圍",
         screenshotTipTitle:"提示！",
-        screenshotTipHasMerge:"無法對合並單元格執行此操作",
+        screenshotTipHasMerge:"無法對合併單元格執行此操作",
         screenshotTipHasMulti:"無法對多重選擇區域執行此操作",
         screenshotTipSuccess:"截取成功",
         screenshotImageName:"截圖",
@@ -10105,11 +10105,11 @@ export default {
         "selectCategory":"或選擇類別",
     },
     drag:{
-        noMerge:"無法對合並單元格執行此操作",
+        noMerge:"無法對合併單元格執行此操作",
         affectPivot:"無法對所選單元格進行此更改，因為它會影響數據透視表！",
         noMulti:"無法對多重選擇區域執行此操作,請選擇單個區域",
         noPaste:"無法在此處粘貼此內容，請選擇粘貼區域的一個單元格，然後再次嘗試粘貼",
-        noPartMerge:"無法對部分合並單元格執行此操作",
+        noPartMerge:"無法對部分合併單元格執行此操作",
 
         inputCorrect:"請輸入正確的數值",
         notLessOne:"行列數不能小於1",
@@ -10247,7 +10247,7 @@ export default {
         protection:"保護",
         locked:"鎖定單元格",
         hidden:"隱藏公式",
-        protectionTips:"只有保護工作表功能(在菜單欄點擊保護工作表按鈕進行設置)開啟後，鎖定單元格或隱藏公式才能生效",
+        protectionTips:"只有保護工作表功能(在選單欄點擊保護工作表按鈕進行設置)開啟後，鎖定單元格或隱藏公式才能生效",
         tipsPart:"部分選中",
         tipsAll:"全部選中",
         selectionIsNullAlert:"請選擇一個範圍！",
@@ -10255,7 +10255,7 @@ export default {
     },
     print:{
         normalBtn:"常規視圖",
-        layoutBtn:"頁面布局",
+        layoutBtn:"頁面佈局",
         pageBtn:"分頁預覽",
 
         menuItemPrint:"打印(Ctrl+P)",
@@ -10271,7 +10271,7 @@ export default {
         refresh: 'WebSocket連接發生錯誤, 請刷新頁面！',
         wait: 'WebSocket連接發生錯誤, 請耐心等待！',
         close: 'WebSocket連接關閉',
-        contact: '服務器通信發生錯誤，請刷新頁面後再試，如若不行請聯系管理員！',
+        contact: '服務器通信發生錯誤，請刷新頁面後再試，如若不行請聯繫管理員！',
         support: '當前瀏覽器不支持WebSocket',
     }
 

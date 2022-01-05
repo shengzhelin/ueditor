@@ -1042,7 +1042,7 @@ const conditionformat = {
             _this.administerRuleDialog();
         });
 
-        // 規則子菜單彈出層 點擊確定修改樣式
+        // 規則子選單彈出層 點擊確定修改樣式
         $(document).off("click.CFdefault").on("click.CFdefault", "#luckysheet-conditionformat-dialog-confirm", function(){
 
             if(!checkProtectionFormatCells(Store.currentSheetIndex)){

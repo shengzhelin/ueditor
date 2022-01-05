@@ -368,7 +368,7 @@ function luckysheetMoveHighlightCell(postion, index, type, isScroll) {
             curC = last["column_focus"];    
         }
         
-        //focus單元格 是否是合並單元格
+        //focus單元格 是否是合併單元格
         let margeset = menuButton.mergeborer(Store.flowdata, curR, curC);
         if(!!margeset){
             let str_r = margeset.row[2];
@@ -425,7 +425,7 @@ function luckysheetMoveHighlightCell(postion, index, type, isScroll) {
             moveY = curC;
         }
 
-        //移動的下一個單元格是否是合並的單元格
+        //移動的下一個單元格是否是合併的單元格
         let margeset2 = menuButton.mergeborer(Store.flowdata, curR, curC);
         if(!!margeset2){
             row = margeset2.row[1];
@@ -482,7 +482,7 @@ function luckysheetMoveHighlightCell(postion, index, type, isScroll) {
             curC = last["column_focus"];    
         }
         
-        //focus單元格 是否是合並單元格
+        //focus單元格 是否是合併單元格
         let margeset = menuButton.mergeborer(Store.flowdata, curR, curC);
         if(!!margeset){
             let str_r = margeset.row[2];
@@ -539,7 +539,7 @@ function luckysheetMoveHighlightCell(postion, index, type, isScroll) {
             moveY = curC;
         }
 
-        //移動的下一個單元格是否是合並的單元格
+        //移動的下一個單元格是否是合併的單元格
         let margeset2 = menuButton.mergeborer(Store.flowdata, curR, curC);
         if(!!margeset2){
             row = margeset2.row[1];
@@ -889,7 +889,7 @@ function luckysheetMoveHighlightRange(postion, index, type, isScroll) {
             datacolumnlen = Store.flowdata[0].length;
 
         if(postion == "down"){ //選區上下變動
-            if(rowHasMerge(rf, curC, endC)){ //focus單元格所在行有合並單元格
+            if(rowHasMerge(rf, curC, endC)){ //focus單元格所在行有合併單元格
                 let rfMerge = getRowMerge(rf, curC, endC);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -958,7 +958,7 @@ function luckysheetMoveHighlightRange(postion, index, type, isScroll) {
             }
         }
         else{
-            if(colHasMerge(cf, curR, endR)){ //focus單元格所在列有合並單元格
+            if(colHasMerge(cf, curR, endR)){ //focus單元格所在列有合併單元格
                 let cfMerge = getColMerge(cf, curR, endR);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 
@@ -1061,7 +1061,7 @@ function luckysheetMoveHighlightRange(postion, index, type, isScroll) {
             datacolumnlen = Store.flowdata[0].length;
 
         if(postion == "down"){ //選區上下變動
-            if(rowHasMerge(rf, curC, endC)){ //focus單元格所在行有合並單元格
+            if(rowHasMerge(rf, curC, endC)){ //focus單元格所在行有合併單元格
                 let rfMerge = getRowMerge(rf, curC, endC);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -1130,7 +1130,7 @@ function luckysheetMoveHighlightRange(postion, index, type, isScroll) {
             }
         }
         else{
-            if(colHasMerge(cf, curR, endR)){ //focus單元格所在列有合並單元格
+            if(colHasMerge(cf, curR, endR)){ //focus單元格所在列有合併單元格
                 let cfMerge = getColMerge(cf, curR, endR);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 
@@ -1304,7 +1304,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合並單元格
+            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合併單元格
                 let rfMerge = getRowMerge(rf, c1, c2);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -1329,7 +1329,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合並單元格
+            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合併單元格
                 let rfMerge = getRowMerge(rf, c1, c2);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -1354,7 +1354,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(colHasMerge(cf, r1, r2)){ //focus所在行有合並單元格
+            if(colHasMerge(cf, r1, r2)){ //focus所在行有合併單元格
                 let cfMerge = getColMerge(cf, r1, r2);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 
@@ -1379,7 +1379,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(colHasMerge(cf, r1, r2)){ //focus所在行有合並單元格
+            if(colHasMerge(cf, r1, r2)){ //focus所在行有合併單元格
                 let cfMerge = getColMerge(cf, r1, r2);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 
@@ -1435,7 +1435,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合並單元格
+            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合併單元格
                 let rfMerge = getRowMerge(rf, c1, c2);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -1460,7 +1460,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合並單元格
+            if(rowHasMerge(rf, c1, c2)){ //focus所在行有合併單元格
                 let rfMerge = getRowMerge(rf, c1, c2);
                 let rf_str = rfMerge[0], rf_end = rfMerge[1];
 
@@ -1485,7 +1485,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(colHasMerge(cf, r1, r2)){ //focus所在行有合並單元格
+            if(colHasMerge(cf, r1, r2)){ //focus所在行有合併單元格
                 let cfMerge = getColMerge(cf, r1, r2);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 
@@ -1510,7 +1510,7 @@ function luckysheetMoveHighlightRange2(postion, type, isScroll) {
                 return;
             }
 
-            if(colHasMerge(cf, r1, r2)){ //focus所在行有合並單元格
+            if(colHasMerge(cf, r1, r2)){ //focus所在行有合併單元格
                 let cfMerge = getColMerge(cf, r1, r2);
                 let cf_str = cfMerge[0], cf_end = cfMerge[1];
 

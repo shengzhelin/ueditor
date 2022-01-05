@@ -404,10 +404,10 @@ export function rowColumnOperationInitial(){
             $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'block';
             $$('#luckysheet-cols-rows-data .luckysheet-menuseparator').style.display = 'block';
 
-            // 自定義右鍵菜單：向上向下增加行，刪除行，隱藏顯示行，設置行高
+            // 自定義右鍵選單：向上向下增加行，刪除行，隱藏顯示行，設置行高
             const cellRightClickConfig = luckysheetConfigsetting.cellRightClickConfig;
 
-            // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+            // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
             if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertRow && !cellRightClickConfig.deleteRow && !cellRightClickConfig.hideRow && !cellRightClickConfig.rowHeight && !cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                 return;
             }
@@ -419,7 +419,7 @@ export function rowColumnOperationInitial(){
             $$('#luckysheet-show-selected').style.display = cellRightClickConfig.hideRow ? 'block' : 'none';
             $$('#luckysheet-column-row-width-selected').style.display = cellRightClickConfig.rowHeight ? 'block' : 'none';
 
-            // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+            // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
             if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
 
@@ -429,7 +429,7 @@ export function rowColumnOperationInitial(){
 
             }
 
-            // 2. 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+            // 2. 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
             if(!cellRightClickConfig.insertRow && !cellRightClickConfig.deleteRow && !cellRightClickConfig.hideRow && !cellRightClickConfig.rowHeight){
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
             }
@@ -841,10 +841,10 @@ export function rowColumnOperationInitial(){
             $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'block';
             $$('#luckysheet-cols-rows-data .luckysheet-menuseparator').style.display = 'block';
 
-            // 自定義右鍵菜單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
+            // 自定義右鍵選單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
             const cellRightClickConfig = luckysheetConfigsetting.cellRightClickConfig;
 
-            // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+            // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
             if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth && !cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                 return;
             }
@@ -856,7 +856,7 @@ export function rowColumnOperationInitial(){
             $$('#luckysheet-show-selected').style.display = cellRightClickConfig.hideColumn ? 'block' : 'none';
             $$('#luckysheet-column-row-width-selected').style.display = cellRightClickConfig.columnWidth ? 'block' : 'none';
 
-            // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+            // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
             if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
 
@@ -866,7 +866,7 @@ export function rowColumnOperationInitial(){
 
             }
 
-            // 2. 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+            // 2. 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
             if(!cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth){
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
             }
@@ -1033,10 +1033,10 @@ export function rowColumnOperationInitial(){
         $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'block';
         $$('#luckysheet-cols-rows-shift .luckysheet-menuseparator').style.display = 'block';
 
-        // 自定義右鍵菜單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
+        // 自定義右鍵選單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
         const cellRightClickConfig = luckysheetConfigsetting.cellRightClickConfig;
 
-        // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+        // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
         if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth && !cellRightClickConfig.sort){
             return;
         }
@@ -1048,7 +1048,7 @@ export function rowColumnOperationInitial(){
         $$('#luckysheet-show-selected').style.display = cellRightClickConfig.hideColumn ? 'block' : 'none';
         $$('#luckysheet-column-row-width-selected').style.display = cellRightClickConfig.columnWidth ? 'block' : 'none';
 
-        // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+        // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
         if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
             $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
 
@@ -1058,7 +1058,7 @@ export function rowColumnOperationInitial(){
 
         }
 
-        // 2. 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+        // 2. 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
         if(!cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth){
             $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
         }
@@ -2111,7 +2111,7 @@ export function rowColumnOperationInitial(){
             jfrefreshgrid(d, Store.luckysheet_select_save);
 
             // 清空編輯框的內容
-            // 備注：在functionInputHanddler方法中會把該標簽的內容拷貝到 #luckysheet-functionbox-cell
+            // 備註：在functionInputHanddler方法中會把該標簽的內容拷貝到 #luckysheet-functionbox-cell
             $("#luckysheet-rich-text-editor").html("");
         }
     });

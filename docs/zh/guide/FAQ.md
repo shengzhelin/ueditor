@@ -72,10 +72,10 @@ luckysheet.transToData(celldata)
 
 ------------
 
-## 初始化時合並單元格怎麽做？
+## 初始化時合併單元格怎麽做？
 
 **<span style="font-size:20px;">A</span>**：參考以下案例
-- [Luckysheet如何初始化含合並單元格的數據](https://www.cnblogs.com/DuShuSir/p/13272397.html)
+- [Luckysheet如何初始化含合併單元格的數據](https://www.cnblogs.com/DuShuSir/p/13272397.html)
 
 ------------
 
@@ -108,7 +108,7 @@ luckysheet.transToData(celldata)
 
 如果您的項目中（比如React/Vue）也自己全局引用了jQuery，且造成了沖突，可以嘗試去掉一個jQuery。
 
-要想在Luckysheet里去除jQuery，需要在源碼根目錄下的`gulpfile.js`文件中找到打包jQuery的地方：[src/plugins/js/jquery.min.js](https://github.com/mengshukeji/Luckysheet/blob/master/gulpfile.js)，刪除jQuery相關的信息即可。
+要想在Luckysheet里去除jQuery，需要在源碼根目錄下的`gulpfile.js`文件中找到打包jQuery的地方：[src/plugins/js/jquery.min.js](https://github.com/mengshukeji/Luckysheet/blob/master/gulpfile.js)，刪除jQuery相關的訊息即可。
 
 ------------
 
@@ -135,7 +135,7 @@ Luckyexcel是excel導入導出庫，項目采用了gulp作為打包工具，舊�
 2. `npm i`
 3. `npm run build`
 
-更多詳細信息關注：[Luckyexcel](https://github.com/mengshukeji/Luckyexcel/)
+更多詳細訊息關注：[Luckyexcel](https://github.com/mengshukeji/Luckyexcel/)
 
 ------------
 
@@ -153,7 +153,7 @@ Luckyexcel是excel導入導出庫，項目采用了gulp作為打包工具，舊�
 
 ## 數據驗證怎麽配置？
 
-**<span style="font-size:20px;">A</span>**：最新文檔已經提供了數據驗證的配置信息，參考[數據驗證配置](/zh/guide/sheet.html#dataVerification)。官方也提供了API方法 [setDataVerification](/zh/guide/api.html#setdataverification-optionitem-setting)，用於動態設置數據驗證功能。
+**<span style="font-size:20px;">A</span>**：最新文檔已經提供了數據驗證的配置訊息，參考[數據驗證配置](/zh/guide/sheet.html#dataVerification)。官方也提供了API方法 [setDataVerification](/zh/guide/api.html#setdataverification-optionitem-setting)，用於動態設置數據驗證功能。
 
 ------------
 
@@ -171,7 +171,7 @@ Luckyexcel是excel導入導出庫，項目采用了gulp作為打包工具，舊�
 - 如果圖片位置完全在單元格內部時，當拉短單元格的寬度或高度，貼到圖片的邊時，圖片會隨著單元格的變小而伸縮變小
 - 當這個圖片超過單元格的邊框時，圖片可以跟隨單元格大小變化
 
-根據圖片的第二個特性，可以操作得到圖片位置信息，原理就是將圖片的位置設置成和單元格邊框重疊（源碼中，需要重疊超過2px），以下演示視頻展示了怎麽將圖片限制在單元格里面自適應寬高。
+根據圖片的第二個特性，可以操作得到圖片位置訊息，原理就是將圖片的位置設置成和單元格邊框重疊（源碼中，需要重疊超過2px），以下演示視頻展示了怎麽將圖片限制在單元格里面自適應寬高。
 
 <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=y3163ya0q6c" allowFullScreen="true"></iframe>
 

@@ -342,7 +342,7 @@ function isSupportBoundingBox(ctx){
 }
 
 
-//獲取單元格文本內容的渲染信息
+//獲取單元格文本內容的渲染訊息
 // let measureTextCache = {}, measureTextCacheTimeOut = null;
 // option {cellWidth,cellHeight,space_width,space_height}
 function getCellTextInfo(cell , ctx, option){

@@ -37,7 +37,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
     value = Math.floor(value);
     let cfg = $.extend(true, {}, file.config);
 
-    //合並單元格配置變動
+    //合併單元格配置變動
     if(cfg["merge"] == null){
         cfg["merge"] = {};
     }
@@ -55,7 +55,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
             if(index < r){
                 merge_new[(r + value) + "_" + c] = { "r": r + value, "c": c, "rs": rs, "cs": cs };
             }
-            // *這里要判斷一下rs是否等於1,因為如果這個合並單元格的行數只有一行時r = r+ rs-1,這種情況不應該進行單元格的加高
+            // *這裡要判斷一下rs是否等於1,因為如果這個合併單元格的行數只有一行時r = r+ rs-1,這種情況不應該進行單元格的加高
             else if (index == r && rs != 1) {
                 if(direction == "lefttop"){
                     merge_new[(r + value) + "_" + c] = { "r": r + value, "c": c, "rs": rs, "cs": cs };
@@ -100,7 +100,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
             }
             else if(index == c + cs - 1){
                 if(direction == "lefttop"){
-                    // *這是要判斷一下這個合並單元格的列寬是否=1,如果cs等於1的情況下,向左插入列，這個合並單元格會右移
+                    // *這是要判斷一下這個合併單元格的列寬是否=1,如果cs等於1的情況下,向左插入列，這個合併單元格會右移
                     if(cs == 1){
                         merge_new[r + "_" + (c + value)] = { "r": r, "c": c + value, "rs": rs, "cs": cs };
                     } else {
@@ -644,7 +644,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
             cfg["rowhidden"] = rowhidden_new;
         }
 
-        // *添加空行模板這里請保持為push null;
+        // *添加空行模板這裡請保持為push null;
         let row = [];
         for (let c = 0; c < d[0].length; c++) {
             row.push(null);
@@ -815,7 +815,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
             cfg["colhidden"] = colhidden_new;
         }
 
-        // *添加空列模板這里請保持為push null;
+        // *添加空列模板這裡請保持為push null;
         let col = [];
         for (let r = 0; r < d.length; r++) {
             col.push(null);
@@ -921,7 +921,7 @@ function luckysheetextendtable(type, index, value, direction, sheetIndex) {
             let row = d[r];
 
             for(let i = 0; i < value; i++){
-                // *這里不能是引用,不然添加多列時添加的都是同一個引用,修改一個cell會同步到多個
+                // *這裡不能是引用,不然添加多列時添加的都是同一個引用,修改一個cell會同步到多個
                 const COLR = JSON.parse(JSON.stringify(col[r]))
                 if(direction == "lefttop"){
                     if(index == 0){
@@ -1103,7 +1103,7 @@ function luckysheetdeletetable(type, st, ed, sheetIndex) {
     let slen = ed - st + 1;
     let cfg = $.extend(true, {}, file.config);
 
-    //合並單元格配置變動
+    //合併單元格配置變動
     if(cfg["merge"] == null){
         cfg["merge"] = {};
     }
@@ -1715,7 +1715,7 @@ function luckysheetdeletetable(type, st, ed, sheetIndex) {
             cfg["borderInfo"] = borderInfo;
         }
 
-        // 備注：該處理方式會在刪除多行的時候會存在bug
+        // 備註：該處理方式會在刪除多行的時候會存在bug
         // 說明：刪除多行後，會把同一個row空數組(引用類型)添加成為data多行的數據源，導致設置這些行數據時產生錯誤。
         //空白行模板
         // let row = [];
@@ -1900,7 +1900,7 @@ function luckysheetDeleteCell(type, str, edr, stc, edc, sheetIndex) {
     let clen = edc - stc + 1;
     let cfg = $.extend(true, {}, Store.config);
 
-    //合並單元格配置變動
+    //合併單元格配置變動
     if(cfg["merge"] == null){
         cfg["merge"] = {};
     }

@@ -235,7 +235,7 @@ function sortSelection(isAsc) {
         return;
     }
 
-    let hasMc = false; //排序選區是否有合並單元格
+    let hasMc = false; //排序選區是否有合併單元格
     let data = [];
 
     for(let r = str; r <= edr; r++){
@@ -255,10 +255,10 @@ function sortSelection(isAsc) {
 
     if(hasMc){
         if(isEditMode()){
-            alert("選區有合並單元格，無法執行此操作！");
+            alert("選區有合併單元格，無法執行此操作！");
         }
         else{
-            tooltip.info("選區有合並單元格，無法執行此操作！", "");
+            tooltip.info("選區有合併單元格，無法執行此操作！", "");
         }
 
         return;
@@ -326,7 +326,7 @@ function sortColumnSeletion(colIndex, isAsc) {
         return;
     }
 
-    let hasMc = false; //排序選區是否有合並單元格
+    let hasMc = false; //排序選區是否有合併單元格
     let data = [];
 
     for(let r = str; r <= edr; r++){
@@ -346,10 +346,10 @@ function sortColumnSeletion(colIndex, isAsc) {
 
     if(hasMc){
         if(isEditMode()){
-            alert("列排序會擴展至整個表格選區，選區有合並單元格，無法執行此操作，請選擇功能欄排序功能！");
+            alert("列排序會擴展至整個表格選區，選區有合併單元格，無法執行此操作，請選擇功能欄排序功能！");
         }
         else{
-            tooltip.info("列排序會擴展至整個表格選區，選區有合並單元格，無法執行此操作，請選擇功能欄排序功能！", "");
+            tooltip.info("列排序會擴展至整個表格選區，選區有合併單元格，無法執行此操作，請選擇功能欄排序功能！", "");
         }
 
         return;

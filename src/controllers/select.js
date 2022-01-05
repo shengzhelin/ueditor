@@ -359,7 +359,7 @@ function collaborativeEditBox() {
             if(value.v.row[0] !== 0){
                 change_height = all_height[count_row[1]] - all_height[count_row[0] - 1] - (count_row[1] - count_row[0] + 1)
             }
-            let range = Store.cooperativeEdit.merge_range //獲取單元格合並後的數據
+            let range = Store.cooperativeEdit.merge_range //獲取單元格合併後的數據
             let change_left = all_width[value.v.column[0] - 1] - 1 //提示框離圖表最左邊的距離
             let change_top = all_height[value.v.row[0] - 1] - 1 //提示框離圖表最右邊的距離
             if (Store.config.columnlen !== null) {
@@ -399,7 +399,7 @@ function collaborativeEditBox() {
                     change_height = all_height[counts[1]] - all_height[counts[0] - 1] - (counts[1] - counts[0] + 1)
                 }
             }
-            //合並單元格時執行
+            //合併單元格時執行
             if (Object.keys(range).length > 0 ) {
                 let flag_sure_merge = false
                 if(range.v.length > 1) {
@@ -409,7 +409,7 @@ function collaborativeEditBox() {
                     flag_sure_merge = range.v[0][1] == null || Object.keys(range.v[0][1]).length > 0
                 }
                 if(flag_sure_merge) {
-                    // 合並成一個時執行
+                    // 合併成一個時執行
                     let flag_merge_width = range.column[0] <= value.v.column[0] && range.column[1] >= value.v.column[1];
                     change_left = all_width[range.column[0] - 1] - 1
                     change_top = all_height[range.row[0] - 1] - 1
@@ -435,7 +435,7 @@ function collaborativeEditBox() {
                         value.v.row = range.row
                     }
                 } else {
-                    // 合並取消變成多個單元格時執行
+                    // 合併取消變成多個單元格時執行
                     change_width = all_width[count_col[0]] - all_width[count_col[0] - 1] - 1
                     if(count_col[0] === 0) {
                         change_width = all_width[count_col[0]] - 1

@@ -90,7 +90,7 @@ function checkIsAllowEdit(){
     }
 }
 
-//範圍是否只包含部分合並單元格
+//範圍是否只包含部分合併單元格
 function hasPartMC(cfg, r1, r2, c1, c2) {
     let hasPartMC = false;
 

@@ -413,7 +413,7 @@ Note that you also need to configure `loadUrl` and `loadSheetUrl` to take effect
 ------------
 ### userMenuItem
 - Type: Array
-- Default: `[{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登陸"}]`
+- Default: `[{url:"www.baidu.com", "icon":'<i class="fa fa-folder" aria-hidden="true"></i>', "name":"我的表格"}, {url:"www.baidu.com", "icon":'<i class="fa fa-sign-out" aria-hidden="true"></i>', "name":"退出登入"}]`
 - Usage: Click the pop-up menu of user information in the upper right corner
 
 ------------

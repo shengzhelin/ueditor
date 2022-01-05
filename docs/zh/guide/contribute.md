@@ -1,7 +1,7 @@
 
 # 貢獻指南  
 
-  歡迎！我們很高興您能來到這里，並非常期待您能有興趣參與 Luckysheet 貢獻。當然，在您參與 Luckysheet 貢獻之前，請確保通讀以下全文：
+  歡迎！我們很高興您能來到這裡，並非常期待您能有興趣參與 Luckysheet 貢獻。當然，在您參與 Luckysheet 貢獻之前，請確保通讀以下全文：
 
 ## 我們的行為準則
 
@@ -93,7 +93,7 @@ git status # 查看沖突文件，並修改沖突
 git add .
 git rebase --continue
 ```
-提交git rebase --continue命令的時候，如果彈出vim提示編輯commit信息，則可以添加你的修改，然後保存退出
+提交git rebase --continue命令的時候，如果彈出vim提示編輯commit訊息，則可以添加你的修改，然後保存退出
 > vim命令請參考閱讀[vim](https://www.runoob.com/linux/linux-vim.html)
 
 8. 提交分支代碼
@@ -107,7 +107,7 @@ git push origin dev
 git pull origin dev
 git push origin dev
 ```
-若彈出vim提示編輯commit信息，可以直接通過vim命令退出
+若彈出vim提示編輯commit訊息，可以直接通過vim命令退出
 > vim命令請參考閱讀[vim](https://www.runoob.com/linux/linux-vim.html)
 
 9. 提交pr

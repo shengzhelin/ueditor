@@ -191,7 +191,7 @@ const luckysheetformula = {
         return dataformat;
     },
     //sparklines添加
-    //獲得函數里某個參數的值，使用此函數需要在函數中執行luckysheet_getValue方法
+    //獲得函數裡某個參數的值，使用此函數需要在函數中執行luckysheet_getValue方法
     getValueByFuncData: function (value, arg) {
         if (value == null) {
             return null;
@@ -4199,7 +4199,7 @@ const luckysheetformula = {
             let file = luckysheetfile[i];
             let calcChain = file.calcChain;
             
-            /* 備注：再次加載表格獲取的數據可能是JSON字符串格式(需要進行發序列化處理) */
+            /* 備註：再次加載表格獲取的數據可能是JSON字符串格式(需要進行發序列化處理) */
             if(calcChain){
                 let tempCalcChain = [];
                 calcChain.forEach((item,idx)=>{

@@ -3,7 +3,7 @@
 ## 初始化配置
 表格初始化配置`options`時，需要配置一個由每個工作表參數組成的一維數組，賦給`options.data`。
 
-> 表格初始化完成之後，通過方法[`luckysheet.getAllSheets()`](/zh/guide/api.html#getAllSheets([setting]))可以獲取所有工作表的配置信息。
+> 表格初始化完成之後，通過方法[`luckysheet.getAllSheets()`](/zh/guide/api.html#getAllSheets([setting]))可以獲取所有工作表的配置訊息。
 
 options.data示例如下：
 ```json
@@ -21,7 +21,7 @@ options.data示例如下：
         "defaultColWidth": 73, //自定義列寬
         "celldata": [], //初始化使用的單元格數據
         "config": {
-            "merge":{}, //合並單元格
+            "merge":{}, //合併單元格
             "rowlen":{}, //表格行高
             "columnlen":{}, //表格列寬
             "rowhidden":{}, //隱藏行
@@ -132,7 +132,7 @@ options.data示例如下：
 ### celldata
 - 類型：Array
 - 默認值：[]
-- 作用： 原始單元格數據集，存儲sheet中所有單元格中的值，是一個包含`{r:0,c:0,v:{m:"value",v:"value",ct: {fa: "General", t: "g"}}}`格式單元格信息的一維數組，只在初始化的時候使用。
+- 作用： 原始單元格數據集，存儲sheet中所有單元格中的值，是一個包含`{r:0,c:0,v:{m:"value",v:"value",ct: {fa: "General", t: "g"}}}`格式單元格訊息的一維數組，只在初始化的時候使用。
 
     r代表行，c代表列，v代表該單元格的值，值可以是字符、數字或者對象。
 
@@ -166,14 +166,14 @@ options.data示例如下：
 ### config
 - 類型：Object
 - 默認值：{}
-- 作用：表格行高、列寬、合並單元格、邊框、隱藏行等設置
+- 作用：表格行高、列寬、合併單元格、邊框、隱藏行等設置
 
     注意，config如果為空,必須為空對象`{}`,不能為字符串或者null
 
 #### config.merge
 - 類型：Object
 - 默認值：{}
-- 作用：合並單元格設置
+- 作用：合併單元格設置
 - 示例：
     ```js
     {
@@ -197,7 +197,7 @@ options.data示例如下：
             }
         }
     ```
-    對象中的`key`為`r + '_' + c`的拼接值，`value`為左上角單元格信息: r:行數，c:列數，rs：合並的行數，cs:合並的列數
+    對象中的`key`為`r + '_' + c`的拼接值，`value`為左上角單元格訊息: r:行數，c:列數，rs：合併的行數，cs:合併的列數
 
 #### config.rowlen
 - 類型：Object
@@ -228,7 +228,7 @@ options.data示例如下：
 #### config.rowhidden
 - 類型：Object
 - 默認值：{}
-- 作用：隱藏行信息，格式為：`rowhidden[行數]: 0`,
+- 作用：隱藏行訊息，格式為：`rowhidden[行數]: 0`,
 
     `key`指定行數即可，`value`總是為`0`
 - 示例：
@@ -257,7 +257,7 @@ options.data示例如下：
 #### config.borderInfo
 - 類型：Array
 - 默認值：{}
-- 作用：單元格的邊框信息
+- 作用：單元格的邊框訊息
 - 示例：
     ```js
     "borderInfo": [{
@@ -309,7 +309,7 @@ options.data示例如下：
         + 邊框類型 `borderType："border-left" | "border-right" | "border-top" | "border-bottom" | "border-all" | "border-outside" | "border-inside" | "border-horizontal" | "border-vertical" | "border-none"`，
         + 邊框粗細 `style:  1 Thin | 2 Hair | 3 Dotted | 4 Dashed | 5 DashDot | 6 DashDotDot | 7 Double | 8 Medium | 9 MediumDashed | 10 MediumDashDot | 11 MediumDashDotDot | 12 SlantedDashDot | 13 Thick`，和aspose.cells的getLineStyle()的值對應的話，需要自己做個轉換，參考 [aspose.cells](https://apireference.aspose.com/cells/net/aspose.cells/cellbordertype)
         + 邊框顏色 `color: 16進制顏色值`
-        + 選區範圍 `range: 行列信息數組`
+        + 選區範圍 `range: 行列訊息數組`
 
     2. 單個單元格 `rangeType："cell"` 
         + 單元格的行數和列數索引 `value.row_index: 數字，value.col_index: 數字`
@@ -437,7 +437,7 @@ options.data示例如下：
 ### calcChain
 - 類型：Array
 - 默認值：[]
-- 作用： 公式鏈是一個由用戶指定順序排列的公式信息數組，Luckysheet會根據此順序來決定公式執行的順序。
+- 作用： 公式鏈是一個由用戶指定順序排列的公式訊息數組，Luckysheet會根據此順序來決定公式執行的順序。
 
     注意，在初始化工作簿的時候，如果有單元格包含公式，請務必添加對應單元格位置的公式鏈，否則Luckysheet無法識別公式。
     
@@ -447,7 +447,7 @@ options.data示例如下：
         "r": 6, //行數
         "c": 3, //列數
         "index": 1, //工作表id
-        "func": [true, 23.75, "=AVERAGE(D3:D6)"], //公式信息，包含公式計算結果和公式字符串
+        "func": [true, 23.75, "=AVERAGE(D3:D6)"], //公式訊息，包含公式計算結果和公式字符串
         "color": "w", //"w"：采用深度優先算法 "b":普通計算
         "parent": null,
         "chidren": {},
@@ -532,7 +532,7 @@ options.data示例如下：
 ### filter
 - 類型：Object
 - 默認值：{}
-- 作用： 篩選的具體設置，跟`filter_select`篩選範圍是互相搭配的。當你在第一個sheet頁創建了一個篩選區域，通過`luckysheet.getLuckysheetfile()[0].filter`也可以看到第一個sheet的篩選配置信息。
+- 作用： 篩選的具體設置，跟`filter_select`篩選範圍是互相搭配的。當你在第一個sheet頁創建了一個篩選區域，通過`luckysheet.getLuckysheetfile()[0].filter`也可以看到第一個sheet的篩選配置訊息。
 
     以下是一個完整的篩選配置案例
     ```js
@@ -544,9 +544,9 @@ options.data示例如下：
                 "text": "Is empty", // 類型說明
                 "type": "0" // 篩選大類
             },
-            "rowhidden": { "3": 0, "4": 0 }, // 隱藏行信息
+            "rowhidden": { "3": 0, "4": 0 }, // 隱藏行訊息
             "optionstate": true, // 是否開啟配置
-            "cindex": 1, // 當前範圍列順序，這里表示第一列
+            "cindex": 1, // 當前範圍列順序，這裡表示第一列
             "str": 2, // 範圍，起始行
             "edr": 6, // 範圍，結束行
             "stc": 1, // 範圍，起始列
@@ -557,7 +557,7 @@ options.data示例如下：
             "caljs": {},
             "rowhidden": { "1": 0},
             "optionstate": true,
-            "cindex": 2, // 當前範圍列順序，這里表示第二列
+            "cindex": 2, // 當前範圍列順序，這裡表示第二列
             "str": 2,
             "edr": 6,
             "stc": 1,
@@ -565,8 +565,8 @@ options.data示例如下：
         }
     }
     ```
-    1. `filter[key]`的`key`值，表示是列索引，從0開始，具體設置項中的`cindex`是從1開始，和這里的`key`是同一個意思。
-    2. `caljs`用來設置按條件篩選的類型和對應的值，設置生效後，會計算隱藏行信息存儲在`rowhidden`中。以下是全部的可設置的類型，其中`value1`和`value2`就是用戶自己填的文本信息：
+    1. `filter[key]`的`key`值，表示是列索引，從0開始，具體設置項中的`cindex`是從1開始，和這裡的`key`是同一個意思。
+    2. `caljs`用來設置按條件篩選的類型和對應的值，設置生效後，會計算隱藏行訊息存儲在`rowhidden`中。以下是全部的可設置的類型，其中`value1`和`value2`就是用戶自己填的文本訊息：
        + `caljs:{value: null, text: "無", type: "0"}`
        + `caljs:{value: "cellnull", text: "單元格為空", type: "0"}`
        + `caljs:{value: "cellnonull", text: "單元格有數據", type: "0"}`
@@ -586,7 +586,7 @@ options.data示例如下：
        + `caljs:{value: "noequal", text: "不等於", type: "1", value1: "10"}`
        + `caljs:{value: "include", text: "介於", type: "2", value1: "15", value2: "25"}`
        + `caljs:{value: "noinclude", text: "不在其中", type: "2", value1: "15", value2: "25"}`
-    3. `rowhidden`是存儲的隱藏行信息，但是如果沒有設置`caljs`按條件篩選，則表明是設置了按顏色篩選（如果行之間有顏色區分的話）和按值進行篩選。所以可以看出，`caljs`的優先級大於`rowhidden`。
+    3. `rowhidden`是存儲的隱藏行訊息，但是如果沒有設置`caljs`按條件篩選，則表明是設置了按顏色篩選（如果行之間有顏色區分的話）和按值進行篩選。所以可以看出，`caljs`的優先級大於`rowhidden`。
     4. `optionstate`表示是否開啟配置，這是一個內部標識，直接設置`true`即可。
     5. `cindex`表示當前設置的列順序，從1開始計數，和`filter[key]`的`key`值形成對應，結果是`key`+1。
     6. `str`是起始行，`edr`是結束行，`stc`是起始列，`edc`是結束列，四個數字代表整個篩選範圍，與`filter_select`的內容保持一致即可。
@@ -682,7 +682,7 @@ options.data示例如下：
 ### luckysheet_conditionformat_save
 - 類型：Array
 - 默認值：[]
-- 作用： 條件格式配置信息，包含多個條件格式配置對象的一維數組，
+- 作用： 條件格式配置訊息，包含多個條件格式配置對象的一維數組，
 
     type: "default": 突出顯示單元格規則和項目選區規則，
 
@@ -1290,7 +1290,7 @@ options.data示例如下：
 ### image
 - 類型：Array
 - 默認值：[]
-- 作用： 插入表格中圖片信息，包含圖片地址、寬高、位置、裁剪等信息
+- 作用： 插入表格中圖片訊息，包含圖片地址、寬高、位置、裁剪等訊息
 - 示例：
     以下為一個`imageItem`案例，通常一個工作表中可能存在多個圖片，所以`image`的格式為數組`[imageItem,imageItem,...]`
     ```json
@@ -1332,7 +1332,7 @@ options.data示例如下：
 ### dataVerification
 - 類型：Object
 - 默認值：{}
-- 作用：數據驗證的配置信息。以下列出了所有需要設置的詳細字段：
+- 作用：數據驗證的配置訊息。以下列出了所有需要設置的詳細字段：
   + {String} [type]: 類型；值可為
     + `"dropdown"`(下拉列表)
     + `"checkbox"`(覆選框)
@@ -1387,13 +1387,13 @@ options.data示例如下：
 
     一個完整的配置案例請參考源碼DEMO示例 [/src/demoData/sheetDataVerification.js](https://github.com/mengshukeji/Luckysheet/blob/master/src/demoData/sheetDataVerification.js)
 ------------
-## 調試信息
+## 調試訊息
 
 初始化所需要的參數，會從簡潔的角度出發來考慮設計，但是本地存儲的參數則不同。
 
 Luckysheet在初始化完成之後進行的一系列操作，會將更多本地參數存儲在luckysheetfile中，作為本地使用的參數，實現一些類似Store數據中心的作用。比如，freezen的參數格式也會變化。
 
-此時的luckysheetfile包含很多非初始化使用的本地參數，可用於調試代碼、本地狀態分析。如下展示了更豐富luckysheetfile信息，可通過方法 `luckysheet.getluckysheetfile()`獲得：
+此時的luckysheetfile包含很多非初始化使用的本地參數，可用於調試代碼、本地狀態分析。如下展示了更豐富luckysheetfile訊息，可通過方法 `luckysheet.getluckysheetfile()`獲得：
 
 ::: details
 ```json
@@ -1409,7 +1409,7 @@ Luckysheet在初始化完成之後進行的一系列操作，會將更多本地�
         "column": 18, //列數
         "celldata": [], //初始化使用的單元格數據
         "config": {
-            "merge":{}, //合並單元格
+            "merge":{}, //合併單元格
             "rowlen":{}, //表格行高
             "columnlen":{}, //表格列寬
             "rowhidden":{}, //隱藏行
@@ -1469,13 +1469,13 @@ Luckysheet在初始化完成之後進行的一系列操作，會將更多本地�
 ### visibledatarow
 - 類型：Number
 - 默認值：[]
-- 作用： 所有行的位置信息，遞增的行位置數據，初始化無需設置
+- 作用： 所有行的位置訊息，遞增的行位置數據，初始化無需設置
 
 ------------
 ### visibledatacolumn
 - 類型：Number
 - 默認值：[]
-- 作用： 所有列的位置信息，遞增的列位置數據，初始化無需設置
+- 作用： 所有列的位置訊息，遞增的列位置數據，初始化無需設置
 
 ------------
 ### ch_width

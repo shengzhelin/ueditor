@@ -661,7 +661,7 @@ const selection = {
             let minc = Store.luckysheet_select_save[0].column[0], //應用範圍首尾列
                 maxc = minc + copyc - 1;
 
-            //應用範圍包含部分合並單元格，則return提示
+            //應用範圍包含部分合併單元格，則return提示
             let has_PartMC = false;
             if(cfg["merge"] != null){
                 has_PartMC = hasPartMC(cfg, minh, maxh, minc, maxc);
@@ -669,10 +669,10 @@ const selection = {
 
             if(has_PartMC){
                 if(isEditMode()){
-                    alert("不能對合並單元格做部分更改");
+                    alert("不能對合併單元格做部分更改");
                 }
                 else{
-                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示', "不能對合並單元格做部分更改");
+                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示', "不能對合併單元格做部分更改");
                 }
 
                 return;
@@ -802,7 +802,7 @@ const selection = {
             let curC = last["column"] == null ? 0 : last["column"][0];
             let rlen = dataChe.length, clen = dataChe[0].length;
 
-            //應用範圍包含部分合並單元格，則return提示
+            //應用範圍包含部分合併單元格，則return提示
             let has_PartMC = false;
             if(Store.config["merge"] != null){
                 has_PartMC = hasPartMC(Store.config, curR, curR + rlen - 1, curC, curC + clen - 1);
@@ -810,10 +810,10 @@ const selection = {
 
             if(has_PartMC){
                 if(isEditMode()){
-                    alert("不能對合並單元格做部分更改");
+                    alert("不能對合併單元格做部分更改");
                 }
                 else{
-                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合並單元格做部分更改");
+                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合併單元格做部分更改");
                 }
                 return;
             }
@@ -911,7 +911,7 @@ const selection = {
         let minh = last["row_focus"], maxh = minh + copyh - 1;         //應用範圍首尾行
         let minc = last["column_focus"], maxc = minc + copyc - 1;      //應用範圍首尾列
 
-        //應用範圍包含部分合並單元格，則提示
+        //應用範圍包含部分合併單元格，則提示
         let has_PartMC = false;
         if(cfg["merge"] != null){
             has_PartMC = hasPartMC(cfg, minh, maxh, minc, maxc);
@@ -919,10 +919,10 @@ const selection = {
 
         if(has_PartMC){
             if(isEditMode()){
-                alert("不能對合並單元格做部分更改");
+                alert("不能對合併單元格做部分更改");
             }
             else{
-                tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合並單元格做部分更改");
+                tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合併單元格做部分更改");
             }
             return;
         }
@@ -940,7 +940,7 @@ const selection = {
         let c_dataVerification = $.extend(true, {}, Store.luckysheetfile[getSheetIndex(copySheetIndex)]["dataVerification"]);
         let dataVerification = $.extend(true, {}, Store.luckysheetfile[getSheetIndex(Store.currentSheetIndex)]["dataVerification"]);
 
-        //剪切粘貼在當前表操作，刪除剪切範圍內數據、合並單元格和數據驗證
+        //剪切粘貼在當前表操作，刪除剪切範圍內數據、合併單元格和數據驗證
         if(Store.currentSheetIndex == copySheetIndex){
             for(let i = c_r1; i <= c_r2; i++){
                 for(let j = c_c1; j <= c_c2; j++){
@@ -1389,7 +1389,7 @@ const selection = {
             maxc = minc + copyc - 1;
         }
 
-        //應用範圍包含部分合並單元格，則提示
+        //應用範圍包含部分合併單元格，則提示
         let has_PartMC = false;
         if(cfg["merge"] != null){
             has_PartMC = hasPartMC(cfg, minh, maxh, minc, maxc);
@@ -1397,10 +1397,10 @@ const selection = {
 
         if(has_PartMC){
             if(isEditMode()){
-                alert("不能對合並單元格做部分更改");
+                alert("不能對合併單元格做部分更改");
             }
             else{
-                tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合並單元格做部分更改");
+                tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合併單元格做部分更改");
             }
             return;
         }
@@ -1657,7 +1657,7 @@ const selection = {
         let copyh = copyData.length, copyc = copyData[0].length;
 
         if(minh == maxh && minc == maxc){
-            //應用範圍是一個單元格，自動增加到覆制範圍大小 (若自動增加的範圍包含部分合並單元格，則提示)
+            //應用範圍是一個單元格，自動增加到覆制範圍大小 (若自動增加的範圍包含部分合併單元格，則提示)
             let has_PartMC = false;
             if(cfg["merge"] != null){
                 has_PartMC = hasPartMC(cfg, minh, minh + copyh - 1, minc, minc + copyc - 1);
@@ -1665,10 +1665,10 @@ const selection = {
 
             if(has_PartMC){
                 if(isEditMode()){
-                    alert("不能對合並單元格做部分更改");
+                    alert("不能對合併單元格做部分更改");
                 }
                 else{
-                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合並單元格做部分更改");
+                    tooltip.info('<i class="fa fa-exclamation-triangle"></i>提示',"不能對合併單元格做部分更改");
                 }
                 return;
             }

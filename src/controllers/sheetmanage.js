@@ -276,7 +276,7 @@ const sheetmanage = {
 
         _this.changeSheetExec(index, isPivotTable, true);
 
-        // 鉤子 sheetCreateAfter 不應該在這里 應在繪制完成後 因此在 changeSheet 實現
+        // 鉤子 sheetCreateAfter 不應該在這裡 應在繪制完成後 因此在 changeSheet 實現
     },
     setSheetHide: function(index, isDelete) {
         let _this = this;
@@ -866,7 +866,7 @@ const sheetmanage = {
 
                     if (!!file.isPivotTable) {
                         Store.luckysheetcurrentisPivotTable = true;
-                        // pivotTable.changePivotTable(Store.currentSheetIndex); //此方法需要注釋掉，在restoreSheetAll中已經執行了刷新了數據透視表，這里就不需要了
+                        // pivotTable.changePivotTable(Store.currentSheetIndex); //此方法需要注釋掉，在restoreSheetAll中已經執行了刷新了數據透視表，這裡就不需要了
                     }
                     else {
                         Store.luckysheetcurrentisPivotTable = false;
@@ -1246,7 +1246,7 @@ const sheetmanage = {
                 file["data"] = data;
                 file["load"] = "1";
 
-                // *這里不應該調用loadOtherFile去加載其余頁面的數據,
+                // *這裡不應該調用loadOtherFile去加載其余頁面的數據,
                 // *因為loadOtherFile里判斷後會調用buildGridData把其余的sheet的數據設置為空的二維數組,即使那個sheet在服務端存在數據.
                 // *這就導致一個數據丟失問題.
                 // _this.loadOtherFile(file);

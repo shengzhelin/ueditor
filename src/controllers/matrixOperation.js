@@ -31,7 +31,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -105,7 +105,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -165,7 +165,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -223,7 +223,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -287,7 +287,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -407,7 +407,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -468,7 +468,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -534,7 +534,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 
@@ -621,7 +621,7 @@ export function initialMatrixOperation(){
             return;
         }
 
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if(Store.config["merge"] != null){
             let has_PartMC = false;
 

@@ -49,7 +49,7 @@ function common_extend(jsonbject1, jsonbject2) {
     return resultJsonObject;
 };
 
-// 替換temp中的${xxx}為指定內容 ,temp:字符串，這里指html代碼，dataarry：一個對象{"xxx":"替換的內容"}
+// 替換temp中的${xxx}為指定內容 ,temp:字符串，這裡指html代碼，dataarry：一個對象{"xxx":"替換的內容"}
 // 例：luckysheet.replaceHtml("${image}",{"image":"abc","jskdjslf":"abc"})   ==>  abc
 function replaceHtml(temp, dataarry) {
     return temp.replace(/\$\{([\w]+)\}/g, function (s1, s2) { let s = dataarry[s2]; if (typeof (s) != "undefined") { return s; } else { return s1; } });
@@ -454,7 +454,7 @@ function luckysheetfontformat(format) {
     }
 }
 
-//右鍵菜單
+//右鍵選單
 function showrightclickmenu($menu, x, y) {
     let winH = $(window).height(), winW = $(window).width();
     let menuW = $menu.width(), menuH = $menu.height();
@@ -565,7 +565,7 @@ function numfloatlen(n) {
     }
 }
 
-//二級菜單顯示位置
+//二級選單顯示位置
 function mouseclickposition($menu, x, y, p) {
     let winH = $(window).height(), winW = $(window).width();
     let menuW = $menu.width(), menuH = $menu.height();

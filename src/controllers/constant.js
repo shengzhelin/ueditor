@@ -268,7 +268,7 @@ const columeHeader_word = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'
     flow = '<div id="luckysheet-cell-flow_${index}" class="luckysheet-cell-flow luckysheetsheetchange" style="width:${width}px;"><div class="luckysheet-cell-flow-clip"><div class="luckysheet-grdblkpush"></div>${flow}</div></div>',
     colsmenuHTML = '';
 
-//右鍵菜單dom
+//右鍵選單dom
 function rightclickHTML(){
     const _locale = locale();
     const rightclick = _locale.rightclick;
@@ -276,7 +276,7 @@ function rightclickHTML(){
 
     const config = customCellRightClickConfig();
 
-    // 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+    // 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
     let handleincellMenuseparator = true;
 
     if(!config.insertRow && !config.insertColumn && !config.deleteRow && !config.deleteColumn && !config.deleteCell ){
@@ -648,7 +648,7 @@ function sheetconfigHTML(){
 
     const config = customSheetRightClickConfig();
 
-    /* 如果配置項全部為flase，則隱藏入口且不再菜單項 */
+    /* 如果配置項全部為flase，則隱藏入口且不再選單項 */
     if(Object.values(config).every(ele=> !ele)){
         $('#luckysheet-sheet-container-c').addClass("luckysheet-sheet-container-menu-hide");
         return "";
@@ -657,7 +657,7 @@ function sheetconfigHTML(){
     let hideTopMenuseparator = true;
     let moveTopMenuseparator = true;
 
-    // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+    // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
     if(!config.delete && !config.copy && !config.rename && !config.color){
         hideTopMenuseparator = false;
         if(!config.hide){
@@ -665,7 +665,7 @@ function sheetconfigHTML(){
         }
     }
 
-    // 2. 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+    // 2. 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
     if(!config.hide){
         hideTopMenuseparator = false;
     }
@@ -1078,7 +1078,7 @@ const iconfontObjects = {
 }
 
 /**
- *單元格右擊菜單配置
+ *單元格右擊選單配置
  *
  */
 function customCellRightClickConfig() {
@@ -1115,7 +1115,7 @@ function customCellRightClickConfig() {
 }
 
 /**
- *sheet頁右擊菜單配置
+ *sheet頁右擊選單配置
  *
  */
 function customSheetRightClickConfig() {

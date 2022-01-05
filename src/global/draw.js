@@ -774,7 +774,7 @@ function luckysheetDrawMain(scrollWidth, scrollHeight, drawWidth, drawHeight, of
         // }, sheetFile,luckysheetTableContent)
     }
 
-    //合並單元格再處理
+    //合併單元格再處理
     for(let m = 0; m < mcArr.length; m++){
         let item = mcArr[m];
         let r = item.r, 
@@ -1155,7 +1155,7 @@ let nullCellRender = function(r, c, start_r, start_c, end_r, end_c,luckysheetTab
         luckysheetTableContent.fillStyle = fillStyle;
     }
 
-    // 這里計算canvas需要繪制的矩形範圍時,需要留下原本單元格邊框的位置
+    // 這裡計算canvas需要繪制的矩形範圍時,需要留下原本單元格邊框的位置
     // 讓 fillRect 繪制矩形的起始xy坐標增加1,繪制長寬減少1
 
     let cellsize = [
@@ -1165,7 +1165,7 @@ let nullCellRender = function(r, c, start_r, start_c, end_r, end_c,luckysheetTab
         (end_r - start_r + borderfix[3] - 1)
     ];
 
-    //單元格渲染前，考慮到合並單元格會再次渲染一遍，統一放到這里
+    //單元格渲染前，考慮到合併單元格會再次渲染一遍，統一放到這裡
     if(!method.createHookFunction("cellRenderBefore", Store.flowdata[r][c], {
         r:r,
         c:c,
@@ -1313,7 +1313,7 @@ let cellRender = function(r, c, start_r, start_c, end_r, end_c, value, luckyshee
 
     let borderfix = menuButton.borderfix(Store.flowdata, r, c);
 
-    // 這里計算canvas需要繪制的矩形範圍時,需要留下原本單元格邊框的位置
+    // 這裡計算canvas需要繪制的矩形範圍時,需要留下原本單元格邊框的位置
     // 讓 fillRect 繪制矩形的起始xy坐標增加1,繪制長寬減少1
 
     let cellsize = [
@@ -1323,7 +1323,7 @@ let cellRender = function(r, c, start_r, start_c, end_r, end_c, value, luckyshee
         (end_r - start_r + borderfix[3] + 1)
     ];
 
-    //單元格渲染前，考慮到合並單元格會再次渲染一遍，統一放到這里
+    //單元格渲染前，考慮到合併單元格會再次渲染一遍，統一放到這裡
     if(!method.createHookFunction("cellRenderBefore", Store.flowdata[r][c], {
         r:r,
         c:c,
@@ -2046,7 +2046,7 @@ function cellOverflow_trace(r, curC, traceC, traceDir, horizonAlign, textMetrics
         };
     }
 
-    //追溯單元格是 非空單元格或合並單元格 則追溯終止
+    //追溯單元格是 非空單元格或合併單元格 則追溯終止
     let cell = data[r][traceC];
     if(cell != null && (!isRealNull(cell.v) || cell.mc != null)){
         return {

@@ -83,7 +83,7 @@ function orderbydatafiler(str, stc, edr, edc, index, asc) {
 
     str = str + 1;
 
-    let hasMc = false; //排序選區是否有合並單元格
+    let hasMc = false; //排序選區是否有合併單元格
     let data = [];
 
     for(let r = str; r <= edr; r++){
@@ -299,7 +299,7 @@ function initialFilterHandler(){
     const locale_button= _locale.button;
     $("#luckysheetfilter").click(createFilter);
 
-    //右鍵菜單 菜單項hover
+    //右鍵選單 選單項hover
     let submenuhide = null, rightclickmenu = null;
     $(".luckysheet-cols-menu .luckysheet-cols-submenu").hover(
         function () {
@@ -858,7 +858,7 @@ function initialFilterHandler(){
             else{
                 content = filterBgColorHtml + filterFcColorHtml + '<div class="luckysheet-mousedown-cancel"><button id="luckysheet-filter-orderby-color-confirm" class="btn btn-primary luckysheet-mousedown-cancel" style="margin: 5px 20px;width: 70px;">'+locale_button.confirm+'</button></div>';
             }
-            //顏色篩選子菜單
+            //顏色篩選子選單
             $("#luckysheet-filter-orderby-color-submenu").remove();
             $("body").append('<div id="luckysheet-filter-orderby-color-submenu" class="luckysheet-cols-menu luckysheet-mousedown-cancel">'+content+'</div>');
             let $t = $("#luckysheet-filter-orderby-color-submenu").end();

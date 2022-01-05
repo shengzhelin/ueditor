@@ -3,7 +3,7 @@ import luckysheetConfigsetting from './luckysheetConfigsetting';
 
 import { getObjType, camel2split } from '../utils/util';
 
-// 默认的工具栏按钮
+// 默認的工具欄按鈕
 export const defaultToolbar = [
     'undo',
     'redo',
@@ -59,7 +59,7 @@ export const defaultToolbar = [
     'print'
 ];
 
-// 工具栏按钮 id 关系
+// 工具欄按鈕 id 關系
 export const toolbarIdMap = {
     undo: '#luckysheet-icon-undo', //Undo redo
     redo: '#luckysheet-icon-redo',
@@ -100,7 +100,7 @@ export const toolbarIdMap = {
     print: '#luckysheet-icon-print' // 'print'
 };
 
-// 创建工具栏按钮的html
+// 創建工具欄按鈕的html
 export function createToolbarHtml() {
     const toolbar = locale().toolbar;
     const fontarray = locale().fontarray;
@@ -837,9 +837,9 @@ export function createToolbarHtml() {
 
     const buttonHTML = ['<div class="luckysheet-toolbar-left-theme"></div>'];
 
-    // 数组形式直接生成
+    // 數組形式直接生成
     if (getObjType(showtoolbarConfig) === 'array') {
-        // 此时不根据 showtoolbar=false，showtoolbarConfig为某几个进行适配，此时showtoolbarConfig本身就是全部要显示的按钮
+        // 此時不根據 showtoolbar=false，showtoolbarConfig為某幾個進行適配，此時showtoolbarConfig本身就是全部要顯示的按鈕
         if (!showtoolbar) {
             return '';
         }
@@ -872,7 +872,7 @@ export function createToolbarHtml() {
         }
     }
 
-    // 对象模式 则从里面挑选 true 保留 false 删掉
+    // 對象模式 則從裡面挑選 true 保留 false 刪掉
     if (JSON.stringify(showtoolbarConfig) !== '{}') {
         if(showtoolbarConfig.hasOwnProperty('undoRedo')){
             config.undo = config.redo = showtoolbarConfig.undoRedo;
@@ -882,7 +882,7 @@ export function createToolbarHtml() {
     for (let i = 0; i < defaultToolbar.length; i++) {
         let key = defaultToolbar[i];
         if (!config[key] && key !== '|') {
-            // 如果当前元素隐藏 按照之前的规则 后面紧跟的 | 分割也不需要显示了
+            // 如果當前元素隱藏 按照之前的規則 後面緊跟的 | 分割也不需要顯示了
             if (defaultToolbar[i + 1] === '|') {
                 i++;
             }

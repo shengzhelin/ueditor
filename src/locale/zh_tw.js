@@ -10264,7 +10264,7 @@ export default {
         refresh: 'WebSocket連接發生錯誤,請刷新頁面！',
         wait   : 'WebSocket連接發生錯誤,請耐心等待！',
         close  : 'WebSocket連接關閉',
-        contact: '服務器通信發生錯誤,請刷新頁面後再試,如若不行請聯系管理員！',
+        contact: '服務器通信發生錯誤,請刷新頁面後再試,如若不行請聯繫管理員！',
         support: '當前瀏覽器不支持WebSocket',
     }
 

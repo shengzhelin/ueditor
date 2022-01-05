@@ -1159,7 +1159,7 @@ export default function luckysheetHandler() {
 
             if (obj_s["row"] != null && obj_s["row"][0] == 0 && obj_s["row"][1] == Store.flowdata.length - 1) {
 
-                // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+                // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth && !cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                     return;
                 }
@@ -1179,7 +1179,7 @@ export default function luckysheetHandler() {
 
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'block';
 
-                // 自定義右鍵菜單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
+                // 自定義右鍵選單：向左向右增加列，刪除列，隱藏顯示列，設置列寬
                 $$('#luckysheet-top-left-add-selected').style.display = cellRightClickConfig.insertColumn ? 'block' : 'none';
                 $$('#luckysheet-bottom-right-add-selected').style.display = cellRightClickConfig.insertColumn ? 'block' : 'none';
                 $$('#luckysheet-del-selected').style.display = cellRightClickConfig.deleteColumn ? 'block' : 'none';
@@ -1187,7 +1187,7 @@ export default function luckysheetHandler() {
                 $$('#luckysheet-show-selected').style.display = cellRightClickConfig.hideColumn ? 'block' : 'none';
                 $$('#luckysheet-column-row-width-selected').style.display = cellRightClickConfig.columnWidth ? 'block' : 'none';
 
-                // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+                // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
                     $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
 
@@ -1197,7 +1197,7 @@ export default function luckysheetHandler() {
 
                 }
 
-                // 2.當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+                // 2.當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
                 if(!cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.hideColumn && !cellRightClickConfig.columnWidth){
                     $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
                 }
@@ -1234,7 +1234,7 @@ export default function luckysheetHandler() {
             }
             else if (obj_s["column"] != null && obj_s["column"][0] == 0 && obj_s["column"][1] == Store.flowdata[0].length - 1) {
 
-                // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+                // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertRow && !cellRightClickConfig.deleteRow && !cellRightClickConfig.hideRow && !cellRightClickConfig.rowHeight && !cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                     return;
                 }
@@ -1253,7 +1253,7 @@ export default function luckysheetHandler() {
 
                 $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'block';
 
-                // 自定義右鍵菜單：向上向下增加行，刪除行，隱藏顯示行，設置行高
+                // 自定義右鍵選單：向上向下增加行，刪除行，隱藏顯示行，設置行高
                 $$('#luckysheet-top-left-add-selected').style.display = cellRightClickConfig.insertRow ? 'block' : 'none';
                 $$('#luckysheet-bottom-right-add-selected').style.display = cellRightClickConfig.insertRow ? 'block' : 'none';
                 $$('#luckysheet-del-selected').style.display = cellRightClickConfig.deleteRow ? 'block' : 'none';
@@ -1261,7 +1261,7 @@ export default function luckysheetHandler() {
                 $$('#luckysheet-show-selected').style.display = cellRightClickConfig.hideRow ? 'block' : 'none';
                 $$('#luckysheet-column-row-width-selected').style.display = cellRightClickConfig.rowHeight ? 'block' : 'none';
 
-                // 1. 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+                // 1. 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
                     $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
 
@@ -1271,7 +1271,7 @@ export default function luckysheetHandler() {
 
                 }
 
-                // 2. 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+                // 2. 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
                 if(!cellRightClickConfig.insertRow && !cellRightClickConfig.deleteRow && !cellRightClickConfig.hideRow && !cellRightClickConfig.rowHeight){
                     $$('#luckysheet-cols-rows-add .luckysheet-menuseparator').style.display = 'none';
                 }
@@ -1306,12 +1306,12 @@ export default function luckysheetHandler() {
                     $("#luckysheet-cols-rows-add").find("input[type='number'].rcsize").val("");
                 }
             }else{
-                // 如果全部按鈕都隱藏，則整個菜單容器也要隱藏
+                // 如果全部按鈕都隱藏，則整個選單容器也要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste && !cellRightClickConfig.insertRow && !cellRightClickConfig.insertColumn && !cellRightClickConfig.deleteRow && !cellRightClickConfig.deleteColumn && !cellRightClickConfig.deleteCell && !cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                     return;
                 }
 
-                // 當一個功能菜單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
+                // 當一個功能選單塊上方的功能塊按鈕都隱藏的時候，下方的功能塊的頂部分割線也需要隱藏
                 if(!cellRightClickConfig.copy && !cellRightClickConfig.copyAs && !cellRightClickConfig.paste){
                     $$('#luckysheet-cols-rows-handleincell .luckysheet-menuseparator').style.display = 'none';
 
@@ -1326,7 +1326,7 @@ export default function luckysheetHandler() {
                 }
             }
 
-            // 當一個功能菜單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
+            // 當一個功能選單塊內所有的按鈕都隱藏的時候，它頂部的分割線也需要隱藏掉
             if(!cellRightClickConfig.clear && !cellRightClickConfig.matrix && !cellRightClickConfig.sort && !cellRightClickConfig.filter && !cellRightClickConfig.chart && !cellRightClickConfig.image && !cellRightClickConfig.link && !cellRightClickConfig.data && !cellRightClickConfig.cellFormat){
                     $$('#luckysheet-cols-rows-data .luckysheet-menuseparator').style.display = 'none';
             }
@@ -1334,7 +1334,7 @@ export default function luckysheetHandler() {
             showrightclickmenu($("#luckysheet-rightclick-menu"), x, y);
         }
 
-        // 備注：在mousedown中發送光標信息會漏處理部分(選區)範圍
+        // 備註：在mousedown中發送光標訊息會漏處理部分(選區)範圍
         server.saveParam("mv", Store.currentSheetIndex, Store.luckysheet_select_save);
     }).dblclick(function (event) {
         if($(event.target).hasClass('luckysheet-mousedown-cancel')){
@@ -3493,7 +3493,7 @@ export default function luckysheetHandler() {
                 //myTop, myLeft: 本次的chart框位置，scrollLeft,scrollTop: 上一次的滾動條位置
                 var myTop = Store.chartparam.luckysheetCurrentChartMoveObj.css("top"), myLeft = Store.chartparam.luckysheetCurrentChartMoveObj.css("left"), scrollLeft = $("#luckysheet-cell-main").scrollLeft(), scrollTop = $("#luckysheet-cell-main").scrollTop();
 
-                //點擊時候存儲的信息，即上一次操作結束的圖表信息，x,y: chart框位置，scrollLeft1,scrollTop1: 滾動條位置
+                //點擊時候存儲的訊息，即上一次操作結束的圖表訊息，x,y: chart框位置，scrollLeft1,scrollTop1: 滾動條位置
                 var x = Store.chartparam.luckysheetCurrentChartMoveXy[2];
                 var y = Store.chartparam.luckysheetCurrentChartMoveXy[3];
 
@@ -3506,7 +3506,7 @@ export default function luckysheetHandler() {
                 Store.jfredo.push({ "type": "moveChart", "chart_id": chart_id, "sheetIndex": Store.currentSheetIndex, "myTop": myTop, "myLeft": myLeft, "scrollTop": scrollTop, "scrollLeft": scrollLeft, "x": x, "y": y, "scrollTop1": scrollTop1, "scrollLeft1": scrollLeft1 });
 
                 // luckysheet.sheetmanage.saveChart({ "chart_id": chart_id, "sheetIndex": sheetIndex, "top": myTop, "left": myLeft });
-                //存儲滾動條位置//協同編輯時可能影響用戶操作，可以考慮不存儲滾動條位置,或者滾動條信息僅僅保存到後台，但是不分發到其他設備（google sheet沒有存儲滾動條位置）
+                //存儲滾動條位置//協同編輯時可能影響用戶操作，可以考慮不存儲滾動條位置,或者滾動條訊息僅僅保存到後台，但是不分發到其他設備（google sheet沒有存儲滾動條位置）
                 // Store.server.saveParam("c", sheetIndex, { "left":myLeft, "top":myTop,"scrollTop": scrollTop, "scrollLeft": scrollLeft }, { "op":"xy", "cid": chart_id});
             }
         }
@@ -4282,7 +4282,7 @@ export default function luckysheetHandler() {
         }
     });
 
-    //禁止瀏覽器 右鍵默認菜單
+    //禁止瀏覽器 右鍵默認選單
     $(".luckysheet-grid-container, #luckysheet-rightclick-menu").on("contextmenu", function (e) {
         e.preventDefault();
     });
@@ -4540,10 +4540,10 @@ export default function luckysheetHandler() {
         $("#luckysheet-scrollbar-y").scrollTop(0);
     });
 
-    //右鍵菜單 覆制按鈕
+    //右鍵選單 覆制按鈕
     $("#luckysheet-copy-btn, #luckysheet-cols-copy-btn, #luckysheet-paste-btn-title").click(function (event) {
         $(this).parent().hide();
-        //覆制範圍內包含部分合並單元格，提示
+        //覆制範圍內包含部分合併單元格，提示
         if (Store.config["merge"] != null) {
             let has_PartMC = false;
 
@@ -4642,7 +4642,7 @@ export default function luckysheetHandler() {
         selection.copy(event);
     });
 
-    //右鍵菜單 粘貼按鈕
+    //右鍵選單 粘貼按鈕
     $("#luckysheet-copy-paste, #luckysheet-cols-paste-btn, #luckysheet-paste-btn-title").click(function (event) {
         selection.paste(event, "btn");
         $(this).parent().hide();
@@ -4660,7 +4660,7 @@ export default function luckysheetHandler() {
     });
 
 
-    //菜單欄 數據透視表
+    //選單欄 數據透視表
     $("#luckysheet-pivot-btn-title").click(function (e) {
         if(!checkProtectionAuthorityNormal(Store.currentSheetIndex, "usePivotTablereports")){
             return;
@@ -4668,7 +4668,7 @@ export default function luckysheetHandler() {
         pivotTable.createPivotTable(e);
     });
 
-    //菜單欄 截圖按鈕
+    //選單欄 截圖按鈕
     $("#luckysheet-chart-btn-screenshot").click(function () {
         const locale_screenshot = _locale.screenshot;
         if (Store.luckysheet_select_save.length == 0) {
@@ -4692,7 +4692,7 @@ export default function luckysheetHandler() {
             return;
         }
 
-        //截圖範圍內包含部分合並單元格，提示
+        //截圖範圍內包含部分合併單元格，提示
         if (Store.config["merge"] != null) {
             let has_PartMC = false;
 
@@ -4835,7 +4835,7 @@ export default function luckysheetHandler() {
         document.body.removeChild(element);
     })
 
-    //菜單欄 分列按鈕
+    //選單欄 分列按鈕
     $("#luckysheet-splitColumn-btn-title").click(function () {
         if(!checkProtectionNotEnable(Store.currentSheetIndex)){
             return;
@@ -4861,7 +4861,7 @@ export default function luckysheetHandler() {
         splitColumn.init();
     });
 
-    //菜單欄 插入圖片按鈕
+    //選單欄 插入圖片按鈕
     $("#luckysheet-insertImg-btn-title").click(function () {
         // *如果禁止前台編輯，則中止下一步操作
         if (!checkIsAllowEdit()) {
@@ -4891,7 +4891,7 @@ export default function luckysheetHandler() {
         imageCtrl.insertImg(file);
     });
 
-    //菜單欄 插入鏈接按鈕
+    //選單欄 插入鏈接按鈕
     $("#luckysheet-insertLink-btn-title").click(function () {
         // *如果禁止前台編輯，則中止下一步操作
         if (!checkIsAllowEdit()) {
@@ -4914,7 +4914,7 @@ export default function luckysheetHandler() {
         $("#luckysheet-rightclick-menu").hide();
     })
 
-    //菜單欄 數據驗證按鈕
+    //選單欄 數據驗證按鈕
     $("#luckysheet-dataVerification-btn-title").click(function () {
         if(!checkProtectionNotEnable(Store.currentSheetIndex)){
             return;
@@ -5252,7 +5252,7 @@ export default function luckysheetHandler() {
     });
 
     // 點擊設置字體大小的下拉箭頭，把自動聚焦輸入框去除（認為下拉設置字體大小，不需要聚焦輸入框）
-    // //toolbar菜單
+    // //toolbar選單
     // $("#" + Store.container + " .luckysheet-wa-editor").on("click", ".luckysheet-toolbar-zoom-combobox", function (e) {
     //     $(e.currentTarget).addClass("luckysheet-toolbar-combo-button-open");
     //     $(e.currentTarget).find(".luckysheet-toolbar-combo-button-input").focus();
