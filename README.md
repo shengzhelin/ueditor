@@ -1,79 +1,243 @@
-English | [繁體中文](./README.zh-TW.md)
+<div align="center">
 
-# ms-agent
+![logo](/docs/.vuepress/public/img/logo_text.png)
 
-ms-agent is a tool that uses the Go language to write and receive zabbix alarm messages and send them to the [ZbxTable](https://github.com/canghai908/zbxtable) platform. It needs to be used with the ZbxTable platform.
+[![Join the chat at https://gitter.im/mengshukeji/Luckysheet](https://badges.gitter.im/mengshukeji/Luckysheet.svg)](https://gitter.im/mengshukeji/Luckysheet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<a href="https://twitter.com/intent/follow?screen_name=luckysheet">
+        <img src="https://img.shields.io/twitter/follow/luckysheet?style=social&logo=twitter"
+            alt="follow on Twitter"></a>
 
-## Compile
+</div>
 
-``` bash
-mkdir -p $GOPATH/src/github.com/canghai908
-cd $GOPATH/src/github.com/canghai908
-git clone https://github.com/canghai908/ms-agent.git
-cd ms-agent
-./control build
-./control pack
+# Luckysheet 3.x is currently being rewritten in Typescript
+
+English| [簡體中文](./README-zh.md)
+
+## Introduction
+🚀Luckysheet is an online spreadsheet like excel that is powerful, simple to configure, and completely open source.
+
+
+## Links
+ | Source Code   | Documentation | Demo | Plugins Demo | Forum |
+ | ------ | -------- | ------ | ------ | ------ |
+ | [Github](https://github.com/mengshukeji/Luckysheet)| [Online Documentation](https://mengshukeji.github.io/LuckysheetDocs/) | [Online Demo](https://mengshukeji.github.io/LuckysheetDemo) / [Cooperative editing demo](http://luckysheet.lashuju.com/demo/) | [Import Excel Demo](https://mengshukeji.github.io/LuckyexcelDemo/) | [Chinese Forum](https://support.qq.com/product/288322)  |
+ | [Gitee Mirror](https://gitee.com/mengshukeji/Luckysheet)| [Gitee Online Documentation](https://mengshukeji.gitee.io/LuckysheetDocs/) | [Gitee Online Demo](https://mengshukeji.gitee.io/luckysheetdemo/) | [Gitee Import Excel Demo](https://mengshukeji.gitee.io/luckyexceldemo/) | [Google Group](https://groups.google.com/g/luckysheet) |
+
+![Demo](/docs/.vuepress/public/img/LuckysheetDemo.gif)
+
+## Plugins
+- [Luckyexcel](https://github.com/mengshukeji/Luckyexcel): Excel import and export library
+- [chartMix](https://github.com/mengshukeji/chartMix): Chart plugin
+
+## Ecosystem
+
+| Project | Description |
+|---------|-------------|
+| [Luckysheet Vue]          | Luckysheet and Luckyexcel in a vue cli3 project |
+| [Luckysheet React]          | Luckysheet in a React project |
+| [Luckyexcel Node]          | Use Luckyexcel in koa2 |
+| [Luckysheet Server]          | Java backend Luckysheet Server |
+| [Luckysheet Server Starter]          | LuckysheetServer docker deployment startup template |
+
+[Luckysheet Vue]: https://github.com/mengshukeji/luckysheet-vue
+[Luckysheet React]: https://github.com/mengshukeji/luckysheet-react
+[Luckyexcel Node]: https://github.com/mengshukeji/Luckyexcel-node
+[Luckysheet Server]: https://github.com/mengshukeji/LuckysheetServer
+[Luckysheet Server Starter]: https://github.com/mengshukeji/LuckysheetServerStarter
+
+
+## Features
+
+- **Formatting**: style, conditional formatting, text alignment and rotation, text truncation, overflow, automatic line wrapping, multiple data types, cell segmentation style
+- **Cells**: drag and drop, fill handle, multiple selection, find and replace, location, merge cells, data verification
+- **Row & column**: hide, insert, delete rows or columns, freeze, and split text
+- **Operation**: undo, redo, copy, paste, cut, hot key, format painter, drag and drop selection
+- **Formulas & Functions**: Built-in, remote and custom formulas
+- **Tables**: filter, sort
+- **Enhanced functions**: Pivot tables, charts, comments, cooperative editing, insert picture, matrix calculations, screenshots, copying to other formats, EXCEL import and export, etc.
+
+For a more detailed feature list, please refer to: [Features](https://mengshukeji.github.io/LuckysheetDocs/guide/#features)
+
+## 📖 Resources
+- Priority reading for new users: [User Guide](https://github.com/mengshukeji/Luckysheet/wiki/User-Guide)
+- For the tutorials, learning materials and supporting solutions provided by the community, please refer to: [Tutorials and Resources](https://mengshukeji.github.io/LuckysheetDocs/guide/resource.html)
+
+## 📜 Changelog
+
+Detailed changes for each release are documented in the [CHANGELOG.md](CHANGELOG.md).
+
+## ❗️ Issues
+
+Please make sure to read the [Issue Reporting Checklist](https://mengshukeji.github.io/LuckysheetDocs/guide/contribute.html#how-to-submit-issues) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+
+## ✅ TODO
+
+Managed with [GitHub Projects](https://github.com/mengshukeji/Luckysheet/projects/1)
+
+## 💪Contribution
+
+Please make sure to read the[ Contributing Guide](https://mengshukeji.github.io/LuckysheetDocs/guide/contribute.html) before making a pull request.
+
+## Usage
+
+### First step
+Introduce dependencies through CDN
+```
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/css/pluginsCss.css' />
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/plugins.css' />
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/css/luckysheet.css' />
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/assets/iconfont/iconfont.css' />
+<script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/js/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/luckysheet.umd.js"></script>
+```
+### Second step
+Specify a table container
+```
+<div id="luckysheet" style="margin:0px;padding:0px;position:absolute;width:100%;height:100%;left: 0px;top: 0px;"></div>
+```
+### Third step
+Create a table
+```
+<script>
+    $(function () {
+        //Configuration item
+        var options = {
+            container: 'luckysheet' //luckysheet is the container id
+        }
+        luckysheet.create(options)
+    })
+</script>
 ```
 
-## Configuration
+## Development
 
-The ms-agent deployment needs to be deployed on Zabbix Server. The ms-agent receives zabbix alarm messages and sends them to the ZbxTable platform through the http protocol. Use zbxtable to complete the ms-agent configuration on the zabbix server platform
+### Requirements
+[Node.js](https://nodejs.org/en/) Version >= 6 
 
-``` 
-cd /usr/local/zbxtable
-./zbxtable install
+### Installation
+```
+npm install
+npm install gulp -g
+```
+### Development
+```
+npm run dev
+```
+### Package
+```
+npm run build
 ```
 
-The display log is as follows
+## Partner project
 
-``` 
-2020/07/18 23:22:16.881 [I] [install.go:43]  Zabbix API Address: http://zabbix-server/api_jsonrpc.php
-2020/07/18 23:22:16.881 [I] [install.go:44]  Zabbix Admin User: Admin
-2020/07/18 23:22:16.881 [I] [install.go:45]  Zabbix Admin Password: xxxxx
-2020/07/18 23:22:17.716 [I] [install.go:52]  登入zabbix平台成功!
-2020/07/18 23:22:17.879 [I] [install.go:69]  創建告警媒介成功!
-2020/07/18 23:22:18.027 [I] [install.go:82]  創建告警用戶組成功!
-2020/07/18 23:22:18.198 [I] [install.go:113]  創建告警用戶成功!
-2020/07/18 23:22:18.198 [I] [install.go:114]  用戶名:ms-agent
-2020/07/18 23:22:18.198 [I] [install.go:115]  密碼:xxxx
-2020/07/18 23:22:18.366 [I] [install.go:167]  創建告警動作成功!
-2020/07/18 23:22:18.366 [I] [install.go:168]  插件安裝完成!
-```
+- [luban-h5](https://github.com/ly525/luban-h5)
+- [h5-Dooring](https://github.com/MrXujiang/h5-Dooring)
+- [Furion](https://gitee.com/monksoul/Furion)
 
-This step will create ms-agent on Zabbix Server with random password, configure related actions and media, and associate it with users
+## Communication
+- [Github Discussions](https://github.com/mengshukeji/Luckysheet/discussions)
+- [Gitter](https://gitter.im/mengshukeji/Luckysheet)
 
-## Installation
+[Chinese community](./README-zh.md)
 
-This program must be deployed on Zabbix Server
+## Sponsor
 
-``` 
-yum install https://dl.cactifans.com/zabbix/ms-agent-1.0.1-1.el7.x86_64.rpm -y
-```
+Luckysheet is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome [backers](https://mengshukeji.github.io/LuckysheetDocs/about/sponsor.html#sponsors-list). If you'd like to join them, please consider:
 
-Environmental information
+- [Become a backer or sponsor on Patreon](https://www.patreon.com/mengshukeji).
+- [Become a backer or sponsor on Open Collective](https://opencollective.com/luckysheet).
+- One-time donation via PayPal, WeChat or Alipay
 
-| program     | path                           | effect                                             |
-| :------- | :------------------------------------ | :----------------------------------------------- |
-| ms-agent | /usr/lib/zabbix/alertscripts/ms-agent | Receive alarms generated by Zabbix platform and send to ZbxTable platform |
-| app.ini  | /etc/ms-agent/app.ini        | ms-agent configuration file                          |
+| PayPal |  WeChat  | Alipay |
+|---|---|---|
+| [Paypal Me](https://www.paypal.me/wbfsa) | <img src="https://minio.cnbabylon.com/public/luckysheet/wechat.jpg" width="140" />| <img src="https://minio.cnbabylon.com/public/luckysheet/alipay.jpg" width="130" /> |
 
-If the alertscripts directory of your Zabbix Server is not /usr/lib/zabbix/alertscripts/, you need to move ms-agen to the alertscripts directory of your zabbix server, otherwise it will appear on the Zabbix alert page that ms-agent cannot be found Error prompt, also unable to receive warning message.
-You can also modify the configuration file of Zabbix Server and point the alertscripts directory to /usr/lib/zabbix/alertscripts/
+### What's the difference between Patreon and OpenCollective?
 
-vi zabbix_server.conf
+Funds donated via Patreon go directly to support mengshukeji's work on Luckysheet. Funds donated via OpenCollective are managed with transparent expenses and will be used for compensating work and expenses for core team members or sponsoring community events. Your name/logo will receive proper recognition and exposure by donating on either platform.
 
-``` 
-AlertScriptsPath=/usr/lib/zabbix/alertscripts
-```
+## Sponsors List
 
-Restart Zabbix Server after modification to take effect
+(Sort by time)
+- *勇 ¥ 30
+- 虛我 ¥ 200
+- 甜黨 ¥ 50
+- Alphabet(Google)-gcf ¥ 1
+- **平 ¥ 100
+- **東 ¥ 10
+- debugger ¥ 20
+- 煩了煩 ¥ 10
+- 文頂頂 ¥ 200
+- yangxshn ¥ 10
+- 愛樂 ¥ 100
+- 小李飛刀刀 ¥ 66
+- 張銘 ¥ 200
+- 曹治軍 ¥ 1
+- *特 ¥ 10
+- **權 ¥ 9.9
+- **sdmq ¥ 20
+- *旭 ¥ 10
+- Quentin ¥ 20
+- 周宇凡 ¥ 100
+- *超 ¥ 10
+- 維寧 ¥ 100
+- hyy ¥ 20
+- 雨亭寒江月 ¥ 50
+- **功 ¥ 10
+- **光 ¥ 20
+- terrywan ¥ 100
+- 王曉洪 ¥ 10
+- Sun ¥ 10
+- 憂繡 ¥ 100
+- Jasonx ¥ 10
+- 國勇 ¥ 66.6
+- 郎志 ¥ 100
+- 匿名 ¥ 1
+- ni ¥ 100
+- 蘇 ¥ 50
+- Mads_chan ¥ 1
+- LK ¥ 100
+- 智連方舟 李汪石 ¥ 168
+- **發 ¥ 260
+- *超 ¥ 10
+- *勇 ¥ 10
+- *騰 ¥ 15
+- 名字好難起 ¥ 20
+- 大山 ¥ 1
+- waiting ¥ 1000
+- **宇 ¥ 10.00
+- 劉小帥的哥哥 ¥ 20.00
+- 寧靜致遠 ¥ 10.00
+- Eleven ¥ 1.00
 
-## Debug
+## Authors and acknowledgment
 
-You can modify the configuration file to open the Debug mode, and view the log /tmp/ms-agent_yyyymmdd.log
+### Active Core Team Members
+- [@wbfsa](https://github.com/wbfsa)
+- [@eiji-th](https://github.com/eiji-th)
+- [@fly-95](https://github.com/fly-95)
+- [@tonytonychopper123](https://github.com/tonytonychopper123)
+- [@Dushusir](https://github.com/Dushusir)
+- [@iamxuchen800117](https://github.com/iamxuchen800117)
+- [@wpxp123456](https://github.com/wpxp123456)
+- [@c19c19i](https://weibo.com/u/3884623955)
+- [@zhangchen915](https://github.com/zhangchen915)
+- [@jerry-f](https://github.com/jerry-f)
+- [@flowerField](https://github.com/flowerField)
+
+### Community Partners
+- [@yiwasheng](https://github.com/yiwasheng)
+- [@danielcai1987](https://github.com/danielcai1987)
+- [@qq6690876](https://github.com/qq6690876)
+- [@javahuang](https://github.com/javahuang)
+- [@TimerGang](https://github.com/TimerGang)
+- [@gsw945](https://github.com/gsw945)
+- [@swen-xiong](https://github.com/swen-xiong)
+- [@lzmch](https://github.com/lzmch)
+- [@kdevilpf](https://github.com/kdevilpf)
+- [@WJWM0316](https://github.com/WJWM0316)
 
 ## License
+[MIT](http://opensource.org/licenses/MIT)
 
-<img alt="Apache-2.0 license" src="https://s3-gz01.didistatic.com/n9e-pub/image/apache.jpeg" width="128">
-
-Zbxtable is available under the Apache-2.0 license. See the [LICENSE](LICENSE) file for more info.
+Copyright (c) 2020-present, mengshukeji
