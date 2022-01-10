@@ -1,83 +1,82 @@
- [English](./README.md) | 簡體中文
+[English](./README.md) | 簡體中文
 
-# ms-agent
+# ZbxTable
 
-ms-agent 是一個使用 go 語言編寫接收zabbix 的告警消息並發送到 [ZbxTable](https://github.com/canghai908/zbxtable) 平台的工具，需配合 ZbxTable 平台使用。
+ZbxTable 是使用 Go 語言開發的一個 Zabbix 報表系統。
+
+## 主要功能：
+
+- 導出監控指標特定時間段內的詳情數據與趨勢數據到 xlsx
+- 導出特定時間段內 Zabbix 的告警消息到 xlsx
+- 對特定時間段內的告警消息進行分析，告警 Top10 等
+- 按照主機組導出巡檢報告
+- 對 Zabbix 圖形按照數類型進行顯示和查看並支持導出到 pdf
+- 主機未恢覆告警顯示和查詢
+
+## 系統架構
+
+![1](https://img.cactifans.com/wp-content/uploads/2020/07/zbxtable.png)
+
+## 組件介紹
+
+ZbxTable: 使用 beego 框架編寫的後端程序
+
+ZbxTable-Web: 使用 React 編寫的前端
+
+MS-Agent: 安裝在 Zabbix Server 上, 用於接收 Zabbix Server 產生的告警，並發送到 ZbxTable 平台
+
+## 在線體驗
+
+直接點擊登入即可
+
+[https://zbx.cactifans.com](https://zbx.cactifans.com)
+
+## 兼容性
+
+| zabbix 版本 | 兼容性            |
+| :---------- | :---------------- |
+| 5.4.x          | ✅            |
+| 5.2.x          | ✅            |
+| 5.0.x LTS      | ✅            |
+| 4.4.x          | ✅            |
+| 4.2.x          | ✅            |
+| 4.0.x LTS      | ✅            |
+| 3.4.x          | ✅            |
+| 3.2.x          | ✅            |
+| 3.0.x LTS      | ✅            |
+
+## 文檔
+
+[ZbxTable 使用說明](https://zbxtable.cactifans.com)
+
+## 源碼
+
+ZbxTable: [https://github.com/canghai908/zbxtable](https://github.com/canghai908/zbxtable)
+
+ZbxTable-Web: [https://github.com/canghai908/zbxtable-web](https://github.com/canghai908/zbxtable-web)
+
+MS-Agent: [https://github.com/canghai908/ms-agent](https://github.com/canghai908/ms-agent)
 
 ## 編譯
 
-``` bash
+```
 mkdir -p $GOPATH/src/github.com/canghai908
 cd $GOPATH/src/github.com/canghai908
-git clone https://github.com/canghai908/ms-agent.git
-cd ms-agent
+git clone https://github.com/canghai908/zbxtable.git
+cd zbxtable
 ./control build
 ./control pack
 ```
 
-## 更新記錄
+## Team
 
-V1.0.1
-2020.07.24 修覆 log 日誌權限問題
+後端
 
-會編譯生成二進制文件，並打包到壓縮包
+[canghai908](https://github.com/canghai908)
 
-## 配置
+前端
 
-ms-agent 部署需部署在 Zabbix Server，ms-agent 接收 zabbix 的告警消息，通過 http 協議發送到 ZbxTable 平台，使用 zbxtable 完成 ms-agent 在 zabbix server 平台配置
-
-``` 
-cd /usr/local/zbxtable
-./zbxtable install
-```
-
-顯示如下日誌
-
-``` 
-2020/07/18 23:22:16.881 [I] [install.go:43]  Zabbix API Address: http://zabbix-server/api_jsonrpc.php
-2020/07/18 23:22:16.881 [I] [install.go:44]  Zabbix Admin User: Admin
-2020/07/18 23:22:16.881 [I] [install.go:45]  Zabbix Admin Password: xxxxx
-2020/07/18 23:22:17.716 [I] [install.go:52]  登入zabbix平台成功!
-2020/07/18 23:22:17.879 [I] [install.go:69]  創建告警媒介成功!
-2020/07/18 23:22:18.027 [I] [install.go:82]  創建告警用戶組成功!
-2020/07/18 23:22:18.198 [I] [install.go:113]  創建告警用戶成功!
-2020/07/18 23:22:18.198 [I] [install.go:114]  用戶名:ms-agent
-2020/07/18 23:22:18.198 [I] [install.go:115]  密碼:xxxx
-2020/07/18 23:22:18.366 [I] [install.go:167]  創建告警動作成功!
-2020/07/18 23:22:18.366 [I] [install.go:168]  插件安裝完成!
-```
-
-此步驟會在 Zabbix Server 創建 ms-agent，密碼為隨機，並配置相關 action 和 media，並關聯到用戶
-
-## 安裝
-
-此程序必須部署在 Zabbix Server
-
-``` 
-yum install https://dl.cactifans.com/zabbix/ms-agent-1.0.1-1.el7.x86_64.rpm -y
-```
-
-環境訊息
-
-| 程序     | 路徑                                  | 作用                                             |
-| :------- | :------------------------------------ | :----------------------------------------------- |
-| ms-agent | /usr/lib/zabbix/alertscripts/ms-agent | 接收 Zabbix 平台產生的告警並發送到 ZbxTable 平台 |
-| app.ini  | /etc/ms-agent/app.ini                 | ms-agent 配置文件                                |
-
-如果你的 Zabbix Server 的 alertscripts 目錄不為/usr/lib/zabbix/alertscripts/ 需要移動 ms-agen 到你的 zabbix server 的 alertscripts 目錄下即可, 否則會在 Zabbix 告警頁面出現找不到 ms-agent 的錯誤提示，也無法收到告警消息。
-也可以修改 Zabbix Server 的配置文件，將 alertscripts 目錄指向/usr/lib/zabbix/alertscripts/
-
-vi zabbix_server.conf
-
-``` 
-AlertScriptsPath=/usr/lib/zabbix/alertscripts
-```
-
-修改後重啟 Zabbix Server 生效
-
-## Debug
-
-可修改配置文件打開 Debug 模式，查看日誌/tmp/ms-agent_yyyymmdd.log
+[ahyiru](https://github.com/ahyiru)
 
 ## License
 
