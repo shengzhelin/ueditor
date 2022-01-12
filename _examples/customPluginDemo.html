@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" charset="utf-8" src="../ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+</head>
+<body>
+<h1>UEditor自定義插件</h1>
+
+<!--style給定寬度可以影響編輯器的最終寬度-->
+<script type="text/plain" id="myEditor">
+    <p><img src="http://ueditor.baidu.com/website/images/banner-dl.png" alt=""></p>
+    <p>插件描述：選中圖片，在其上單擊，會改變圖片的邊框！</p>
+</script>
+<script type="text/javascript">
+
+
+    //創建一個在選中的圖片單擊時添加邊框的插件，其實質就是在baidu.editor.plugins塞進一個閉包
+    UE.plugins["addborder"] = function () {
+        var me = this;
+        //創建一個改變圖片邊框的命令
+        me.commands["addborder"] = {
+            execCommand:function () {
+                //獲取當前選區
+                var range = me.selection.getRange();
+                //選區沒閉合的情況下操作
+                if ( !range.collapsed ) {
+                    //圖片判斷
+                    var img = range.getClosedNode();
+                    if ( img && img.tagName == "IMG" ) {
+                        //點擊切換圖片邊框
+                        img.style.border = img.style.borderWidth == "5px"?"1px":"5px solid red";
+                    }
+                }
+            }
+        };
+        //註冊一個觸發命令的事件，同學們可以在任意地放綁定觸發此命令的事件
+        me.addListener( 'click', function () {
+            setTimeout(function(){
+                me.execCommand( "addborder" );
+            })
+
+        } );
+    };
+    var editor_a = UE.getEditor('myEditor' );
+</script>
+
+</body>
+
+
+</html>

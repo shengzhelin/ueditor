@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" charset="utf-8" src="../ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+</head>
+<body>
+<h1>UEditor多實例</h1>
+
+<!--style給定寬度可以影響編輯器的最終寬度-->
+<script type="text/plain" id="myEditor1" style="margin-bottom:100px;">
+</script>
+<script type="text/plain" id="myEditor2" style="margin-bottom:100px;">
+    <p>這裡我可以寫一些輸入提示</p>
+</script>
+<script type="text/plain" id="myEditor3" style="margin-bottom:100px;">
+</script>
+
+<script type="text/javascript">
+    UE.getEditor('myEditor1', {
+        theme:"default", //皮膚
+        lang:'zh-cn' //語言
+    });
+
+    UE.getEditor('myEditor2', {
+        autoClearinitialContent:true, //focus時自動清空初始化時的內容
+        wordCount:false, //關閉字數統計
+        elementPathEnabled:false//關閉elementPath
+    });
+
+    UE.getEditor('myEditor3', {
+        //toolbars:[['FullScreen', 'Source', 'Undo', 'Redo','Bold']],//這裡可以選擇自己需要的工具按鈕名稱,此處僅選擇如下五個
+        lang:"en"
+        //更多其他參數，請參考ueditor.config.js中的配置項
+    });
+</script>
+
+</body>
+
+
+</html>

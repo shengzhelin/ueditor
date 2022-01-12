@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="../internal.js"></script>
+    <style type="text/css">
+        .wrapper{width: 600px;padding: 10px;height: 352px;overflow: hidden;position: relative;border-bottom: 1px solid #d7d7d7}
+        .localPath input{float: left;width: 350px;line-height: 20px;height: 20px;}
+        #clipboard{float:left;width: 70px;height: 30px; }
+        .description{ color: #0066cc; margin-top: 2px; width: 450px; height: 45px;float: left;line-height: 22px}
+        #upload{width: 100px;height: 30px;float: right; margin:10px 2px 0 0;cursor: pointer;}
+        #msg{ width: 140px; height: 30px; line-height:25px;float: left;color: red}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="localPath">
+            <input id="localPath" type="text" readonly />
+            <div id="clipboard"></div>
+            <div id="msg"></div>
+        </div>
+        <div id="flashContainer"></div>
+        <div>
+            <div id="upload" style="display: none" ><img id="uploadBtn"></div>
+            <div class="description">
+                <span style="color: red"><var id="lang_resave"></var>: </span><var id="lang_step"></var>
+            </div>
+          </div>
+    </div>
+    <script type="text/javascript" src="tangram.js"></script>
+    <script type="text/javascript" src="wordimage.js"></script>
+    <script type="text/javascript">
+        editor.setOpt({
+            wordImageFieldName:"upfile",
+            compressSide:0,
+            maxImageSideLength:900
+        });
+
+            //全局變量
+        var imageUrls = [],          //用於保存從服務器返回的圖片訊息數組
+            selectedImageCount = 0,  //當前已選擇的但未上傳的圖片數量
+            optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
+            optImageFieldName = editor.getOpt('imageFieldName'),
+            optImageCompressBorder = editor.getOpt('imageCompressEnable') ? editor.getOpt('imageCompressBorder'):null,
+            maxSize = editor.getOpt('imageMaxSize') / 1024 / 1024,
+            extension = editor.getOpt('imageAllowFiles').join(';').replace(/\./g, '*.');
+
+        /* 添加額外的GET參數 */
+        var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
+            urlWidthParams = optImageUrl + (optImageUrl.indexOf('?') == -1 ? '?':'&') + params;
+
+        utils.domReady(function(){
+            //創建Flash相關的參數集合
+            var flashOptions = {
+                container:"flashContainer",                                                    //flash容器id
+                url:urlWidthParams,                                           // 上傳處理頁面的url地址
+                ext:editor.queryCommandValue('serverParam') || {},                                 //可向服務器提交的自定義參數列表
+                fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //上傳文件格式限制
+                flashUrl:'imageUploader.swf',                                                  //上傳用的flash組件地址
+                width:600,          //flash的寬度
+                height:272,         //flash的高度
+                gridWidth:120,     // 每一個預覽圖片所占的寬度
+                gridHeight:120,    // 每一個預覽圖片所占的高度
+                picWidth:100,      // 單張預覽圖片的寬度
+                picHeight:100,     // 單張預覽圖片的高度
+                uploadDataFieldName: optImageFieldName,    // POST請求中圖片數據的key
+                picDescFieldName:'pictitle',      // POST請求中圖片描述的key
+                maxSize: maxSize,                         // 文件的最大體積,單位M
+                compressSize:1,                   // 上傳前如果圖片體積超過該值，會先壓縮,單位M
+                maxNum:32,                         // 單次最大可上傳多少個文件
+                compressSide: 0,                 //等比壓縮的基準，0為按照最長邊，1為按照寬度，2為按照高度
+                compressLength: optImageCompressBorder        //能接受的最大邊長，超過該值Flash會自動等比壓縮
+            };
+            //回調函數集合，支持傳遞函數名的字符串、函數句柄以及函數本身三種類型
+            var callbacks={
+                selectFileCallback: function(selectFiles){                // 選擇文件的回調
+                    selectedImageCount += selectFiles.length;
+                    if(selectedImageCount) baidu.g("upload").style.display = "";
+                    dialog.buttons[0].setDisabled(true); //初始化時置灰確定按鈕
+                },
+                deleteFileCallback: function(delFiles){                 // 刪除文件的回調
+                    selectedImageCount -= delFiles.length;
+                    if (!selectedImageCount) {
+                        baidu.g("upload").style.display = "none";
+                        dialog.buttons[0].setDisabled(false);         //沒有選擇圖片時重新點亮按鈕
+                    }
+                },
+                uploadCompleteCallback: function(data){               // 單個文件上傳完成的回調
+                    try{var info = eval("(" + data.info + ")");
+                    info && imageUrls.push(info);
+                    selectedImageCount--;
+                    }catch(e){}
+                },
+                uploadErrorCallback: function (data){         // 單個文件上傳失敗的回調,
+                    console && console.log(data);
+                },
+                allCompleteCallback: function(){              // 全部上傳完成時的回調
+                    dialog.buttons[0].setDisabled(false);    //上傳完畢後點亮按鈕
+                }
+                //exceedFileCallback: 'exceedFileCallback',   // 文件超出限制的最大體積時的回調
+                //startUploadCallback: startUploadCallback    // 開始上傳某個文件時的回調
+            };
+            wordImage.init(flashOptions,callbacks);
+        });
+
+    </script>
+
+</body>
+</html>

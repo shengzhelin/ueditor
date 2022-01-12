@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" charset="utf-8" src="../ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+    <!--加入高亮的js和css文件，如果你的編輯器和展示也是一個頁面那麽高亮的js可以不加載-->
+    <script type="text/javascript" charset="utf-8" src="../third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../third-party/SyntaxHighlighter/shCoreDefault.css"/>
+</head>
+<body>
+<h1>代碼高亮演示</h1>
+<h2>獲得編輯器實例</h2>
+<div style="width:200px">
+    <pre class="brush:js;toolbar:false;">
+        UE.getEditor('myEditor');
+    </pre>
+</div>
+
+<!--style給定寬度可以影響編輯器的最終寬度-->
+<script type="text/plain" id="myEditor" style="width:500px">
+    <h3>實例化編輯器</h3>
+     <pre class="brush:js;toolbar:false;">
+         UE.getEditor('myEditor');
+</pre>
+</script>
+<script type="text/javascript">
+    //為了在編輯器之外能展示高亮代碼
+    SyntaxHighlighter.highlight();
+   UE.getEditor('myEditor');
+</script>
+
+</body>
+
+
+</html>

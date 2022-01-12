@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <script type="text/javascript" src="../internal.js"></script>
+    <link rel="stylesheet" type="text/css" href="emotion.css">
+</head>
+<body>
+<div id="tabPanel" class="wrapper">
+    <div id="tabHeads" class="tabhead">
+        <span><var id="lang_input_choice"></var></span>
+        <span><var id="lang_input_Tuzki"></var></span>
+        <span><var id="lang_input_lvdouwa"></var></span>
+        <span><var id="lang_input_BOBO"></var></span>
+        <span><var id="lang_input_babyCat"></var></span>
+        <span><var id="lang_input_bubble"></var></span>
+        <span><var id="lang_input_youa"></var></span>
+    </div>
+    <div id="tabBodys" class="tabbody">
+        <div id="tab0"></div>
+        <div id="tab1"></div>
+        <div id="tab2"></div>
+        <div id="tab3"></div>
+        <div id="tab4"></div>
+        <div id="tab5"></div>
+        <div id="tab6"></div>
+    </div>
+</div>
+<div id="tabIconReview">
+    <img id='faceReview' class='review' src="../../themes/default/images/spacer.gif"/>
+</div>
+<script type="text/javascript" src="emotion.js"></script>
+<script type="text/javascript">
+    var emotion = {
+        tabNum:7, //切換面板數量
+        SmilmgName:{ tab0:['j_00', 84], tab1:['t_00', 40], tab2:['w_00', 52], tab3:['B_00', 63], tab4:['C_00', 20], tab5:['i_f', 50], tab6:['y_00', 40] }, //圖片前綴名
+        imageFolders:{ tab0:'jx2/', tab1:'tsj/', tab2:'ldw/', tab3:'bobo/', tab4:'babycat/', tab5:'face/', tab6:'youa/'}, //圖片對應文件夾路徑
+        imageCss:{tab0:'jd', tab1:'tsj', tab2:'ldw', tab3:'bb', tab4:'cat', tab5:'pp', tab6:'youa'}, //圖片css類名
+        imageCssOffset:{tab0:35, tab1:35, tab2:35, tab3:35, tab4:35, tab5:25, tab6:35}, //圖片偏移
+        SmileyInfor:{
+            tab0:['Kiss', 'Love', 'Yeah', '啊！', '背扭', '頂', '抖胸', '88', '汗', '瞌睡', '魯拉', '拍磚', '揉臉', '生日快樂', '大笑', '瀑布汗~', '驚訝', '臭美', '傻笑', '拋媚眼', '發怒', '打醬油', '俯臥撐', '氣憤', '?', '吻', '怒', '勝利', 'HI', 'KISS', '不說', '不要', '扯花', '大心', '頂', '大驚', '飛吻', '鬼臉', '害羞', '口水', '狂哭', '來', '發財了', '吃西瓜', '套牢', '害羞', '慶祝', '我來了', '敲打', '暈了', '勝利', '臭美', '被打了', '貪吃', '迎接', '酷', '微笑', '親吻', '調皮', '驚恐', '耍酷', '發火', '害羞', '汗水', '大哭', '', '加油', '困', '你NB', '暈倒', '開心', '偷笑', '大哭', '滴汗', '嘆氣', '超讚', '??', '飛吻', '天使', '撒花', '生氣', '被砸', '嚇傻', '隨意吐'],
+            tab1:['Kiss', 'Love', 'Yeah', '啊！', '背扭', '頂', '抖胸', '88', '汗', '瞌睡', '魯拉', '拍磚', '揉臉', '生日快樂', '攤手', '睡覺', '癱坐', '無聊', '星星閃', '旋轉', '也不行', '郁悶', '正Music', '抓墻', '撞墻至死', '歪頭', '戳眼', '飄過', '互相拍磚', '砍死你', '扔桌子', '少林寺', '什麽？', '轉頭', '我愛牛奶', '我踢', '搖晃', '暈厥', '在籠子里', '震蕩'],
+            tab2:['大笑', '瀑布汗~', '驚訝', '臭美', '傻笑', '拋媚眼', '發怒', '我錯了', 'money', '氣憤', '挑逗', '吻', '怒', '勝利', '委屈', '受傷', '說啥呢？', '閉嘴', '不', '逗你玩兒', '飛吻', '眩暈', '魔法', '我來了', '睡了', '我打', '閉嘴', '打', '打暈了', '刷牙', '爆揍', '炸彈', '倒立', '刮胡子', '邪惡的笑', '不要不要', '愛戀中', '放大仔細看', '偷窺', '超高興', '暈', '松口氣', '我跑', '享受', '修養', '哭', '汗', '啊~', '熱烈歡迎', '打醬油', '俯臥撐', '?'],
+            tab3:['HI', 'KISS', '不說', '不要', '扯花', '大心', '頂', '大驚', '飛吻', '鬼臉', '害羞', '口水', '狂哭', '來', '淚眼', '流淚', '生氣', '吐舌', '喜歡', '旋轉', '再見', '抓狂', '汗', '鄙視', '拜', '吐血', '噓', '打人', '蹦跳', '變臉', '扯肉', '吃To', '吃花', '吹泡泡糖', '大變身', '飛天舞', '回眸', '可憐', '猛抽', '泡泡', '蘋果', '親', '', '騷舞', '燒香', '睡', '套娃娃', '捅捅', '舞倒', '西紅柿', '愛慕', '搖', '搖擺', '雜耍', '招財', '被毆', '被球悶', '大驚', '理想', '歐打', '嘔吐', '碎', '吐痰'],
+            tab4:['發財了', '吃西瓜', '套牢', '害羞', '慶祝', '我來了', '敲打', '暈了', '勝利', '臭美', '被打了', '貪吃', '迎接', '酷', '頂', '幸運', '愛心', '躲', '送花', '選擇'],
+            tab5:['微笑', '親吻', '調皮', '驚訝', '耍酷', '發火', '害羞', '汗水', '大哭', '得意', '鄙視', '困', '誇獎', '暈倒', '疑問', '媒婆', '狂吐', '青蛙', '發愁', '親吻', '', '愛心', '心碎', '玫瑰', '禮物', '哭', '奸笑', '可愛', '得意', '呲牙', '暴汗', '楚楚可憐', '困', '哭', '生氣', '驚訝', '口水', '彩虹', '夜空', '太陽', '錢錢', '燈泡', '咖啡', '蛋糕', '音樂', '愛', '勝利', '讚', '鄙視', 'OK'],
+            tab6:['男兜', '女兜', '開心', '乖乖', '偷笑', '大笑', '抽泣', '大哭', '無奈', '滴汗', '嘆氣', '狂暈', '委屈', '超讚', '??', '疑問', '飛吻', '天使', '撒花', '生氣', '被砸', '口水', '淚奔', '嚇傻', '吐舌頭', '點頭', '隨意吐', '旋轉', '困困', '鄙視', '狂頂', '籃球', '再見', '歡迎光臨', '恭喜發財', '稍等', '我在線', '恕不議價', '庫房有貨', '貨在路上']
+        }
+    };
+</script>
+</body>
+</html>

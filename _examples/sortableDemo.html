@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="../ueditor.parse.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+<h1>表格排序演示</h1>
+<p>
+<p>
+    <strong>默認排序方法有五種:</strong><br/>
+    reversecurrent : 逆序當前<br/>
+    orderbyasc : 按ASCII字符升序<br/>
+    reversebyasc : 按ASCII字符降序<br/>
+    orderbynum : 按數值大小升序<br/>
+    reversebynum : 按數值大小降序
+</p>
+<p>
+    <span style="font-size: 14px; color: rgb(127, 127, 127);">表格data-sort-type屬性值為reversebynum，<span style="color:#ff511a; font-weight: bold;">按照數值大小降序排序</span>，點擊第一行的單元格進行排序。</span>
+</p>
+<div id="content1" class="content">
+    <table data-sort="sortEnabled" width="992" class="sortEnabled" data-sort-type="reversebynum">
+        <tbody>
+        <tr class="firstRow"> <td width="165">343</td> <td width="165">352</td> <td width="165">323</td> <td width="165">234</td> <td width="165">379</td> <td width="166">782</td> </tr>
+        <tr> <td width="165">341</td> <td width="165">163</td> <td width="165">422</td> <td width="165">234</td> <td width="165">725</td> <td width="166">833</td> </tr>
+        <tr> <td width="165">221</td> <td width="165">456</td> <td width="165">335</td> <td width="165">423</td> <td width="165">445</td> <td width="166">793</td> </tr>
+        <tr> <td width="165">112</td> <td width="165">277</td> <td width="165">563</td> <td width="165">423</td> <td width="165">932</td> <td width="166">425</td> </tr>
+        <tr> <td width="165">587</td> <td width="165">175</td> <td width="165">159</td> <td width="165">734</td> <td width="165">582</td> <td width="166">458</td> </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <br />
+</p>
+<p>
+    <span style="font-size: 14px; color: rgb(127, 127, 127);">自定義排序，<span style="color:#ff511a; font-weight: bold;">按照個位數排序</span>，點擊第一行的單元格進行排序。</span>
+</p>
+<div id="content2" class="content">
+    <table data-sort="sortEnabled" width="992" class="sortEnabled">
+        <tbody>
+        <tr class="firstRow"> <td width="165">343</td> <td width="165">352</td> <td width="165">323</td> <td width="165">234</td> <td width="165">379</td> <td width="166">782</td> </tr>
+        <tr> <td width="165">341</td> <td width="165">163</td> <td width="165">422</td> <td width="165">234</td> <td width="165">725</td> <td width="166">833</td> </tr>
+        <tr> <td width="165">221</td> <td width="165">456</td> <td width="165">335</td> <td width="165">423</td> <td width="165">445</td> <td width="166">793</td> </tr>
+        <tr> <td width="165">112</td> <td width="165">277</td> <td width="165">563</td> <td width="165">423</td> <td width="165">932</td> <td width="166">425</td> </tr>
+        <tr> <td width="165">587</td> <td width="165">175</td> <td width="165">159</td> <td width="165">734</td> <td width="165">582</td> <td width="166">458</td> </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    // 語法
+    // uParse(selector,[option])
+    /*
+     selector支持
+     id,class,tagName
+     */
+    /*
+     目前支持的參數
+     option:
+     highlightJsUrl 代碼高亮相關js的路徑 如果展示有代碼高亮，必須給定該屬性
+     highlightCssUrl 代碼高亮相關css的路徑 如果展示有代碼高亮，必須給定該屬性
+     liiconpath 自定義列表樣式的圖標路徑，可以不給定，默認'http://bs.baidu.com/listicon/',
+     listDefaultPaddingLeft : 自定義列表樣式的左邊寬度 默認'20',
+     customRule 可以傳入你自己的處理規則函數，函數第一個參數是容器節點
+     */
+    uParse('#content1',{
+        rootPath : '../'
+    })
+    uParse('#content2',{
+        rootPath : '../',
+        tableSortCompareFn: function(td1, td2){
+            var value1 = td1.innerText||td1.textContent,
+                    value2 = td2.innerText||td2.textContent;
+            return parseInt(value1) % 10 > parseInt(value2) % 10;
+        }
+    })
+
+</script>
+
+</body>
+</html>

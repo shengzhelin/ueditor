@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="../ueditor.parse.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>解析編輯的內容</h1>
+    <div class="content" style="width:200px">
+        <ol class="custom_cn2 list-paddingleft-1"><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>這裡可以書寫，編輯器的初始內容</p></li></ol><ul class="custom_dash list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><p>sdfas</p></li></ul><ol class="custom_cn2 list-paddingleft-1"><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>dfas</p></li></ol><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>dfa</p></li><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>sdfadf</p></li></ol></ol>
+        <p>
+            這裡可以書寫，編輯器的初始內容
+        </p>
+        <p>
+            <video class="video-js vjs-default-skin" data-setup="{}" controls preload="none" width="640" height="264"
+                   src="http://video-js.zencoder.com/oceans-clip.mp4"
+                   poster="http://video-js.zencoder.com/oceans-clip.png">
+                <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+            </video>
+        </p>
+        <pre class="brush:js;toolbar:false;">
+               moveToBookmark:function (bookmark) {
+            var start = bookmark.id ? this.document.getElementById(bookmark.start) : bookmark.start,
+                end = bookmark.end && bookmark.id ? this.document.getElementById(bookmark.end) : bookmark.end;
+            this.setStartBefore(start);
+            domUtils.remove(start);
+            if (end) {
+                this.setEndBefore(end);
+                domUtils.remove(end);
+            } else {
+                this.collapse(true);
+            }
+            return this;
+        },
+        </pre>
+        <ol class="custom_cn2 list-paddingleft-1">
+            <li class="list-cn-3-1 list-cn2-paddingleft-1">
+                <p>
+                    dfasdf
+                </p>
+            </li>
+            <li class="list-cn-3-2 list-cn2-paddingleft-1">
+                <p>
+                    asd
+                </p>
+            </li>
+            <li class="list-cn-3-3 list-cn2-paddingleft-1">
+                <p>
+                    fa
+                </p>
+            </li>
+            <li class="list-cn-3-4 list-cn2-paddingleft-1">
+                <p>
+                    sdfa
+                </p>
+            </li>
+            <li class="list-cn-3-5 list-cn2-paddingleft-1">
+                <p>
+                    sdfa
+                </p>
+            </li>
+        </ol>
+    </div>
+    <div id="content" class="content">
+        <table width="960">
+            <caption>
+                sdf<br />
+            </caption>
+            <tbody>
+            <tr>
+                <th valign="null">
+                    sdf<br />
+                </th>
+                <th valign="null">
+                    sdf<br />
+                </th>
+                <th valign="null">
+                    <br />
+                </th>
+                <th valign="null">
+                    <br />
+                </th>
+                <th valign="null">
+                    <br />
+                </th>
+                <th valign="null">
+                    <br />
+                </th>
+                <th valign="null">
+                    <br />
+                </th>
+            </tr>
+            <tr>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+                <td width="116" valign="top">
+                    <br />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content_background">
+        <h1>
+            UEditor
+        </h1>
+        <h2>
+            簡介
+        </h2>
+        <p>
+            UEditor是由百度WEB前端研發部開發的所見即所得的開源富文本編輯器，具有輕量、可定制、用戶體驗優秀等特點。開源基於BSD協議，所有源代碼在協議允許範圍內可自由修改和使用。百度UEditor的推出，可以幫助不少網站開者在開發富文本編輯器所遇到的難題，節約開發者因開發富文本編輯器所需要的大量時間，有效降低了企業的開發成本。
+        </p>
+        <h2>
+            特點<br/>
+        </h2>
+        <p>
+            1、核心層提供了編輯器底層的一些方法和概念，如DOM樹操作、Selection、Range等。
+        </p>
+        <p>
+            2、在核心層之上覆蓋的是命令插件層。之所以叫命令插件層，是因為UEditor中所有的功能型實現都是通過這一層中的命令和插件來完成的，並且各個命令和插件之間基本互不耦合——使用者需要使用哪個功能就導入哪個功能對應的命令或者插件文件，完全不用考慮另外那些雜七雜八的JS文件（極少數插件除外，關於這些插件下文會整理出一個依賴列表來供同學們參考）。
+        </p>
+        <p>
+            理論上來講，所有的命令都是可以用插件來代替的，但是依然將兩者分開的主要原因是命令都是一些靜態的方法，無需隨editor實例初始化，從而優化了編輯器的性能。而插件隨編輯器的初始化而初始化，性能上會有少許的影響，但相比命令而言，插件能夠完成更加覆雜的功能。其中最主要的一個特點是在插件內部既可以為編輯器註冊命令，也可以為編輯器綁定監聽事件。這個特點使得為編輯器添加任何功能都可以在插件中獨立完成。
+        </p>
+        <p>
+            3、在命令插件層之上則是UI層。UEditor的UI設計與核心層和命令插件層幾乎完全解耦，簡單的幾個配置就可以為編輯器在界面上添加額外的UI元素和功能，具體的配置下面將會深入闡述。
+        </p>
+        <p>
+            <br/>
+        </p>
+        <p style="display:none;" data-background="background-repeat:no-repeat;background-position:center center;background-color:#C3D69B;background-image:url(http://www.baidu.com/img/bdlogo.gif);">
+            <br/>
+        </p>
+    </div>
+
+    <script>
+        // 語法
+        // uParse(selector,[option])
+        /*
+         selector支持
+         id,class,tagName
+         */
+        /*
+         目前支持的參數
+         option:
+         highlightJsUrl 代碼高亮相關js的路徑 如果展示有代碼高亮，必須給定該屬性
+         highlightCssUrl 代碼高亮相關css的路徑 如果展示有代碼高亮，必須給定該屬性
+         liiconpath 自定義列表樣式的圖標路徑，可以不給定，默認'http://bs.baidu.com/listicon/',
+         listDefaultPaddingLeft : 自定義列表樣式的左邊寬度 默認'20',
+         customRule 可以傳入你自己的處理規則函數，函數第一個參數是容器節點
+         */
+
+        uParse('.content',{
+            rootPath : '../'
+        })
+        uParse('.content_background',{
+            rootPath : '../'
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="../ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+    <title>表格內實例化編輯器實例</title>
+</head>
+
+<body>
+<div style="height: 100px"></div>
+<div id="div" style="border: 1px solid #fff">
+    <table border="1">
+        <caption>表格標題</caption>
+        <tr><th>標題</th><th>內容</th></tr>
+        <!--編輯器實例化到表格內部時，請在對應的單元格上明確標注寬度值（百分數或者直接數均可），否則有可能在工具欄浮動等功能狀態下出現移位-->
+        <tr>
+            <td>中國</td><td width="100%"><textarea id="editor"></textarea></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    UE.getEditor('editor');
+</script>
+</body>
+</html>
