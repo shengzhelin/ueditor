@@ -393,7 +393,7 @@ test('cloneContents', function () {
     range.setStart(b, 1).setEnd(div, 1);
     var frag = range.cloneContents();
     /*類型：<b>xxxx|</b>|div_text（"|"表示切的位置）*/
-    equal(ua.getHTML(frag), '<b></b>', ' 只選中一個b標籤，插入空文本節點');
+    equal(ua.getHTML(frag), '<b></b>', ' 只選中一個b標簽，插入空文本節點');
 
     /*類型：<b>t|_ext</b>div|_text（"|"表示切的位置）*/
     range.setStart(b.firstChild, 1).setEnd(b.nextSibling, 3);
@@ -413,8 +413,8 @@ test('cloneContents', function () {
     equals(ua.getHTML(range.cloneContents()), '<b></b>xxxx<b>c22c</b>');
 });
 
-/*startContainer和endContainer為文本節點，補全後面</b></tr>之類的標籤*/
-test('cloneContents--補全後面的標籤', function () {
+/*startContainer和endContainer為文本節點，補全後面</b></tr>之類的標簽*/
+test('cloneContents--補全後面的標簽', function () {
     var div = te.dom[2];
     var r = new baidu.editor.dom.Range(document);
     div.innerHTML = '<p id=\"first\">first<!--not--> strong <!-- --><strong id=\"strong\">strong</strong> second <em id=\"em\">em</em> strong.</p><p id=\"second\">bar</p><p id=\"traverse\"><b><em id=\"em\">some text</em></b><em>em text</em>more text</p><table id=\"table\" width=\"300\"><tbody><tr><td>1</td><td id=\"two\">abc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id=\"last\">textabc<span>span</span></p>';
@@ -422,11 +422,11 @@ test('cloneContents--補全後面的標籤', function () {
     var two = document.getElementById('two').firstChild;
     r.setStart(first, 1).setEnd(two, 2);
     ua.checkSameHtml(ua.getHTML(r.cloneContents()), '<p id="first">irst<!--not--> strong <!-- --><strong id="strong">strong</strong> second <em id="em">em</em> strong.</p><p id="second">bar</p><p id="traverse"><b><em id="em">some text</em></b><em>em text</em>more text</p><table id="table" width="300"><tbody><tr><td>1</td><td id="two">ab</td></tr></tbody></table>');
-    ua.checkResult(r, first, two, 1, 2, false, 'cloneContents--補全後面的標籤');
+    ua.checkResult(r, first, two, 1, 2, false, 'cloneContents--補全後面的標簽');
 });
 
-/*startContainer和endContainer為文本節點，層級各不相同，補全前面 的<b><tr>之類的標籤*/
-test('cloneContents--補全前面的標籤', function () {
+/*startContainer和endContainer為文本節點，層級各不相同，補全前面 的<b><tr>之類的標簽*/
+test('cloneContents--補全前面的標簽', function () {
     var div = te.dom[2];
     var r = new baidu.editor.dom.Range(document);
     div.innerHTML = '<p id=\"first\">first<!--not--> strong <!-- --><strong id=\"strong\">strong</strong> second <em id=\"em\">em</em> strong.</p><p id=\"second\">bar</p><p id=\"traverse\"><b><em id=\"em\">some text</em></b><em>em text</em>more text</p><table id=\"table\" width=\"300\"><tbody><tr><td>1</td><td id=\"two\">abc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id=\"last\">textabc<span>span</span></p>';
@@ -435,7 +435,7 @@ test('cloneContents--補全前面的標籤', function () {
     r.setStart(two, 1);
     r.setEnd(last, 2);
     ua.checkSameHtml(ua.getHTML(r.cloneContents()), '<table id="table" width="300"><tbody><tr><td id="two">bc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id="last">te</p>');
-    ua.checkResult(r, two, last, 1, 2, false, 'cloneContents--補全前面的標籤');
+    ua.checkResult(r, two, last, 1, 2, false, 'cloneContents--補全前面的標簽');
 });
 
 /*startContainer和endContainer為文本節點，為兄弟節點*/
@@ -543,7 +543,7 @@ test('cloneContents--自閉合元素', function () {
     div.innerHTML = '<b>b_text<i id="ii">i_text</i><img /></b>xxx';
     var b = div.firstChild;
     range.setStart(b.firstChild, 2).setEnd(b, b.childNodes.length);
-    /*只能獲得<img>而不是<img  />的標籤*/
+    /*只能獲得<img>而不是<img  />的標簽*/
     equal(ua.getHTML(range.cloneContents()), 'text<i id="ii">i_text</i><img>');
     ua.checkResult(range, b.firstChild, b, 2, b.childNodes.length, false, '選中結束位置為自閉合元素-1');
 
@@ -671,8 +671,8 @@ test('deleteContents--startContainer是文本，endContainer的nodeType=1', func
 });
 
 
-/*startContainer和endContainer為文本節點，補全後面</b></tr>之類的標籤*/
-test('extractContents--補全後面的標籤', function () {
+/*startContainer和endContainer為文本節點，補全後面</b></tr>之類的標簽*/
+test('extractContents--補全後面的標簽', function () {
     var div = te.dom[2];
     var r = new baidu.editor.dom.Range(document);
     div.innerHTML = '<p id=\"first\">first<!--not--> strong <!-- --><strong id=\"strong\">strong</strong> second <em id=\"em\">em</em> strong.</p><p id=\"second\">bar</p><p id=\"traverse\"><b><em id=\"em\">some text</em></b><em>em text</em>more text</p><table id=\"table\" width=\"300\"><tbody><tr><td>1</td><td id=\"two\">abc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id=\"last\">textabc<span>span</span></p>';
@@ -681,11 +681,11 @@ test('extractContents--補全後面的標籤', function () {
     r.setStart(first, 1).setEnd(two, 2);
     ua.checkSameHtml(ua.getHTML(r.extractContents()), '<p id="first">irst<!--not--> strong <!-- --><strong id="strong">strong</strong> second <em id="em">em</em> strong.</p><p id="second">bar</p><p id="traverse"><b><em id="em">some text</em></b><em>em text</em>more text</p><table id="table" width="300"><tbody><tr><td>1</td><td id="two">ab</td></tr></tbody></table>');
     ua.checkSameHtml(ua.getHTML(r.startContainer), '<div id="test"><p id=\"first\">f</p><table id=\"table\" width=\"300\"><tbody><tr><td id=\"two\">c</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id=\"last\">textabc<span>span</span></p></div>');
-    ua.checkResult(r, div, div, 1, 1, true, 'startContainer--補全後面的標籤');
+    ua.checkResult(r, div, div, 1, 1, true, 'startContainer--補全後面的標簽');
 });
 
-/*startContainer和endContainer為文本節點，層級各不相同，補全前面 的<b><tr>之類的標籤*/
-test('extractContents--補全前面的標籤', function () {
+/*startContainer和endContainer為文本節點，層級各不相同，補全前面 的<b><tr>之類的標簽*/
+test('extractContents--補全前面的標簽', function () {
     var div = te.dom[2];
     var r = new baidu.editor.dom.Range(document);
     div.innerHTML = '<p id=\"first\">first<!--not--> strong <!-- --><strong id=\"strong\">strong</strong> second <em id=\"em\">em</em> strong.</p><p id=\"second\">bar</p><p id=\"traverse\"><b><em id=\"em\">some text</em></b><em>em text</em>more text</p><table id=\"table\" width=\"300\"><tbody><tr><td>1</td><td id=\"two\">abc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id=\"last\">textabc<span>span</span></p>';
@@ -694,7 +694,7 @@ test('extractContents--補全前面的標籤', function () {
     r.setStart(two, 1).setEnd(last, 2);
     ua.checkSameHtml(ua.getHTML(r.extractContents()), '<table id="table" width="300"><tbody><tr><td id="two">bc</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><p id="last">te</p>');
     ua.checkSameHtml(ua.getHTML(r.startContainer), '<div id="test"><p id=\"first\">first<!--not--> strong <!-- --><strong id=\"strong\">strong</strong> second <em id=\"em\">em</em> strong.</p><p id=\"second\">bar</p><p id=\"traverse\"><b><em id=\"em\">some text</em></b><em>em text</em>more text</p><table id=\"table\" width=\"300\"><tbody><tr><td>1</td><td id=\"two\">a</td></tr></tbody></table><p id=\"last\">xtabc<span>span</span></p></div>');
-    ua.checkResult(r, div, div, 4, 4, true, 'startContainer--補全前面的標籤');
+    ua.checkResult(r, div, div, 4, 4, true, 'startContainer--補全前面的標簽');
 });
 
 /*startContainer和endContainer為文本節點，為兄弟節點*/
@@ -785,7 +785,7 @@ test('extractContents--自閉合元素', function () {
     div.innerHTML = inner;
     b = div.firstChild;
     range.setStart(b.firstChild, 2).setEnd(b, b.childNodes.length);
-    /*只能獲得<img>而不是<img  />的標籤*/
+    /*只能獲得<img>而不是<img  />的標簽*/
     equal(ua.getHTML(range.extractContents()), 'text<i id="ii">i_text</i><img>', '獲取帶有<img>的內容');
     equal(ua.getHTML(range.startContainer), '<b>b_</b>', '檢查切除元素後');
     ua.checkResult(range, b, b, 1, 1, true, '選中結束位置為自閉合元素');
@@ -1119,7 +1119,7 @@ test('applyInlineStyle--雙重strong', function () {
     range.setEnd(div.firstChild.nextSibling.firstChild, 3);
 
     range.applyInlineStyle('strong');
-    equals(ua.getHTML(div), '<div id="test">div<strong>_textstrong_text</strong></div>', '同一個塊元素父標籤雙重加粗');
+    equals(ua.getHTML(div), '<div id="test">div<strong>_textstrong_text</strong></div>', '同一個塊元素父標簽雙重加粗');
 
     div.innerHTML = 'xx<p>xx<strong>bbbb</strong>xxx</p>xx<p><strong>aaaaaaa</strong></p>';
     range.setStartBefore(div.firstChild.nextSibling.firstChild);
@@ -1428,7 +1428,7 @@ test('removeInlineStyle--刪除部分文本樣式，需要切分文本節點', f
 
 });
 
-/*閉合情況挪到basestyle中去做了，在這裡不做任何處理*/
+/*閉合情況挪到basestyle中去做了，在這里不做任何處理*/
 test('removeInlineStyle--刪除閉合元素的樣式', function () {
     var div = te.dom[2];
     var range = new baidu.editor.dom.Range(document);

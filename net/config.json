@@ -1,0 +1,94 @@
+/* 前後端通信相關的配置,注釋只允許使用多行方式 */
+{
+    /* 上傳圖片配置項 */
+    "imageActionName": "uploadimage", /* 執行上傳圖片的action名稱 */
+    "imageFieldName": "upfile", /* 提交的圖片表單名稱 */
+    "imageMaxSize": 2048000, /* 上傳大小限制，單位B */
+    "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 上傳圖片格式顯示 */
+    "imageCompressEnable": true, /* 是否壓縮圖片,默認是true */
+    "imageCompressBorder": 1600, /* 圖片壓縮最長邊限制 */
+    "imageInsertAlign": "none", /* 插入的圖片浮動方式 */
+    "imageUrlPrefix": "/ueditor/net/", /* 圖片訪問路徑前綴 */
+    "imagePathFormat": "upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+                                /* {filename} 會替換成原文件名,配置這項需要注意中文亂碼問題 */
+                                /* {rand:6} 會替換成隨機數,後面的數字是隨機數的位數 */
+                                /* {time} 會替換成時間戳 */
+                                /* {yyyy} 會替換成四位年份 */
+                                /* {yy} 會替換成兩位年份 */
+                                /* {mm} 會替換成兩位月份 */
+                                /* {dd} 會替換成兩位日期 */
+                                /* {hh} 會替換成兩位小時 */
+                                /* {ii} 會替換成兩位分鐘 */
+                                /* {ss} 會替換成兩位秒 */
+                                /* 非法字符 \ : * ? " < > | */
+                                /* 具請體看線上文檔: fex.baidu.com/ueditor/#use-format_upload_filename */
+
+    /* 塗鴉圖片上傳配置項 */
+    "scrawlActionName": "uploadscrawl", /* 執行上傳塗鴉的action名稱 */
+    "scrawlFieldName": "upfile", /* 提交的圖片表單名稱 */
+    "scrawlPathFormat": "upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+    "scrawlMaxSize": 2048000, /* 上傳大小限制，單位B */
+    "scrawlUrlPrefix": "/ueditor/net/", /* 圖片訪問路徑前綴 */
+    "scrawlInsertAlign": "none",
+
+    /* 截圖工具上傳 */
+    "snapscreenActionName": "uploadimage", /* 執行上傳截圖的action名稱 */
+    "snapscreenPathFormat": "upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+    "snapscreenUrlPrefix": "/ueditor/net/", /* 圖片訪問路徑前綴 */
+    "snapscreenInsertAlign": "none", /* 插入的圖片浮動方式 */
+
+    /* 抓取遠程圖片配置 */
+    "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
+    "catcherActionName": "catchimage", /* 執行抓取遠程圖片的action名稱 */
+    "catcherFieldName": "source", /* 提交的圖片列表表單名稱 */
+    "catcherPathFormat": "upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+    "catcherUrlPrefix": "/ueditor/net/", /* 圖片訪問路徑前綴 */
+    "catcherMaxSize": 2048000, /* 上傳大小限制，單位B */
+    "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 抓取圖片格式顯示 */
+
+    /* 上傳視頻配置 */
+    "videoActionName": "uploadvideo", /* 執行上傳視頻的action名稱 */
+    "videoFieldName": "upfile", /* 提交的視頻表單名稱 */
+    "videoPathFormat": "upload/video/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+    "videoUrlPrefix": "/ueditor/net/", /* 視頻訪問路徑前綴 */
+    "videoMaxSize": 102400000, /* 上傳大小限制，單位B，默認100MB */
+    "videoAllowFiles": [
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"], /* 上傳視頻格式顯示 */
+
+    /* 上傳文件配置 */
+    "fileActionName": "uploadfile", /* controller里,執行上傳視頻的action名稱 */
+    "fileFieldName": "upfile", /* 提交的文件表單名稱 */
+    "filePathFormat": "upload/file/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上傳保存路徑,可以自定義保存路徑和文件名格式 */
+    "fileUrlPrefix": "/ueditor/net/", /* 文件訪問路徑前綴 */
+    "fileMaxSize": 51200000, /* 上傳大小限制，單位B，默認50MB */
+    "fileAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ], /* 上傳文件格式顯示 */
+
+    /* 列出指定目錄下的圖片 */
+    "imageManagerActionName": "listimage", /* 執行圖片管理的action名稱 */
+    "imageManagerListPath": "upload/image", /* 指定要列出圖片的目錄 */
+    "imageManagerListSize": 20, /* 每次列出文件數量 */
+    "imageManagerUrlPrefix": "/ueditor/net/", /* 圖片訪問路徑前綴 */
+    "imageManagerInsertAlign": "none", /* 插入的圖片浮動方式 */
+    "imageManagerAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 列出的文件類型 */
+
+    /* 列出指定目錄下的文件 */
+    "fileManagerActionName": "listfile", /* 執行文件管理的action名稱 */
+    "fileManagerListPath": "upload/file", /* 指定要列出文件的目錄 */
+    "fileManagerUrlPrefix": "/ueditor/net/", /* 文件訪問路徑前綴 */
+    "fileManagerListSize": 20, /* 每次列出文件數量 */
+    "fileManagerAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ] /* 列出的文件類型 */
+
+}

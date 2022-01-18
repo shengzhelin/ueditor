@@ -44,7 +44,7 @@ test('trace:2183 h1標題居中',function(){
     stop();
 });
 
-test('合併空行',function(){
+test('合並空行',function(){
     var editor = te.obj[0];
     editor.setContent('<p>歡迎使用</p><p><br /></p><p><br /></p><p>ueditor!</p>');
     setTimeout(function(){
@@ -53,7 +53,7 @@ test('合併空行',function(){
         editor.execCommand('autotypeset');
         ua.manualDeleteFillData(editor.body);
         var html =editor.body.innerHTML.toLowerCase().replace(/\r\n/ig,'');
-        equal(html,'<p>歡迎使用</p><p><br></p><p>ueditor!</p>','合併空行');
+        equal(html,'<p>歡迎使用</p><p><br></p><p>ueditor!</p>','合並空行');
         start();
     }, 50 );
     stop();
@@ -66,7 +66,7 @@ test('帶有圖片表情',function(){
     equal($(editor.body.lastChild).css('text-align'),'center','圖片居中');
     editor.options.autotypeset.imageBlockLine = 'left';
     editor.execCommand('autotypeset');
-    equal($(editor.body.lastChild).css('text-align'),'left','圖片靠左');
+    equal($(editor.body.lastChild).css('text-align'),'left','圖片居左');
 });
 
 test('刪除空行',function(){
@@ -163,7 +163,7 @@ test('粘貼過濾',function(){
     editor.execCommand( 'insertHtml',html.html,true);
     editor.fireEvent("afterpaste");
     txt='<p style="text-align:center;">hello1<img src="http://img.baidu.com/hi/jx2/j_0001.gif" style="float: none;">hello2</p>';
-    ua.checkHTMLSameStyle(txt, editor.document, editor.body, '文字居中，表情靠左');
+    ua.checkHTMLSameStyle(txt, editor.document, editor.body, '文字居中，表情居左');
 });
 
 test('trace:4018，4012',function(){
@@ -203,7 +203,7 @@ test('trace:3991',function(){
         var range = new baidu.editor.dom.Range(editor3.document);
         range.setStart(text,0).collapse(1).select();
         editor3.execCommand("inserttitlecol");
-        equal(editor3.queryCommandState("inserttitlecol"),-1,'標題列不能向右合併');
+        equal(editor3.queryCommandState("inserttitlecol"),-1,'標題列不能向右合並');
         var f = $("#edui538_state")[0];
         start();
     }, 100);

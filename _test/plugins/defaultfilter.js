@@ -10,14 +10,6 @@ module( 'plugins.defaultfilter' );
 //test('',function(){
 //   stop();
 //});
-test( 'p標籤禁止嵌套', function () {
-    var editor = te.obj[0];
-    editor.setContent( '<p align ="center" ><p>123</p><p>456</p></p><dl><dd></dd></dl>' );
-    var br = ua.browser.ie?'&nbsp;':'<br>';
-    console.log(editor.getContent());
-    var html = '<p style=\"text-align:center;\">'+br+'</p><p>123</p><p>456</p><ul class=" list-paddingleft-2"><li><p>'+br+'</p></li></ul>';
-    ua.checkSameHtml(editor.body.innerHTML,html, 'p標籤禁止嵌套');
-} );
 test( '對代碼的行號不處理', function () {
     var editor = te.obj[0];
     editor.setContent( '<td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td>');
@@ -32,33 +24,33 @@ test( '空td,th,caption', function () {
     var html = '<table><caption>'+br+'</caption><tbody><tr><th>'+br+'</th><th>'+br+'</th></tr><tr><td>'+br+'</td><td>'+br+'</td></tr><tr><td>'+br+'</td><td>'+br+'</td></tr></tbody></table>';
     ua.checkSameHtml(editor.body.innerHTML,html,'空td,th,caption,添加text')
 } );
-test( '轉換a標籤', function () {
+test( '轉換a標簽', function () {
     var editor = te.obj[0];
     editor.setContent( '<a href="http://elearning.baidu.com/url/RepositoryEntry/68616197" target="_blank">' );
     var br = ua.browser.ie?'&nbsp;':'<br>';
     var html = '<p><a href="http://elearning.baidu.com/url/RepositoryEntry/68616197" target="_blank" _href="http://elearning.baidu.com/url/RepositoryEntry/68616197"></a></p>';
-    ua.checkSameHtml(html,editor.body.innerHTML,'轉換a標籤');
+    ua.checkSameHtml(html,editor.body.innerHTML,'轉換a標簽');
 } );
-test( '轉換img標籤', function () {
+test( '轉換img標簽', function () {
     var editor = te.obj[0];
     editor.setContent( '<img src="http://www.baidu.com/img/shouye_b5486898c692066bd2cbaeda86d74448.gif" width="270" height="129" style="border: 0px;" />' );
 //    var html = '<p><img src="http://www.baidu.com/img/shouye_b5486898c692066bd2cbaeda86d74448.gif" width="270" height="129" style="border: 0px;" _src="http://www.baidu.com/img/shouye_b5486898c692066bd2cbaeda86d74448.gif" /></p>';
     equal(editor.body.getElementsByTagName('img')[0].getAttribute('_src'),"http://www.baidu.com/img/shouye_b5486898c692066bd2cbaeda86d74448.gif");
 } );
-test( '刪span中的white-space標籤', function () {
+test( '刪span中的white-space標簽', function () {
     if(ua.browser.webkit){
         var editor = te.obj[0];
         editor.setContent( '<span style=" display: block; white-space: nowrap " >sadfsadf</span>' );
         var html = '<p><span style=" display: block; ">sadfsadf</span></p>';
-        ua.checkSameHtml(html,editor.body.innerHTML,'刪span中的white-space標籤');
+        ua.checkSameHtml(html,editor.body.innerHTML,'刪span中的white-space標簽');
     }
 } );
 //TODO 1.2.6
-//test( '刪p中的margin|padding標籤', function () {
+//test( '刪p中的margin|padding標簽', function () {
 //    var editor = te.obj[0];
 //    editor.setContent( '<p style="margin-left: 1em; list-style: none;" >hello</p>' );
 //    var html = '<p style="list-style: none;">hello</p>';
-//    ua.checkSameHtml(html,editor.body.innerHTML,'刪p中的margin|padding標籤');
+//    ua.checkSameHtml(html,editor.body.innerHTML,'刪p中的margin|padding標簽');
 //} );
 test( '給空p加br&&轉對齊樣式', function () {
     var editor = te.obj[0];
@@ -96,8 +88,8 @@ test( 'li', function () {
     ua.checkSameHtml(html,editor.body.innerHTML,'li');
 } );
 //<li style="margin: 0px 0px 0px 6px;" ><a href="http://www.baidu.com/p/pistachio%E5%A4%A9?from=zhidao" class="user-name"  >pistachio天<i class="i-arrow-down"></i></a></li>
-//TODO 現在在過濾機制里面去除無用的標籤
-test( "getContent--去除無用的空標籤:autoClearEmptyNode==true", function() {
+//TODO 現在在過濾機制里面去除無用的標簽
+test( "getContent--去除無用的空標簽:autoClearEmptyNode==true", function() {
     var div = document.body.appendChild(document.createElement('div'));
     div.id = 'ue';
     var editor = UE.getEditor('ue',{autoClearEmptyNode:true,'autoFloatEnabled':false});
@@ -124,7 +116,7 @@ test( "getContent--去除無用的空標籤:autoClearEmptyNode==true", function(
                 }
                 innerHTML = '<span style="color:#c4bd97"></span><strong>xx</strong><em>em</em><em></em>';
                 editor.setContent(innerHTML);
-                /*inline標籤上只要有屬性就不清理*/
+                /*inline標簽上只要有屬性就不清理*/
                 if (ua.browser.ie >8) {
                     ua.checkSameHtml(editor.getContent().toLowerCase(), '<p><span style="color: rgb(196, 189, 151);" ></span><strong>xx</strong><em>em</em></p>', "span 有style但內容為空");
                 }
@@ -141,7 +133,7 @@ test( "getContent--去除無用的空標籤:autoClearEmptyNode==true", function(
                 }
                 innerHTML = '<a href="http://www.baidu.com"></a><a>a</a><strong>xx</strong><em>em</em><em></em>';
                 editor.setContent(innerHTML);
-                ua.checkSameHtml(editor.getContent(), '<p><a href="http://www.baidu.com" ></a><a>a</a><strong>xx</strong><em>em</em></p>', "a 有href但內容為空,不過濾a標籤");
+                ua.checkSameHtml(editor.getContent(), '<p><a href="http://www.baidu.com" ></a><a>a</a><strong>xx</strong><em>em</em></p>', "a 有href但內容為空,不過濾a標簽");
                 setTimeout(function () {
                     UE.delEditor('ue');
                     start()
@@ -152,7 +144,7 @@ test( "getContent--去除無用的空標籤:autoClearEmptyNode==true", function(
 });
 
 //editor.options.autoClearEmptyNode
-test("getContent--不去除無用的空標籤:autoClearEmptyNode==false", function() {
+test("getContent--不去除無用的空標簽:autoClearEmptyNode==false", function() {
     var div = document.body.appendChild(document.createElement('div'));
     div.id = 'ue';
     var editor = UE.getEditor('ue',{autoClearEmptyNode:false,'autoFloatEnabled':false});
@@ -187,36 +179,36 @@ test("getContent--轉換空格，nbsp與空格相間顯示", function() {
     editor.setContent(innerHTML);
     equal(editor.getContent(), '<p>x &nbsp;x &nbsp; x &nbsp;x&nbsp;&nbsp; &nbsp;&nbsp;</p>', "轉換空格，nbsp與空格相間顯示");
 });
-test( '轉換script標籤', function () {
+test( '轉換script標簽', function () {
     var editor = te.obj[0];
     var br = ua.browser.ie?'<p>&nbsp;</p>':('<p><br></p>');
     editor.setContent( '<script type="text/javascript">ueditor</script>' );
     var html = br+'<div type="text/javascript" cdata_tag=\"script\"  cdata_data=\"ueditor\" _ue_custom_node_=\"true\"></div>';
-    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標籤');
+    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標簽');
 } );
-test( 'trace 3698 1.3.0 版本修覆: script(style)標籤里面的內容不轉碼', function () {
+test( 'trace 3698 1.3.0 版本修覆: script(style)標簽里面的內容不轉碼', function () {
     var editor = te.obj[0];
     editor.setContent('<script type="text/plain" id="myEditor" name="myEditor">var ue=UE.getEditor("editor");</script>');
-    equal(editor.document.getElementById('myEditor').innerHTML,'','內容不保留');//1.3.6 針對ie下標籤不能隱藏問題的修覆
+    equal(editor.document.getElementById('myEditor').innerHTML,'','內容不保留');//1.3.6 針對ie下標簽不能隱藏問題的修覆
     // todo 1.3.0 trace 3698
     editor.setContent('<style type="text/css" id="myEditor">        .clear {            clear: both;        }     </style>');
     var br = ua.browser.ie?'<p>&nbsp;</p>':('<p><br></p>');
     ua.checkSameHtml(editor.getContent(),br+'<style type="text/css" id="myEditor">.clear {            clear: both;        }</style>','內容不轉碼');
 } );
-test( '轉換style標籤:style data不為空', function () {
+test( '轉換style標簽:style data不為空', function () {
     var editor = te.obj[0];
     editor.setContent( '<style type="text/css">sdf</style>' );
     var br = ua.browser.ie?'<p>&nbsp;</p>':('<p><br></p>');
     var html = br+'<div type="text/css" cdata_tag="style" cdata_data=\"sdf\" _ue_custom_node_=\"true\"></div>';
-    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標籤');
+    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標簽');
 } );
-test( '轉換style標籤:style data不空', function () {
+test( '轉換style標簽:style data不空', function () {
     var editor = te.obj[0];
     editor.setContent( '<style type="text/css"></style>' );
     var br = ua.browser.ie?'<p>&nbsp;</p>':('<p><br></p>');
 
     var html = br+'<div type="text/css" cdata_tag="style" _ue_custom_node_=\"true\"></div>';
-    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標籤');
+    ua.checkSameHtml(editor.body.innerHTML,html,'轉換script標簽');
 } );
 test( 'div出編輯器轉換', function () {
     var editor = te.obj[0];

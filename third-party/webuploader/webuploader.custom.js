@@ -4,7 +4,7 @@
 /**
  * @fileOverview 讓內部各個部件的代碼可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模塊定義方式組織起來。
  *
- * AMD API 內部的簡單不完全實現，請忽略。只有當WebUploader被合併成一個文件的時候才會引入。
+ * AMD API 內部的簡單不完全實現，請忽略。只有當WebUploader被合並成一個文件的時候才會引入。
  */
 (function( root, factory ) {
     var modules = {},
@@ -804,7 +804,7 @@
             },
     
             /**
-             * 獲取文件統計訊息。返回一個包含一下訊息的對象。
+             * 獲取文件統計信息。返回一個包含一下信息的對象。
              * * `successNum` 上傳成功的文件數
              * * `uploadFailNum` 上傳失敗的文件數
              * * `cancelNum` 被刪除的文件數
@@ -837,7 +837,7 @@
                         type.substring( 1 );
     
                 if (
-                        // 調用通過on方法註冊的handler.
+                        // 調用通過on方法注冊的handler.
                         Mediator.trigger.apply( this, arguments ) === false ||
     
                         // 調用opts.onEvent
@@ -1039,7 +1039,7 @@
     
             this.uid = Base.guid('client_');
     
-            // 允許runtime沒有初始化之前，註冊一些方法在初始化後執行。
+            // 允許runtime沒有初始化之前，注冊一些方法在初始化後執行。
             this.runtimeReady = function( cb ) {
                 return deferred.done( cb );
             };
@@ -1210,7 +1210,7 @@
     });
     
     /**
-     * @fileOverview 錯誤訊息
+     * @fileOverview 錯誤信息
      */
     define('lib/filepicker',[
         'base',
@@ -1539,7 +1539,7 @@
              * @property {Arroy} [accept=null]
              * @namespace options
              * @for Uploader
-             * @description 指定接受哪些類型的文件。 由於目前還有ext轉mimeType表，所以這裡需要分開指定。
+             * @description 指定接受哪些類型的文件。 由於目前還有ext轉mimeType表，所以這里需要分開指定。
              *
              * * `title` {String} 文字描述
              * * `extensions` {String} 允許的文件後綴，不帶點，多個用逗號分割。
@@ -1669,7 +1669,7 @@
             // 是否裁剪
             crop: false,
     
-            // 是否保留頭部訊息
+            // 是否保留頭部信息
             preserveHeaders: true,
     
             // 是否允許放大。
@@ -1793,7 +1793,7 @@
              *     // 是否允許裁剪。
              *     crop: true,
              *
-             *     // 是否保留頭部meta訊息。
+             *     // 是否保留頭部meta信息。
              *     preserveHeaders: false,
              *
              *     // 為空的話則保留原有圖片格式。
@@ -1813,7 +1813,7 @@
                 // 為空的話則保留原有圖片格式。
                 // 否則強制轉換成指定的類型。
                 // IE 8下面 base64 大小不能超過 32K 否則預覽失敗，而非 jpeg 編碼的圖片很可
-                // 能會超過 32k, 所以這裡設置成預覽的時候都是 image/jpeg
+                // 能會超過 32k, 所以這里設置成預覽的時候都是 image/jpeg
                 type: 'image/jpeg'
             },
     
@@ -1839,7 +1839,7 @@
              *     // 是否允許裁剪。
              *     crop: false,
              *
-             *     // 是否保留頭部meta訊息。
+             *     // 是否保留頭部meta信息。
              *     preserveHeaders: true
              * }
              * ```
@@ -2028,7 +2028,7 @@
          * @class File
          * @constructor 構造函數
          * @grammar new File( source ) => File
-         * @param {Lib.File} source [lib.File](#Lib.File)實例, 此source對象是帶有Runtime訊息的。
+         * @param {Lib.File} source [lib.File](#Lib.File)實例, 此source對象是帶有Runtime信息的。
          */
         function WUFile( source ) {
     
@@ -2147,7 +2147,7 @@
             },
     
             /**
-             * 獲取文件原始訊息。
+             * 獲取文件原始信息。
              * @return {*}
              */
             getSource: function() {
@@ -2696,7 +2696,7 @@
     
     });
     /**
-     * @fileOverview 添加獲取Runtime相關訊息的方法。
+     * @fileOverview 添加獲取Runtime相關信息的方法。
      */
     define('widgets/runtime',[
         'uploader',
@@ -3299,7 +3299,7 @@
                 me.remaning++;
     
                 // 如果沒有分片，則直接使用原始的。
-                // 不會丟失content-type訊息。
+                // 不會丟失content-type信息。
                 block.blob = block.chunks === 1 ? file.source :
                         file.source.slice( block.start, block.end );
     
@@ -3615,14 +3615,14 @@
     
         });
     
-        // 註冊Components
+        // 注冊Components
         Html5Runtime.register = function( name, component ) {
             var klass = components[ name ] = Base.inherits( CompBase, component );
             return klass;
         };
     
-        // 註冊html5運行時。
-        // 只有在支持的前提下註冊。
+        // 注冊html5運行時。
+        // 只有在支持的前提下注冊。
         if ( window.Blob && window.FileReader && window.DataView ) {
             Runtime.addRuntime( type, Html5Runtime );
         }
@@ -4313,7 +4313,7 @@
                         height: this.height
                     };
     
-                    // 讀取meta訊息。
+                    // 讀取meta信息。
                     if ( !me._metas && 'image/jpeg' === me.type ) {
                         Util.parseMeta( me._blob, function( error, ret ) {
                             me._metas = ret;
@@ -4682,7 +4682,7 @@
      * 這個方式性能不行，但是可以解決android里面的toDataUrl的bug
      * android里面toDataUrl('image/jpege')得到的結果卻是png.
      *
-     * 所以這裡沒轍，只能借助這個工具
+     * 所以這里沒轍，只能借助這個工具
      * @fileOverview jpeg encoder
      */
     define('runtime/html5/jpegencoder',[], function( require, exports, module ) {

@@ -9,7 +9,7 @@
 //清空上次查選的痕跡
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//給tab註冊切換事件
+//給tab注冊切換事件
 /**
  * tab點擊處理事件
  * @param tabHeads
@@ -120,7 +120,6 @@ $G("preReplaceBtn").onclick = function (txt, dir, mcase) {
 };
 //替換
 $G("repalceBtn").onclick = function () {
-    editor.trigger('clearLastSearchResult');
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
     if (!findtxt) {
@@ -163,8 +162,3 @@ var frCommond = function (obj) {
     return editor.execCommand("searchreplace", obj);
 };
 switchTab("searchtab");
-
-
-dialog.onclose = function(){
-    editor.trigger('clearLastSearchResult')
-};

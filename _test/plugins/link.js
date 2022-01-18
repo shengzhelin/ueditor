@@ -113,7 +113,7 @@ test( '去除表格中的鏈接', function () {
 //        equal( tds[0].childNodes.length, 1, '第一個表格中有一個占位文本節點' );
 //    range = editor.selection.getRange();
 //    tds = body.firstChild.getElementsByTagName( 'td' );
-//    equal( ua.getChildHTML( tds[1] ), 'google', 'a標籤被刪除' );
+//    equal( ua.getChildHTML( tds[1] ), 'google', 'a標簽被刪除' );
 //    if ( UE.browser.gecko )
 //        ua.checkResult( range, tds[0], tds[0], 0, 0, true, 'check unlink result' );
 //    else if(UE.browser.opera)
@@ -142,7 +142,7 @@ test( '添加鏈接--表格第一個單元格沒有超鏈接', function () {
 //        editor.currentSelectedArr = [tds[0], tds[1]];
             editor.execCommand( 'link', {href:'www.baidu.com'} );
             range = editor.selection.getRange();
-            equal( ua.getChildHTML( trs[0].cells[1] ), '<a href="www.baidu.com">google</a>', 'a標籤的地址被修改了' );
+            equal( ua.getChildHTML( trs[0].cells[1] ), '<a href="www.baidu.com">google</a>', 'a標簽的地址被修改了' );
             var br = ua.browser.ie ? '' : '<br>';
             equal( ua.getChildHTML( trs[0].cells[0] ), '<a href="www.baidu.com">www.baidu.com</a>'+br, 'td 1 被添加了超鏈接' );
             if ( (!baidu.editor.browser.gecko)&&(!baidu.editor.browser.webkit))

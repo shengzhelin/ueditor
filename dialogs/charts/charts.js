@@ -278,7 +278,7 @@ function collectData () {
 }
 
 /**
- * 獲取用戶配置訊息
+ * 獲取用戶配置信息
  */
 function getUserConfig () {
 
@@ -484,7 +484,7 @@ function getCellValue ( cell ) {
 //dialog確認事件
 dialog.onok = function () {
 
-    //收集訊息
+    //收集信息
     var form = document.forms[ 'data-form' ],
         info = getUserConfig();
 

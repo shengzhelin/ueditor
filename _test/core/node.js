@@ -14,10 +14,10 @@ test( 'getNodeById', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><div id="bb"></div>sdfadf</div>');
     node = node.getNodeById('bb');
-    equals(node.getAttr('id'),'bb','獲取標籤id');
+    equals(node.getAttr('id'),'bb','獲取標簽id');
     node = uNode.createElement('<div id="aa"><div id="bb"><div id="cc"></div> </div>sdfadf</div>');
     node = node.getNodeById('cc');
-    equals(node.getAttr('id'),'cc','獲取標籤id');
+    equals(node.getAttr('id'),'cc','獲取標簽id');
 });
 
 test( 'getNodesByTagName', function() {
@@ -46,14 +46,14 @@ test( 'innerHTML', function() {
 test( 'innerText', function() {
     var tmp = new UE.uNode.createElement('area');
     tmp.innerHTML('<p></p>');
-    equals(tmp.innerText(),tmp,'標籤類型特殊');
+    equals(tmp.innerText(),tmp,'標簽類型特殊');
     tmp = new UE.uNode.createText('');
     tmp.innerHTML('<p></p>');
     equals(tmp.innerText(),tmp,'對象類型不為element');
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa">sdfadf</div>');
     node.innerHTML('<p>dfsdfsdf<b>eee</b>sdf</p>');
-    equals(node.innerText(),'dfsdfsdfeeesdf','獲取標籤中純文本');
+    equals(node.innerText(),'dfsdfsdfeeesdf','獲取標簽中純文本');
     node.innerText('sdf');
     equals(node.innerHTML(),'sdf','設置文本節點');
 });
@@ -69,7 +69,7 @@ test( 'appendChild && insertBefore', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa">sdfadf</div>');
     node.innerHTML('<p><td></td></p>');
-    equals(node.innerHTML().replace(/[ ]+>/g,'>'),'<p><table><tbody><tr><td></td></tr></tbody></table></p>','補全html標籤');
+    equals(node.innerHTML().replace(/[ ]+>/g,'>'),'<p><table><tbody><tr><td></td></tr></tbody></table></p>','補全html標簽');
     var tmp = uNode.createElement('div');
     node.appendChild(tmp);
     equals(node.innerHTML().replace(/[ ]+>/g,'>'),'<p><table><tbody><tr><td></td></tr></tbody></table></p><div></div>','appendChild');

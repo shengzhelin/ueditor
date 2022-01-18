@@ -7,7 +7,7 @@ test('sub--table', function () {
         setTimeout(function () {
             var range = te.obj[1];
             var body = editor.document.body;
-            //1.2的版本中，table標籤套了div標籤，原來的var tbody = body.firstChild.firstChild；改為如下
+            //1.2的版本中，table標簽套了div標簽，原來的var tbody = body.firstChild.firstChild；改為如下
             var tbody = editor.document.getElementsByTagName('table')[0].firstChild;
             range.selectNode(body.firstChild).select();
             var tds = body.firstChild.getElementsByTagName('td');
@@ -61,7 +61,7 @@ test('閉合插入上下標', function () {
         equal(ua.getChildHTML(body.firstChild), '你<sup></sup>好', '查看執行上標後的結果');
         range = editor.selection.getRange();
         range.insertNode(editor.document.createTextNode('hello'));
-        equal(ua.getChildHTML(body.firstChild), '你<sup>hello</sup>好', '上標標籤中插入文本');
+        equal(ua.getChildHTML(body.firstChild), '你<sup>hello</sup>好', '上標標簽中插入文本');
         start();
     }, 100)
 });
@@ -214,7 +214,7 @@ test('trace 1884:單擊B再單擊I ', function () {
     equal(editor.queryCommandState('italic'), 1, 'b高亮');
 });
 
-test('單擊B再在其他地方單擊I，空的strong標籤被刪除 ', function () {
+test('單擊B再在其他地方單擊I，空的strong標簽被刪除 ', function () {
     var editor = te.obj[0];
     var body = editor.body;
     var range = te.obj[1];
@@ -227,7 +227,7 @@ test('單擊B再在其他地方單擊I，空的strong標籤被刪除 ', function
     equal(editor.queryCommandState('italic'), 1, 'b高亮');
     ua.manualDeleteFillData(body);
     if (!ua.browser.ie) {     //ie下有問題不能修，屏蔽ie
-        equal(body.innerHTML.toLowerCase(), '<p><em></em>hello</p>', '空strong標籤被刪除')
+        equal(body.innerHTML.toLowerCase(), '<p><em></em>hello</p>', '空strong標簽被刪除')
     }
 });
 
@@ -305,10 +305,10 @@ test('表格中文本加粗', function () {
         editor.execCommand('bold');
         ua.manualDeleteFillData(editor.body);
         equal(editor.queryCommandState('bold'), 1, 'b高亮');
-        equal(trs[0].cells[0].firstChild.tagName.toLowerCase(), 'strong', '[0][0]單元格中文本標籤');
+        equal(trs[0].cells[0].firstChild.tagName.toLowerCase(), 'strong', '[0][0]單元格中文本標簽');
         if (!ua.browser.ie)
-            equal(trs[1].cells[0].firstChild.tagName.toLowerCase(), 'br', '[1][0]單元格中文本標籤');
-        equal(trs[2].cells[0].firstChild.tagName.toLowerCase(), 'strong', '[2][0]單元格中文本標籤');
+            equal(trs[1].cells[0].firstChild.tagName.toLowerCase(), 'br', '[1][0]單元格中文本標簽');
+        equal(trs[2].cells[0].firstChild.tagName.toLowerCase(), 'strong', '[2][0]單元格中文本標簽');
         start();
     }, 50);
     stop();

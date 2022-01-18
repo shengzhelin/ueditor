@@ -16,7 +16,7 @@ test( 'block的元素（p）', function () {
             tag:'h3'
         });
         ua.manualDeleteFillData(editor.body);
-        equal(editor.body.firstChild.getAttribute('label'), 'aaa', '檢查標籤');
+        equal(editor.body.firstChild.getAttribute('label'), 'aaa', '檢查標簽');
         range.selectNode(editor.body.firstChild).select();
         equal(editor.queryCommandValue('customstyle'), 'aaa', 'queryCommandValue');
         equal(editor.queryCommandState('customstyle'), '0', 'queryCommandState');
@@ -39,7 +39,7 @@ test( 'block的元素（p）', function () {
         equal(editor.queryCommandState('customstyle'), '0', 'queryCommandState');
         /*trace 1732*/
         var p = editor.body.firstChild;
-        equal(p.tagName.toLowerCase(), 'p', '閉合去掉h3標籤');
+        equal(p.tagName.toLowerCase(), 'p', '閉合去掉h3標簽');
         equal(p.innerHTML, 'hello', '檢查innerHTML');
 
         editor.setContent('<h3 style="border: 1px solid rgb(204, 204, 204); " label="aaa">hello</h3><p><br></p>');
@@ -50,7 +50,7 @@ test( 'block的元素（p）', function () {
             tag:'h3'
         });
         var p = editor.body.firstChild;
-        equal(p.tagName.toLowerCase(), 'p', '非閉合去掉h3標籤');
+        equal(p.tagName.toLowerCase(), 'p', '非閉合去掉h3標簽');
         start();
     }, 50);
     stop();
@@ -67,7 +67,7 @@ test( 'block的元素（div）', function () {
                 tag:'h3'
         } );
         ua.manualDeleteFillData( editor.body );
-        equal( editor.body.firstChild.getAttribute( 'label' ), 'aaa', '檢查標籤' );
+        equal( editor.body.firstChild.getAttribute( 'label' ), 'aaa', '檢查標簽' );
         var hStyle = $( editor.body.firstChild );
         ok( editor.body.firstChild.style.borderWidth=='1px', '檢查邊框寬' );
         ok( hStyle.css( 'border-top-style' ) == 'solid' && hStyle.css( 'border-bottom-style' ) == 'solid' && hStyle.css( 'border-left-style' ) == 'solid' && hStyle.css( 'border-right-style' ) == 'solid', '檢查邊框風格' );
@@ -106,7 +106,7 @@ test( 'inline的元素(a)', function () {
         equal(editor.queryCommandValue('customstyle'),'aaa','queryCommandValue');
         equal(editor.queryCommandState('customstyle'),'0','queryCommandState');
         ua.manualDeleteFillData( editor.body );
-        equal( editor.body.firstChild.getAttribute( 'label' ), 'aaa', '檢查標籤' );
+        equal( editor.body.firstChild.getAttribute( 'label' ), 'aaa', '檢查標簽' );
         var hStyle = $( editor.body.firstChild );
         ok( editor.body.firstChild.style.borderWidth=='1px', '檢查邊框寬' );
         ok( hStyle.css( 'border-top-style' ) == 'solid' && hStyle.css( 'border-bottom-style' ) == 'solid' && hStyle.css( 'border-left-style' ) == 'solid' && hStyle.css( 'border-right-style' ) == 'solid', '檢查邊框風格' );
@@ -129,7 +129,7 @@ test( 'inline的元素(a)', function () {
         equal(editor.queryCommandValue('customstyle'),'','queryCommandValue');
         equal(editor.queryCommandState('customstyle'),'0','queryCommandState');
 } );
-//h 與span標籤作為選區的情況，在下的用例中自然使用到
+//h 與span標簽作為選區的情況，在下的用例中自然使用到
 test( 'block的元素-樣式的反覆轉換：塊-塊；包含的選取方式：整段、部分、多段', function () {
         var editor = te.obj[0];
         editor.setContent( '<p>hello</p><p>world</p>' );
@@ -155,11 +155,11 @@ test( 'block的元素-樣式的反覆轉換：塊-塊；包含的選取方式：
         range.setStart(editor.body.getElementsByTagName('h1')[0],0).collapse(true).select();//閉合選區
         editor.execCommand( 'customstyle', {
                 tag:'h1',
-                label:'靠左標題',
+                label:'居左標題',
                 style:'border-bottom:#ccc 2px solid;padding:0 4px 0 0;margin:0 0 10px 0;'
         } );
         ua.manualDeleteFillData( editor.body );
-        equal( editor.body.getElementsByTagName('h1')[0].getAttribute( 'label' ), '靠左標題', '閉合選區設置塊元素的樣式：靠左標題' );
+        equal( editor.body.getElementsByTagName('h1')[0].getAttribute( 'label' ), '居左標題', '閉合選區設置塊元素的樣式：居左標題' );
         var hStyle = $(editor.body.getElementsByTagName('h1')[0]);
         ok(  editor.body.getElementsByTagName('h1')[0].style.borderBottomWidth == '2px' , '檢查邊框寬' );
         ok(  hStyle.css( 'border-bottom-style' ) == 'solid' , '檢查邊框風格' );
@@ -418,7 +418,7 @@ test('h1空節點',function(){
     range.setStart(editor.body.firstChild,0).collapse(1).select();
     editor.execCommand('customstyle',{tag:'h1', label:'居中標題', style:'border-bottom:#ccc 2px solid;padding:0 4px 0 0;text-align:center;margin:0 0 20px 0;'});
     ua.manualDeleteFillData(editor.body);
-    equal(editor.body.firstChild.tagName,'H1','h1標籤');
+    equal(editor.body.firstChild.tagName,'H1','h1標簽');
     equal($(editor.body.firstChild).css('textAlign'),'center','居中');
     range.setStart(editor.body.firstChild.firstChild,0).collapse(1).select();
     ua.keyup(editor.body,{keyCode:32});

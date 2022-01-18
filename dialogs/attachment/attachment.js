@@ -15,7 +15,7 @@
         initButtons();
     };
 
-    /* 初始化tab標籤 */
+    /* 初始化tab標簽 */
     function initTabs() {
         var tabs = $G('tabhead').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -106,7 +106,7 @@
                 $queue = $wrap.find('.filelist'),
             // 狀態欄，包括進度和控制按鈕
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件總體選擇訊息。
+            // 文件總體選擇信息。
                 $info = $statusBar.find('.info'),
             // 上傳按鈕
                 $upload = $wrap.find('.uploadBtn'),
@@ -129,7 +129,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的進度訊息，key為file id
+            // 所有文件的進度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -439,10 +439,8 @@
             }
 
             uploader.on('fileQueued', function (file) {
-                if (file.ext && acceptExtensions.indexOf(file.ext.toLowerCase()) != -1 && file.size <= fileMaxSize) {
-                    fileCount++;
-                    fileSize += file.size;
-                }
+                fileCount++;
+                fileSize += file.size;
 
                 if (fileCount === 1) {
                     $placeHolder.addClass('element-invisible');
@@ -453,10 +451,8 @@
             });
 
             uploader.on('fileDequeued', function (file) {
-                if (file.ext && acceptExtensions.indexOf(file.ext.toLowerCase()) != -1 && file.size <= fileMaxSize) {
-                    fileCount--;
-                    fileSize -= file.size;
-                }
+                fileCount--;
+                fileSize -= file.size;
 
                 removeFile(file);
                 updateTotalProgress();
@@ -488,10 +484,8 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這裡可以通過data對象添加POST參數
-                if (actionUrl.toLowerCase().indexOf('jsp') != -1) {
-                    header['X_Requested_With'] = 'XMLHttpRequest';
-                }
+                //這里可以通過data對象添加POST參數
+                header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
             uploader.on('uploadProgress', function (file, percentage) {

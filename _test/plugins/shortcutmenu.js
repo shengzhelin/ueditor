@@ -8,7 +8,7 @@
 module( 'plugins.contextmenu' );
 
 test( '基本的shortcutmenu', function() {
-//設置選單內容\
+//設置菜單內容\
     var div = document.body.appendChild(document.createElement('div'));
     div.id = 'ue';
     var editor = UE.getEditor("ue", { shortcutMenu: ["fontfamily", "fontsize", "bold", "italic", "underline", "forecolor", "backcolor", "insertorderedlist", "insertunorderedlist"]});
@@ -17,13 +17,13 @@ test( '基本的shortcutmenu', function() {
         ua.contextmenu(editor.body);
         setTimeout(function () {
             var menu = document.getElementsByClassName("edui-shortcutmenu")[0];
-            equal(!!menu, true, '右鍵檢查選單是否存在');
+            equal(!!menu, true, '右鍵檢查菜單是否存在');
 
-            ok(menu.style.display == "" || menu.style.display == "block", '右鍵檢查選單是否顯示');
+            ok(menu.style.display == "" || menu.style.display == "block", '右鍵檢查菜單是否顯示');
 
             ua.mousedown(editor.body.firstChild);
 
-            equal(menu.style.display, "none", '鼠標按下檢查選單是否隱藏');
+            equal(menu.style.display, "none", '鼠標按下檢查菜單是否隱藏');
 
             UE.delEditor('ue');
 
@@ -35,7 +35,7 @@ test( '基本的shortcutmenu', function() {
     });
 });
 test( '鍵盤操作,隱藏shortcutmenu', function() {
-//設置選單內容\
+//設置菜單內容\
     var div = document.body.appendChild(document.createElement('div'));
     div.id = 'ue';
     var editor = UE.getEditor("ue" ,{ shortcutMenu: ["fontfamily", "fontsize", "bold", "italic", "underline", "forecolor", "backcolor", "insertorderedlist", "insertunorderedlist"]});
@@ -44,10 +44,10 @@ test( '鍵盤操作,隱藏shortcutmenu', function() {
         ua.contextmenu(editor.body);
         setTimeout(function(){
             var menu=document.getElementsByClassName("edui-shortcutmenu")[0];
-            equal(!!menu,true,'右鍵檢查選單是否存在');
-            ok(menu.style.display==""||menu.style.display=="block",'右鍵檢查選單是否顯示');
+            equal(!!menu,true,'右鍵檢查菜單是否存在');
+            ok(menu.style.display==""||menu.style.display=="block",'右鍵檢查菜單是否顯示');
             ua.keydown(editor.body.firstChild);
-            equal(menu.style.display,"none",'鍵盤按下檢查選單是否隱藏');
+            equal(menu.style.display,"none",'鍵盤按下檢查菜單是否隱藏');
             UE.delEditor('ue');
             te.dom.push(document.getElementById('ue'));
             te.dom.push(document.getElementById('edui_fixedlayer'));
@@ -56,7 +56,7 @@ test( '鍵盤操作,隱藏shortcutmenu', function() {
     });
 } );
 test( '框選內容', function() {
-//設置選單內容\
+//設置菜單內容\
     var div = document.body.appendChild(document.createElement('div'));
     div.id = 'ue';
     var editor = UE.getEditor("ue" ,{ shortcutMenu: ["fontfamily", "fontsize", "bold", "italic", "underline", "forecolor", "backcolor", "insertorderedlist", "insertunorderedlist"]});
@@ -73,8 +73,8 @@ test( '框選內容', function() {
         ua.contextmenu(editor.body);
         setTimeout(function(){
             var menu=document.getElementsByClassName("edui-shortcutmenu")[0];
-            equal(!!menu,true,'右鍵檢查選單是否存在');
-            ok(menu.style.display==""||menu.style.display=="block",'右鍵檢查選單是否顯示');
+            equal(!!menu,true,'右鍵檢查菜單是否存在');
+            ok(menu.style.display==""||menu.style.display=="block",'右鍵檢查菜單是否顯示');
             ua.checkResult(editor.selection.getRange(), sc, ec, so, eo, collapsed,'檢查range不變');
             ua.keydown(editor.body.firstChild);
             UE.delEditor('ue');

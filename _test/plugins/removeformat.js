@@ -57,7 +57,7 @@ test( '指定刪除某一個style', function () {
     /*只刪除span的color style*/
     editor.execCommand( 'removeformat', 'span', 'color' );
     var html = '<p><span style="color:red;font-size: 18px"><em><strong>he</strong></em></span><span style="font-size: 18px"><em><strong>llo1</strong></em></span></p><p><strong><span style="font-size: 18px">hel</span></strong><strong><span style="color:red;font-size: 18px">lo2</span></strong></p>';
-    ua.checkHTMLSameStyle( html, editor.document, body, '檢查去除特定標籤的樣式的結果' );
+    ua.checkHTMLSameStyle( html, editor.document, body, '檢查去除特定標簽的樣式的結果' );
 } );
 
 test( '指定刪除的元素刪除屬性後是空元素', function () {

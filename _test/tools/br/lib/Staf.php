@@ -3,16 +3,10 @@ include 'StafResult.php';
 
 class Staf{
 	public static function handle($src, $cmd, $host='local'){
-		$_cmd = "/usr/local/staf/bin/"."staf $host $src $cmd";
+		$_cmd = "staf $host $src $cmd";
 
 		//print $_cmd;
-        echo "wangnew2---".$_cmd."\n";
-        echo "wangold2---".$back."\n";
-		$wand = exec($_cmd, $back);
-//        exec("/usr/local/staf/bin/STAF 10.94.26.95 PROCESS START COMMAND notepad");
-        echo "+-".$back."-+";
-        var_dump($back);
-        echo $wand."\n";
+		exec($_cmd, $back);
 		return StafResult::parse($back);
 	}
 

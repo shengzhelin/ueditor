@@ -155,7 +155,7 @@ function match(fileName, matcher )
      */
     var ms = matcher.split( ',');
     if ( ms.length > 1 ) {
-        //這裡把或的邏輯改成與
+        //這里把或的邏輯改成與
         for ( var matcher1 in ms ) {
             if ( !match(fileName, ms[matcher1] ) )
                 return false;
@@ -265,7 +265,7 @@ function covcalc() {
 
         var percentage = (num_statements === 0 ? 0 : ( 100* num_executed / num_statements ).toFixed(1));
         var kiss = file.replace( '.js', '' );
-        // 統計所有用例的覆蓋率訊息和測試結果
+        // 統計所有用例的覆蓋率信息和測試結果
 
         if ( brkisses[kiss] == undefined )
             brkisses[kiss] = '0;0;_;0;0';

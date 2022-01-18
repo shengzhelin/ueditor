@@ -20,7 +20,7 @@
         initUpload();
     };
 
-    /* 初始化tab標籤 */
+    /* 初始化tab標簽 */
     function initTabs(){
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //編輯視頻時初始化相關訊息
+        //編輯視頻時初始化相關信息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依據傳入的align值更新按鈕訊息
+     * 依據傳入的align值更新按鈕信息
      * @param align
      */
     function updateAlignButton( align ) {
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 將單個視頻訊息插入編輯器中
+     * 將單個視頻信息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -270,6 +270,8 @@
 
         var conUrl = convert_url(url);
 
+        conUrl = utils.unhtmlForUrl(conUrl);
+
         $G("preview").innerHTML = '<div class="previewMsg"><span>'+lang.urlError+'</span></div>'+
         '<embed class="previewVideo" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
             ' src="' + conUrl + '"' +
@@ -284,8 +286,8 @@
     function insertUpload(){
         var videoObjs=[],
             uploadDir = editor.getOpt('videoUrlPrefix'),
-            width = $G('upload_width').value || 420,
-            height = $G('upload_height').value || 280,
+            width = parseInt($G('upload_width').value, 10) || 420,
+            height = parseInt($G('upload_height').value, 10) || 280,
             align = findFocus("upload_alignment","name") || 'none';
         for(var key in uploadVideoList) {
             var file = uploadVideoList[key];
@@ -306,7 +308,7 @@
         }
     }
 
-    /*初始化上傳標籤*/
+    /*初始化上傳標簽*/
     function initUpload(){
         uploadFile = new UploadFile('queueList');
     }
@@ -335,7 +337,7 @@
                 $queue = $wrap.find('.filelist'),
             // 狀態欄，包括進度和控制按鈕
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件總體選擇訊息。
+            // 文件總體選擇信息。
                 $info = $statusBar.find('.info'),
             // 上傳按鈕
                 $upload = $wrap.find('.uploadBtn'),
@@ -358,7 +360,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的進度訊息，key為file id
+            // 所有文件的進度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -713,10 +715,8 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這裡可以通過data對象添加POST參數
-                if (actionUrl.toLowerCase().indexOf('jsp') != -1) {
-                    header['X_Requested_With'] = 'XMLHttpRequest';
-                }
+                //這里可以通過data對象添加POST參數
+                header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
             uploader.on('uploadProgress', function (file, percentage) {

@@ -10,13 +10,13 @@ test( '插入錨點後切換源碼', function() {
         editor.setContent( '<p>' + br + '</p>' );
         range.setStart( body.firstChild, 0 ).collapse( 1 ).select();
         editor.execCommand( 'anchor', 'hello' );
-        ua.checkHTMLSameStyle( '<img anchorname="hello" class="anchorclass">' + br, editor.document, body.firstChild, '檢查錨點html' );     //1.2版本後，在img前有的不可見字符沒有刪去，這裡改成之比較img內的內容
+        ua.checkHTMLSameStyle( '<img anchorname="hello" class="anchorclass">' + br, editor.document, body.firstChild, '檢查錨點html' );     //1.2版本後，在img前有的不可見字符沒有刪去，這里改成之比較img內的內容
         ok(body.getElementsByTagName('img')[0].attributes['anchorname'].nodeValue=="hello"&&body.getElementsByTagName('img')[0].attributes['class'].nodeValue=="anchorclass",'檢查錨點');
         editor.execCommand( 'source' );     /*切到源碼模式下會有一個超時*/
         setTimeout( function() {
             var tas = editor.iframe.parentNode.getElementsByTagName( 'textarea' );
             if(ua.browser.webkit){
-//                ok( editor.iframe.nextSibling.textContent.indexOf( '<a name="hello"' ) !=-1, '查看是否轉換成功' );
+                ok( editor.iframe.nextSibling.textContent.indexOf( '<a name="hello"' ) !=-1, '查看是否轉換成功' );
             }
             else{
                 ok( tas[0].value.indexOf( '<a name="hello"' ) != -1 || tas[0].value.indexOf( '<a anchorname="1"' ) != -1, '查看是否轉換成功' );
@@ -66,8 +66,8 @@ test( '在源碼模式設置超鏈接沒有name屬性，切換到編輯器模式
             setTimeout( function() {
                 editor.execCommand( 'source' );
                 ua.manualDeleteFillData(editor.body);
-//                equal( body.firstChild.firstChild.tagName.toLowerCase(), 'a', 'a標籤不會轉化' );
-                equal( body.firstChild.lastChild.tagName.toLowerCase(), 'a', 'a標籤不會轉化' );   //兼容opera
+//                equal( body.firstChild.firstChild.tagName.toLowerCase(), 'a', 'a標簽不會轉化' );
+                equal( body.firstChild.lastChild.tagName.toLowerCase(), 'a', 'a標簽不會轉化' );   //兼容opera
                 start();
                 }, 50 );
         }, 10 );

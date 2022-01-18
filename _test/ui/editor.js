@@ -102,7 +102,7 @@ test( '判斷render有內容時，顯示render內容(script)', function() {
     ue3.render('sc3');
     stop();
     ue3.ready(function(){
-        equal(ue3.body.firstChild.innerHTML.toLowerCase(),"renderinnerhtml",'標籤有內容,顯示標籤內容');
+        equal(ue3.body.firstChild.innerHTML.toLowerCase(),"renderinnerhtml",'標簽有內容,顯示標簽內容');
         sc3 = document.getElementById('sc3');
         sc3.parentNode.removeChild(sc3);
         start();
@@ -117,7 +117,7 @@ test( 'render沒有內容時，顯示initialContent', function() {
     ue4.render(sc4);
     stop();
     ue4.ready(function(){
-        equal(ue4.body.firstChild.innerHTML.toLowerCase(),ue4.options.initialContent.toLowerCase(),'標籤沒有內容，顯示initialContent');
+        equal(ue4.body.firstChild.innerHTML.toLowerCase(),ue4.options.initialContent.toLowerCase(),'標簽沒有內容，顯示initialContent');
         sc4 = document.getElementById('sc4');
         sc4.parentNode.removeChild(sc4);
         start();

@@ -3,13 +3,14 @@
  * @file
  * @since 1.2.6.1
  */
-UE.plugin.register("serverparam", function() {
-  var me = this,
-    serverParam = {};
+UE.plugin.register('serverparam', function (){
 
-  return {
-    commands: {
-      /**
+    var me = this,
+        serverParam = {};
+
+    return {
+        commands:{
+            /**
              * 修改服務器提交的額外參數列表,清除所有項
              * @command serverparam
              * @method execCommand
@@ -20,7 +21,7 @@ UE.plugin.register("serverparam", function() {
              * editor.queryCommandValue('serverparam'); //返回空
              * ```
              */
-      /**
+            /**
              * 修改服務器提交的額外參數列表,刪除指定項
              * @command serverparam
              * @method execCommand
@@ -31,7 +32,7 @@ UE.plugin.register("serverparam", function() {
              * editor.execCommand('serverparam', 'name'); //刪除屬性name
              * ```
              */
-      /**
+            /**
              * 修改服務器提交的額外參數列表,使用鍵值添加項
              * @command serverparam
              * @method execCommand
@@ -44,7 +45,7 @@ UE.plugin.register("serverparam", function() {
              * editor.queryCommandValue('serverparam'); //返回對象 {'name': 'hello'}
              * ```
              */
-      /**
+            /**
              * 修改服務器提交的額外參數列表,傳入鍵值對對象添加多項
              * @command serverparam
              * @method execCommand
@@ -56,7 +57,7 @@ UE.plugin.register("serverparam", function() {
              * editor.queryCommandValue('serverparam'); //返回對象 {'name': 'hello'}
              * ```
              */
-      /**
+            /**
              * 修改服務器提交的額外參數列表,使用自定義函數添加多項
              * @command serverparam
              * @method execCommand
@@ -71,7 +72,7 @@ UE.plugin.register("serverparam", function() {
              * ```
              */
 
-      /**
+            /**
              * 獲取服務器提交的額外參數列表
              * @command serverparam
              * @method queryCommandValue
@@ -81,30 +82,26 @@ UE.plugin.register("serverparam", function() {
              * editor.queryCommandValue( 'serverparam' ); //返回對象 {'key': 'value'}
              * ```
              */
-      serverparam: {
-        execCommand: function(cmd, key, value) {
-          if (key === undefined || key === null) {
-            //不傳參數,清空列表
-            serverParam = {};
-          } else if (utils.isString(key)) {
-            //傳入鍵值
-            if (value === undefined || value === null) {
-              delete serverParam[key];
-            } else {
-              serverParam[key] = value;
+            'serverparam':{
+                execCommand:function (cmd, key, value) {
+                    if (key === undefined || key === null) { //不傳參數,清空列表
+                        serverParam = {};
+                    } else if (utils.isString(key)) { //傳入鍵值
+                        if(value === undefined || value === null) {
+                            delete serverParam[key];
+                        } else {
+                            serverParam[key] = value;
+                        }
+                    } else if (utils.isObject(key)) { //傳入對象,覆蓋列表項
+                        utils.extend(serverParam, key, true);
+                    } else if (utils.isFunction(key)){ //傳入函數,添加列表項
+                        utils.extend(serverParam, key(), true);
+                    }
+                },
+                queryCommandValue: function(){
+                    return serverParam || {};
+                }
             }
-          } else if (utils.isObject(key)) {
-            //傳入對象,覆蓋列表項
-            utils.extend(serverParam, key, false);
-          } else if (utils.isFunction(key)) {
-            //傳入函數,添加列表項
-            utils.extend(serverParam, key(), false);
-          }
-        },
-        queryCommandValue: function() {
-          return serverParam || {};
         }
-      }
     }
-  };
 });

@@ -68,11 +68,11 @@ test('font轉span', function () {
     var editor = te.obj[0];
     editor.setContent('<font size="12" color="red" lang="en" face="arial"><b><i>hello</i>hello</b>');
     var html = '<span style="font-size:12px;color:red;font-family:arial"><strong><em>hello</em>hello</strong></span>';
-    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標籤');
+    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標簽');
     /*size的值在sizeMap中有對應的值*/
     editor.setContent('<b><font size="10" color="#ff0000" lang="en" face="楷體">hello');
     html = '<strong><span style="font-size:10px;color:#ff0000;font-family:楷體">hello</span></strong>';
-    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標籤');
+    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標簽');
 });
 test('beforegetContent', function () {
     var editor = te.obj[0];
@@ -88,7 +88,7 @@ test('beforegetContent', function () {
         div1.innerHTML = editor.getContent();
         div.innerHTML = '<p><span style="color: rgb(255, 0, 0);" >hello</span></p>';
 //    ok( ua.haveSameAllChildAttribs( div, div1 ), '查看空span是否被刪除' );
-//        equal(ua.getChildHTML(div), ua.getChildHTML(div1));
+        equal(ua.getChildHTML(div), ua.getChildHTML(div1));
         start();
     }, 50);
 });
@@ -495,12 +495,12 @@ test('trace 3096：單元格中改變字號', function () {
     stop();
 });
 
-test('轉換font標籤', function () {
+test('轉換font標簽', function () {
     var editor = te.obj[0];
     editor.setContent('<font size="16" color="red"><b><i>x</i></b></font>');
     var html = '<p><span style="font-size:16px;color:red" ><strong><em>x</em></strong></span></p>';
-    ua.checkHTMLSameStyle(html, editor.document, editor.body, '轉換font標籤');
+    ua.checkHTMLSameStyle(html, editor.document, editor.body, '轉換font標簽');
     editor.setContent('<font style="color:red"><u>x</u></font>');
     html = '<span style="color:red"><span style="text-decoration:underline;">x</span></span>';
-    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標籤');
+    ua.checkHTMLSameStyle(html, editor.document, editor.body.firstChild, '轉換font標簽');
 });

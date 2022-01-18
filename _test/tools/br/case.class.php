@@ -151,7 +151,7 @@ class Kiss
         $as = explode( ';' , $matcher );
         if ( sizeof( $as ) > 1 ) {
 
-            //這裡把或的邏輯改成與
+            //這里把或的邏輯改成與
             foreach ( $as as $matcher1 ) {
                 if ( $this->match( $matcher1 ) )
                     return true;
@@ -161,7 +161,7 @@ class Kiss
         $ms = explode( ',' , $matcher );
         if ( sizeof( $ms ) > 1 ) {
 
-            //這裡把或的邏輯改成與
+            //這里把或的邏輯改成與
             foreach ( $ms as $matcher1 ) {
                 if ( !$this->match( $matcher1 ) )
                     return false;
@@ -203,7 +203,7 @@ class Kiss
                 $newName = explode( '\\.' , $name );
                 $newName = $newName[ count( $newName ) - 1 ];
                 print( "<a href=\"run.php?case=$name\" id=\"$c->case_id\" class=\"jsframe_qunit\" target=\"_blank\" title=\"$name\" onclick=\"run('$name');\$('#id_rerun').html('$name');return false;\">"
-                       /*過長的時候屏蔽超出20的部分，因為隱藏的處理，所有用例不能直接使用標籤a中的innerHTML，而應該使用title*/
+                       /*過長的時候屏蔽超出20的部分，因為隱藏的處理，所有用例不能直接使用標簽a中的innerHTML，而應該使用title*/
                        . $newName . "</a>\n" );
             }
         }

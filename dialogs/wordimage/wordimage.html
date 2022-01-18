@@ -39,12 +39,12 @@
         });
 
             //全局變量
-        var imageUrls = [],          //用於保存從服務器返回的圖片訊息數組
+        var imageUrls = [],          //用於保存從服務器返回的圖片信息數組
             selectedImageCount = 0,  //當前已選擇的但未上傳的圖片數量
             optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
             optImageFieldName = editor.getOpt('imageFieldName'),
             optImageCompressBorder = editor.getOpt('imageCompressEnable') ? editor.getOpt('imageCompressBorder'):null,
-            maxSize = editor.getOpt('imageMaxSize') / 1024 / 1024,
+            maxSize = editor.getOpt('imageMaxSize') / 1024,
             extension = editor.getOpt('imageAllowFiles').join(';').replace(/\./g, '*.');
 
         /* 添加額外的GET參數 */

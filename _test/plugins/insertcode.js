@@ -70,20 +70,6 @@ test('trace 3395：插入代碼為空時，清空編輯器', function () {
         ua.keydown(editor.body, {'keyCode':8});
         br = ua.browser.ie ? '' : '<br>';
         ua.checkSameHtml(editor.body.innerHTML, '<p>' + br + '</p>', '檢查編輯器清空');
-
-        if(!ua.browser.ie){
-        editor.setContent('<pre class="brush:html;toolbar:false"></pre>');
-        editor.fireEvent('delkeydown',{});
-        ua.checkSameHtml(editor.body.innerHTML, '<p>' + br + '</p>', '檢查編輯器清空');
-        }
-        editor.setContent('<pre class="brush:html;toolbar:false"></pre>');
-        ua.keydown(editor.body, {'keyCode':40});
-
-        if(ua.browser.ie==8||ua.browser.ie==11)
-            br = '<br>'
-        if(ua.browser.ie==8)return;
-        ua.checkSameHtml(editor.body.innerHTML,'<pre class="brush:html;toolbar:false">'+br+'</pre>','方向鍵處理');
-
 });
 
 test('trace 3396：多次切換源碼，不會產生空行', function () {
@@ -190,7 +176,7 @@ test('test-beforeInsertHTML', function(){
             ua.checkSameHtml(editor.body.innerHTML, '<pre class="brush:html;toolbar:false">I​<br>brtext<br></pre>', '插入chrome/ff');}
         ua.manualDeleteFillData(editor.body);
 
-        //混合標籤
+        //混合標簽
         range.setStart(editor.body.firstChild,0).collapse(true).select();
         insert='<p>PPP<p>222</p><span>SSS</span><br>BBB</p>';
         editor.execCommand('inserthtml', insert);

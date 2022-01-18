@@ -137,14 +137,14 @@ test( 'trace 3285：startContainer為body添加引用', function () {
 } );
 
 //ie 不通過
-test('aa標籤',function(){
+test('aa標簽',function(){
     var editor = te.obj[0];
     var range = te.obj[1];
     if(!ua.browser.ie){
         editor.setContent('<aa>hello</aa>');
         range.setStart(editor.body.firstChild.firstChild,0).collapse(1).select();
         editor.execCommand('blockquote');
-        equal(ua.getChildHTML(editor.body),'<blockquote><aa>hello</aa></blockquote>','aa標籤');
+        equal(ua.getChildHTML(editor.body),'<blockquote><aa>hello</aa></blockquote>','aa標簽');
         editor.setContent('hello<aa>hello2</aa>');
         range.setStart(editor.body.lastChild.firstChild,0).setEnd(editor.body.lastChild.firstChild,3).select();
         editor.execCommand('blockquote');

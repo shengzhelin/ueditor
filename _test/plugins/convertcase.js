@@ -87,7 +87,7 @@ test('非閉合選擇----字符串包括換行跟空格', function () {
     }, 50);
     stop();
 });
-test('標籤table', function () {
+test('標簽table', function () {
     //單個單元格，多個單元格，兩個表格
     var editor = te.obj[0];
     var range = te.obj[1];
@@ -126,7 +126,7 @@ test('標籤table', function () {
     }, 50);
 });
 
-test('標籤h1', function () {
+test('標簽h1', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
@@ -149,14 +149,14 @@ test('h1&table', function () {
         range.setStart(body.firstChild.firstChild, 0).setEnd(body.lastChild.firstChild.lastChild.lastChild.firstChild, 6).select();
         var tds = body.lastChild.getElementsByTagName('td');
         editor.execCommand("touppercase");
-        ok(body.firstChild.tagName == "h1" || body.firstChild.tagName == "H1", "h1標籤");
+        ok(body.firstChild.tagName == "h1" || body.firstChild.tagName == "H1", "h1標簽");
         equal(body.firstChild.innerHTML, "HELLO", "h1--up");
         equal(tds[0].innerHTML, "HELLO1", "table--單元格1--up");
         equal(tds[1].innerHTML, "HELLO2", "table--單元格2--up");
         equal(tds[2].innerHTML, "HELLO3", "table--單元格3--up");
         equal(tds[3].innerHTML, "HELLO4", "table--單元格4--up");
         editor.execCommand("tolowercase");
-        ok(body.firstChild.tagName == "h1" || body.firstChild.tagName == "H1", "h1標籤");
+        ok(body.firstChild.tagName == "h1" || body.firstChild.tagName == "H1", "h1標簽");
         equal(body.firstChild.innerHTML, "hello", "h1--low");
         equal(tds[0].innerHTML, "hello1", "table--單元格1--low");
         equal(tds[1].innerHTML, "hello2", "table--單元格2--low");
@@ -175,22 +175,22 @@ test('三個組合', function () {
     var tds = body.firstChild.nextSibling.getElementsByTagName('td');
     range.setStart(body.firstChild.firstChild, 2).setEnd(body.lastChild.firstChild, 2).select();
     editor.execCommand("touppercase");
-    ok(body.firstChild.tagName == "p" || body.firstChild.tagName == "P", "p標籤");
+    ok(body.firstChild.tagName == "p" || body.firstChild.tagName == "P", "p標簽");
     equal(body.firstChild.innerHTML, "heLLO", "p--up");
     equal(tds[0].innerHTML, "HELLO1", "table--單元格1--up");
     equal(tds[1].innerHTML, "HELLO2", "table--單元格2--up");
     equal(tds[2].innerHTML, "HELLO3", "table--單元格3--up");
     equal(tds[3].innerHTML, "HELLO4", "table--單元格4--up");
-    ok(body.lastChild.tagName == "h1" || body.lastChild.tagName == "H1", "h1標籤");
+    ok(body.lastChild.tagName == "h1" || body.lastChild.tagName == "H1", "h1標簽");
     equal(body.lastChild.innerHTML, "HEllo", "h1--up");
     editor.execCommand("tolowercase");
-    ok(body.firstChild.tagName == "p" || body.firstChild.tagName == "P", "p標籤");
+    ok(body.firstChild.tagName == "p" || body.firstChild.tagName == "P", "p標簽");
     equal(body.firstChild.innerHTML, "hello", "p--low");
     equal(tds[0].innerHTML, "hello1", "table--單元格1--low");
     equal(tds[1].innerHTML, "hello2", "table--單元格2--low");
     equal(tds[2].innerHTML, "hello3", "table--單元格3--low");
     equal(tds[3].innerHTML, "hello4", "table--單元格4--low");
-    ok(body.lastChild.tagName == "h1" || body.lastChild.tagName == "H1", "h1標籤");
+    ok(body.lastChild.tagName == "h1" || body.lastChild.tagName == "H1", "h1標簽");
     equal(body.lastChild.innerHTML, "hello", "h1--low");
 });
 

@@ -259,7 +259,7 @@
 	    
 	    for (key in options) {
 	        // 將options參數中的事件參數覆制到eventHandlers對象中
-	        // 這裡覆制所有options的成員，eventHandlers有冗余
+	        // 這里覆制所有options的成員，eventHandlers有冗余
 	        // 但是不會產生任何影響，並且代碼緊湊
 	        eventHandlers[key] = options[key];
 	    }
@@ -755,14 +755,14 @@
 
 
 	/**
-	 * 將兩個數組參數合併成一個類似hashMap結構的對象，這個對象使用第一個數組做為key，使用第二個數組做為值，如果第二個參數未指定，則把對象的所有值置為true。
+	 * 將兩個數組參數合並成一個類似hashMap結構的對象，這個對象使用第一個數組做為key，使用第二個數組做為值，如果第二個參數未指定，則把對象的所有值置為true。
 	 * @name baidu.array.hash
 	 * @function
 	 * @grammar baidu.array.hash(keys[, values])
 	 * @param {Array} keys 作為key的數組
 	 * @param {Array} [values] 作為value的數組，未指定此參數時，默認值將對象的值都設為true。
 	 *             
-	 * @returns {Object} 合併後的對象{key : value}
+	 * @returns {Object} 合並後的對象{key : value}
 	 */
 	baidu.array.hash = function(keys, values) {
 	    var o = {}, vl = values && values.length, i = 0, l = keys.length;
@@ -851,13 +851,13 @@
 
 
 	/**
-	 * 遍歷數組中所有元素，將每一個元素應用方法進行合併，並返回合併後的結果。
+	 * 遍歷數組中所有元素，將每一個元素應用方法進行合並，並返回合並後的結果。
 	 * @name baidu.array.reduce
 	 * @function
 	 * @grammar baidu.array.reduce(source, iterator[, initializer])
 	 * @param {Array}    source 需要遍歷的數組.
 	 * @param {Function} iterator 對每個數組元素進行處理的函數，函數接受四個參數：上一次reduce的結果（或初始值），當前元素值，索引值，整個數組.
-	 * @param {Object}   [initializer] 合併的初始項，如果沒有此參數，默認用數組中的第一個值作為初始值.
+	 * @param {Object}   [initializer] 合並的初始項，如果沒有此參數，默認用數組中的第一個值作為初始值.
 	 * @return {Array} reduce後的值.
 	 * @version 1.3.4
 	 * @see baidu.array.reduce
@@ -2460,7 +2460,7 @@
 	 * @name baidu.dom.create
 	 * @function
 	 * @grammar baidu.dom.create(tagName[, options])
-	 * @param {string} tagName 標籤名稱.
+	 * @param {string} tagName 標簽名稱.
 	 * @param {Object} opt_attributes 元素創建時擁有的屬性，如style和className.
 	 * @version 1.3
 	 * @meta standard
@@ -2571,7 +2571,7 @@
 	};
 
 	/**
-	 * 重載了默認的toString方法，使得返回訊息更加準確一些。
+	 * 重載了默認的toString方法，使得返回信息更加準確一些。
 	 * @return {string} 對象的String表示形式
 	 */
 	baidu.lang.Class.prototype.toString = function(){
@@ -2613,7 +2613,7 @@
 	};
 
 	/**
-	 * 註冊對象的事件監聽器。引入baidu.lang.Event後，Class的子類實例才會獲得該方法。
+	 * 注冊對象的事件監聽器。引入baidu.lang.Event後，Class的子類實例才會獲得該方法。
 	 * @grammar obj.addEventListener(type, handler[, key])
 	 * @param 	{string}   type         自定義事件的名稱
 	 * @param 	{Function} handler      自定義事件被觸發時應該調用的回調函數
@@ -3061,7 +3061,7 @@
 	    element = baidu.dom._g(element);
 
 	    var realListener = function (ev) {
-	            // 1. 這裡不支持EventArgument,  原因是跨frame的事件掛載
+	            // 1. 這里不支持EventArgument,  原因是跨frame的事件掛載
 	            // 2. element是為了修正this
 	            listener.call(element, ev);
 	        },
@@ -3373,7 +3373,7 @@
 	        pos.top  -= doc.documentElement.clientTop;
 	        
 	        var htmlDom = doc.body,
-	            // 在這裡，不使用element.style.borderLeftWidth，只有computedStyle是可信的
+	            // 在這里，不使用element.style.borderLeftWidth，只有computedStyle是可信的
 	            htmlBorderLeftWidth = parseInt(getStyle(htmlDom, 'borderLeftWidth')),
 	            htmlBorderTopWidth = parseInt(getStyle(htmlDom, 'borderTopWidth'));
 	        if(browser.ie && !browser.isStrict){
@@ -3532,7 +3532,7 @@
 	        op.autoStop && baidu.event.on(op.handler, "mouseup", stop);
 	        op.autoStop && baidu.event.on(window, "mouseup", stop);
 	        
-	        // 在拖曳過程中頁面里的文字會被選中高亮顯示，在這裡修正
+	        // 在拖曳過程中頁面里的文字會被選中高亮顯示，在這里修正
 	        baidu.event.on(document, "selectstart", unselect);
 
 	        // 設置鼠標粘滯
@@ -3892,7 +3892,7 @@
 				}
 				delete manager._targetsDroppingOver[guid];
 			};
-		//事件註冊,return object提供事件解除
+		//事件注冊,return object提供事件解除
 		manager.addEventListener("ondrag", _dragging);
 		manager.addEventListener("ondragend", _dragend);
 		return {
@@ -4414,15 +4414,15 @@
 
 
 	/**
-	 * 獲取目標元素指定標籤的最近的祖先元素
+	 * 獲取目標元素指定標簽的最近的祖先元素
 	 * @name baidu.dom.getAncestorByTag
 	 * @function
 	 * @grammar baidu.dom.getAncestorByTag(element, tagName)
 	 * @param {HTMLElement|string} element 目標元素或目標元素的id
-	 * @param {string} tagName 祖先元素的標籤名
+	 * @param {string} tagName 祖先元素的標簽名
 	 * @see baidu.dom.getAncestorBy,baidu.dom.getAncestorByClass
 	 *             
-	 * @returns {HTMLElement|null} 指定標籤的最近的祖先元素，查找不到時返回null
+	 * @returns {HTMLElement|null} 指定標簽的最近的祖先元素，查找不到時返回null
 	 */
 	baidu.dom.getAncestorByTag = function (element, tagName) {
 	    element = baidu.dom.g(element);
@@ -4728,13 +4728,13 @@
 	 * @function
 	 * @grammar baidu.dom.insertHTML(element, position, html)
 	 * @param {HTMLElement|string} element 目標元素或目標元素的id
-	 * @param {string} position 插入html的位置訊息，取值為beforeBegin,afterBegin,beforeEnd,afterEnd
+	 * @param {string} position 插入html的位置信息，取值為beforeBegin,afterBegin,beforeEnd,afterEnd
 	 * @param {string} html 要插入的html
 	 * @remark
 	 * 
 	 * 對於position參數，大小寫不敏感<br>
 	 * 參數的意思：beforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
-	 * 此外，如果使用本函數插入帶有script標籤的HTML字符串，script標籤對應的腳本將不會被執行。
+	 * 此外，如果使用本函數插入帶有script標簽的HTML字符串，script標簽對應的腳本將不會被執行。
 	 * 
 	 * @shortcut insertHTML
 	 * @meta standard
@@ -4748,7 +4748,7 @@
 	    if (element.insertAdjacentHTML) {
 	        element.insertAdjacentHTML(position, html);
 	    } else {
-	        // 這裡不做"undefined" != typeof(HTMLElement) && !window.opera判斷，其它瀏覽器將出錯？！
+	        // 這里不做"undefined" != typeof(HTMLElement) && !window.opera判斷，其它瀏覽器將出錯？！
 	        // 但是其實做了判斷，其它瀏覽器下等於這個函數就不能執行了
 	        range = element.ownerDocument.createRange();
 	        // FF下range的位置設置錯誤可能導致創建出來的fragment在插入dom樹之後html結構亂掉
@@ -4893,7 +4893,7 @@
 	 * @grammar baidu.dom.q(className[, element, tagName])
 	 * @param {string} className 元素的class，只能指定單一的class，如果為空字符串或者純空白的字符串，返回空數組。
 	 * @param {string|HTMLElement} [element] 開始搜索的元素，默認是document。
-	 * @param {string} [tagName] 要獲取元素的標籤名，如果沒有值或者值為空字符串或者純空白的字符串，表示不限制標籤名。
+	 * @param {string} [tagName] 要獲取元素的標簽名，如果沒有值或者值為空字符串或者純空白的字符串，表示不限制標簽名。
 	 * @remark 不保證返回數組中DOM節點的順序和文檔中DOM節點的順序一致。
 	 * @shortcut q,T.Q
 	 * @meta standard
@@ -5102,8 +5102,8 @@
 	        while (k --) {
 	            var simple = seq[k];
 	            // 轉化[id="xxx"][name="xxx"][tagName="xxx"][className~="xxx"]之類的選擇器
-	            // 識別:root,html|head|body|title等全局僅一個的標籤的選擇器，忽略*選擇器
-	            // 合併類選擇器以便於使用getElementsByClassName
+	            // 識別:root,html|head|body|title等全局僅一個的標簽的選擇器，忽略*選擇器
+	            // 合並類選擇器以便於使用getElementsByClassName
 	            if (simple.kind == ':html') simple = make('T', 'html');
 	            if (simple.kind == '=') {
 	                if (efMap[simple[0]]) simple = make(efMap[simple[0]], [simple[1]]);
@@ -5120,7 +5120,7 @@
 	            if (simple.kind == ':not' && !((t=simple[0],t.length==1)&&(t=t[0],t.length==1))) {
 	                simple.kind = ':not-ex';
 	            }
-	            //remark: 這裡是為了支持sizzle的setFilter系列
+	            //remark: 這里是為了支持sizzle的setFilter系列
 	            if (regPos.test(simple.kind)) {
 	                simple[0] = Number(simple[0]) | 0;
 	                var newSimple = make(simple.kind, simple.slice(0));
@@ -5155,7 +5155,7 @@
 	            var seq = chain[k];
 	            seq = process(seq);
 	            seq.N = 'node' + k;
-	            //remark: 這裡是為了支持sizzle的setFilter.
+	            //remark: 這里是為了支持sizzle的setFilter.
 	            if (seq.allPoses) {
 	                if (!chain.allPoses) {
 	                    chain.allPoses = [];
@@ -5267,7 +5267,7 @@
 	        ':checked': '#{N}.checked===true',
 	        ':selected': '(#{N}.parentNode.selectedIndex,#{N}.selected===true)',
 
-	        // TODO: 這些偽類可以轉化成為標籤選擇器加以優化！
+	        // TODO: 這些偽類可以轉化成為標簽選擇器加以優化！
 	        ':focus': TPL_DOC + '#{N}===doc.activeElement',
 	        ':button': TPL_INPUT_T + '#{N}.nodeName==="button"||(#{N}.nodeName===input_t&&#{N}.type==="button")',
 	        ':submit': TPL_INPUT_T + '#{N}.nodeName===input_t&&#{N}.type==="submit"',
@@ -6715,7 +6715,7 @@
 
 
 	/**
-	 * 提供給setStyle與getStyle使用，在做textOverflow時會向element對象中添加,_baiduOverflow, _baiduHTML兩個屬性保存原始的innerHTML訊息
+	 * 提供給setStyle與getStyle使用，在做textOverflow時會向element對象中添加,_baiduOverflow, _baiduHTML兩個屬性保存原始的innerHTML信息
 	 */
 	baidu.dom._styleFixer.textOverflow = (function () {
 	    var fontSizeCache = {};
@@ -7084,7 +7084,7 @@
 	};
 
 	/**
-	 * Element類，所有擴展到鏈條上的方法都會被放在這裡面
+	 * Element類，所有擴展到鏈條上的方法都會被放在這里面
 	 * @name baidu.element.Element
 	 * @grammar baidu.element.Element(node)
 	 * @param {DOMElement|NodeList} node   目標元素，可以是數組或者單個node節點
@@ -7210,7 +7210,7 @@
 	     * 把get去掉
 	     * 鏈里面的方法可以不以get開頭調用
 	     * 如 baidu.element("myDiv").parent() == baidu.element("myDiv").getParent();
-	     * TODO: 合併getter和setter. baidu.e('myDiv').style() &  baidu.e('myDiv').style('width', '100');
+	     * TODO: 合並getter和setter. baidu.e('myDiv').style() &  baidu.e('myDiv').style('width', '100');
 	     */
 	    function stripGet(match) {  
 	        return match.charAt(3).toLowerCase();
@@ -7386,7 +7386,7 @@
 
 
 	/**
-	 * 觸發已經註冊的事件。注：在ie下不支持load和unload事件
+	 * 觸發已經注冊的事件。注：在ie下不支持load和unload事件
 	 * @name baidu.event.fire
 	 * @function
 	 * @grammar baidu.event.fire(element, type, options)
@@ -7963,7 +7963,7 @@
 	    while (len--) {
 	        item = lis[len];
 	        //20100409 berg: 不解除unload的綁定，保證用戶的事件一定會被執行
-	        //否則用戶掛載進入的unload事件也可能會在這裡被刪除
+	        //否則用戶掛載進入的unload事件也可能會在這里被刪除
 	        if (item[1] == 'unload') {
 	            continue;
 	        }
@@ -8444,7 +8444,7 @@
 	baidu.lang.eventCenter = baidu.lang.eventCenter || baidu.lang.createSingle();
 
 	/**
-	 * 註冊全局事件監聽器。
+	 * 注冊全局事件監聽器。
 	 * @name baidu.lang.eventCenter.addEventListener
 	 * @function
 	 * @grammar baidu.lang.eventCenter.addEventListener(type, handler[, key])
@@ -9036,11 +9036,11 @@
 
 
 	/*
-	 * 默認情況下，所有在源對象上的屬性都會被非遞歸地合併到目標對象上
+	 * 默認情況下，所有在源對象上的屬性都會被非遞歸地合並到目標對象上
 	 * 並且如果目標對象上已有此屬性，不會被覆蓋
 	 */
 	/**
-	 * 合併源對象的屬性到目標對象。
+	 * 合並源對象的屬性到目標對象。
 	 *
 	 * @name baidu.object.merge
 	 * @function
@@ -9050,8 +9050,8 @@
 	 * @param {Function} source 源對象.
 	 * @param {Object} opt_options optional merge選項.
 	 * @config {boolean} overwrite optional 如果為真，源對象屬性會覆蓋掉目標對象上的已有屬性，默認為假.
-	 * @config {string[]} whiteList optional 白名單，默認為空，如果存在，只有在這裡的屬性才會被處理.
-	 * @config {boolean} recursive optional 是否遞歸合併對象里面的object，默認為否.
+	 * @config {string[]} whiteList optional 白名單，默認為空，如果存在，只有在這里的屬性才會被處理.
+	 * @config {boolean} recursive optional 是否遞歸合並對象里面的object，默認為否.
 	 * @return {object} merge後的object.
 	 * @see baidu.object.extend
 	 * @author berg
@@ -9121,7 +9121,7 @@
 	 * @name baidu.page.createStyleSheet
 	 * @function
 	 * @grammar baidu.page.createStyleSheet(options)
-	 * @param {Object} options 配置訊息
+	 * @param {Object} options 配置信息
 	                
 	 * @param {Document} options.document 指定在哪個document下創建，默認是當前文檔
 	 * @param {String} options.url css文件的URL
@@ -9357,8 +9357,8 @@
 	 * @param {Array} resources               資源描述數組，單個resource含如下屬性.
 	 * @param {String} resources.url           鏈接地址.
 	 * @param {String} [resources.type]        取值["css","js","html"]，默認參考文件後綴.
-	 * @param {String} [resources.requestType] 取值["dom","ajax"]，默認js和css用dom標籤，html用ajax.
-	 * @param {Function} resources.onload        當前resource加載完成的回調函數，若requestType為ajax，參數為xhr(可能失效)，responseText；若requestType為dom，無參數，執行時this為相應dom標籤。.
+	 * @param {String} [resources.requestType] 取值["dom","ajax"]，默認js和css用dom標簽，html用ajax.
+	 * @param {Function} resources.onload        當前resource加載完成的回調函數，若requestType為ajax，參數為xhr(可能失效)，responseText；若requestType為dom，無參數，執行時this為相應dom標簽。.
 	 *
 	 * @param {Object} [options]               可選參數.
 	 * @param {Function} [options.onload]        資源全部加載完成的回調函數，無參數。.
@@ -9504,7 +9504,7 @@
 	            };
 	        //默認用後綴名, 並防止後綴名大寫
 	        res.type = res.type || url.substr(url.lastIndexOf('.') + 1);
-	        //默認html格式用ajax請求,其他都使用dom標籤方式請求.
+	        //默認html格式用ajax請求,其他都使用dom標簽方式請求.
 	        res.requestType = res.requestType || (res.type == 'html' ? 'ajax' : 'dom');
 
 	        if (cacheData = cache[res.url]) {
@@ -9708,7 +9708,7 @@
 
 
 	/**
-	 * @namespace baidu.sio 使用動態script標籤請求服務器資源，包括由服務器端的回調和瀏覽器端的回調。
+	 * @namespace baidu.sio 使用動態script標簽請求服務器資源，包括由服務器端的回調和瀏覽器端的回調。
 	 */
 	baidu.sio = baidu.sio || {};
 	/*
@@ -9738,7 +9738,7 @@
 
 
 	/**
-	 * 刪除script的屬性，再刪除script標籤，以解決修覆內存泄漏的問題
+	 * 刪除script的屬性，再刪除script標簽，以解決修覆內存泄漏的問題
 	 * 
 	 * @param {HTMLElement} src script節點
 	 */
@@ -9767,7 +9767,7 @@
 
 
 	/**
-	 * 通過script標籤加載數據，加載完成由瀏覽器端觸發回調
+	 * 通過script標簽加載數據，加載完成由瀏覽器端觸發回調
 	 * @name baidu.sio.callByBrowser
 	 * @function
 	 * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
@@ -9837,7 +9837,7 @@
 
 
 	/**
-	 * 通過script標籤加載數據，加載完成由服務器端觸發回調
+	 * 通過script標簽加載數據，加載完成由服務器端觸發回調
 	 * @name baidu.sio.callByServer
 	 * @function
 	 * @grammar baidu.sio.callByServer(url, callback[, opt_options])
@@ -9871,7 +9871,7 @@
 	        window[callbackName] = getCallBack(0);
 	    } else if(baidu.lang.isString(callback)){
 	        // 如果callback是一個字符串的話，就需要保證url是唯一的，不要去改變它
-	        // TODO 當調用了callback之後，無法刪除動態創建的script標籤
+	        // TODO 當調用了callback之後，無法刪除動態創建的script標簽
 	        callbackName = callback;
 	    } else {
 	        if (matches = reg.exec(url)) {
@@ -9922,7 +9922,7 @@
 
 
 	/**
-	 * 通過請求一個圖片的方式令服務器存儲一條日誌
+	 * 通過請求一個圖片的方式令服務器存儲一條日志
 	 * author: int08h,leeight
 	 * @param {string} url 要發送的地址.
 	 */
@@ -9931,9 +9931,9 @@
 	      key = 'tangram_sio_log_' + Math.floor(Math.random() *
 	            2147483648).toString(36);
 
-	  // 這裡一定要掛在window下
+	  // 這里一定要掛在window下
 	  // 在IE中，如果沒掛在window下，這個img變量又正好被GC的話，img的請求會abort
-	  // 導致服務器收不到日誌
+	  // 導致服務器收不到日志
 	  window[key] = img;
 
 	  img.onload = img.onerror = img.onabort = function() {
@@ -9947,11 +9947,11 @@
 
 	    // 下面這句非常重要
 	    // new Image創建的是DOM，DOM的事件中形成閉包環引用DOM是典型的內存泄露
-	    // 因此這裡一定要置為null
+	    // 因此這里一定要置為null
 	    img = null;
 	  };
 
-	  // 一定要在註冊了事件之後再設置src
+	  // 一定要在注冊了事件之後再設置src
 	  // 不然如果圖片是讀緩存的話，會錯過事件處理
 	  // 最後，對於url最好是添加客戶端時間來防止緩存
 	  // 同時服務器也配合一下傳遞Cache-Control: no-cache;
@@ -10338,7 +10338,7 @@
 
 
 	/**
-	 * 去掉字符串中的html標籤
+	 * 去掉字符串中的html標簽
 	 * @param {string} source 要處理的字符串.
 	 * @return {string}
 	 */
@@ -10532,8 +10532,8 @@
 	 * @param {string} source 目標字符串
 	 * @remark
 	 * 
-	1.支持html標籤、屬性以及字符實體。<br>
-	2.任意字符中間都會插入wbr標籤，對於過長的文本，會造成dom節點元素增多，占用瀏覽器資源。
+	1.支持html標簽、屬性以及字符實體。<br>
+	2.任意字符中間都會插入wbr標簽，對於過長的文本，會造成dom節點元素增多，占用瀏覽器資源。
 	3.在opera下，瀏覽器默認css不會為wbr加上樣式，導致沒有換行效果，可以在css中加上 wbr:after { content: "\00200B" } 解決此問題
 			
 	 *             
@@ -10628,7 +10628,7 @@
 	 * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路徑語句的基本目錄或URL
 	 * @param {string} 	options.bgcolor 			swf文件的背景色
 	 * @param {string} 	options.salign 				設置縮放的swf文件在由width和height設置定義的區域內的位置。允許值：l/r/t/b/tl/tr/bl/br
-	 * @param {boolean} options.menu 				是否顯示右鍵選單，允許值：true/false
+	 * @param {boolean} options.menu 				是否顯示右鍵菜單，允許值：true/false
 	 * @param {boolean} options.loop 				播放到最後一幀時是否重新播放，允許值： true/false
 	 * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
 	 * @param {string} 	options.quality 			設置flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
@@ -10679,7 +10679,7 @@
 	    var vars = options['vars'],
 	        objProperties = ['classid', 'codebase', 'id', 'width', 'height', 'align'];
 	    
-	    // 初始化object標籤需要的classid、codebase屬性值
+	    // 初始化object標簽需要的classid、codebase屬性值
 	    options['align'] = options['align'] || 'middle';
 	    options['classid'] = 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000';
 	    options['codebase'] = 'http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0';
@@ -10745,7 +10745,7 @@
 	    options['pluginspage'] = 'http://www.macromedia.com/go/getflashplayer';
 	    
 	    
-	    // 構建embed標籤的字符串
+	    // 構建embed標簽的字符串
 	    str.push('<embed');
 	    // 在firefox、opera、safari下，salign屬性必須在scale屬性之後，否則會失效
 	    // 經過討論，決定采用BT方法，把scale屬性的值先保存下來，最後輸出
@@ -10798,7 +10798,7 @@
 	 * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路徑語句的基本目錄或URL
 	 * @param {string} 	options.bgcolor 			swf文件的背景色
 	 * @param {string} 	options.salign 				設置縮放的swf文件在由width和height設置定義的區域內的位置。允許值：l/r/t/b/tl/tr/bl/br
-	 * @param {boolean} options.menu 				是否顯示右鍵選單，允許值：true/false
+	 * @param {boolean} options.menu 				是否顯示右鍵菜單，允許值：true/false
 	 * @param {boolean} options.loop 				播放到最後一幀時是否重新播放，允許值： true/false
 	 * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
 	 * @param {string} 	options.quality 			設置flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
@@ -10857,8 +10857,8 @@
 	 * @returns {HTMLElement} flash對象的實例
 	 */
 	baidu.swf.getMovie = function (name) {
-		//ie9下, Object標籤和embed標籤嵌套的方式生成flash時,
-		//會導致document[name]多返回一個Object元素,而起作用的只有embed標籤
+		//ie9下, Object標簽和embed標簽嵌套的方式生成flash時,
+		//會導致document[name]多返回一個Object元素,而起作用的只有embed標簽
 		var movie = document[name], ret;
 	    return baidu.browser.ie == 9 ?
 	    	movie && movie.length ? 
@@ -10883,11 +10883,11 @@
 	 * @function
 	 * @name baidu.swf.Proxy
 	 * @grammar new baidu.swf.Proxy(id, property, [, loadedHandler])
-	 * @param {string} id Flash的元素id.object標籤id, embed標籤name.
+	 * @param {string} id Flash的元素id.object標簽id, embed標簽name.
 	 * @param {string} property Flash的方法或者屬性名稱，用來檢測Flash是否初始化好了.
 	 * @param {Function} loadedHandler 初始化之後的回調函數.
 	 * @remark Flash對應的DOM元素必須已經存在, 否則拋錯. 可以使用baidu.swf.create預先創建Flash對應的DOM元素.
-	 * @author xxxxxx@baidu.com (leeight)
+	 * @author liyubei@baidu.com (leeight)
 	 */
 	baidu.swf.Proxy = function(id, property, loadedHandler) {
 	    /**
@@ -11063,7 +11063,7 @@
 	        };
 	        
 	    baidu.object.each(json, function(item, key){
-	        // 這裡只考慮item為數組、字符串、數字類型，不考慮嵌套的object
+	        // 這里只考慮item為數組、字符串、數字類型，不考慮嵌套的object
 	        if (baidu.lang.isArray(item)) {
 	            itemLen = item.length;
 	            // FIXME value的值需要encodeURIComponent轉義嗎？
@@ -11121,7 +11121,7 @@
 	            result[key] = value;
 	        } else if (baidu.lang.isArray(item)) {
 	            item.push(value);
-	        } else { // 這裡只可能是string了
+	        } else { // 這里只可能是string了
 	            result[key] = [item, value];
 	        }
 	    }

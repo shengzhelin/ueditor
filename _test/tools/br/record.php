@@ -34,7 +34,7 @@ function interXML($onlyfails) {
 				//				$caseList['totalCov'] = $totalCov;
 			} else { //否則添加到相應的用例中去
 				$foundCase = $caseList[$caseName]; //找到用例名稱對應的array，$caseName為key
-				if (!array_key_exists($browser, $foundCase)) { //如果沒有該瀏覽器訊息，則添加
+				if (!array_key_exists($browser, $foundCase)) { //如果沒有該瀏覽器信息，則添加
 					//					$totalCov += $cov;
 					$caseList[$caseName][$browser] = array (
 						'hostInfo' => $host,

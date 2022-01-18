@@ -12,13 +12,13 @@ UE.I18N['zh-cn'] = {
         'superscript':'上標', 'formatmatch':'格式刷', 'source':'源代碼', 'blockquote':'引用',
         'pasteplain':'純文本粘貼模式', 'selectall':'全選', 'print':'打印', 'preview':'預覽',
         'horizontal':'分隔線', 'removeformat':'清除格式', 'time':'時間', 'date':'日期',
-        'unlink':'取消鏈接', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合併單元格', 'mergedown':'下合併單元格',
+        'unlink':'取消鏈接', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合並單元格', 'mergedown':'下合並單元格',
         'deleterow':'刪除行', 'deletecol':'刪除列', 'splittorows':'拆分成行',
         'splittocols':'拆分成列', 'splittocells':'完全拆分單元格','deletecaption':'刪除表格標題','inserttitle':'插入標題',
-        'mergecells':'合併多個單元格', 'deletetable':'刪除表格', 'cleardoc':'清空文檔','insertparagraphbeforetable':"表格前插入行",'insertcode':'代碼語言',
+        'mergecells':'合並多個單元格', 'deletetable':'刪除表格', 'cleardoc':'清空文檔','insertparagraphbeforetable':"表格前插入行",'insertcode':'代碼語言',
         'fontfamily':'字體', 'fontsize':'字號', 'paragraph':'段落格式', 'simpleupload':'單圖上傳', 'insertimage':'多圖上傳','edittable':'表格屬性','edittd':'單元格屬性', 'link':'超鏈接',
         'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查詢替換', 'map':'Baidu地圖', 'gmap':'Google地圖',
-        'insertvideo':'視頻', 'help':'幫助', 'justifyleft':'靠左對齊', 'justifyright':'靠右對齊', 'justifycenter':'居中對齊',
+        'insertvideo':'視頻', 'help':'幫助', 'justifyleft':'居左對齊', 'justifyright':'居右對齊', 'justifycenter':'居中對齊',
         'justifyjustify':'兩端對齊', 'forecolor':'字體顏色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
         'insertunorderedlist':'無序列表', 'fullscreen':'全屏', 'directionalityltr':'從左向右輸入', 'directionalityrtl':'從右向左輸入',
         'rowspacingtop':'段前距', 'rowspacingbottom':'段後距',  'pagebreak':'分頁', 'insertframe':'插入Iframe', 'imagenone':'默認',
@@ -63,7 +63,7 @@ UE.I18N['zh-cn'] = {
     },
     'customstyle':{
         'tc':'標題居中',
-        'tl':'標題靠左',
+        'tl':'標題居左',
         'im':'強調',
         'hi':'明顯強調'
     },
@@ -166,10 +166,10 @@ UE.I18N['zh-cn'] = {
         'deletetitlecol':'刪除表格標題列',
         'averageDiseRow':'平均分布各行',
         'averageDisCol':'平均分布各列',
-        'mergeright':"向右合併",
-        'mergeleft':"向左合併",
-        'mergedown':"向下合併",
-        'mergecells':"合併單元格",
+        'mergeright':"向右合並",
+        'mergeleft':"向左合並",
+        'mergedown':"向下合並",
+        'mergecells':"合並單元格",
         'splittocells':"完全拆分單元格",
         'splittocols':"拆分成列",
         'splittorows':"拆分成行",
@@ -216,10 +216,10 @@ UE.I18N['zh-cn'] = {
     'more':'更多',
     'pasteOpt':'粘貼選項',
     'pasteSourceFormat':"保留源格式",
-    'tagFormat':'只保留標籤',
+    'tagFormat':'只保留標簽',
     'pasteTextFormat':'只保留文本',
     'autoTypeSet':{
-        'mergeLine':"合併空行",
+        'mergeLine':"合並空行",
         'delLine':"清除空行",
         'removeFormat':"清除格式",
         'indent':"首行縮進",
@@ -315,7 +315,7 @@ UE.I18N['zh-cn'] = {
             'lang_tab_upload': '上傳附件',
             'lang_tab_online': '在線附件',
             'lang_start_upload':"開始上傳",
-            'lang_drop_remind':"可以將文件拖到這裡，單次最多可選100個文件"
+            'lang_drop_remind':"可以將文件拖到這里，單次最多可選100個文件"
         },
         'uploadSelectFile':'點擊選擇文件',
         'uploadAddFile':'繼續添加',
@@ -632,7 +632,7 @@ UE.I18N['zh-cn'] = {
         captionName:'表格名稱',
         titleName:'標題',
         cellsName:'內容',
-        errorMsg:'有合併單元格，不可排序'
+        errorMsg:'有合並單元格，不可排序'
     },
     'edittip':{
         'static':{

@@ -35,7 +35,7 @@ test('trace 583,1726 插入表格、表情,撤銷', function () {
 });
 
 /*trace 595*/
-test('trace 595 撤銷合併單元格後再合併單元格', function () {
+test('trace 595 撤銷合並單元格後再合並單元格', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
@@ -45,7 +45,7 @@ test('trace 595 撤銷合併單元格後再合併單元格', function () {
     for (var i = 0; i < 5; i++) {
         tds[i].innerHTML = 'hello';
     }
-    //合併單元格
+    //合並單元格
     setTimeout(function () {
         var trs = editor.body.firstChild.getElementsByTagName('tr');
         var ut = editor.getUETable(editor.body.firstChild);
@@ -57,17 +57,17 @@ test('trace 595 撤銷合併單元格後再合併單元格', function () {
         ua.manualDeleteFillData(editor.body);
         var tds = editor.body.getElementsByTagName('td');
         equal(tds.length, 6, '單元格數');
-        equal(trs[0].cells[0].colSpan, 2, '合併--[0][0]單元格colspan');
-        equal(trs[0].cells[0].rowSpan, 2, '合併--[0][0]單元格rowspan');
+        equal(trs[0].cells[0].colSpan, 2, '合並--[0][0]單元格colspan');
+        equal(trs[0].cells[0].rowSpan, 2, '合並--[0][0]單元格rowspan');
         equal(trs[0].cells[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '內容覆制正確');
 
-        //撤銷合併單元格的操作
+        //撤銷合並單元格的操作
         editor.execCommand('undo');
         ua.manualDeleteFillData(editor.body);
         ok(tds[0].colSpan == 1 && tds[0].rowSpan == 1 && tds.length == 9, '撤銷後，單元格回覆成多個');
         ok(tds[0].innerHTML.toLowerCase() == 'hello' && tds[1].innerHTML.toLowerCase() == 'hello' && tds[3].innerHTML.toLowerCase() == 'hello' && tds[4].innerHTML.toLowerCase() == 'hello', '內容覆制正確');
 
-        //再次合併單元格
+        //再次合並單元格
         setTimeout(function () {
             var trs = editor.body.firstChild.getElementsByTagName('tr');
             var ut = editor.getUETable(editor.body.firstChild);
@@ -77,7 +77,7 @@ test('trace 595 撤銷合併單元格後再合併單元格', function () {
             editor.execCommand('mergecells');
             ua.manualDeleteFillData(editor.body);
             tds = editor.body.firstChild.getElementsByTagName('td');
-            ok(tds[0].colSpan == 2 && tds[0].rowSpan == 2 && tds.length == 6, '再次合併，多個單元格合併成一個');
+            ok(tds[0].colSpan == 2 && tds[0].rowSpan == 2 && tds.length == 6, '再次合並，多個單元格合並成一個');
             equal(tds[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '內容覆制正確');
             start();
         }, 50);
@@ -140,7 +140,7 @@ test('trace 617 插入文本、分割線、文本,撤銷2次，撤銷掉分割�
 });
 
 /*trace 632*/
-test('trace 632 合併單元格後撤銷再合併單元格不會丟字', function () {
+test('trace 632 合並單元格後撤銷再合並單元格不會丟字', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
@@ -150,7 +150,7 @@ test('trace 632 合併單元格後撤銷再合併單元格不會丟字', functio
     for (var i = 0; i < 6; i++) {
         tds[i].innerHTML = 'hello';
     }
-    //合併單元格
+    //合並單元格
     setTimeout(function () {
         var trs = editor.body.firstChild.getElementsByTagName('tr');
         var ut = editor.getUETable(editor.body.firstChild);
@@ -160,9 +160,9 @@ test('trace 632 合併單元格後撤銷再合併單元格不會丟字', functio
         editor.execCommand('mergecells');
         ua.manualDeleteFillData(editor.body);
         tds = editor.body.firstChild.getElementsByTagName('td');
-        equal(tds[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '合併單元格,內容覆制正確');
+        equal(tds[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '合並單元格,內容覆制正確');
 
-        //撤銷合併單元格的操作,再次合併單元格
+        //撤銷合並單元格的操作,再次合並單元格
         editor.execCommand('Undo');
         setTimeout(function () {
             var trs = editor.body.firstChild.getElementsByTagName('tr');
@@ -173,7 +173,7 @@ test('trace 632 合併單元格後撤銷再合併單元格不會丟字', functio
             editor.execCommand('mergecells');
             ua.manualDeleteFillData(editor.body);
             tds = editor.body.firstChild.getElementsByTagName('td');
-            equal(tds[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '撤銷後再次合併單元格,內容覆制正確');
+            equal(tds[0].innerHTML.toLowerCase(), 'hello<br>hello<br>hello<br>hello', '撤銷後再次合並單元格,內容覆制正確');
             start();
         }, 50);
     }, 50);
@@ -182,14 +182,14 @@ test('trace 632 合併單元格後撤銷再合併單元格不會丟字', functio
 
 /*trace 675  這個trace用例中的操作已經設為非法*/
 /*trace 685*/
-test('trace 685 合併單元格後,刪除行,再撤銷,再刪除行', function () {
+test('trace 685 合並單元格後,刪除行,再撤銷,再刪除行', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
     range.setStart(editor.body.firstChild, 0).collapse(true).select();
     editor.execCommand('inserttable', {numCols: 4, numRows: 4});
 
-    //選擇第一行的4格單元格，合併
+    //選擇第一行的4格單元格，合並
     setTimeout(function () {
         var trs = editor.body.firstChild.getElementsByTagName('tr');
         var ut = editor.getUETable(editor.body.firstChild);
@@ -198,9 +198,9 @@ test('trace 685 合併單元格後,刪除行,再撤銷,再刪除行', function (
         range.setStart(trs[0].cells[0], 0).collapse(true).select();
         var tds = editor.body.getElementsByTagName('td');
         editor.execCommand('mergecells');
-        ok(tds[0].colSpan == 4 && tds[0].rowSpan == 1, '第一行的4個單元格合併成一個');
+        ok(tds[0].colSpan == 4 && tds[0].rowSpan == 1, '第一行的4個單元格合並成一個');
 
-        //選擇第2，3，4行的第1個單元格，合併
+        //選擇第2，3，4行的第1個單元格，合並
         setTimeout(function () {
             var trs = editor.body.firstChild.getElementsByTagName('tr');
             var ut = editor.getUETable(editor.body.firstChild);
@@ -209,9 +209,9 @@ test('trace 685 合併單元格後,刪除行,再撤銷,再刪除行', function (
             range.setStart(trs[0].cells[0], 0).collapse(true).select();
             var tds = editor.body.getElementsByTagName('td');
             editor.execCommand('mergecells');
-            ok(tds[1].colSpan == 1 && tds[1].rowSpan == 3, '第2，3，4行的第一個單元格合併成一個');
+            ok(tds[1].colSpan == 1 && tds[1].rowSpan == 3, '第2，3，4行的第一個單元格合並成一個');
 
-            //單擊第二步合併的單元格，點擊刪除行
+            //單擊第二步合並的單元格，點擊刪除行
             range.setStart(tds[4], 0).collapse(true).select();
             editor.execCommand('deleterow');
             equal(editor.body.firstChild.getElementsByTagName('tr').length, 3, '點擊刪除行，表格剩三行');
@@ -230,14 +230,14 @@ test('trace 685 合併單元格後,刪除行,再撤銷,再刪除行', function (
 
 /*trace 711 這個要中文輸入法再模擬鍵盤輸入，貌似不能寫？？？*/
 /*trace 718*/
-test('trace 718 合併單元格後,刪除列,再撤銷,再刪除列', function () {
+test('trace 718 合並單元格後,刪除列,再撤銷,再刪除列', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
     range.setStart(editor.body.firstChild, 0).collapse(true).select();
     editor.execCommand('inserttable', {numCols: 4, numRows: 4});
 
-    //選擇中間的4格單元格，合併
+    //選擇中間的4格單元格，合並
     setTimeout(function () {
         var trs = editor.body.firstChild.getElementsByTagName('tr');
         var ut = editor.getUETable(editor.body.firstChild);
@@ -246,8 +246,8 @@ test('trace 718 合併單元格後,刪除列,再撤銷,再刪除列', function (
         range.setStart(trs[1].cells[1], 0).collapse(true).select();
         var tds = editor.body.firstChild.getElementsByTagName('td');
         editor.execCommand('mergecells');
-        ok(tds[5].colSpan == 2 && tds[5].rowSpan == 2, '對一個4*4的表格，選擇中間的4格單元格，合併成一個');
-        //光標定位在合併後的大單元格中，點擊刪除列按鈕
+        ok(tds[5].colSpan == 2 && tds[5].rowSpan == 2, '對一個4*4的表格，選擇中間的4格單元格，合並成一個');
+        //光標定位在合並後的大單元格中，點擊刪除列按鈕
         range.setStart(tds[5], 0).collapse(true).select();
         editor.execCommand('deletecol');
         equal(editor.body.firstChild.getElementsByTagName('tr')[0].childNodes.length, 3, '點擊刪除列，表格剩三列');
@@ -269,14 +269,14 @@ test('trace 718 合併單元格後,刪除列,再撤銷,再刪除列', function (
 
 /*trace 722 需要中文輸入法*/
 /*trace 743*/
-test('trace 743 合併單元格後,刪除列,再撤銷', function () {
+test('trace 743 合並單元格後,刪除列,再撤銷', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
     range.setStart(editor.body.firstChild, 0).collapse(true).select();
     editor.execCommand('inserttable', {numCols: 4, numRows: 4});
 
-    //第一行的4格單元格，合併
+    //第一行的4格單元格，合並
     setTimeout(function () {
         var trs = editor.body.firstChild.getElementsByTagName('tr');
         var ut = editor.getUETable(editor.body.firstChild);
@@ -285,7 +285,7 @@ test('trace 743 合併單元格後,刪除列,再撤銷', function () {
         range.setStart(trs[0].cells[0], 0).collapse(true).select();
         editor.execCommand('mergecells');
         var tds = editor.body.firstChild.getElementsByTagName('td');
-        ok(tds[0].colSpan == 4 && tds[0].rowSpan == 1 && tds.length == 13, '對一個4*4的表格，選擇第一行的4格單元格，合併成一個');
+        ok(tds[0].colSpan == 4 && tds[0].rowSpan == 1 && tds.length == 13, '對一個4*4的表格，選擇第一行的4格單元格，合並成一個');
         //點擊刪除列按鈕
         editor.execCommand('deletecol');
         equal(editor.body.firstChild.getElementsByTagName('tr')[1].childNodes.length, 3, '點擊刪除列，表格剩3列');

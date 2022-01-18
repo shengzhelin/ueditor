@@ -7,7 +7,7 @@
  */
 module( 'ui.menu' );
 test( 'menu,submenu的顯示', function() {
-//設置選單內容\
+//設置菜單內容\
     var editor = new te.obj[0].Editor();
     var items=[
             {
@@ -45,13 +45,13 @@ test( 'menu,submenu的顯示', function() {
                 icon:'justifyjustify',
                 subMenu:{
                         items: [{
-                            label:'靠左對齊',
+                            label:'居左對齊',
                             cmdName:'justify',
                             value:'left',
                             editor:editor
                         },
                         {
-                            label:'靠右對齊',
+                            label:'居右對齊',
                             cmdName:'justify',
                             value:'right',
                             editor:editor
@@ -96,7 +96,7 @@ test( 'menu,submenu的顯示', function() {
         equal(document.getElementById(submenu1).style.display,'','顯示submenu,檢查submenu的display值:""');
         equal(getElementsByClassName_2(document.getElementById(submenu1),'div','edui-menu-body')[0].childNodes.length,4,'檢查submenu的menuitems數量');
         equal(getElementsByClassName_2(document.getElementById(submenu1),'div','edui-menu-body')[0].firstChild.className,'edui-menuitem  edui-'+editor.options.theme,'檢查submenu的內容');
-        equal(getElementsByClassName_2(document.getElementById(submenu1),'div','edui-menuitem')[0].firstChild.lastChild.innerHTML,'靠左對齊','檢查menuitem的內容');
+        equal(getElementsByClassName_2(document.getElementById(submenu1),'div','edui-menuitem')[0].firstChild.lastChild.innerHTML,'居左對齊','檢查menuitem的內容');
         var menuClass = document.getElementById(menuid1).className;
         equal(menuClass,"edui-menuitem  edui-"+editor.options.theme+" edui-hassubmenu edui-hassubmenu edui-state-hover edui-state-opened",'');
         if(ua.browser.ie){
@@ -132,7 +132,7 @@ test( 'menu,submenu的顯示', function() {
 } );
 test( '先打開一個submenu，再打開另一個submenu', function() {
 var editor = new te.obj[0].Editor();
-//設置選單內容
+//設置菜單內容
     var items=[
             {
                 label:'刪除',
@@ -143,13 +143,13 @@ var editor = new te.obj[0].Editor();
                 icon:'justifyjustify',
                 subMenu:{
                         items: [{
-                            label:'靠左對齊',
+                            label:'居左對齊',
                             cmdName:'justify',
                             value:'left'
 
                         },
                         {
-                            label:'靠右對齊',
+                            label:'居右對齊',
                             cmdName:'justify',
                             value:'right'
                         },
@@ -170,12 +170,12 @@ var editor = new te.obj[0].Editor();
                 label:'表格',
                 subMenu:{
                         items: [{
-                            label:'靠左對齊',
+                            label:'居左對齊',
                             cmdName:'justify',
                             value:'left'
                         },
                         {
-                            label:'靠右對齊',
+                            label:'居右對齊',
                             cmdName:'justify',
                             value:'right'
                         }],
@@ -228,7 +228,7 @@ var editor = new te.obj[0].Editor();
 } );
 test( 'dispose', function() {
     var editor = new te.obj[0].Editor();
-//設置選單內容
+//設置菜單內容
     var items=[
             {
                 label:'刪除',
@@ -261,12 +261,12 @@ test( 'dispose', function() {
                 label:'表格',
                 subMenu:{
                         items: [{
-                            label:'靠左對齊',
+                            label:'居左對齊',
                             cmdName:'justify',
                             value:'left'
                         },
                         {
-                            label:'靠右對齊',
+                            label:'居右對齊',
                             cmdName:'justify',
                             value:'right'
                         }],
@@ -286,7 +286,7 @@ test( 'dispose', function() {
 } );
 test( '_onClick', function() {
     var editor = new te.obj[0].Editor();
-//設置選單內容
+//設置菜單內容
     var items=[
             {
                 label:'取消鏈接',
@@ -296,12 +296,12 @@ test( '_onClick', function() {
                 label:'表格',
                 subMenu:{
                         items: [{
-                            label:'靠左對齊',
+                            label:'居左對齊',
                             cmdName:'justify',
                             value:'left'
                         },
                         {
-                            label:'靠右對齊',
+                            label:'居右對齊',
                             cmdName:'justify',
                             value:'right'
                         }],

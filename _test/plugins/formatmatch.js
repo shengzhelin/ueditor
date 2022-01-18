@@ -294,7 +294,7 @@ test('trace 1096，1761:表格刷表格', function () {
 });
 
 /*trace 1092, 991*/
-test('文本刷a標籤(閉合)', function () {
+test('文本刷a標簽(閉合)', function () {
 
     var editor = te.obj[0];
     var range = te.obj[1];
@@ -349,7 +349,7 @@ test('點了格式刷後不刷文本再點一次格式刷', function () {
         }, 50);
     stop();
 });
-test('a標籤刷文本', function () {
+test('a標簽刷文本', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     setTimeout(function () {

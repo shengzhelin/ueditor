@@ -80,7 +80,7 @@ test('trace 2747 普通情況,選中一個節點，輸入tab鍵',function(){
     stop();
 });
 
-test('trace 2746 刪除自閉合標籤',function(){
+test('trace 2746 刪除自閉合標簽',function(){
     var editor = te.obj[0];
     editor.setContent( '<h1>hello<br></h1><p>he<img src="http://img.baidu.com/hi/jx2/j_0015.gif" />oll</p>' );
     var range = te.obj[1];
@@ -91,7 +91,7 @@ test('trace 2746 刪除自閉合標籤',function(){
         setTimeout(function(){
             equal(te.obj[0].undoManger.index,1,'');
             var html = '<h1>hello<br></h1><p>heoll</p>';
-            equal(ua.getChildHTML(te.obj[0].body),html,'刪除自閉合標籤');
+            equal(ua.getChildHTML(te.obj[0].body),html,'刪除自閉合標簽');
             start();
         },20);
     },20);
@@ -216,7 +216,7 @@ test(' 光標定位到列表前，輸入tab鍵',function(){
     stop();
 });
 
-test( '刪除inline的標籤', function() {
+test( '刪除inline的標簽', function() {
     var editor = te.obj[0];
     editor.setContent( '<p><strong><em>hello world</em><span>wasai</span></strong></p>' );
     var range = te.obj[1];

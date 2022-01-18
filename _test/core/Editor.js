@@ -77,7 +77,7 @@ test("initialStyle", function () {
 
 test("autoSyncData:true,textarea容器(由setcontent觸發的)", function () {
     var div = document.body.appendChild(document.createElement('div'));
-    div.innerHTML = '<form id="form" method="post" target="_blank"><textarea id="myEditor" name="myEditor">這裡的內容將會和html，body等標籤一塊提交</textarea></form>';
+    div.innerHTML = '<form id="form" method="post" target="_blank"><textarea id="myEditor" name="myEditor">這里的內容將會和html，body等標簽一塊提交</textarea></form>';
     equal(document.getElementById('form').childNodes.length, 1, 'form里只有一個子節點');
     var editor_a = UE.getEditor('myEditor', {autoHeightEnabled: false});
     stop();
@@ -124,7 +124,7 @@ test("autoSyncData:true（由blur觸發的）", function () {
 });
 test("sync", function () {
     var div = document.body.appendChild(document.createElement('div'));
-    div.innerHTML = '<form id="form" method="post" target="_blank"><textarea id="myEditor" name="myEditor">這裡的內容將會和html，body等標籤一塊提交</textarea></form>';
+    div.innerHTML = '<form id="form" method="post" target="_blank"><textarea id="myEditor" name="myEditor">這里的內容將會和html，body等標簽一塊提交</textarea></form>';
     var editor_a = UE.getEditor('myEditor', {autoHeightEnabled: false});
     stop();
     editor_a.ready(function () {
@@ -220,7 +220,7 @@ test("setDisabled,setEnabled", function () {
                 setTimeout(function () {
                     equal(editor.body.contentEditable, 'true', 'setEnabled');
                     equal(ua.getChildHTML(editor.body), '<p>歡迎使用ueditor!</p>', '內容恢覆');
-                    if (!ua.browser.ie || ua.browser.ie < 9) {// ie9,10改range 之後，ie9,10這裡的前後range不一致，focus時是text，setEnabled後是p
+                    if (!ua.browser.ie || ua.browser.ie < 9) {// ie9,10改range 之後，ie9,10這里的前後range不一致，focus時是text，setEnabled後是p
                         equal(editor.selection.getRange().startContainer.outerHTML, startContainer, '檢查range');
                     }
                     equal(editor.selection.getRange().startOffset, startOffset, '檢查range');
@@ -256,9 +256,9 @@ test("render-- options", function () {
 
     var div = document.body.appendChild(document.createElement('div'));
     editor.render(div);
-    /*會自動用p標籤包圍*/
+    /*會自動用p標簽包圍*/
     var space = baidu.editor.browser.ie ? '&nbsp;' : '<br>';
-    //策略變化，自1.2.6，div 標籤都會被過濾
+    //策略變化，自1.2.6，div 標簽都會被過濾
     stop();
     editor.ready(function () {
         equal(ua.getChildHTML(editor.body), '<p><span class="span">xxx</span></p><p>xxx</p><p>' + space + '</p>', 'check initialContent');
@@ -698,7 +698,7 @@ test("hasContents", function () {
 //    ok( editor.hasContents(), "空格不過濾" );
 //} );
 
-/*參數是對原有認為是空的標籤的一個擴展，即原來的dtd認為br為空，加上這個參數可以認為br存在時body也不是空*/
+/*參數是對原有認為是空的標簽的一個擴展，即原來的dtd認為br為空，加上這個參數可以認為br存在時body也不是空*/
 test("hasContents--有參數", function () {
     var editor = te.obj[1];
     var container = te.dom[0];

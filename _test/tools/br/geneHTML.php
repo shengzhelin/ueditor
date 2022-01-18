@@ -17,7 +17,7 @@
  *
  *
  *
- * 不直接使用<style type ="text/css">來設置css是因為有的郵件客戶端會過濾這樣的訊息
+ * 不直接使用<style type ="text/css">來設置css是因為有的郵件客戶端會過濾這樣的信息
  *
  * ***/
 function geneHTML($caseList, $name=''){
@@ -69,7 +69,7 @@ function getThBrowser($caseList){
 			$count++;
 		}
 		$thBrowser .="</tr><tr>";
-		break;//遍歷一次就知道所有瀏覽器的訊息
+		break;//遍歷一次就知道所有瀏覽器的信息
 	}
 	for($index = 0; $index < $count; $index++) {
 		$thBrowser .= "<td>cov</td><td>fail</td><td>total</td>";
@@ -80,7 +80,7 @@ function getThBrowser($caseList){
 
 /**
  *
- * 根據執行結果生成單元格訊息
+ * 根據執行結果生成單元格信息
  * @param unknown_type $caseList
  */
 function getTrCase($caseList,$onlyFail,$onlyCoverd){
@@ -107,7 +107,7 @@ function getTrCase($caseList,$onlyFail,$onlyCoverd){
 		    $trCase .= "<td title='全瀏覽器覆蓋率'>".$totalCov.($totalCov=="_"?"":"%")."</td>";
         }
 		foreach ($caseDetail as $br => $infos) {
-			//$b為browser名字,$info為詳細訊息
+			//$b為browser名字,$info為詳細信息
 			$fail = $infos['fail'];
             $ifFail = $fail==0?$ifFail:true;
 			$total = $infos['total'];
@@ -135,7 +135,7 @@ function getTrCase($caseList,$onlyFail,$onlyCoverd){
 
 /**
  *
- * 計算總覆蓋率訊息
+ * 計算總覆蓋率信息
  * @param unknown_type $caseDetail
  * @param unknown_type $brcount
  */
@@ -144,7 +144,7 @@ function calTotalCov($caseDetail,$brcount){
     $num_statements = 0;
     $num_executed = 0;
     $totalInfo = null;//數組，記錄全瀏覽器的覆蓋情況，對文件中的每一行：覆蓋為1，沒覆蓋為0，不計數為2
-    $flag = 1;//$flag==-1時，各個瀏覽器覆蓋率記錄的文件訊息有沖突，不能計算出全瀏覽器覆蓋率（統計的文件長度不同/標記為2的不計入統計的行訊息不同）
+    $flag = 1;//$flag==-1時，各個瀏覽器覆蓋率記錄的文件信息有沖突，不能計算出全瀏覽器覆蓋率（統計的文件長度不同/標記為2的不計入統計的行信息不同）
 	foreach ($caseDetail as $caseInfo){
         //如果recordCovForBrowser為空，跳過這個$caseInfo
         if($caseInfo['recordCovForBrowser']==''){
@@ -159,7 +159,7 @@ function calTotalCov($caseDetail,$brcount){
             ;
         if($totalInfo==null){
 //            if(count($infos)==1){
-//                $flag = 0;//沒有覆蓋率訊息
+//                $flag = 0;//沒有覆蓋率信息
 //                break;
 //            }
             for($i=0;$i<count($infos);$i++){
@@ -174,7 +174,7 @@ function calTotalCov($caseDetail,$brcount){
                     continue;
                 }
                 elseif($infos[$i]==2){
-                    $flag  = -1;//標記為2的不計入統計的行訊息不同
+                    $flag  = -1;//標記為2的不計入統計的行信息不同
                     break;
                 }
                 elseif($totalInfo[$i]==0&&$infos[$i]==1){
@@ -187,9 +187,9 @@ function calTotalCov($caseDetail,$brcount){
             }
 	    }
     }
-    if($flag==-1)//各個瀏覽器的統計訊息有矛盾
+    if($flag==-1)//各個瀏覽器的統計信息有矛盾
         $totalCov = "fail";
-    elseif($length==-1||$totalInfo==null)//沒有覆蓋率訊息
+    elseif($length==-1||$totalInfo==null)//沒有覆蓋率信息
         $totalCov = "_";
     else{
         for($i=0;$i<count($totalInfo);$i++){

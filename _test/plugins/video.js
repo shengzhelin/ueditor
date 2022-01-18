@@ -29,7 +29,7 @@ test( '插入優酷視頻', function () {
             ok(img[0].style.background.indexOf("url("+editor.options.UEDITOR_HOME_URL+"themes/default/images/videologo.gif)") > -1, '占位符背景圖是否正常');
         }
         var html = editor.getContent();
-        ok(html.toLowerCase().indexOf('<embed') != -1, '轉換為embed標籤');
+        ok(html.toLowerCase().indexOf('<embed') != -1, '轉換為embed標簽');
         start();
     },100);
 } );
@@ -58,7 +58,7 @@ test( '插入上傳視頻', function () {
         }
 
         var html = editor.getContent();
-        ok(html.toLowerCase().indexOf('<video') != -1, '轉換為video標籤');
+        ok(html.toLowerCase().indexOf('<video') != -1, '轉換為video標簽');
         start();
     },100);
 } );

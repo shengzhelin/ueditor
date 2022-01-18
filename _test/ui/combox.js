@@ -9,7 +9,7 @@ module( 'ui.combox' );
 test( 'combox', function() {
     var editor = new baidu.editor.ui.Editor();
     editor.render("editor");
-//設置選單內容
+//設置菜單內容
     var list = [
                 ['1',[1]],
                 ['0',[0]],

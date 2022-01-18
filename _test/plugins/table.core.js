@@ -106,7 +106,7 @@ test("cloneCell", function () {
     equal(cell.rowSpan, 2, "clone了一個2行一列的單元格");
     equal(cell.style.borderTopColor, "green", "上邊框的顏色將會被下邊框取代");
     cell = ut.cloneCell(table.rows[0].cells[0], true);
-    ok(cell.rowSpan, 1, "忽略被合併單元格時將會充值單元格的rowspan和colspan為1")
+    ok(cell.rowSpan, 1, "忽略被合並單元格時將會充值單元格的rowspan和colspan為1")
 });
 
 
@@ -143,16 +143,16 @@ test("mergeRight,mergeDown", function () {
         ut = new UT(table);
     var cell = table.rows[0].cells[1];
     ut.mergeDown(cell);
-    ok(cell.rowSpan === 2, "向下合併成功");
+    ok(cell.rowSpan === 2, "向下合並成功");
 
     ut.mergeDown(cell);
-    ok(cell.rowSpan === 3, "向下合併成功");
+    ok(cell.rowSpan === 3, "向下合並成功");
 
     cell = cell.previousSibling;
     ut.mergeRight(cell);
-    ok(cell.rowSpan === 3 && cell.colSpan === 2, "向右合併成功");
+    ok(cell.rowSpan === 3 && cell.colSpan === 2, "向右合並成功");
 
-    equal(cell.parentNode.rowIndex, 0, "合併到了正確的位置")
+    equal(cell.parentNode.rowIndex, 0, "合並到了正確的位置")
 });
 test("mergeRange",function(){
     var table = getTable("<tr><td rowspan='3'>1</td><td>2</td><td>3</td><td rowspan='2'>4</td><td>5</td><td>6</td></tr>" +
@@ -162,7 +162,7 @@ test("mergeRange",function(){
     var range = ut.getCellsRange(table.rows[0].cells[1],table.rows[2].cells[3]);
     ut.setSelected(range);
     ut.mergeRange();
-    ok(table.rows[0].cells[1].rowSpan===3,"合併選區")
+    ok(table.rows[0].cells[1].rowSpan===3,"合並選區")
 
 });
 

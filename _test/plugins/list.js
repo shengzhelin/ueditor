@@ -30,17 +30,17 @@ test('trace 3859 回車將p轉成列表', function () {
 });
 
 //todo bug3418
-test('ol標籤嵌套', function () {
+test('ol標簽嵌套', function () {
     var editor = te.obj[0];
     editor.setContent('<ol class="custom_num list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><p>a</p></li><ol class="custom_num list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><p>b</p></li></ol></ol>');
     ua.checkSameHtml(editor.body.innerHTML, '<ol class=\"custom_num list-paddingleft-1\"><li class=\"list-num-1-1 list-num-paddingleft-1\"><p>a</p></li><ol class=\"custom_num1 list-paddingleft-2\"><li class=\"list-num-2-1 list-num1-paddingleft-1\"><p>b</p></li></ol></ol>');
 });
 
-test('li內添加p標籤', function () {
+test('li內添加p標簽', function () {
     var editor = te.obj[0];
     editor.setContent('<ol><li>asd<p>asd</p></li></ol>');
     ua.manualDeleteFillData(editor.body);
-    ua.checkSameHtml(editor.body.innerHTML, '<ol class=\" list-paddingleft-2\"><li><p>asd</p><p>asd</p></li></ol>', '添加p標籤');
+    ua.checkSameHtml(editor.body.innerHTML, '<ol class=\" list-paddingleft-2\"><li><p>asd</p><p>asd</p></li></ol>', '添加p標簽');
 });
 //todo 1.2.6.1
 test('p轉成列表', function () {
@@ -316,7 +316,7 @@ test('非閉合方式切換有序和無序列表', function () {
     equal(ua.getChildHTML(body.firstChild), '<li><p>hello</p></li><li><p>hello3</p></li>', '變為有序列表後innerHTML 不變');
 });
 
-test('將列表下的文本合併到列表中', function () {
+test('將列表下的文本合並到列表中', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
@@ -344,7 +344,7 @@ test('多個列表', function () {
     editor.execCommand('insertorderedlist');
     equal(body.firstChild.tagName.toLowerCase(), 'ol', '仍然是ol');
     equal(body.childNodes.length, 1, 'body只有1個孩子ol');
-    equal(body.firstChild.childNodes.length, 2, '下面的列表合併到上面');
+    equal(body.firstChild.childNodes.length, 2, '下面的列表合並到上面');
     equal(ua.getChildHTML(body.lastChild), '<li><p>hello1</p></li><li><p>hello2</p></li>', '2個li子節點');
 });
 
@@ -363,37 +363,37 @@ test('修改列表中間某一段列表為另一種列表', function () {
     equal(ua.getChildHTML(body.childNodes[1]), '<li><p>hello2</p></li><li><p>hello3</p></li>', '檢查第二個列表的內容');
 });
 
-test('兩個列表，將下面的合併上去', function () {
+test('兩個列表，將下面的合並上去', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
     editor.setContent('<ol><li>hello3</li></ol><ol><li>hello1</li></ol><ul><li>hello2</li></ul>');
     range.selectNode(body.lastChild).select();
-    /*將無序的變為有序，有序上面的有序不會合併在一起了*/
+    /*將無序的變為有序，有序上面的有序不會合並在一起了*/
     editor.execCommand('insertorderedlist');
     equal(body.firstChild.tagName.toLowerCase(), 'ol', '仍然是ol');
     equal(body.childNodes.length, 2, 'body有兩個孩子ol');
-    equal(body.lastChild.childNodes.length, 2, '下面和上面的列表合併到上面去了');
+    equal(body.lastChild.childNodes.length, 2, '下面和上面的列表合並到上面去了');
 //TODO 1.2.6不嚴重bug注釋 空style未刪除
 //    equal( ua.getChildHTML( editor.body ), '<ol class=" list-paddingleft-2" ><li><p>hello3</p></li></ol><ol class=" list-paddingleft-2" ><li><p>hello1</p></li><li><p>hello2</p></li></ol>', '3個li子節點' );
 });
 
-test('trace 3293：列表下的文本合併到列表中', function () {
+test('trace 3293：列表下的文本合並到列表中', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
     editor.setContent('<ol><li>hello3</li><li>hello1</li></ol><p>文本1</p><p>文本2</p>');
     range.setStart(body, 1).setEnd(body, 3).select();
-    /*選中文本變為有序列表，和上面的列表合併了*/
+    /*選中文本變為有序列表，和上面的列表合並了*/
     editor.execCommand('insertorderedlist');
     var ol = body.firstChild;
-    equal(body.childNodes.length, 1, '所有合併為一個列表');
+    equal(body.childNodes.length, 1, '所有合並為一個列表');
     equal(ol.tagName.toLowerCase(), 'ol', '仍然是ol');
-    equal(ol.childNodes.length, 4, '下面和上面的列表合併到上面去了');
+    equal(ol.childNodes.length, 4, '下面和上面的列表合並到上面去了');
     equal(ua.getChildHTML(body.firstChild), '<li><p>hello3</p></li><li><p>hello1</p></li><li><p>文本1</p></li><li><p>文本2</p></li>', '4個li子節點');
 });
 
-test('2個相同類型的列表合併', function () {
+test('2個相同類型的列表合並', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
@@ -401,9 +401,9 @@ test('2個相同類型的列表合併', function () {
     range.selectNode(body.lastChild).select();
     editor.execCommand('insertorderedlist');
     var ol = body.firstChild;
-    equal(body.childNodes.length, 1, '所有合併為一個列表');
+    equal(body.childNodes.length, 1, '所有合並為一個列表');
     equal(ol.tagName.toLowerCase(), 'ol', '仍然是ol');
-    equal(ol.childNodes.length, 4, '下面和上面的列表合併到上面去了');
+    equal(ol.childNodes.length, 4, '下面和上面的列表合並到上面去了');
     equal(ua.getChildHTML(body.firstChild), '<li><p>hello3</p></li><li><p>hello1</p></li><li><p>文本1</p></li><li><p>文本2</p></li>', '4個li子節點');
 });
 
@@ -444,7 +444,7 @@ test('列表內後退', function () {
 
         var lis;
         var br = ua.browser.ie ? '<br>' : '<br>';
-//////標籤空格的處理
+//////標簽空格的處理
         editor.setContent('<ol><li><br></li><li><p>hello2</p></li><li><br></li><li><sss>hello3</sss></li><li><p>hello4</p></li><li><p>hello5</p></li></ol>');
 //    editor.setContent('<ol><li><br></li><li><p>hello2</p></li><li></li><li><sss>hello3</sss></li><li><p>hello4</p></li><li><p>hello5</p></li></ol>');
         range.setStart(editor.body.firstChild.lastChild.firstChild.firstChild, 0).collapse(1).select();
@@ -472,7 +472,7 @@ test('列表內後退', function () {
             ua.manualDeleteFillData(editor.body);
             ua.keydown(editor.body, {keyCode:8});
 //TODO 1.2.6不嚴重bug注釋 空style未刪除
-//        equal(ua.getChildHTML(editor.body),'<p><br></p><ol class=\" list-paddingleft-2\"><li><p>hello2</p><p><br></p><sss>hello3</sss></li><li><p>hello4</p><p>hello5</p></li></ol>','自定義標籤後退');
+//        equal(ua.getChildHTML(editor.body),'<p><br></p><ol class=\" list-paddingleft-2\"><li><p>hello2</p><p><br></p><sss>hello3</sss></li><li><p>hello4</p><p>hello5</p></li></ol>','自定義標簽後退');
         }
 
 });
@@ -495,7 +495,7 @@ test('列表內回車', function () {
         range.setStart(lis[0].lastChild, 0).collapse(1).select();
         ua.keydown(editor.body, {keyCode:13});
         equal(ua.getChildHTML(editor.body.firstChild), '<li><p><sss>hello1</sss><p></p></p></li><li><p><p>hello2</p></p></li>', '單個列表項內回車');
-//////標籤空格的處理
+//////標簽空格的處理
 //    editor.setContent('<ol><li><br></li><li><p>hello5</p></li><li><p><br></p><p><br></p></li></ol>');
         editor.setContent('<ol><li><br></li><li><p>hello5</p></li><li><p><br></p><p><br></p></li></ol>');
         lis = editor.body.getElementsByTagName('li');
@@ -807,7 +807,7 @@ test('trace 3118：全選後backspace', function () {
 
 });
 
-test('trace 3126：1.2.5+列表重構新增標籤，tab鍵', function () {
+test('trace 3126：1.2.5+列表重構新增標簽，tab鍵', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
 

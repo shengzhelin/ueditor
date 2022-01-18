@@ -188,7 +188,7 @@ test('trace 2121', function () {
 });
 test('autofloat:false 禁用IE中的自動加超鏈接功能', function () {
     if(ua.browser.ie==8)return;
-    //在IE中回車/空格自動加連接,這裡模擬加連接以後,測試keyup時把添加的鏈接去掉
+    //在IE中回車/空格自動加連接,這里模擬加連接以後,測試keyup時把添加的鏈接去掉
     if (ua.browser.ie>8) {//這個用例中,ie8不好模擬startContainer.nodeName = p,用下面的用例測是一樣的
         var div = document.body.appendChild(document.createElement('div'));
         div.id = 'ue';
@@ -202,7 +202,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能', function () {
                 setTimeout(function () {
                     ua.keyup(editor.body, {'keyCode': 13});
                     setTimeout(function () {
-                        equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標籤被去掉了');
+                        equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標簽被去掉了');
                         equal(body.childNodes.length, 2, '結果正確');
                         equal(body.firstChild.tagName.toLowerCase(), 'p', '結果正確');
                         equal(body.firstChild.innerHTML, 'www.baidu.com', '結果正確');
@@ -218,7 +218,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能', function () {
 });
 test('autofloat:false 禁用IE中的自動加超鏈接功能--回車', function () {
     if(ua.browser.ie==8)return;
-    //在IE中回車/空格自動加連接,這裡模擬加連接以後,測試keyup時把添加的鏈接去掉
+    //在IE中回車/空格自動加連接,這里模擬加連接以後,測試keyup時把添加的鏈接去掉
     if (ua.browser.ie) {
         var div = document.body.appendChild(document.createElement('div'));
         div.id = 'ue';
@@ -232,7 +232,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--回車', function 
                 setTimeout(function () {
                     ua.keyup(editor.body, {'keyCode': 13});
                     setTimeout(function () {
-                        equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標籤被去掉了');
+                        equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標簽被去掉了');
                         equal(body.childNodes.length, 2, '結果正確');
                         equal(body.firstChild.tagName.toLowerCase(), 'p', '結果正確');
                         equal(body.firstChild.innerHTML, 'www.baidu.com', '結果正確');
@@ -249,7 +249,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--回車', function 
 
 test('autofloat:false 禁用IE中的自動加超鏈接功能--空格', function () {
     if(ua.browser.ie==8)return;
-    //在IE中回車/空格自動加連接,這裡模擬加連接以後,測試keyup時把添加的鏈接去掉
+    //在IE中回車/空格自動加連接,這里模擬加連接以後,測試keyup時把添加的鏈接去掉
     if (ua.browser.ie) {
         var div = document.body.appendChild(document.createElement('div'));
         div.id = 'ue';
@@ -268,7 +268,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--空格', function 
 //                }
                 setTimeout(function () {
                     ua.keyup(editor.body, {'keyCode': 32});
-                    equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標籤被去掉了');
+                    equal(body.firstChild.getElementsByTagName('a').length, 0, 'a 標簽被去掉了');
                     equal(body.childNodes.length, 1, '結果正確');
                     equal(body.firstChild.tagName.toLowerCase(), 'p', '結果正確');
                     equal(body.firstChild.innerHTML.toLowerCase(), 'www.baidu.com'+space+'<img>', '結果正確');
@@ -285,7 +285,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--空格', function 
 });
 //對於手動添加的,不會誤刪
 test('autofloat:false 禁用IE中的自動加超鏈接功能--對於手動添加的,不會誤刪', function () {
-    //在IE中回車/空格自動加連接,這裡模擬加連接以後,測試keyup時把添加的鏈接去掉
+    //在IE中回車/空格自動加連接,這里模擬加連接以後,測試keyup時把添加的鏈接去掉
     if (ua.browser.ie) {
         var div = document.body.appendChild(document.createElement('div'));
         div.id = 'ue';
@@ -305,7 +305,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--對於手動添加
                 setTimeout(function () {
                     ua.keyup(editor.body, {'keyCode': 32});
                     var a = body.firstChild.getElementsByTagName('a');
-                    ok(a&&a.length==1, 'a 標籤沒去掉');
+                    ok(a&&a.length==1, 'a 標簽沒去掉');
                     ok(a[0] && $(a[0]).attr('href').indexOf('http://www.baidu.com') != -1, '檢查a的href');
                     setTimeout(function () {
                         editor.execCommand('cleardoc');
@@ -316,7 +316,7 @@ test('autofloat:false 禁用IE中的自動加超鏈接功能--對於手動添加
                                 ua.keyup(editor.body, {'keyCode': 13});
                                 setTimeout(function () {
                                     a = body.firstChild.getElementsByTagName('a');
-                                    ok(a&&a.length==1, 'a 標籤沒去掉');
+                                    ok(a&&a.length==1, 'a 標簽沒去掉');
                                     ok(a[0] && $(a[0]).attr('href').indexOf('http://www.baidu.com') != -1, '檢查a的href');
                                     UE.delEditor('ue');
                                     te.dom.push(document.getElementById('ue'));

@@ -234,7 +234,7 @@ test( '對插入的代碼設置多倍段前距', function () {
     }, 50);
 } );
 
-test( '在合併單元格中設置多倍段前距', function () {
+test( '在合並單元格中設置多倍段前距', function () {
     var editor = new baidu.editor.Editor({'autoFloatEnabled':false});
     stop();
     setTimeout( function () {
@@ -255,7 +255,7 @@ test( '在合併單元格中設置多倍段前距', function () {
                 range.setStart(trs[0].firstChild, 0).setEnd(trs[1].firstChild, 0).select();
                 editor.currentSelectedArr = [trs[0].firstChild, trs[1].firstChild];
                 editor.execCommand('mergecells');
-                /*合併單元格後設置這個單元格多倍段前距*/
+                /*合並單元格後設置這個單元格多倍段前距*/
                 ua.manualDeleteFillData(editor.body);
                 range.setStart(trs[0].firstChild, 0).collapse(true).select();
                 editor.execCommand('rowspacing', 20, 'top');
@@ -275,7 +275,7 @@ test( '在合併單元格中設置多倍段前距', function () {
 } );
 
 /*trace 1079*/
-test( '合併單元格後設置多個單元格多倍段前距', function () {
+test( '合並單元格後設置多個單元格多倍段前距', function () {
     var editor = new baidu.editor.Editor( {'plugins':['table'],'autoFloatEnabled':false} );
     stop();
     setTimeout(function () {
@@ -291,7 +291,7 @@ test( '合併單元格後設置多個單元格多倍段前距', function () {
             setTimeout(function () {
                 ua.manualDeleteFillData(editor.body);
                 var trs = editor.body.firstChild.getElementsByTagName('tr');
-                /*合併第一列前2個單元格*/
+                /*合並第一列前2個單元格*/
                 range.setStart(trs[0].firstChild, 0).setEnd(trs[1].firstChild, 0).select();
                 editor.currentSelectedArr = [trs[0].firstChild, trs[1].firstChild];
                 editor.execCommand('mergecells');

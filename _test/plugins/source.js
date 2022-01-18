@@ -49,7 +49,7 @@ test('chrome刪除後切換源碼再切換回來，光標沒了', function () {
 //        editor.setContent( '<p><br></p>' );
 //        setTimeout(function(){
 //            range.setStart( editor.body.firstChild, 0 ).collapse( 1 ).select();
-//            /*涉及到video的一些特殊處理，因此直接設置編輯器的html不是很可行，所以這裡用了video這個插件*/
+//            /*涉及到video的一些特殊處理，因此直接設置編輯器的html不是很可行，所以這里用了video這個插件*/
 //            editor.execCommand( 'insertvideo', {url:'www.baidu.com'} );
 //            setTimeout( function () {
 //                editor.execCommand( 'source' );
@@ -94,7 +94,7 @@ test('切換源碼，源碼中多處空行', function () {
 });
 
 /*trace 710*/
-test('設置源碼內容沒有p標籤，切換源碼後會自動添加', function () {
+test('設置源碼內容沒有p標簽，切換源碼後會自動添加', function () {
     var editor = te.obj[0];
     editor.setContent('<strong><em>helloworld你好啊</em></strong>大家好，<strong><i>你在幹嘛呢</i></strong><em><strong>。謝謝，不用謝</strong></em>~~%199<p>hello</p>');
     setTimeout(function () {
@@ -131,7 +131,7 @@ test('切換源碼去掉空的span', function () {
     equal(editor.getContent(), '<p>切換源碼去掉空的span</p>');
 });
 
-test('b,i標籤，切換源碼後自動轉換成strong和em', function () {
+test('b,i標簽，切換源碼後自動轉換成strong和em', function () {
     var editor = te.obj[0];
     editor.setContent('<p><b>加粗的內容</b><i>斜體的內容<b>加粗且斜體</b></i></p>');
     setTimeout(function () {
@@ -206,7 +206,7 @@ test('插入分頁符,源碼中顯示：_baidu_page_break_tag_', function () {
     stop();
 });
 //TODO 1.2.6
-//test( 'trace 1977 1949 插入代碼,源碼中對應的標籤是pre', function () {
+//test( 'trace 1977 1949 插入代碼,源碼中對應的標簽是pre', function () {
 //    var div = document.body.appendChild( document.createElement( 'div' ) );
 //    $( div ).css( 'width', '500px' ).css( 'height', '500px' ).css( 'border', '1px solid #ccc' );
 //    var editor = te.obj[2];
@@ -304,7 +304,7 @@ test('trace 1727:插入超鏈接後再插入空格，空格不能被刪除', fun
 //    });
 //});
 
-test('在font,b,i標籤中輸入，會自動轉換標籤 ', function () {
+test('在font,b,i標簽中輸入，會自動轉換標簽 ', function () {
 //    if(!ua.browser.gecko){
     var editor = te.obj[0];
     editor.body.innerHTML = '<p><font size="3" color="red"><b><i>x</i></b></font></p>';

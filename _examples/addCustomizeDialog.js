@@ -2,7 +2,7 @@ UE.registerUI('dialog',function(editor,uiName){
 
     //創建dialog
     var dialog = new UE.ui.Dialog({
-        //指定彈出層中頁面的路徑，這裡只能支持頁面,因為跟addCustomizeDialog.js相同目錄，所以無需加路徑
+        //指定彈出層中頁面的路徑，這里只能支持頁面,因為跟addCustomizeDialog.js相同目錄，所以無需加路徑
         iframeUrl:'customizeDialogPage.html',
         //需要指定當前的編輯器實例
         editor:editor,
@@ -36,7 +36,7 @@ UE.registerUI('dialog',function(editor,uiName){
     var btn = new UE.ui.Button({
         name:'dialogbutton' + uiName,
         title:'dialogbutton' + uiName,
-        //需要添加的額外樣式，指定icon圖標，這裡默認使用一個重覆的icon
+        //需要添加的額外樣式，指定icon圖標，這里默認使用一個重覆的icon
         cssRules :'background-position: -500px 0;',
         onclick:function () {
             //渲染dialog

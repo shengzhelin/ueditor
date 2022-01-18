@@ -8,7 +8,7 @@
 module('plugins.contextmenu');
 
 //test('stop', function () {stop();});
-test('基本右鍵選單', function () {
+test('基本右鍵菜單', function () {
     var editor = te.obj[0];
     stop();
 
@@ -65,7 +65,7 @@ test('基本右鍵選單', function () {
         }, 200);
 });
 
-test('表格右鍵選單', function () {
+test('表格右鍵菜單', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     stop();
@@ -74,7 +74,7 @@ test('表格右鍵選單', function () {
         setTimeout(function () {
             range.setStart(editor.body.firstChild.firstChild.firstChild.firstChild.firstChild, 0).collapse(true).select();
             ua.contextmenu(editor.body.firstChild.firstChild.firstChild);
-// 點開右鍵選單
+// 點開右鍵菜單
             equal(document.getElementsByClassName("edui-menu-body").length, 5, '獲得edui-menu-body名稱的class個數5');
             var menuBody = document.getElementsByClassName("edui-menu-body")[0];
             equal(menuBody.childNodes.length, 13, '第一個menu11個items2個分隔線');
@@ -88,7 +88,7 @@ test('表格右鍵選單', function () {
 
             var menutableBody = document.getElementsByClassName("edui-menu-body")[1];
             var forTable = document.getElementsByClassName('edui-for-table');
-//點開'表格'子選單
+//點開'表格'子菜單
             if (ua.browser.ie) {
                 ua.mouseenter(forTable[forTable.length - 1]);
             } else {
@@ -197,7 +197,7 @@ test('trace 3088：檢查表格屬性', function () {
             setTimeout(function () {
                 var menutable = document.getElementsByClassName("edui-menu-body")[1];
                 var forTable = document.getElementsByClassName('edui-for-table');
-                //點開'表格屬性'(表格子選單的倒數第二項)
+                //點開'表格屬性'(表格子菜單的倒數第二項)
                 if (ua.browser.ie&&ua.browser.ie<9) {
                     ua.mouseenter(forTable[forTable.length - 1]);
                     ua.click(menutable.childNodes[menutable.childNodes.length-2]);

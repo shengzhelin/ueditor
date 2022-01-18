@@ -571,7 +571,7 @@ test('trace 3022 表格名稱中backspace、ctrl+z、enter', function () {
 
 
 /*trace 3067*/
-test('trace 3067 向右合併--tab鍵', function () {
+test('trace 3067 向右合並--tab鍵', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     editor.setContent('<p></p>');
@@ -585,12 +585,12 @@ test('trace 3067 向右合併--tab鍵', function () {
     range.setStart(tds[0], 0).collapse(true).select();
     range = editor.selection.getRange();
     var common = range.getCommonAncestor(true, true);
-    equal(common.colSpan, 2, 'tab鍵前光標位於合併後的單元格中');
+    equal(common.colSpan, 2, 'tab鍵前光標位於合並後的單元格中');
     ua.keydown(editor.body, {'keyCode': 9});
     setTimeout(function () {
         range = editor.selection.getRange();
         common = range.getCommonAncestor(true, true);
-        equal(common.colSpan, 1, 'tab鍵前光標跳到合併後單元格的下一個單元格中');
+        equal(common.colSpan, 1, 'tab鍵前光標跳到合並後單元格的下一個單元格中');
         start();
     }, 20);
     stop();
@@ -713,7 +713,7 @@ test('表格粘貼', function () {
     equal(editor.body.getElementsByTagName('table').length, '2', '觸發粘貼事件後有2個table');
 });
 //
-//test('trace 3104 粘貼後合併單元格',function(){
+//test('trace 3104 粘貼後合並單元格',function(){
 //    var div = document.body.appendChild(document.createElement('div'));
 //    var editor = te.obj[0];
 //    var range = te.obj[1];
@@ -797,13 +797,13 @@ test('trace 3106 粘貼標題行', function () {
 //        equal(editor.body.firstChild.firstChild.firstChild.firstChild.tagName.toLowerCase(),'td','不是th，是td');
         range.setStart(editor.body.firstChild.firstChild.firstChild.firstChild, 0).collapse(true).select();
         equal(editor.queryCommandState('inserttable'), -1, '應當不可以插入表格');
-        equal(editor.queryCommandState('mergeright'), 0, '應當可以右合併單元格');
+        equal(editor.queryCommandState('mergeright'), 0, '應當可以右合並單元格');
     }
     else {
 //        equal(editor.body.firstChild.nextSibling.firstChild.firstChild.firstChild.tagName.toLowerCase(),'td','不是th，是td');
         range.setStart(editor.body.firstChild.nextSibling.firstChild.firstChild.firstChild, 0).collapse(true).select();
         equal(editor.queryCommandState('inserttable'), -1, '應當不可以插入表格');
-        equal(editor.queryCommandState('mergeright'), 0, '應當可以右合併單元格');
+        equal(editor.queryCommandState('mergeright'), 0, '應當可以右合並單元格');
     }
 });
 

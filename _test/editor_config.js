@@ -1,9 +1,9 @@
 /**
  *  ueditor完整配置項
- *  可以在這裡配置整個編輯器的特性
+ *  可以在這里配置整個編輯器的特性
  */
 var UEDITOR_CONFIG2 = {
-    UEDITOR_HOME_URL: '../../../', //這裡你可以配置成ueditor目錄在您網站的絕對路徑
+    UEDITOR_HOME_URL: '../../../', //這里你可以配置成ueditor目錄在您網站的絕對路徑
     toolbars: [
         ['FullScreen','Source','|','Undo','Redo','|',
          'Bold','Italic','Underline','StrikeThrough','Superscript','Subscript','RemoveFormat','FormatMatch','|',
@@ -44,14 +44,14 @@ var UEDITOR_CONFIG2 = {
         'unlink': '取消鏈接',
         'insertrow': '前插入行',
         'insertcol': '前插入列',
-        'mergeright': '右合併單元格',
-        'mergedown': '下合併單元格',
+        'mergeright': '右合並單元格',
+        'mergedown': '下合並單元格',
         'deleterow': '刪除行',
         'deletecol': '刪除列',
         'splittorows': '拆分成行',
         'splittocols': '拆分成列',
         'splittocells': '完全拆分單元格',
-        'mergecells': '合併多個單元格',
+        'mergecells': '合並多個單元格',
         'deletetable': '刪除表格',
 //        'tablesuper': '表格高級設置',
         'insertparagraphbeforetable': '表格前插行',
@@ -69,8 +69,8 @@ var UEDITOR_CONFIG2 = {
         'gmap': 'Google地圖',
         'video': '視頻',
         'help': '幫助',
-        'justifyleft':'靠左對齊',
-        'justifyright':'靠右對齊',
+        'justifyleft':'居左對齊',
+        'justifyright':'居右對齊',
         'justifycenter':'居中對齊',
         'justifyjustify':'兩端對齊',
         'forecolor' : '字體顏色',
@@ -144,12 +144,12 @@ var UEDITOR_CONFIG2 = {
             icon : 'justifyjustify',
             subMenu : [
                 {
-                    label: '靠左對齊',
+                    label: '居左對齊',
                     cmdName : 'justify',
                     value : 'left'
                 },
                {
-                    label: '靠右對齊',
+                    label: '居右對齊',
                     cmdName : 'justify',
                     value : 'right'
                 },{
@@ -194,11 +194,11 @@ var UEDITOR_CONFIG2 = {
                 },
                 '-',
                  {
-                    label: '右合併單元格',
+                    label: '右合並單元格',
                     cmdName : 'mergeright'
                 },
                 {
-                    label: '下合併單元格',
+                    label: '下合並單元格',
                     cmdName : 'mergedown'
                 },
                 '-',
@@ -211,7 +211,7 @@ var UEDITOR_CONFIG2 = {
                     cmdName : 'splittocols'
                 },
                  {
-                    label: '合併多個單元格',
+                    label: '合並多個單元格',
                     cmdName : 'mergecells'
                 },
                 {
@@ -226,9 +226,9 @@ var UEDITOR_CONFIG2 = {
     initialContent: '<span style="color:#ccc">歡迎光臨編輯器</span>',  //初始化編輯器的內容
     autoClearinitialContent :true,                       //是否自動清除編輯器初始內容
     iframeCssUrl :'../../../themes/iframe.css',        //要引入css的url
-    removeFormatTags : 'b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,span,strike,strong,sub,sup,tt,u,var',    //配置格式刷刪除的標籤
+    removeFormatTags : 'b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,span,strike,strong,sub,sup,tt,u,var',    //配置格式刷刪除的標簽
     removeFormatAttributes : 'class,style,lang,width,height,align,hspace,valign',        //配置格式刷刪除的屬性
-    enterTag : 'br',                                      //編輯器回車標籤。p或br
+    enterTag : 'br',                                      //編輯器回車標簽。p或br
     maxUndoCount : 20,                                   //最多可以回退的次數
     maxInputCount : 20,                                  //當輸入的字符數超過該值時，保存一次現場
     selectedTdClass : 'selectTdClass',                   //設定選中td的樣式名稱
@@ -240,7 +240,7 @@ var UEDITOR_CONFIG2 = {
     initialFrameHeight: 400,                                 //最小高度
     autoHeightEnabled: true,                             //是否自動長高
     elementPathEnabled : false,                          //是否啟用elementPath
-    serialize : function(){                              //配置過濾標籤
+    serialize : function(){                              //配置過濾標簽
         function X( t, s, b ) {
             var o = {};
             for(var i=0,ai;ai=arguments[i++];){

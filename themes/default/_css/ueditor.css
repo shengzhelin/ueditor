@@ -7,15 +7,15 @@
 @import "editor.css";
 
 
-/*-------可選中選單按鈕，按需加載-------*/
-    /*可選中選單按鈕--依賴splitbutton*/
+/*-------可選中菜單按鈕，按需加載-------*/
+    /*可選中菜單按鈕--依賴splitbutton*/
 @import "menubutton.css";
-    /*可選中選單按鈕-彈出選單*/
+    /*可選中菜單按鈕-彈出菜單*/
 @import "menu.css";
 
 
-/*-------不可選中選單按鈕，按需加載-------*/
-    /*不可選中選單按鈕--依賴splitbutton*/
+/*-------不可選中菜單按鈕，按需加載-------*/
+    /*不可選中菜單按鈕--依賴splitbutton*/
 @import "combox.css";
 
 
@@ -24,9 +24,9 @@
 @import "button.css";
     /*按鈕icon*/
 @import "buttonicon.css";
-    /*彈出選單按鈕-附加按鈕*/
+    /*彈出菜單按鈕-附加按鈕*/
 @import "splitbutton.css";
-    /*彈出選單*/
+    /*彈出菜單*/
 @import "popup.css";
     /*提示消息*/
 @import "message.css";
@@ -35,15 +35,15 @@
 /*-------獨立按鈕樣式，按需加載-------*/
     /*彈出對話框樣式*/
 @import "dialog.css";
-    /*段落格式彈出選單*/
+    /*段落格式彈出菜單*/
 @import "paragraphpicker.css";
-    /*表格彈出選單*/
+    /*表格彈出菜單*/
 @import "tablepicker.css";
-    /*顏色彈出選單*/
+    /*顏色彈出菜單*/
 @import "colorpicker.css";
-    /*自動排版彈出選單*/
+    /*自動排版彈出菜單*/
 @import "autotypesetpicker.css";
-    /*平均分布選單*/
+    /*平均分布菜單*/
 @import "cellalignpicker.css";
     /*分隔線*/
 @import "separtor.css";
@@ -51,9 +51,9 @@
 @import "colorbutton.css";
     /*表情按鈕--依賴splitbutton*/
 @import "multiMenu.css";
-    /*右鍵選單*/
+    /*右鍵菜單*/
 @import "contextmenu.css";
-    /*快捷選單*/
+    /*快捷菜單*/
 @import "shortcutmenu.css";
     /*粘貼提示*/
 @import "pastepicker.css";

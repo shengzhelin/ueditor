@@ -1,6 +1,6 @@
 module( 'core.filternode' );
 
-test( '過濾掉整個標籤', function() {
+test( '過濾掉整個標簽', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><p>sdf<b>sdf</b></p><i>sdf</i></div>');
     UE.filterNode(node,{
@@ -17,7 +17,7 @@ test( '過濾掉整個標籤', function() {
     equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p><p>sdfs</p></p></div>','保留p，過濾br');
 });
 
-test( '過濾標籤全部屬性', function() {
+test( '過濾標簽全部屬性', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><p>sdf<b>sdf</b></p><i>sdf</i></div>');
     node.innerHTML('<div id="aa"><p style="color:#ccc"><p>sdfssdfs</p></p>sdfasdf</div>');
@@ -35,10 +35,10 @@ test( '過濾標籤全部屬性', function() {
         '-':'b i',
         'p':{}
     });
-    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p>asd</p></div>','同時過濾多個標籤屬性');
+    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p>asd</p></div>','同時過濾多個標簽屬性');
 });
 
-test( '過濾標籤部分屬性', function() {
+test( '過濾標簽部分屬性', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><p>sdf<b>sdf</b></p><i>sdf</i></div>');
     node.innerHTML('<p style="color:#ccc;border:1px solid #ccc;"><table><tbody><tr><td></td></tr></tbody></table></p><div>sdfasdf</div>');
@@ -58,7 +58,7 @@ test( '過濾標籤部分屬性', function() {
         'span':{$:{}},
         'strong':'-'
     });
-    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p style="line-height:200%"><span>sdfs</span></p></div>','過濾span全部屬性，保留p部分屬性，過濾strong標籤');
+    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p style="line-height:200%"><span>sdfs</span></p></div>','過濾span全部屬性，保留p部分屬性，過濾strong標簽');
 
     node.innerHTML('<p><a></a><u class="ad" id="underline">sdfs<sub class="ab">sdfs</sub><i>sdfs</i></u><i>sdfs</i></p>');
     UE.filterNode(node,{
@@ -69,10 +69,10 @@ test( '過濾標籤部分屬性', function() {
         'sub':{$:{}},
         'i':'-'
     });
-    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p><u class="ad">sdfs<sub>sdfs</sub></u></p></div>','過濾sub全部屬性，保留u部分屬性，過濾i標籤');
+    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><p><u class="ad">sdfs<sub>sdfs</sub></u></p></div>','過濾sub全部屬性，保留u部分屬性，過濾i標簽');
 });
 
-test( '標籤替換過濾', function() {
+test( '標簽替換過濾', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><p>sdf<b>sdf</b></p><i>sdf</i></div>');
     node.innerHTML('<p style="color:#ccc;border:1px solid #ccc;"><table><tbody><tr><td>sdfs</td><td>sdfs</td></tr></tbody></table></p><div>sdfasdf</div>');
@@ -110,7 +110,7 @@ test( '標籤替換過濾', function() {
     ua.checkSameHtml(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"><img src="http://img.baidu.com/hi/jx2/j_0020.gif" /><table>aldkfj<tbody><tr>adf &nbsp; &nbsp;</tr><tr><td>lkj</td></tr></tbody></table></div>','th按文本內容替換，保留img部分屬性');
 });
 
-test( '保留標籤全部屬性', function() {
+test( '保留標簽全部屬性', function() {
     var uNode = UE.uNode;
     var node = uNode.createElement('<div id="aa"><p>sdf<b>sdf</b></p><i>sdf</i></div>');
     node.innerHTML('<ol><li><em>sdf</em></li><ul class=" list-paddingleft-2"><li>a</li><li>b</li><li>c</ul><li>jkl</ol>');
@@ -137,7 +137,7 @@ test( '特殊規則過濾', function() {
     UE.filterNode(node,{
         'b':'-'
     });
-    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"></div>','過濾規則中包含html中不存在的標籤');
+    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa"></div>','過濾規則中包含html中不存在的標簽');
 
     node.innerHTML('<p><!--asdfjasldkfjasldkfj--></p>');
     UE.filterNode(node,{
@@ -174,5 +174,5 @@ test( '只有black list', function () {
         script:'-',
         style:'-'
     });
-    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa">hello2</div>','過濾規則中包含html中不存在的標籤');
+    equals(node.toHtml().replace(/[ ]+>/g,'>'),'<div id="aa">hello2</div>','過濾規則中包含html中不存在的標簽');
 } );

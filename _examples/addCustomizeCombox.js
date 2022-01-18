@@ -1,18 +1,18 @@
 UE.registerUI('combox',function(editor,uiName){
-    //註冊按鈕執行時的command命令,用uiName作為command名字，使用命令默認就會帶有回退操作
+    //注冊按鈕執行時的command命令,用uiName作為command名字，使用命令默認就會帶有回退操作
     editor.registerCommand(uiName,{
         execCommand:function(cmdName,value){
-            //這裡借用fontsize的命令
+            //這里借用fontsize的命令
             this.execCommand('fontsize',value + 'px')
         },
         queryCommandValue:function(){
-            //這裡借用fontsize的查詢命令
+            //這里借用fontsize的查詢命令
             return this.queryCommandValue('fontsize')
         }
     });
 
 
-    //創建下拉選單中的鍵值對，這裡我用字體大小作為例子
+    //創建下拉菜單中的鍵值對，這里我用字體大小作為例子
     var items = [];
     for(var i= 0,ci;ci=[10, 11, 12, 14, 16, 18, 20, 24, 36][i++];){
         items.push({

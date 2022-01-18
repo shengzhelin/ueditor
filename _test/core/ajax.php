@@ -3,7 +3,7 @@
  * check get or post
  *
  */
-/*加上這句使得當php配置顯示Notice提示訊息時也不會報錯*/
+/*加上這句使得當php配置顯示Notice提示信息時也不會報錯*/
 error_reporting(E_ERROR | E_WARNING);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // POST請求
 

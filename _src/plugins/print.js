@@ -14,9 +14,10 @@
  * editor.execCommand( 'print' );
  * ```
  */
-UE.commands["print"] = {
-  execCommand: function() {
-    this.window.print();
-  },
-  notNeedUndo: 1
+UE.commands['print'] = {
+    execCommand : function(){
+        this.window.print();
+    },
+    notNeedUndo : 1
 };
+

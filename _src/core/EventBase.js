@@ -28,11 +28,12 @@
  * UE.EventBase.call(editor);
  * ```
  */
-var EventBase = (UE.EventBase = function() {});
+var EventBase = UE.EventBase = function () {};
 
 EventBase.prototype = {
-  /**
-     * 註冊事件監聽器
+
+    /**
+     * 注冊事件監聽器
      * @method addListener
      * @param { String } types 監聽的事件名稱，同時監聽多個事件使用空格分隔
      * @param { Function } fn 監聽的事件被觸發時，會執行該回調函數
@@ -48,28 +49,28 @@ EventBase.prototype = {
      *         }else{
      *             //do something
      *         }
-     *         console.log(this.getContent) // this是註冊的事件的編輯器實例
+     *         console.log(this.getContent) // this是注冊的事件的編輯器實例
      * })
      * ```
      * @see UE.EventBase:fireEvent(String)
      */
-  addListener: function(types, listener) {
-    types = utils.trim(types).split(/\s+/);
-    for (var i = 0, ti; (ti = types[i++]); ) {
-      getListener(this, ti, true).push(listener);
-    }
-  },
+    addListener:function (types, listener) {
+        types = utils.trim(types).split(/\s+/);
+        for (var i = 0, ti; ti = types[i++];) {
+            getListener(this, ti, true).push(listener);
+        }
+    },
 
-  on: function(types, listener) {
-    return this.addListener(types, listener);
-  },
-  off: function(types, listener) {
-    return this.removeListener(types, listener);
-  },
-  trigger: function() {
-    return this.fireEvent.apply(this, arguments);
-  },
-  /**
+    on : function(types, listener){
+      return this.addListener(types,listener);
+    },
+    off : function(types, listener){
+        return this.removeListener(types, listener)
+    },
+    trigger:function(){
+        return this.fireEvent.apply(this,arguments);
+    },
+    /**
      * 移除事件監聽器
      * @method removeListener
      * @param { String } types 移除的事件名稱，同時移除多個事件使用空格分隔
@@ -80,14 +81,14 @@ EventBase.prototype = {
      * editor.removeListener("selectionchange",changeCallback);
      * ```
      */
-  removeListener: function(types, listener) {
-    types = utils.trim(types).split(/\s+/);
-    for (var i = 0, ti; (ti = types[i++]); ) {
-      utils.removeItem(getListener(this, ti) || [], listener);
-    }
-  },
+    removeListener:function (types, listener) {
+        types = utils.trim(types).split(/\s+/);
+        for (var i = 0, ti; ti = types[i++];) {
+            utils.removeItem(getListener(this, ti) || [], listener);
+        }
+    },
 
-  /**
+    /**
      * 觸發事件
      * @method fireEvent
      * @param { String } types 觸發的事件名稱，同時觸發多個事件使用空格分隔
@@ -99,7 +100,7 @@ EventBase.prototype = {
      * ```
      */
 
-  /**
+    /**
      * 觸發事件
      * @method fireEvent
      * @param { String } types 觸發的事件名稱，同時觸發多個事件使用空格分隔
@@ -119,33 +120,31 @@ EventBase.prototype = {
      * editor.fireEvent("selectionchange", "Hello", "World");
      * ```
      */
-  fireEvent: function() {
-    var types = arguments[0];
-    types = utils.trim(types).split(" ");
-    for (var i = 0, ti; (ti = types[i++]); ) {
-      var listeners = getListener(this, ti),
-        r,
-        t,
-        k;
-      if (listeners) {
-        k = listeners.length;
-        while (k--) {
-          if (!listeners[k]) continue;
-          t = listeners[k].apply(this, arguments);
-          if (t === true) {
-            return t;
-          }
-          if (t !== undefined) {
-            r = t;
-          }
+    fireEvent:function () {
+        var types = arguments[0];
+        types = utils.trim(types).split(' ');
+        for (var i = 0, ti; ti = types[i++];) {
+            var listeners = getListener(this, ti),
+                r, t, k;
+            if (listeners) {
+                k = listeners.length;
+                while (k--) {
+                    if(!listeners[k])continue;
+                    t = listeners[k].apply(this, arguments);
+                    if(t === true){
+                        return t;
+                    }
+                    if (t !== undefined) {
+                        r = t;
+                    }
+                }
+            }
+            if (t = this['on' + ti.toLowerCase()]) {
+                r = t.apply(this, arguments);
+            }
         }
-      }
-      if ((t = this["on" + ti.toLowerCase()])) {
-        r = t.apply(this, arguments);
-      }
+        return r;
     }
-    return r;
-  }
 };
 /**
  * 獲得對象所擁有監聽類型的所有監聽器
@@ -160,11 +159,9 @@ EventBase.prototype = {
  * @return { Array } 監聽器數組
  */
 function getListener(obj, type, force) {
-  var allListeners;
-  type = type.toLowerCase();
-  return (
-    (allListeners =
-      obj.__allListeners || (force && (obj.__allListeners = {}))) &&
-    (allListeners[type] || (force && (allListeners[type] = [])))
-  );
+    var allListeners;
+    type = type.toLowerCase();
+    return ( ( allListeners = ( obj.__allListeners || force && ( obj.__allListeners = {} ) ) )
+        && ( allListeners[type] || force && ( allListeners[type] = [] ) ) );
 }
+

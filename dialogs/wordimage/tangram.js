@@ -173,13 +173,13 @@ baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.
  * @function
  * @grammar baidu.dom.insertHTML(element, position, html)
  * @param {HTMLElement|string} element 目標元素或目標元素的id
- * @param {string} position 插入html的位置訊息，取值為beforeBegin,afterBegin,beforeEnd,afterEnd
+ * @param {string} position 插入html的位置信息，取值為beforeBegin,afterBegin,beforeEnd,afterEnd
  * @param {string} html 要插入的html
  * @remark
  * 
  * 對於position參數，大小寫不敏感<br>
  * 參數的意思：beforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
- * 此外，如果使用本函數插入帶有script標籤的HTML字符串，script標籤對應的腳本將不會被執行。
+ * 此外，如果使用本函數插入帶有script標簽的HTML字符串，script標簽對應的腳本將不會被執行。
  * 
  * @shortcut insertHTML
  * @meta standard
@@ -294,7 +294,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路徑語句的基本目錄或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
  * @param {string} 	options.salign 				設置縮放的swf文件在由width和height設置定義的區域內的位置。允許值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否顯示右鍵選單，允許值：true/false
+ * @param {boolean} options.menu 				是否顯示右鍵菜單，允許值：true/false
  * @param {boolean} options.loop 				播放到最後一幀時是否重新播放，允許值： true/false
  * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
  * @param {string} 	options.quality 			設置flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
@@ -437,7 +437,7 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路徑語句的基本目錄或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
  * @param {string} 	options.salign 				設置縮放的swf文件在由width和height設置定義的區域內的位置。允許值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否顯示右鍵選單，允許值：true/false
+ * @param {boolean} options.menu 				是否顯示右鍵菜單，允許值：true/false
  * @param {boolean} options.loop 				播放到最後一幀時是否重新播放，允許值： true/false
  * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
  * @param {string} 	options.quality 			設置flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
@@ -771,7 +771,7 @@ baidu.flash._Base = (function(){
  * @config {Number} vars.mode mode == 0時，是使用滾動條，mode == 1時，拉伸flash, 默認值為0
  * @see baidu.swf.createHTML
  * @param {String} backgroundUrl 背景圖片路徑
- * @param {String} listBacgroundkUrl 佈局控件背景
+ * @param {String} listBacgroundkUrl 布局控件背景
  * @param {String} buttonUrl 按鈕圖片不背景
  * @param {String|Function} selectFileCallback 選擇文件的回調
  * @param {String|Function} exceedFileCallback文件超出限制的最大體積時的回調
@@ -1044,7 +1044,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
 };
 
 /**
- * 使用動態script標籤請求服務器資源，包括由服務器端的回調和瀏覽器端的回調
+ * 使用動態script標簽請求服務器資源，包括由服務器端的回調和瀏覽器端的回調
  * @namespace baidu.sio
  */
 baidu.sio = baidu.sio || {};
@@ -1063,7 +1063,7 @@ baidu.sio._createScriptTag = function(scr, url, charset){
 };
 
 /**
- * 刪除script的屬性，再刪除script標籤，以解決修覆內存泄漏的問題
+ * 刪除script的屬性，再刪除script標簽，以解決修覆內存泄漏的問題
  * 
  * @param {HTMLElement} src script節點
  */
@@ -1085,7 +1085,7 @@ baidu.sio._removeScriptTag = function(scr){
 
 
 /**
- * 通過script標籤加載數據，加載完成由瀏覽器端觸發回調
+ * 通過script標簽加載數據，加載完成由瀏覽器端觸發回調
  * @name baidu.sio.callByBrowser
  * @function
  * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
@@ -1141,7 +1141,7 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
 };
 
 /**
- * 通過script標籤加載數據，加載完成由服務器端觸發回調
+ * 通過script標簽加載數據，加載完成由服務器端觸發回調
  * @name baidu.sio.callByServer
  * @function
  * @grammar baidu.sio.callByServer(url, callback[, opt_options])
@@ -1215,7 +1215,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
 };
 
 /**
- * 通過請求一個圖片的方式令服務器存儲一條日誌
+ * 通過請求一個圖片的方式令服務器存儲一條日志
  * @function
  * @grammar baidu.sio.log(url)
  * @param {string} url 要發送的地址.

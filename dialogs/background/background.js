@@ -8,7 +8,7 @@
         initColorSelector();
     };
 
-    /* 初始化tab標籤 */
+    /* 初始化tab標簽 */
     function initTabs(){
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {

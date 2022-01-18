@@ -2,7 +2,7 @@
     "name": "ueditor",
     "title": "ueditor",
     "description": "UEditor富文本web編輯器",
-    "version": "2.0.0",
+    "version": "1.4.3",
     "homepage": "http://ueditor.baidu.com/",
     "author": {
         "name": "f-cube @ FEX",
@@ -15,21 +15,20 @@
     "keywords": [
         "ueditor",
         "web editor",
-        "javascript",
-        "rich editor"
+        "javascript"
     ],
     "bugs": {
         "url": "https://github.com/fex-team/ueditor/issues"
     },
     "dependencies": {
         "grunt": "~0.4.1",
-        "grunt-contrib-clean": "~0.5.0",
         "grunt-contrib-concat": "~0.3.0",
-        "grunt-contrib-copy": "~0.4.0",
         "grunt-contrib-cssmin": "~0.6.0",
-        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-contrib-uglify": "~1.0.1",
+        "grunt-contrib-copy": "~0.4.0",
+        "grunt-transcoding": "~0.1.1",
         "grunt-text-replace": "~0.3.9",
-        "grunt-transcoding": "~0.1.1"
+        "grunt-contrib-clean": "~0.5.0"
     },
     "devDependencies": {
         "grunt": "~0.4.1"

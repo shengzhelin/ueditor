@@ -138,7 +138,7 @@ test('defer--多個defer', function () {
     }, delay)();
 });
 
-/*若互斥，則前一個註冊的setTimeout事件被刪除*/
+/*若互斥，則前一個注冊的setTimeout事件被刪除*/
 test('defer--考慮互斥', function () {
     var utils = te.obj[0];
     var delay = 20;
@@ -347,10 +347,10 @@ test('4個margin屬性', function () {
     equal(result, 'margin-top:2px;', '1個屬性就不合');
 });
 
-test('合併;的問題', function () {
+test('合並;的問題', function () {
     equal(UE.utils.optCss('font-size:12px;&quot;;&lt;dssdfs&gt;;;'), 'font-size:12px;&quot;;&lt;dssdfs&gt;;', '');
 });
-//test( '合併border相關屬性', function () {
+//test( '合並border相關屬性', function () {
 ////    var css = 'border-width:thin medium;' + //只有border-width
 ////        'border-top-color:red;border-bottom-color:red;border-left-color:red;' + //3個分屬性相同，不應當合
 ////        'border-right-style:hidden;border-bottom-style:hidden;border-left-style:hidden;border-top-style:hidden';         //4個分屬性相同，應當合

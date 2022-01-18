@@ -22,9 +22,9 @@ class Mail {
 		$mail->Host       = "MAILBOX03.internal.baidu.com";      // SMTP 服務器
 		$mail->Port       = 465;                   // SMTP服務器的端口號
 		$mail->Username   = "zhuwemxuan";  // SMTP服務器用戶名
-		$mail->Password   = "xxxxx";            // SMTP服務器密碼
-		$mail->SetFrom('xxxx@baidu.com', '朱文軒');
-		$mail->AddReplyTo("xxxx@baidu.com","郵件回覆人的名稱");
+		$mail->Password   = "Zwx19840818";            // SMTP服務器密碼
+		$mail->SetFrom('zhuewnxuan@baidu.com', '朱文軒');
+		$mail->AddReplyTo("zhuwenxuan@baidu.com","郵件回覆人的名稱");
 		$mail->Subject    = $subject;
 		$mail->AltBody    = "To view the message, please use an HTML compatible email viewer! - From www.jiucool.com"; // optional, comment out and test
 		$mail->MsgHTML($body);
@@ -37,7 +37,7 @@ class Mail {
         }
     }
     function new_send_mail(){
-        mail("xxxx@baidu.com","asdfasdf","asdfasdf");
+        mail("zhuwenxuan@baidu.com","asdfasdf","asdfasdf");
 //        require_once('../libs/phpmailer/class.phpmailer.php');
 //        $mail = new PHPMailer();
 //        $body             = "asdfdsf";
@@ -49,9 +49,9 @@ class Mail {
 //        $mail->SMTPDebug = 2;
 //        $mail->Host     = 'smtp.baidu.com';
 //        $mail->Port = 25;
-//        $mail->Username = "xxxx@baidu.com";
-//        $mail->Password = "xxxx";
-//        $mail->SetFrom('xxxx@baidu.com', 'First Last');
+//        $mail->Username = "zhuwenxuan@baidu.com";
+//        $mail->Password = "Zwx19840818";
+//        $mail->SetFrom('zhuwenxuan@baidu.com', 'First Last');
 //
 //        $mail->AddReplyTo("zhuwen_xuan@126.com","First Last");
 //
@@ -86,7 +86,7 @@ class Mail {
         $mail->Password = "zwx19840818";
         $mail->SetFrom('zhuwen_xuan@126.com', 'First Last');
 
-        $mail->AddReplyTo("xxxx@baidu.com","First Last");
+        $mail->AddReplyTo("zhuwenxuan@baidu.com","First Last");
 
         $mail->Subject    = "PHPMailer Test Subject via POP before SMTP, basic";
 
@@ -94,7 +94,7 @@ class Mail {
 
         $mail->MsgHTML($body);
 
-        $address = "xxxxxx@baidu.com";
+        $address = "zhuwenxuan@baidu.com";
         $mail->AddAddress($address, "John Doe");
         if(!$mail->Send()) {
           echo "Mailer Error: " . $mail->ErrorInfo;

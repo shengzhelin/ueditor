@@ -9,7 +9,7 @@ module( 'ui.menubutton' );
 test( 'menubutton', function() {
     var editor = new baidu.editor.ui.Editor();
     editor.render("editor");
-//設置選單內容
+//設置菜單內容
     var val=['1', '1.5','1.75','2', '3', '4', '5'];
     for(var i=0,ci,items=[];ci = val[i++];){
             items.push({

@@ -128,13 +128,13 @@ test( '圖像設置左右浮動', function () {
     editor.execCommand( 'imagefloat', 'right' );
     equal( body.getElementsByTagName( 'img' )[0].style['cssFloat'] || body.getElementsByTagName( 'img' )[0].style['styleFloat'], 'right', '右浮動' );
     equal( editor.queryCommandValue( 'imagefloat' ), 'right' );
-    equal( editor.queryCommandState( 'imagefloat' ), 0, '圖片被選中，因此圖片選單高亮' );
+    equal( editor.queryCommandState( 'imagefloat' ), 0, '圖片被選中，因此圖片菜單高亮' );
     range.setStart( body.firstChild, 0 ).collapse( 1 ).select();
-    equal( editor.queryCommandState( 'imagefloat' ), -1, '光標閉合，因此圖片選單高不高亮' );
+    equal( editor.queryCommandState( 'imagefloat' ), -1, '光標閉合，因此圖片菜單高不高亮' );
     equal( editor.queryCommandValue( 'justify' ), 'left', '段落的對齊方式為左對齊' );
     equal( editor.queryCommandValue( 'imagefloat' ), 'none', '圖片對齊方式在閉合情況獲取為空' )
     range.selectNode( body.firstChild.firstChild ).select();
-    equal( editor.queryCommandValue( 'imagefloat' ), 'none', '選中文本，因此圖片選單高不高亮' );
+    equal( editor.queryCommandValue( 'imagefloat' ), 'none', '選中文本，因此圖片菜單高不高亮' );
 } );
 
 test( '左浮動變為默認的樣式和居中', function () {
@@ -179,7 +179,7 @@ test( ' 帶有超鏈接的圖片', function () {
     equal( ua.getFloatStyle( p.firstChild.firstChild ), '', 'image對齊方式float為空' );
 } );
 
-test( ' 默認樣式切換到居中再切換回默認，會把居中導致的3個p合併', function () {
+test( ' 默認樣式切換到居中再切換回默認，會把居中導致的3個p合並', function () {
     var editor = te.obj[0];
     var range = te.obj[1];
     var body = editor.body;
@@ -192,7 +192,7 @@ test( ' 默認樣式切換到居中再切換回默認，會把居中導致的3�
         equal( ua.getFloatStyle( p.firstChild ), '', 'image對齊方式float為空' );
         equal( editor.queryCommandValue( 'justify' ), 'center', '段落的對齊方式為居中' );
         editor.execCommand( 'imagefloat', 'none' );
-        equal( body.childNodes.length, 1, '3個p合併為1個' );
+        equal( body.childNodes.length, 1, '3個p合並為1個' );
 
         var a = body.firstChild.firstChild.nextSibling;
         equal( a.tagName.toLowerCase(), 'a', 'p的孩子為a' );

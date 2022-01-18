@@ -61,7 +61,7 @@ test( '先設h1再縮進', function() {
         range.setStart(editor.body.firstChild, 0).setEnd(editor.body.lastChild, 1).select();
         editor.execCommand('paragraph', 'h1');
         editor.execCommand('indent');
-//        equal(editor.queryCommandValue('paragraph'), 'h1', '段落格式為h1');
+        equal(editor.queryCommandValue('paragraph'), 'h1', '段落格式為h1');
         equal(editor.body.firstChild.style['textIndent'], '2em', '查看縮進量');
         start();
     }, 50);
@@ -166,7 +166,7 @@ test( '閉合取消縮進', function() {
 //    range.setStart( tds[0], 0 ).collapse( true ).select();
 //    editor.execCommand( 'indent' );
 //    ua.manualDeleteFillData( editor.body );
-//    equal( tds[0].firstChild.tagName.toLowerCase(), 'p', '插入一個p標籤' );
+//    equal( tds[0].firstChild.tagName.toLowerCase(), 'p', '插入一個p標簽' );
 //    equal( tds[0].firstChild.style['textIndent'], '2em', '查看縮進量' );
 //    range.setStart( tds[0].firstChild, 0 ).collapse( true ).select();
 //    te.presskey( '', 'h' );
@@ -196,7 +196,7 @@ test( '多個單元格縮進和取消縮進', function() {
         editor.execCommand('indent');
         ua.manualDeleteFillData(editor.body);
         /*會自動在非block元素外面套p*/
-        equal(tds[0].firstChild.tagName.toLowerCase(), 'p', '插入一個p標籤');
+        equal(tds[0].firstChild.tagName.toLowerCase(), 'p', '插入一個p標簽');
         for (var index = 0; index < tds.length; index++) {
             equal(tds[index].firstChild.style['textIndent'], '2em', '查看第' + (index + 1) + '個單元格的縮進量');
         }

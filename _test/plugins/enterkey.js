@@ -195,7 +195,7 @@ test( 'table首行中回車', function () {
         ua.keydown(editor.body,{'keyCode':13});
         stop();
         setTimeout(function(){
-            equal(ua.getChildHTML(te.obj[0].body.firstChild),'<br>','加入p');//opera中，由原生方法實現p標籤
+            equal(ua.getChildHTML(te.obj[0].body.firstChild),'<br>','加入p');//opera中，由原生方法實現p標簽
             start();
         },20);
     }

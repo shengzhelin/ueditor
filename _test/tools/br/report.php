@@ -18,7 +18,7 @@ function match($fileName, $matcher )
     $as = explode( ';' , $matcher );
     if ( sizeof( $as ) > 1 ) {
 
-        //這裡把或的邏輯改成與
+        //這里把或的邏輯改成與
         foreach ( $as as $matcher1 ) {
             if ( match($fileName, $matcher1 ) )
                 return true;
@@ -27,7 +27,7 @@ function match($fileName, $matcher )
     }
     $ms = explode( ',' , $matcher );
     if ( sizeof( $ms ) > 1 ) {
-        //這裡把或的邏輯改成與
+        //這里把或的邏輯改成與
         foreach ( $ms as $matcher1 ) {
             if ( !match($fileName, $matcher1 ) )
                 return false;

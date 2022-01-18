@@ -2,7 +2,7 @@ module( 'plugins.pagebreak' );
 
 /*trace 1179*/
 //TODO bug沒有修覆，暫時注釋
-test( '對合併過單元格的表格分頁', function () {
+test( '對合並過單元格的表格分頁', function () {
         stop();
         var editor = te.obj[0];
         var range = te.obj[1];

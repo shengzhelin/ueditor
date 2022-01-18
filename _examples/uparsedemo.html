@@ -10,9 +10,9 @@
 <body>
     <h1>解析編輯的內容</h1>
     <div class="content" style="width:200px">
-        <ol class="custom_cn2 list-paddingleft-1"><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>這裡可以書寫，編輯器的初始內容</p></li></ol><ul class="custom_dash list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><p>sdfas</p></li></ul><ol class="custom_cn2 list-paddingleft-1"><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>dfas</p></li></ol><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>dfa</p></li><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>sdfadf</p></li></ol></ol>
+        <ol class="custom_cn2 list-paddingleft-1"><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>這里可以書寫，編輯器的初始內容</p></li></ol><ul class="custom_dash list-paddingleft-1"><li class="list-dash list-dash-paddingleft"><p>sdfas</p></li></ul><ol class="custom_cn2 list-paddingleft-1"><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>dfas</p></li></ol><li class="list-cn-3-1 list-cn2-paddingleft-1"><p>dfa</p></li><ol style="list-style-type: decimal; " class=" list-paddingleft-3"><li><p>sdfadf</p></li></ol></ol>
         <p>
-            這裡可以書寫，編輯器的初始內容
+            這里可以書寫，編輯器的初始內容
         </p>
         <p>
             <video class="video-js vjs-default-skin" data-setup="{}" controls preload="none" width="640" height="264"
@@ -162,7 +162,7 @@
             2、在核心層之上覆蓋的是命令插件層。之所以叫命令插件層，是因為UEditor中所有的功能型實現都是通過這一層中的命令和插件來完成的，並且各個命令和插件之間基本互不耦合——使用者需要使用哪個功能就導入哪個功能對應的命令或者插件文件，完全不用考慮另外那些雜七雜八的JS文件（極少數插件除外，關於這些插件下文會整理出一個依賴列表來供同學們參考）。
         </p>
         <p>
-            理論上來講，所有的命令都是可以用插件來代替的，但是依然將兩者分開的主要原因是命令都是一些靜態的方法，無需隨editor實例初始化，從而優化了編輯器的性能。而插件隨編輯器的初始化而初始化，性能上會有少許的影響，但相比命令而言，插件能夠完成更加覆雜的功能。其中最主要的一個特點是在插件內部既可以為編輯器註冊命令，也可以為編輯器綁定監聽事件。這個特點使得為編輯器添加任何功能都可以在插件中獨立完成。
+            理論上來講，所有的命令都是可以用插件來代替的，但是依然將兩者分開的主要原因是命令都是一些靜態的方法，無需隨editor實例初始化，從而優化了編輯器的性能。而插件隨編輯器的初始化而初始化，性能上會有少許的影響，但相比命令而言，插件能夠完成更加覆雜的功能。其中最主要的一個特點是在插件內部既可以為編輯器注冊命令，也可以為編輯器綁定監聽事件。這個特點使得為編輯器添加任何功能都可以在插件中獨立完成。
         </p>
         <p>
             3、在命令插件層之上則是UI層。UEditor的UI設計與核心層和命令插件層幾乎完全解耦，簡單的幾個配置就可以為編輯器在界面上添加額外的UI元素和功能，具體的配置下面將會深入闡述。

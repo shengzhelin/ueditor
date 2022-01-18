@@ -550,7 +550,7 @@ test( 'un-多事件的字符串參數', function() {
     div2.id = 'test2';
     te.dom.push( div2 );
     var handle = function( e ) {
-        ok( false, e.type + ' 沒有註銷' );
+        ok( false, e.type + ' 沒有注銷' );
     };
     domUtils.on( te.dom[2], 'mouseover mousedown', handle);
 
@@ -588,7 +588,7 @@ test( "test case sensitive", function() {
     div.appendChild( document.createElement( 'div' ) );
 } );
 
-test( "un--取消註冊unload事件", function() {
+test( "un--取消注冊unload事件", function() {
     expect( 1 );
     var domUtils = te.obj[3];
     var div = te.dom[2];
@@ -603,7 +603,7 @@ test( "un--取消註冊unload事件", function() {
 } );
 
 
-test( "un--同一個回調註冊多個事件，後面事件會將第一個事件dhandler覆蓋掉", function() {
+test( "un--同一個回調注冊多個事件，後面事件會將第一個事件dhandler覆蓋掉", function() {
     expect( 1 );
     var domUtils = te.obj[3];
     var div = te.dom[2];
@@ -618,7 +618,7 @@ test( "un--同一個回調註冊多個事件，後面事件會將第一個事件
     ua.click( div );
 } );
 
-test( "un--同一個回調同一個事件註冊2次", function() {
+test( "un--同一個回調同一個事件注冊2次", function() {
     expect( 1 );
     var domUtils = te.obj[3];
     var div = te.dom[2];
@@ -633,7 +633,7 @@ test( "un--同一個回調同一個事件註冊2次", function() {
     ua.click( div );
 } );
 
-test( "un--同一個事件取消註冊三次", function() {
+test( "un--同一個事件取消注冊三次", function() {
     expect( 1 );
     var domUtils = te.obj[3];
     var div = te.dom[2];
@@ -808,7 +808,7 @@ test( 'isSameStyle--float', function() {
 test( 'isBlockElm', function() {
     var div = te.dom[2];
     var domUtils = te.obj[3];
-    /*isindex,noframes是特例，在這裡不做驗證*/
+    /*isindex,noframes是特例，在這里不做驗證*/
     var blockElms = ['address','blockquote','center','dir','div','dl','fieldset','form','h1','h2','h3','h4','h5','h6','hr','menu','ol','p','pre','table','ul'];
     var k = blockElms.length;
     while ( k ) {
@@ -883,10 +883,10 @@ test( 'mergeChild--span', function() {
     div_new.id = 'test';
     div.innerHTML = '<span style="background-color:blue;"><span style="font-size:12px;color:red">span_1<span style="font-size:12px">span_2</span></span></span>';
     domUtils.mergeChild( div.firstChild.firstChild );
-    /*span套span則進行合併*/
+    /*span套span則進行合並*/
     div_new.innerHTML = '<span style="background-color:blue;"><span style="font-size:12px;color:red">span_1</span></span>';
     div_new.firstChild.firstChild.appendChild( document.createTextNode( 'span_2' ) );
-    ok( ua.haveSameAllChildAttribs( div, div_new ), 'span套span則合併' );
+    ok( ua.haveSameAllChildAttribs( div, div_new ), 'span套span則合並' );
 
     div.innerHTML = '<p><span style="font-size:12px;color:red">span_1<span style="font-size:12px">span_2</span></span></p>';
     domUtils.mergeChild( div.firstChild.firstChild );
@@ -973,7 +973,7 @@ test( 'mergeToParent--一個span孩子，孩子css樣式與父節點相同', fun
     ok( ua.haveSameAllChildAttribs( div, div_new ), 'mergeTo parent，刪除樣式相同的子節點' );
 } );
 
-test( 'mergeToParent--多個span孩子,祖先節點不可被合併', function() {
+test( 'mergeToParent--多個span孩子,祖先節點不可被合並', function() {
     var div = te.dom[2];
     var domUtils = baidu.editor.dom.domUtils;
     div.innerHTML = '<span style="color:red;font-size:12px;"><span style="left:10px;right:20px;"></span><span style="top:10px"></span></span>';
@@ -1003,7 +1003,7 @@ test( 'mergeToParent--其他inline節點', function() {
     ok( ua.getChildHTML( div ), '<b>xxx<i>xxx<u>xxxx<em>xxxxxxxxx</em></u></i></b>' );
 } );
 
-/*合併兄弟節點中有相同屬性包括style的節點*/
+/*合並兄弟節點中有相同屬性包括style的節點*/
 test( 'mergeSibling--左邊沒有兄弟', function() {
     var div = te.dom[2];
     var domUtils = baidu.editor.dom.domUtils;
@@ -1534,7 +1534,7 @@ test('inNodeEndBoundary',function(){
     ok(domUtils.isInNodeEndBoundary(range,div),'lastchild邊界');
 });
 
-//test( '閉合選區，標籤邊界', function() {
+//test( '閉合選區，標簽邊界', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var div = te.dom[2];
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
@@ -1552,7 +1552,7 @@ test('inNodeEndBoundary',function(){
 //    same( domUtils.findTagNamesInSelection( range, ['h2','a'] ), null, '選區位置為(p,1)，但是不符合查找的條件' );
 //} );
 
-//test( '<strong style="color:red">文本閉合選區</strong>中查找是否包含特定的標籤列表', function() {
+//test( '<strong style="color:red">文本閉合選區</strong>中查找是否包含特定的標簽列表', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
@@ -1560,7 +1560,7 @@ test('inNodeEndBoundary',function(){
 //    var range = new baidu.editor.dom.Range( editor.document );
 //    var body = editor.body;
 //
-//    editor.setContent( '<h2 id="tt-h2">我是測試的header:h2</h2><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標籤</a></p>' );
+//    editor.setContent( '<h2 id="tt-h2">我是測試的header:h2</h2><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標簽</a></p>' );
 //    var expectH2 = editor.document.getElementById( 'tt-h2' ),
 //            expectA = editor.document.getElementById( 'tt-a' );
 //
@@ -1600,7 +1600,7 @@ test('inNodeEndBoundary',function(){
 //    var range = new baidu.editor.dom.Range( editor.document );
 //    var body = editor.body;
 //
-//    editor.setContent( '<h2 id="tt-h2">我是測試的header:h2</h2><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標籤</a></p>' );
+//    editor.setContent( '<h2 id="tt-h2">我是測試的header:h2</h2><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標簽</a></p>' );
 //    var expectH2 = editor.document.getElementById( 'tt-h2' ),
 //            expectA = editor.document.getElementById( 'tt-a' );
 //    var textH2 = body.firstChild.firstChild;
@@ -1618,7 +1618,7 @@ test('inNodeEndBoundary',function(){
 //    ok( expectA === domUtils.findTagNamesInSelection( range, ['a', 'h2', 'h3'] ), '跨節點選中：tag順序：[a, h2, h3]' );
 //} );
 
-//test( '不閉合選區，選區包含<strong style="color:red">前半個</strong>半個標籤', function() {
+//test( '不閉合選區，選區包含<strong style="color:red">前半個</strong>半個標簽', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
@@ -1628,12 +1628,12 @@ test('inNodeEndBoundary',function(){
 //    editor.setContent( '<h2>這是h2的文本<a>這是一個超鏈接</a></h2>' );
 //    var a = body.firstChild.lastChild;
 //    range.setStart( body, 0 ).setEnd( a.firstChild, 3 ).select();
-//    same( domUtils.findTagNamesInSelection( range, ['a','h2','body','p'] ), a, '選擇h2和a的前半部分標籤，找到第一個為a' );
+//    same( domUtils.findTagNamesInSelection( range, ['a','h2','body','p'] ), a, '選擇h2和a的前半部分標簽，找到第一個為a' );
 //    /*調換查找的數組中元素的順序*/
-//    same( domUtils.findTagNamesInSelection( range, ['h2','a','body','p'] ), body.firstChild, '選擇h2和a的前半部分標籤，找到第一個為h2' );
+//    same( domUtils.findTagNamesInSelection( range, ['h2','a','body','p'] ), body.firstChild, '選擇h2和a的前半部分標簽，找到第一個為h2' );
 //} );
 
-//test( '不閉合選區，選區包含<strong style="color:red">後半個</strong>標籤', function() {
+//test( '不閉合選區，選區包含<strong style="color:red">後半個</strong>標簽', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
@@ -1643,12 +1643,12 @@ test('inNodeEndBoundary',function(){
 //    editor.setContent( '<h2>這是h2的文本<a>這是一個超鏈接</a></h2>' );
 //    var a = body.firstChild.lastChild;
 //    range.setStart( a.firstChild, 3 ).setEnd( body, 1 ).select();
-//    same( domUtils.findTagNamesInSelection( range, ['a','h2','body','p'] ), a, '選擇h2和a的後部分標籤，找到第一個為a' );
+//    same( domUtils.findTagNamesInSelection( range, ['a','h2','body','p'] ), a, '選擇h2和a的後部分標簽，找到第一個為a' );
 //    /*調換查找的數組中元素的順序*/
-//    same( domUtils.findTagNamesInSelection( range, ['h2','a','body','p'] ), body.firstChild, '選擇h2和a的後部分標籤，找到第一個為h2' );
+//    same( domUtils.findTagNamesInSelection( range, ['h2','a','body','p'] ), body.firstChild, '選擇h2和a的後部分標簽，找到第一個為h2' );
 //} );
 
-//test( '不閉合選區，選區包含2個相同的標籤', function() {
+//test( '不閉合選區，選區包含2個相同的標簽', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
@@ -1667,7 +1667,7 @@ test('inNodeEndBoundary',function(){
 //    same( domUtils.findTagNamesInSelection( range, ['a'] ), a, '選區包含2個不完整的a,選擇第一個a' );
 //} );
 
-//test( '不閉合選區，選區緊挨著標籤邊界', function() {
+//test( '不閉合選區，選區緊挨著標簽邊界', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
@@ -1694,14 +1694,14 @@ test('inNodeEndBoundary',function(){
 //    same(domUtils.findTagNamesInSelection(range,['div','pre','a','h1','h2','h3','h4','h5','h6','h7','table']),body.getElementsByTagName('table')[0],'深節點');
 //} );
 
-//test( '<strong style="color:red">control range</strong>中查找是否包含特定的標籤列表', function() {
+//test( '<strong style="color:red">control range</strong>中查找是否包含特定的標簽列表', function() {
 //    var domUtils = baidu.editor.dom.domUtils;
 //    var editor = new baidu.editor.ui.Editor({autoFloatEnabled:true});
 //    var div = te.dom[2];
 //    editor.render( div );
 //    var range = new baidu.editor.dom.Range( editor.document );
 //
-//    editor.setContent( '<span id="tt-span">test_</span><img id="tt-h2" src="http://www.baidu.com/img/baidu_sylogo1.gif"/><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標籤</a></p>' );
+//    editor.setContent( '<span id="tt-span">test_</span><img id="tt-h2" src="http://www.baidu.com/img/baidu_sylogo1.gif"/><p id="tt-p"><strong>xx樂樂樂樂x</strong><a id="tt-a">我是標簽</a></p>' );
 //    var expectH2 = editor.document.getElementById( 'tt-h2' ),
 //         expectA = editor.document.getElementById( 'tt-a' ),
 //         expectSpan = editor.document.getElementById( 'tt-span' );

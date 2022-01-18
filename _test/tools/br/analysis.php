@@ -51,7 +51,7 @@ class Analysis{
 			$include[$d] = self::$_cache[$d];
 		}
 
-		//因為依賴關系的前後聯繫，最後在include中加入當前domain
+		//因為依賴關系的前後聯系，最後在include中加入當前domain
 		if($recurse)
 		$include[$domain] = $cnts['c'];
 		return $include;
